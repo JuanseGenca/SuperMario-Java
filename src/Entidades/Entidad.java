@@ -3,7 +3,7 @@ package Entidades;
 import java.util.Observer;
 import Logica.*;
 
-public abstract class Entidad implements Visitable{   
+public abstract class Entidad implements Visitable implements EntidadLogica{   
  //Atributos
  protected int posicionX;
  protected int posicionY;
@@ -34,7 +34,7 @@ public abstract class Entidad implements Visitable{
     return posicionY;
  }
 
- public Sprite[] getSprite() {
+ public Sprite getSprite() {
     return miSprite;
  }
 
