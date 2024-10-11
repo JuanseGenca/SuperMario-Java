@@ -1,7 +1,9 @@
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Parserint {
     protected int nivel;
@@ -18,38 +20,82 @@ public class Parserint {
 
     
 
-    public Nivel cargarNivel(int nivel,String skin){
-        Nivel nivelActual = new Nivel();
-        if(nivel == 1)
-            nivelActual = generarNivel1(skin);
-        else {
-            if (nivel == 2)
-                nivelActual = generarNivel2(skin);
-            else
-                nivelActual = generarNivel3(skin);
+    public Nivel cargarArchivoNivel(int nivel,String skin){
+        String path = obtenerArchivoNivel(this.nivel);
+        return cargarNivelDesdeArchivo(path);
+        
+    }
+
+    protected String obtenerArchivoNivel(int nivel){
+        String archivo;
+        if(nivel == 1){
+            archivo = "ruta del archivo"; //poner ruta real cuando tengamos el archivo
         }
+
+        return archivo;
+
+    }
+
+
+    public Nivel cargarNivelDesdeArchivo(String path) {
+        Nivel nivelActual = new Nivel();
+
+        try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
+            String linea;
+            while ((linea = lector.readLine()) != null) {
+                // mientras que linea sea distinto de nulo parseo
+                String[] partes = linea.split(":");
+                String tipo = partes[0];
+                String[] parametros = partes[1].split(",");
+                //divido los datos del archivo en arreglos
+                String modoDeJuego = parametros[2];
+                switch (tipo) {
+                    case "Mario":
+                        int marioX = Integer.parseInt(parametros[0]);
+                        int marioY = Integer.parseInt(parametros[1]);
+                        nivelActual.agregarMario(fabricaEnt.crearMario(marioX, marioY, fabricaSprite.crearSpriteMario(modoDeJuego)));
+                        break;
+
+                    case "Bloque Solido":
+                        int bloqueSolidoX = Integer.parseInt(parametros[0]);
+                        int bloqueSolidoY = Integer.parseInt(parametros[1]);
+                        nivelActual.agregarPlataforma(fabricaEnt.crearBloqueSolido(bloqueSolidoX, bloqueSolidoY,fabricaSprite.crearSpriteBloqueSolido(modoDeJuego)));
+                        break;
+
+                    case "Goomba":
+                        int goombaX = Integer.parseInt(parametros[0]);
+                        int goombaY = Integer.parseInt(parametros[1]);
+                        nivelActual.agregarEnemigo(fabricaEnt.crearGoomba(goombaX, goombaY, fabricaSprite.crearSpriteGoomba(modoDeJuego)));
+                        break;
+                    case "Tuberia":
+                        int tuberiaX = Integer.parseInt(parametros[0]);
+                        int tuberiaY = Integer.parseInt(parametros[1]);
+                        nivelActual.agregarPlataforma(fabricaEnt.crearTuberia(tuberiaX,tuberiaY,fabricaSprite.crearSpriteTuberia(modoDeJuego)));
+                        break;
+                    case "Ladrillo Solido":
+                        int ladrilloX = Integer.parseInt(parametros[0]);
+                        int ladrilloY = Integer.parseInt(parametros[1]);
+                        nivelActual.agregarPlataforma(fabricaEnt.crearLadrilloSolido(ladrilloX,ladrilloY,fabricaSprite.crearSpriteLadrilloSolido(modoDeJuego)));
+                        break;
+                    case "Meta":
+                        int metaX = Integer.parseInt(parametros[0]);
+                        int metaY = Integer.parseInt(parametros[1]);
+                        nivelActual.agregarPlataforma(fabricaEnt.crearMeta(metaX,metaY,fabricaSprite.crearSpriteMeta(modoDeJuego)));
+                        break;
+                    case "Vacio":
+                        int vacioX = Integer.parseInt(parametros[0]);
+                        int vacioY = Integer.parseInt(parametros[1]);
+                        nivelActual.agregarPlataforma(fabricaEnt.crearVacio(vacioX,vacioY,fabricaSprite.crearSpriteVacio(modoDeJuego)));
+                        break;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return nivelActual;
     }
 
-    protected Nivel generarNivel1(String skin){
-        Nivel nivelGenerado = new Nivel();//que parametros paso?
-
-        nivelGenerado.agregarMario(fabricaEnt.crearMario(2,2,fabricaSprite.crearSpriteMario(skin)));
-        
-        for(int i=0;i<10;i++){
-            nivelGenerado.agregarPlataforma(fabricaEnt.crearBloqueSolido(i,1));
-        }
-
-        for(int i=6;i<9;i++){
-            nivelGenerado.agregarPlataforma(fabricaEnt.crearBloqueSolido(i,4));
-        }
-        
-        nivelGenerado.agregarEnemigo(fabricaEnt.crearGoomba(4,2,skin));
-        nivelGenerado.agregarEnemigo(fabricaEnt.crearGoomba(7,2,skin));
-        
-       return nivelGenerado;
-
-    }
 
 }
 
