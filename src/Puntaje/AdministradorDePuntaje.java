@@ -18,7 +18,7 @@ public class AdministradorDePuntaje {
         return scoreActual;
     }
 
-    public void actualizarScore(int puntos)  {
+    public void actualizarPuntaje(int puntos)  {
          scoreActual=scoreActual+puntos;
         //Falta conectar con logica
     }

@@ -52,7 +52,7 @@ public class Logica {
     }
 
     public int getCantidadDeVidas() {
-        return vidas;
+        return cantidadVidas;
     }
 
     public Reloj getRelojGlobal() {
@@ -95,8 +95,15 @@ public class Logica {
 
     public void perderVidas() {
         cantidadVidas=cantidadVidas-1;
-        //Falta logica para ver si se perdio el juego
         this.actualizarVidas();
+
+        if(cantidadVidas==0) {
+            //Mensaje a la gui de terminar juego
+            if(administradorDePuntaje.entro_en_el_top5()) {
+                //Ver como conseguir el nombre del jugador
+                administradorDePuntaje.mejorJugador(jugador.getNombre());
+            }
+        }
     }
 
     public void agregarMoneda() {
