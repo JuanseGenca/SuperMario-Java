@@ -22,7 +22,7 @@ public class GUI  extends JFrame {
 
 
     public GUI() {
-        //miLogica = logica;
+        //miLogica = mi_logica;
         
         inicializarGUI();
     }
@@ -33,7 +33,7 @@ public class GUI  extends JFrame {
 
         setearJFrame();
 
-        //miCentralPantallas.mostrarMenuPrincipal();
+        miCentralPantallas.mostrarMenuPrincipal();
     }
 
     private void setearJFrame() {

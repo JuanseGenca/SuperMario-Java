@@ -46,7 +46,7 @@ public class Logica {
         this.keyListener=keyListener;
     }
     
-        public int getPuntaje() {
+    public int getPuntaje() {
         return puntaje;
     }
 

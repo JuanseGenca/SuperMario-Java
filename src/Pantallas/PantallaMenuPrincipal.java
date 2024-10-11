@@ -1,0 +1,60 @@
+package Pantallas;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+
+public class PantallaMenuPrincipal extends JPanel implements Pantalla {
+    CentralPantallas miCentral;
+
+    public PantallaMenuPrincipal(CentralPantallas mi_central) {
+        miCentral = mi_central;
+    }
+
+    @Override
+    public void crearPantalla(int width, int height) {
+	    setLayout(new GridBagLayout());
+	    setSize(new Dimension(width,height));
+	    setBackground(new Color(0, 0, 0, 120));
+	}
+
+    public void agregarComponentes() {
+        
+	}
+
+    public void setVisibilidad(boolean vis) {
+        setVisible(vis);
+    }
+
+    public void refrescar() {
+        this.repaint();
+        this.revalidate();
+    }
+    
+    private JButton crearBotonConImagen(String imagePath) {
+        // Load the image and create an ImageIcon
+        ImageIcon icono_imagen = new ImageIcon(this.getClass().getResource(imagePath));
+		Image imagen_escalada = icono_imagen.getImage().getScaledInstance(500, 500, Image.SCALE_SMOOTH);
+		Icon icono_imagen_escalado = new ImageIcon(imagen_escalada);
+
+        // Create a JButton with the ImageIcon
+        JButton boton = new JButton(icono_imagen_escalado);
+
+        // Set the size of the button based on the size of the image
+        boton.setSize(icono_imagen_escalado.getIconWidth(), icono_imagen_escalado.getIconHeight());
+		boton.setOpaque(false);
+		boton.setContentAreaFilled(false);
+		boton.setFocusable(false);
+		boton.setBorderPainted(false);
+		boton.setRolloverEnabled(false);
+		boton.setBackground(new Color(0,0,0,0));
+
+        return boton;
+    }
+}

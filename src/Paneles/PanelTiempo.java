@@ -2,19 +2,17 @@ package Paneles;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-public class PanelTimer extends JPanel implements Paneles {
+public class PanelTiempo extends JPanel implements Paneles {
 
     private CentralPaneles miCentral;
     private JLabel timerLabel;
 
-    public PanelTimer(CentralPaneles mi_central) {
+    public PanelTiempo(CentralPaneles mi_central) {
         miCentral = mi_central;
     }
 

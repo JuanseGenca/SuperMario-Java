@@ -19,7 +19,6 @@ public class PanelScore extends JPanel implements Paneles {
         miCentral = mi_central;
     }
 
-    @Override
     public void crearPanel() {
         setBackground(new Color(0,0,0,200));
 
@@ -28,8 +27,7 @@ public class PanelScore extends JPanel implements Paneles {
 		scoreLabel.setForeground(Color.WHITE);
 		add(scoreLabel);
     }
-
-    @Override
+    
     public void agregarAJFrame() {
         //TODO: queda pendiente hacerlo sin GridBagLayout
     }
