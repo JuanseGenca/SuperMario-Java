@@ -2,6 +2,7 @@ package Logica;
 import Enemigos.*;
 import PowerUps.*;
 import Entidades.*;
+import Plataformas.*;
 
 public interface Visitor {
     public void visit(KoopaTroopa k);
