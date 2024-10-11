@@ -1,6 +1,6 @@
 package Logica;
 
-import Puntajes.*;
+import Puntaje.AdministradorDePuntaje;
 
 public class Logica {
     //Atributos de instancia
@@ -95,6 +95,7 @@ public class Logica {
 
     public void perderVidas() {
         cantidadVidas=cantidadVidas-1;
+        //Falta logica para ver si se perdio el juego
         this.actualizarVidas();
     }
 

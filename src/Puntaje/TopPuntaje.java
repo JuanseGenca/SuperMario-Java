@@ -5,12 +5,14 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class TopPuntaje {
+    
     private PriorityQueue<PuntajeJugador> listadeJugadores;
     private static final int MAX_ELEMENTOS = 5;
-    private static final String ArchivoDeGuardado = "TOP5.csv";
+    @SuppressWarnings("ConstantName")
+    private static final String archivoDeGuardado = "TOP5.csv";
     
     public TopPuntaje() {
-        listadeJugadores = new PriorityQueue<>5,new ComparadorJugadores());
+        listadeJugadores = new PriorityQueue<>(5,new ComparadorJugadores());
     }
 
     public void agregarJugador(String cadena, int numero) {
@@ -29,18 +31,19 @@ public class TopPuntaje {
     }
 
     public void guardarLista() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ArchivoDeGuardado, false))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivoDeGuardado, false))) {
             for (PuntajeJugador jugador : listadeJugadores) {
                 writer.write(jugador.getNombre() + "," + jugador.getScore() + "\n");
             }
         } catch (IOException e) {
-            e.printStackTrace();}
+            System.out.println("Errir al guardar la lista");
+        }
     }
     
 
     public void cargarLista() {
         listadeJugadores.clear(); // Limpiar la lista antes de cargarla nuevamente
-        try (Scanner scanner = new Scanner(new File(ArchivoDeGuardado))) {
+        try (Scanner scanner = new Scanner(new File(archivoDeGuardado))) {
             while (scanner.hasNextLine()) {
                 String linea = scanner.nextLine();
                 String[] partes = linea.split(",");
@@ -49,7 +52,7 @@ public class TopPuntaje {
                 listadeJugadores.add(new PuntajeJugador(nombre_del_Jugador, puntuacion));
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Errir al cargar la lista");
         }
     }
     

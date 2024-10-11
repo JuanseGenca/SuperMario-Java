@@ -1,45 +1,41 @@
 package Puntaje;
 
-import java.util.PriorityQueue;
-
 import GUI.CentralPaneles;
+import java.util.PriorityQueue;
 
 public class AdministradorDePuntaje {
     protected TopPuntaje topPuntaje;
     protected int scoreActual;
     protected CentralPaneles centralPaneles;
 
-    public AdministradorDePuntaje(CentralPaneles centralPaneles)
-    {
+    public AdministradorDePuntaje(CentralPaneles centralPaneles) {
         this.topPuntaje=new TopPuntaje();
         scoreActual=0;
         this.centralPaneles=centralPaneles;
     }
 
-    public int getScore()
-    {
+    public int getScore() {
         return scoreActual;
     }
 
-    public void actualizarScore(int puntos)
-    {
-        scoreActual=scoreActual+puntos;
-        centralPaneles.actualizarScore(scoreActual);
+    public void actualizarScore(int puntos)  {
+         scoreActual=scoreActual+puntos;
+        //Falta conectar con logica
     }
 
-    public boolean entro_en_el_top5()
-    {
-        return (scoreActual>0 && (TopPuntaje.obtenerListadeJugadores().size()<5 || TopPuntaje.obtenerListadeJugadores().peek().getScore()<=scoreActual));
+    public boolean entro_en_el_top5() {
+        boolean hayMenosDeCinco=(topPuntaje.obtenerListadeJugadores().size()<5);
+        boolean elScoreEstaEntreLosCincoMejores=(topPuntaje.obtenerListadeJugadores().peek().getScore()<=scoreActual);
+
+        return (scoreActual>0 && (hayMenosDeCinco || elScoreEstaEntreLosCincoMejores));
     }
 
-    public PriorityQueue<PuntajeJugador> obtenerListadeJugadores()
-    {
-      return TopPuntaje.obtenerListadeJugadores();
+    public PriorityQueue<PuntajeJugador> obtenerListadeJugadores() {
+      return topPuntaje.obtenerListadeJugadores();
     }
     
-    public void mejorJugador(String nombre_del_Jugador)
-    {
-        TopPuntaje.agregarJugador(nombre_del_Jugador, scoreActual);
+    public void mejorJugador(String nombre_del_Jugador) {
+        topPuntaje.agregarJugador(nombre_del_Jugador, scoreActual);
     }
 
     //ambos devuelven los array en orden DESCENDENTE
