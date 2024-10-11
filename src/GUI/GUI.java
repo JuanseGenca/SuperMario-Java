@@ -1,0 +1,49 @@
+package GUI;
+
+import javax.swing.JFrame;
+
+
+import Pantallas.CentralPantallas;
+import Paneles.CentralPaneles;
+import Logica.Logica;
+
+public class GUI  extends JFrame {
+    protected CentralPaneles miCentralPaneles;
+    protected CentralPantallas miCentralPantallas; 
+    protected Logica miLogica;
+    //protected Sonido miSonido;
+    //protected PositionList<Sprites> sprites;
+    //protected NivelGrafico miNivelGrafico;
+
+    public static final int ARRIBA = 15000;
+    public static final int ABAJO = 15001;
+    public static final int IZQUIERDA = 15002;
+    public static final int DERECHA = 15003;
+
+
+    public GUI() {
+        //miLogica = logica;
+        
+        inicializarGUI();
+    }
+
+    private void inicializarGUI() {
+        miCentralPaneles = new CentralPaneles(this, miLogica);
+        miCentralPantallas = new CentralPantallas(this, miLogica);
+
+        setearJFrame();
+
+        //miCentralPantallas.mostrarMenuPrincipal();
+    }
+
+    private void setearJFrame() {
+        setTitle("Proyecto Super Mario Bros - Comision 15");
+		setSize(1000,600);
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+
+
+}

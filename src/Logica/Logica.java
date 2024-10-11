@@ -1,5 +1,7 @@
 package Logica;
 
+import Entidades.Mario;
+import GUI.GUI;
 import Puntaje.AdministradorDePuntaje;
 
 public class Logica {
@@ -9,6 +11,7 @@ public class Logica {
     protected int cantidadVidas;
     protected int puntaje;
     protected int monedas;
+    protected int tiempoRestante;
     protected Reloj relojGlobal;
     protected Parseint parseint;
     protected GUI gui;
@@ -41,6 +44,14 @@ public class Logica {
 
     public void setKeyListener(KeyListener keyListener) {
         this.keyListener=keyListener;
+    }
+    
+        public int getPuntaje() {
+        return puntaje;
+    }
+
+    public int getTiempoRestante() {
+        return tiempoRestante;
     }
 
     public ManejadorDeColisiones getManejadorDeColisiones() {
