@@ -1,5 +1,7 @@
 package Enemigos;
 
+import Logica.Visitor;
+
 public abstract class KoopaTroopa extends Enemigo{
     //Atributos
     protected Estado estadoKoopaTroopa;

@@ -1,5 +1,5 @@
 package PowerUps;
-
+import Logica.Visitor;
 public class FlorDeFuego extends PowerUp{
     public FlorDeFuego(int x, int y){
         super(x,y);

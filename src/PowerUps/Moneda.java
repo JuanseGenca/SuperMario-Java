@@ -1,4 +1,5 @@
 package PowerUps;
+import Logica.*;
 
 public class Moneda extends PowerUp{
     public Moneda(int x, int y){
@@ -11,7 +12,7 @@ public class Moneda extends PowerUp{
     public void moverIzquierda() {
         posicionX -= velocidadX;
     }
-    public void aceptar(Visitor v){
+    public void aceptar(Visitor v) {
         v.visit(this);
     }
 }

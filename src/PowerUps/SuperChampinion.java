@@ -1,5 +1,5 @@
 package PowerUps;
-
+import Logica.Visitor;
 public class SuperChampinion extends PowerUp{
     public SuperChampinion(int x, int y){
         super(x,y);

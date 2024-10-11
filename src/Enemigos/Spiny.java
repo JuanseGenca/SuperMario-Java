@@ -1,4 +1,5 @@
 package Enemigos;
+import Logica.Visitor;
 
 public class Spiny extends Enemigo{
     public Spiny(int x, int y){

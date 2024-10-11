@@ -1,6 +1,7 @@
 package Entidades;
 
 import java.util.Observer;
+import Logica.*;
 
 public abstract class Entidad implements Visitable{   
  //Atributos
@@ -51,13 +52,9 @@ public abstract class Entidad implements Visitable{
 
    public void actualizar() {}
 
-   public void aceptar(Visitor visitor) {}
+   public abstract void aceptar(Visitor visitor);
 
    public abstract void moverDerecha();
 
    public abstract void moverIzquierda();
-
-   public void aceptar(Visitor v){
-      visitor.visit(this);
-   }
 }

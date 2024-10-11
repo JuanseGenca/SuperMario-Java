@@ -1,4 +1,5 @@
 package Enemigos;
+import Logica.*;
 
 public class Goomba extends Enemigo{
     public Goomba(int x, int y){

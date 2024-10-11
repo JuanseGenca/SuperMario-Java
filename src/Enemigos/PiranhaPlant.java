@@ -1,4 +1,5 @@
 package Enemigos;
+import Logica.Visitor;
 
 public class PiranhaPlant extends Enemigo{
     public PiranhaPlant(int x, int y){

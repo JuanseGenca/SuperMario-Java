@@ -24,6 +24,9 @@ public class Mario extends Entidad{
         estado.disparar();
     }
     public void chocarBloque(Plataforma bloque){
-        aceptar(this);
+        
+    }
+    public void aceptar(Visitor v){
+        v.visit(this);
     }
 }

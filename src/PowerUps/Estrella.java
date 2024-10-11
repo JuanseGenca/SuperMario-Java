@@ -1,4 +1,5 @@
 package PowerUps;
+import Logica.Visitor;
 
 public class Estrella extends PowerUp{
     public Estrella(int x, int y){

@@ -1,4 +1,5 @@
 package PowerUps;
+import Logica.Visitor;
 
 public class ChampinionVerde extends PowerUp{
     public ChampinionVerde(int x, int y){
