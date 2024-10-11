@@ -2,8 +2,6 @@ package Entidades;
 
 import java.util.Observer;
 
-import javafx.scene.shape.Rectangle;
-
 public abstract class Entidad {   
  //Atributos
  protected int posicionX;
