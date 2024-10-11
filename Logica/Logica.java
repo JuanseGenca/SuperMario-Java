@@ -1,4 +1,6 @@
+package Logica;
 
+import Puntajes.*;
 
 public class Logica {
     //Atributos de instancia
@@ -26,7 +28,7 @@ public class Logica {
     }
 
     public void setCantidadDeVidas(int vidas) {
-        this.vidas=vidas;
+        this.cantidadVidas=vidas;
     }
 
     public void setRelojGlobal(Reloj reloj) {
@@ -57,12 +59,12 @@ public class Logica {
         return relojGlobal;
     }
 
-    public int getNivelActual() {
-        return nivel;
+    public Nivel getNivelActual() {
+        return nivelActual;
     }
 
     public void actualizarVidas() {
-        gui.actualizarVidas(vidas);
+        gui.actualizarVidas(cantidadVidas);
     }
 
     public void moverJugadorDerecha() {
@@ -87,16 +89,16 @@ public class Logica {
     }
 
     public void ganarVidas() {
-        vidas=vidas+1;
+        cantidadVidas=cantidadVidas+1;
         this.actualizarVidas();
     }
 
     public void perderVidas() {
-        vidas=vidas-1;
+        cantidadVidas=cantidadVidas-1;
         this.actualizarVidas();
     }
 
-    public void aagregarMoneda() {
+    public void agregarMoneda() {
         monedas=monedas+1;
         if(monedas==100) {
             this.ganarVidas();
