@@ -24,13 +24,8 @@ public class BloquePregunta extends BloqueIrrompible{
     public void aceptar(Visitor v){
         v.visit(this);
     }
-    @Override
     public void moverDerecha(){
-        throw new UnsupportedOperationException("Unimplemented method 'moverDerecha'");
     }
-    @Override
     public void moverIzquierda() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverIzquierda'");
     }
 }

@@ -4,7 +4,7 @@ import GUI.Observer;
 import GUI.Sprite;
 import Logica.*;
 
-public abstract class Entidad implements Visitable implements EntidadLogica{   
+public abstract class Entidad implements Visitable, EntidadLogica{   
  //Atributos
  protected int posicionX;
  protected int posicionY;
@@ -37,7 +37,7 @@ public abstract class Entidad implements Visitable implements EntidadLogica{
     return posicionX;
  }
 
- public int getPosiciony() {
+ public int getPosicionY() {
     return posicionY;
  }
 
@@ -57,7 +57,9 @@ public abstract class Entidad implements Visitable implements EntidadLogica{
 
    public void recibirDanio() {}
 
-   public void actualizar() {}
+   public void actualizar(){
+      miObserver.actualizar();
+   }
 
    public abstract void aceptar(Visitor visitor);
 

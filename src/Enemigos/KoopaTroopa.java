@@ -5,7 +5,7 @@ import Logica.Visitor;
 
 public abstract class KoopaTroopa extends Enemigo{
     //Atributos
-    protected Estado estadoKoopaTroopa;
+    protected EstadoKoopaTroopa estadoKoopaTroopa;
 
     public KoopaTroopa(int x, int y,Sprite sprite){
         super(x, y,sprite);

@@ -9,4 +9,5 @@ public abstract class Enemigo extends Entidad{
         super(x,y,sprite);
     }
     public abstract void aceptar(Visitor v);
+    
 }

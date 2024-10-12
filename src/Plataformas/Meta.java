@@ -13,10 +13,8 @@ public class Meta extends Plataforma{
     }
 
     public void moverDerecha() {
-        //NO DEBERIA PODER MOVER PLATAFORMAS
     }
 
     public void moverIzquierda() {
-        //NO DEBERIA PODER MOVER PLATAFORMAS
     }
 }

@@ -10,15 +10,9 @@ public class Vacio extends Plataforma{
     public void aceptar(Visitor v){
         v.visit(this);
     }
-    @Override
     public void moverDerecha() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverDerecha'");
     }
-    @Override
     public void moverIzquierda() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverIzquierda'");
     }
 
 }
