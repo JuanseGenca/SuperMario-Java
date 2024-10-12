@@ -1,6 +1,6 @@
 package Entidades;
 
-import java.util.Observer;
+import GUI.Observer;
 import Logica.*;
 
 public abstract class Entidad implements Visitable implements EntidadLogica{   

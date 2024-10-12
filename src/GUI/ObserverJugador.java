@@ -6,17 +6,18 @@ import Paneles.PanelCamara;
 public class ObserverJugador extends ObserverGrafico{
 
 	private static final long serialVersionUID = 7017967195998406908L;
-	private PanelCamara PanelCamara;
+	private PanelCamara panelCamara;
+    
 	
 	
 	public ObserverJugador(PanelCamara PanelCamara, EntidadLogica entidadObservada) {
 		super(entidadObservada);
-		this.PanelCamara = PanelCamara;
+		this.panelCamara = PanelCamara;
 		actualizar();
 	}
 	
 	public void actualizar() {
 		super.actualizar();
-		//DEBE MOVER LA CAMARA HACIA EL JUGADOR
+		panelCamara.actualizarFondo(entidadObservada.getPosicionX());
 	}
 }

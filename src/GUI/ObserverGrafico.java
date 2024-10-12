@@ -6,11 +6,11 @@ import Entidades.EntidadLogica;
 
 public abstract class ObserverGrafico extends JLabel implements Observer{
     
-    private EntidadLogica entidadObservada;
+    protected EntidadLogica entidadObservada;
 
-    protected ObserverGrafico(EntidadLogica entidad_observada) {
+    protected ObserverGrafico(EntidadLogica entidadObservada) {
 		super();
-		this.entidadObservada = entidad_observada;
+		this.entidadObservada = entidadObservada;
 	}
 
     public void actualizar(){
