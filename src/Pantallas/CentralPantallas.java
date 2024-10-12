@@ -26,7 +26,7 @@ public class CentralPantallas {
     public void mostrarMenuPrincipal() {
         panelPrincipal = new JPanel(new BorderLayout());
 
-        JLabel titleLabel = new JLabel("Super Mario Bros - Main Menu", SwingConstants.CENTER);
+        JLabel titleLabel = new JLabel("Super Mario Bros - Comision 15", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 36)); 
         panelPrincipal.add(titleLabel, BorderLayout.NORTH);
 

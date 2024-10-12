@@ -38,7 +38,7 @@ public class GUI  extends JFrame {
 
     private void setearJFrame() {
         setTitle("Proyecto Super Mario Bros - Comision 15");
-		setSize(1000,600);
+		setSize(1200,800);
 		setLocationRelativeTo(null);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
