@@ -34,12 +34,14 @@ public class CentralPaneles {
 	}
 
 	public void mostrarPanelCamara() {
-        PanelCamara miPanelCamara = new PanelCamara(this); //TODO: implementar PanelCamara
+        PanelCamara miPanelCamara = new PanelCamara(this);
 		miPanelCamara.crearPanel();
         miPanelCamara.agregarAJFrame();
     }
 
-
+	public void actualizarFondo(int marioX) {
+		miPanelCamara.actualizarFondo(marioX);
+	} 
 
 	public void mostrarPanelTimer() {
         miPanelTiempo = new PanelTiempo(this);

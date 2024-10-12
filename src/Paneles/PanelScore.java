@@ -1,10 +1,7 @@
 package Paneles;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -27,7 +24,7 @@ public class PanelScore extends JPanel implements Paneles {
 		scoreLabel.setForeground(Color.WHITE);
 		add(scoreLabel);
     }
-    
+
     public void agregarAJFrame() {
         //TODO: queda pendiente hacerlo sin GridBagLayout
     }
