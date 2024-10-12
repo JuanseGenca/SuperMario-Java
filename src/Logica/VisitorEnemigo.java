@@ -2,88 +2,31 @@ package Logica;
 
 import Enemigos.*;
 import Entidades.*;
+import Plataformas.BloqueIrrompible;
+import Plataformas.LadrilloRompible;
+import Plataformas.Meta;
+import Plataformas.Plataforma;
+import Plataformas.Vacio;
 import PowerUps.*;
 
 public class VisitorEnemigo implements Visitor{
-
-    @Override
-    public void visit(KoopaTroopa k) {
-
-    }
-
-    @Override
-    public void visit(Goomba g) {
-    }
-
-    @Override
-    public void visit(Lakitu l) {
-    }
-
-    @Override
-    public void visit(BuzzyBeetle b) {
-    }
-
-    @Override
-    public void visit(PiranhaPlant p) {
-    }
-
-    @Override
-    public void visit(Spiny s) {
-    }
-
-    @Override
-    public void visit(Mario m) {
-        //DAÑO O MORIR
-    }
-
-    @Override
-    public void visit(ChampinionVerde cv) {
-    }
-
-    @Override
-    public void visit(SuperChampinion sc) {
-    }
-
-    @Override
-    public void visit(FlorDeFuego f) {
-    }
-
-    @Override
-    public void visit(Moneda m) {
-    }
-
-    @Override
-    public void visit(Plataforma p) {
-        //CAMBIAR LA DIRECCION DE MOVIMIENTO
-    }
-
-    @Override
-    public void visit(Estrella e) {
-    }
-
-    @Override
-    public void visit(LadrilloRompible lr) {
-        //CAMBIAR LA DIRECCION DE MOVIMIENTO
-    }
-
-    @Override
-    public void visit(BloqueIrrompible bi) {
-       //CAMBIAR LA DIRECCION DE MOVIMIENTO
-    }
-
-    @Override
-    public void visit(Meta m) {
-        
-    }
-
-    @Override
-    public void visit(Vacio v) {
-       //MUERE
-    }
-
-    @Override
-    public void visit(PowerUp pu) {
-       
-    }
-
+    public void visit(KoopaTroopa k){}
+    public void visit(Goomba g){}
+    public void visit(Lakitu l){}
+    public void visit(BuzzyBeetle b){}
+    public void visit(PiranhaPlant p){}
+    public void visit(Spiny s){}
+    public void visit(Mario m){}
+    public void visit(ChampinionVerde cv){}
+    public void visit(SuperChampinion sc){}
+    public void visit(FlorDeFuego f){}
+    public void visit(Moneda m){}
+    public void visit(Plataforma p){}
+    public void visit(Estrella e){}
+    public void visit(LadrilloRompible lr){}
+    public void visit(BloqueIrrompible bi){}
+    public void visit(Meta m){}
+    public void visit(Vacio v){}
+    public void visit(PowerUp pu){}
+    public void visit(BolaDeFuego bf){}
 }
