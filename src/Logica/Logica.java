@@ -14,7 +14,7 @@ public class Logica {
     protected int monedas;
     protected int tiempoRestante;
     protected Reloj relojGlobal;
-    protected Parseint parseint;
+    protected Parserint parseint;
     protected GUI gui;
     protected KeyListener keyListener;
     protected Mario jugador;
