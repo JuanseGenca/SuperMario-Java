@@ -1,7 +1,7 @@
 package Pantallas;
 
 
-public interface Pantalla {
+public interface Pantalla extends JFrame{
     public void crearPantalla(int width, int height);
 
     public void agregarComponentes();
