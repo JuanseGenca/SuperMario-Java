@@ -21,8 +21,8 @@ public class GUI  extends JFrame {
     public static final int DERECHA = 15003;
 
 
-    public GUI() {
-        //miLogica = mi_logica;
+    public GUI(Logica mi_logica) {
+        miLogica = mi_logica;
         
         inicializarGUI();
     }
