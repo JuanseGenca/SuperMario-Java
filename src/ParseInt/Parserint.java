@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import GUI.GUI;
 import Logica.ManejadorDeColisiones;
+import Nivel.Nivel;
 
 public class Parserint {
     protected int nivel;
