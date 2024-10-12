@@ -2,6 +2,7 @@ package Logica;
 
 import Entidades.Mario;
 import GUI.GUI;
+import Nivel.Nivel;
 import Puntaje.AdministradorDePuntaje;
 
 public class Logica {
@@ -38,8 +39,8 @@ public class Logica {
         this.relojGlobal=reloj;
     }
 
-    public void setNivelActual(int nivel) {
-        this.nivel=nivel;
+    public void setNivelActual(Nivel nivel) {
+        this.nivelActual=nivel;
     }
 
     public void setKeyListener(KeyListener keyListener) {

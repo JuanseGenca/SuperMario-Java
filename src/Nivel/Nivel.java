@@ -1,12 +1,11 @@
 package Nivel;
-import Enemigos.Enemigo;
+import Enemigos.*;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import GUI.GUI;
-import Logica.ManejadorDeColisiones;
+import Logica.*;
 import Plataformas.Plataforma;
 import PowerUps.PowerUp;
-
 import java.util.ArrayList;
 
 public class Nivel {
@@ -17,17 +16,18 @@ public class Nivel {
     protected Mario jugador;
     protected GUI miGui;
     protected ManejadorDeColisiones manejadorColisiones;
-    protected int numero;
+    protected HiloEntidades hiloEntidades;
+    protected int numeroNivel;
 
-    public Nivel(GUI gui, ManejadorDeColisiones manejador){
+    public Nivel(GUI gui, ManejadorDeColisiones manejador, HiloEntidades hiloEntidades){
         miGui = gui;
         manejadorColisiones = manejador;
         enemigos = new ArrayList<>();
         plataformas = new ArrayList<>();
         powerUps = new ArrayList<>();
         bolasFuego = new ArrayList<>();
+        this.hiloEntidades = hiloEntidades;
         //falta inicializar a Mario, como consigo los parametros?
-        //falta el numero de nivel, la logica se lo pasa?
     }
     public ArrayList<Enemigo> getEnemigos(){
         return enemigos;
@@ -44,62 +44,78 @@ public class Nivel {
     public Mario getMario(){
         return jugador;
     }
+
+    public int getNivel() {
+        return numeroNivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.numeroNivel = nivel;
+    }
     public void eliminarPlataforma(Plataforma plataforma){
-        boolean encontre = false;
-        for(int i=0;i<plataformas.size() && !encontre;i++){
-            if(plataformas.get(i) == plataforma){
-                encontre = true;
-                plataformas.remove(i);
-            }
+        if(plataformas.contains(plataforma)) {
+            plataformas.remove(plataforma);
+            manejadorColisiones.eliminarEntidad(plataforma);
+            hiloEntidades.removeActionListener(plataforma);
         }
     }
     public void eliminarMario(Mario mario){
         //como elimino a mario? le asigno null directamente?
     }
     public void eliminarPowerUp(PowerUp powerUp){
-        boolean encontre = false;
-        for(int i=0;i<powerUps.size() && !encontre;i++){
-            if(powerUps.get(i) == powerUp){
-                encontre = true;
-                powerUps.remove(i);
-            }
+        if(powerUps.contains(powerUp)){
+            powerUps.remove(powerUp);
+            manejadorColisiones.eliminarEntidad(powerUp);
+            hiloEntidades.removeActionListener(powerUp);
         }
     }
     public void eliminarEnemigo(Enemigo enemigo){
-        boolean encontre = false;
-        for(int i=0;i<enemigos.size() && !encontre;i++){
-            if(enemigos.get(i) == enemigo){
-                encontre = true;
-                enemigos.remove(i);
-            }
+        if(enemigos.contains(enemigo)){
+            enemigos.remove(enemigo);
+            manejadorColisiones.eliminarEntidad(enemigo);
+            hiloEntidades.removeActionListener(enemigo);
         }
     }
     public void eliminarBolaDeFuego(BolaDeFuego bola){
-        boolean encontre = false;
-        for(int i=0;i<bolasFuego.size() && !encontre;i++){
-            if(bolasFuego.get(i) == bola){
-                encontre = true;
-                bolasFuego.remove(i);
-            }
+        if(bolasFuego.contains(bola)){
+            bolasFuego.remove(bola);
+            manejadorColisiones.eliminarEntidad(bola);
+            hiloEntidades.removeActionListener(bola);
         }
     }
     public void agregarPlataforma(Plataforma plataforma){
-        plataformas.addLast(plataforma);
-        //unicamente esto? revisar todos los agregar
+        if(plataforma!=null) {
+            plataformas.add(plataforma);
+            manejadorColisiones.agregarEntidad(plataforma);
+            hiloEntidades.addActionListener(plataforma);
+        }
     }
     public void agregarBolaDeFuego(BolaDeFuego bola){
-        bolasFuego.addLast(bola);
+        if(bola!=null) {
+            bolasFuego.add(bola);
+            manejadorColisiones.agregarEntidad(bola);
+            hiloEntidades.addActionListener(bola);
+        }
     }
     public void agregarMario(Mario mario){
-        jugador = mario;
+        if(mario!=null) {
+            this.jugador = mario;
+            manejadorColisiones.agregarEntidad(mario);
+        }
     }
     public void agregarPowerUp(PowerUp powerUp){
-        powerUps.addLast(powerUp);
+        if(powerUp!=null) {
+            powerUps.add(powerUp);
+            manejadorColisiones.agregarEntidad(powerUp);
+            hiloEntidades.addActionListener(powerUp);
+        }
     }
     public void agregarEnemigo(Enemigo enemigo){
-        enemigos.addLast(enemigo);
+        if(enemigo!=null) { 
+            enemigos.add(enemigo);
+            manejadorColisiones.agregarEntidad(enemigo);
+            hiloEntidades.addActionListener(enemigo);
+        }
     }
-    public void pasarEntidades(HiloEntidades hiloEntidades){
-        //terminar esto
-    }
+
 }

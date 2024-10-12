@@ -1,6 +1,7 @@
 package Logica;
 
 import Entidades.*;
+import Nivel.*;
 import java.util.*;
 public class ManejadorDeColisiones {
     protected LinkedList<Entidad> entidades;
@@ -29,8 +30,8 @@ public class ManejadorDeColisiones {
 
     public void chequearColisiones() { 
         LinkedList<Entidad> entidadesAux= entidades;
-        for(Entidad entidad:entidadesAux) {
-            Entidad entidadComprobar=entidadesAux.pollFirst();
+        for(Entidad entidadC:entidadesAux) {
+            Entidad entidadComprobar=entidadC;
             for(Entidad entidad:entidadesAux) {
                 if(entidad.getHitBox().intersects(entidadComprobar.getHitBox())) {
                     //Mensaje a entidad y entidadComprobar de colision
