@@ -1,15 +1,17 @@
 package GUI;
+import java.awt.image.BufferedImage;
 
-public class Sprite{
-    
+public class Sprite {
 
-    //Falta implementar
-    public Sprite(){
+    public Spritesheet sheet;
+    public BufferedImage spriteActual;
+    public int width, height;
 
+    public Sprite(Spritesheet sheet, int x, int y) {
+        spriteActual = sheet.getSprite(x, y, width, height);
     }
 
-    public Sprite getSprite(){
-        
-        return null;
+    public BufferedImage getSprite() {
+        return spriteActual;
     }
 }
