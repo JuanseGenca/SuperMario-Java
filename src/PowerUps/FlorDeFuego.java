@@ -1,8 +1,9 @@
 package PowerUps;
+import GUI.Sprite;
 import Logica.Visitor;
 public class FlorDeFuego extends PowerUp{
-    public FlorDeFuego(int x, int y){
-        super(x,y);
+    public FlorDeFuego(int x, int y,Sprite sprite){
+        super(x,y, sprite);
     }
     public void moverDerecha() {
         posicionX += velocidadX;

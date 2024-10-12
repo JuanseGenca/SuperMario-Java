@@ -1,10 +1,11 @@
 package Enemigos;
 
+import GUI.Sprite;
 import Logica.Visitor;
 
 public class Lakitu extends Enemigo{
-    public Lakitu(int x, int y){
-        super(x,y);
+    public Lakitu(int x, int y,Sprite sprite){
+        super(x,y,sprite);
     }
     public void moverDerecha() {
         posicionX += velocidadX;

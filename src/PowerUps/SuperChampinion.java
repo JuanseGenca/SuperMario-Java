@@ -1,8 +1,9 @@
 package PowerUps;
+import GUI.Sprite;
 import Logica.Visitor;
 public class SuperChampinion extends PowerUp{
-    public SuperChampinion(int x, int y){
-        super(x,y);
+    public SuperChampinion(int x, int y,Sprite sprite){
+        super(x,y, sprite);
     }
     public void moverDerecha() {
         posicionX += velocidadX;

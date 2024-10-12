@@ -1,12 +1,13 @@
 package Plataformas;
 
 import Entidades.Entidad;
+import GUI.Sprite;
 import Logica.Visitor;
 
 public class BloquePregunta extends BloqueIrrompible{
     
-    public BloquePregunta(int x, int y){
-        super(x, y);
+    public BloquePregunta(int x, int y,Sprite sprite){
+        super(x, y,sprite);
     }
     public Entidad getEntidadContenida(){
         return entidadContenida;

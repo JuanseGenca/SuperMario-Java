@@ -1,13 +1,14 @@
 package Enemigos;
 
+import GUI.Sprite;
 import Logica.Visitor;
 
 public abstract class KoopaTroopa extends Enemigo{
     //Atributos
     protected Estado estadoKoopaTroopa;
 
-    public KoopaTroopa(int x, int y){
-        super(x, y);
+    public KoopaTroopa(int x, int y,Sprite sprite){
+        super(x, y,sprite);
     }
     public void moverDerecha() {
         posicionX += velocidadX;

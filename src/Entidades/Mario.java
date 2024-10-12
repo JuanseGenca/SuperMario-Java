@@ -1,12 +1,14 @@
 package Entidades;
+import GUI.Sprite;
 import Logica.*;
+import Plataformas.Plataforma;
 
 public class Mario extends Entidad{
     protected EstadoMario estado;
     protected Logica miLogica;
 
-    public Mario(int x, int y){
-        super(x,y);
+    public Mario(int x, int y,Sprite sprite){
+        super(x,y,sprite);
     }
     public void moverDerecha(){
         posicionX += velocidadX;

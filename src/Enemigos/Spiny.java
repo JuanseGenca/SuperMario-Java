@@ -1,9 +1,10 @@
 package Enemigos;
+import GUI.Sprite;
 import Logica.Visitor;
 
 public class Spiny extends Enemigo{
-    public Spiny(int x, int y){
-        super(x,y);
+    public Spiny(int x, int y,Sprite sprite){
+        super(x,y,sprite);
     }
     public void moverDerecha() {
         posicionX += velocidadX;

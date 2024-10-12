@@ -1,9 +1,10 @@
 package PowerUps;
+import GUI.Sprite;
 import Logica.*;
 
 public class Moneda extends PowerUp{
-    public Moneda(int x, int y){
-        super(x,y);
+    public Moneda(int x, int y,Sprite sprite){
+        super(x,y, sprite);
     }
     public void moverDerecha() {
         posicionX += velocidadX;

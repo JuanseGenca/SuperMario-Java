@@ -1,6 +1,7 @@
 package Entidades;
 
 import GUI.Observer;
+import GUI.Sprite;
 import Logica.*;
 
 public abstract class Entidad implements Visitable implements EntidadLogica{   
@@ -12,7 +13,7 @@ public abstract class Entidad implements Visitable implements EntidadLogica{
  protected int direccion;
  protected boolean sobreSuelo;
  protected int puntaje;
- protected Sprite[] miSprite;
+ protected Sprite miSprite;
  protected Observer miObserver;
  protected Rectangle miHitBox;
 
@@ -21,6 +22,12 @@ public abstract class Entidad implements Visitable implements EntidadLogica{
     this.posicionX=posicionX;
     this.posicionY=posicionY;
  }
+
+ public Entidad(int posicionX, int posicionY,Sprite sprite) {
+   this.posicionX=posicionX;
+   this.posicionY=posicionY;
+   miSprite = sprite;
+}
 
  public int getPuntaje() {
     return puntaje;
