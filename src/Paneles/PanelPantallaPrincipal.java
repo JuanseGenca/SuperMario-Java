@@ -1,4 +1,4 @@
-package Pantallas;
+package Paneles;
 
 import GUI.GUI;
 import java.awt.Image;
