@@ -1,11 +1,9 @@
 package GUI;
 
-import javax.swing.JFrame;
-
-
-import Pantallas.CentralPantallas;
-import Paneles.CentralPaneles;
 import Logica.Logica;
+import Paneles.CentralPaneles;
+import Pantallas.CentralPantallas;
+import javax.swing.JFrame;
 
 public class GUI  extends JFrame {
     protected CentralPaneles miCentralPaneles;
@@ -14,6 +12,7 @@ public class GUI  extends JFrame {
     //protected Sonido miSonido;
     //protected PositionList<Sprites> sprites;
     //protected NivelGrafico miNivelGrafico;
+    protected KeyListener keyListener;
 
     public static final int ARRIBA = 15000;
     public static final int ABAJO = 15001;

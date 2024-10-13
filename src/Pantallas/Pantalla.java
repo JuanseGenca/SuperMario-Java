@@ -1,7 +1,9 @@
 package Pantallas;
 
+import javax.swing.*;
 
-public interface Pantalla extends JFrame{
+
+public interface Pantalla implements JFrame{
     public void crearPantalla(int width, int height);
 
     public void agregarComponentes();

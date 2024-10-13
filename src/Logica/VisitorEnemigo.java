@@ -9,7 +9,9 @@ import Plataformas.Plataforma;
 import Plataformas.Vacio;
 import PowerUps.*;
 
+
 public class VisitorEnemigo implements Visitor{
+    
     public void visit(KoopaTroopa k){}
     public void visit(Goomba g){}
     public void visit(Lakitu l){}

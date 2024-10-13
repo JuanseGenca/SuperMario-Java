@@ -3,6 +3,7 @@ package Logica;
 import Entidades.*;
 import Nivel.*;
 import java.util.*;
+
 public class ManejadorDeColisiones {
     protected LinkedList<Entidad> entidades;
     protected Nivel nivelActual;
