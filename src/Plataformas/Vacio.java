@@ -10,9 +10,8 @@ public class Vacio extends Plataforma{
     public void aceptar(Visitor v){
         v.visit(this);
     }
-    public void moverDerecha() {
-    }
-    public void moverIzquierda() {
+    public void mover(){
+        
     }
 
 }

@@ -10,4 +10,8 @@ public abstract class Enemigo extends Entidad{
     }
     public abstract void aceptar(Visitor v);
     
+    public void mover(){
+
+    }
+    
 }

@@ -12,9 +12,7 @@ public class Meta extends Plataforma{
         v.visit(this);
     }
 
-    public void moverDerecha() {
-    }
-
-    public void moverIzquierda() {
+    public void mover(){
+        
     }
 }

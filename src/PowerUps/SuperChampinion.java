@@ -5,12 +5,8 @@ public class SuperChampinion extends PowerUp{
     public SuperChampinion(int x, int y,Sprite sprite){
         super(x,y, sprite);
     }
-    public void moverDerecha() {
-        posicionX += velocidadX;
-    }
-    
-    public void moverIzquierda() {
-        posicionX -= velocidadX;
+    public void mover(){
+        
     }
     public void aceptar(Visitor v){
         v.visit(this);

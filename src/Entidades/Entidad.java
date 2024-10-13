@@ -63,7 +63,9 @@ public abstract class Entidad implements Visitable, EntidadLogica{
 
    public abstract void aceptar(Visitor visitor);
 
-   public abstract void moverDerecha();
+   public abstract void mover();
 
-   public abstract void moverIzquierda();
+   public void establecerDireccion(int x){
+      direccion = x;
+   }
 }

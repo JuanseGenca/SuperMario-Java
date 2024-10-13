@@ -24,8 +24,7 @@ public class BloquePregunta extends BloqueIrrompible{
     public void aceptar(Visitor v){
         v.visit(this);
     }
-    public void moverDerecha(){
-    }
-    public void moverIzquierda() {
+    public void mover(){
+        
     }
 }

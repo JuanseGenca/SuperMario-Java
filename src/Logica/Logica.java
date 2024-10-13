@@ -79,14 +79,6 @@ public class Logica {
         gui.actualizarVidas(cantidadVidas);
     }
 
-    public void moverJugadorDerecha() {
-        jugador.moverDerecha();
-    }
-
-    public void moverJugadorIzquierda() {
-        jugador.moverIzquierda();
-    }
-
     public void saltarJugador() {
         jugador.saltar();
     }
@@ -124,5 +116,9 @@ public class Logica {
             this.ganarVidas();
             monedas=0;
         }
+    }
+
+    public void establecerDireccionMario(int x){
+        jugador.establecerDireccion(x);
     }
 }

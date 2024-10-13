@@ -10,12 +10,9 @@ public class Mario extends Entidad{
     public Mario(int x, int y,Sprite sprite){
         super(x,y,sprite);
     }
-    public void moverDerecha(){
-        posicionX += velocidadX;
-    }
-    public void moverIzquierda(){
-        posicionX -= velocidadX;
-    }
+    public void mover(){
+
+   }
     public void saltar(){
         posicionY += velocidadY;
     }

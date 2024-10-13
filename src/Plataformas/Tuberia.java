@@ -23,8 +23,7 @@ public class Tuberia extends BloqueIrrompible{
     public void aceptar(Visitor v){
         v.visit(this);
     }
-    public void moverDerecha() {
+    public void mover(){
+        
     }
-    public void moverIzquierda() {
-    } 
 }
