@@ -8,8 +8,8 @@ public abstract class Entidad implements Visitable, EntidadLogica{
  //Atributos
  protected int posicionX;
  protected int posicionY;
- protected int velocidadX;
- protected int velocidadY;
+ protected final int velocidadX = 10; //¿QUE VELOCIDADES VAMOS A USAR?
+ protected final int velocidadY = 10;
  protected int direccion;
  protected boolean sobreSuelo;
  protected int puntaje;

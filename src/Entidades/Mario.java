@@ -10,9 +10,22 @@ public class Mario extends Entidad{
     public Mario(int x, int y,Sprite sprite){
         super(x,y,sprite);
     }
+    //Hay que ver si conviene ponerlo en mario y para cada entidad mover() se comporta de forma diferente
+    //O si conviene hacer mover() en clase entidad y que todas se muevan igual.
     public void mover(){
-
-   }
+        if(direccion == 15001){
+            posicionY+=velocidadY;
+        }
+        if(direccion == 15001){
+            posicionY-=velocidadY;
+        }
+        if(direccion == 15002){
+            posicionX-= velocidadX;
+        }
+        if(direccion == 15003){
+            posicionX+= velocidadX;
+        }
+    }
     public void saltar(){
         posicionY += velocidadY;
     }
@@ -22,6 +35,7 @@ public class Mario extends Entidad{
     public void disparar(){
         estado.disparar();
     }
+    //¿Hace falta?
     public void chocarBloque(Plataforma bloque){
         
     }
