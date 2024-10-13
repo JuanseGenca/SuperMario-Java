@@ -55,7 +55,7 @@ public class EntidadesFactory {
     }
 
     public BuzzyBeetle crearBuzzyBeetle(int x,int y){
-        BufferedImage[] spriteBuzzyBeetle = spriteFactory.crearSpriteBeetle();
+        BufferedImage[] spriteBuzzyBeetle = spriteFactory.crearSpriteBuzzyBeetle();
         BuzzyBeetle buzzyBeetle = new BuzzyBeetle(x,y,spriteBuzzyBeetle);
         return buzzyBeetle;
     }

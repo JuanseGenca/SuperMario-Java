@@ -3,8 +3,6 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.nio.Buffer;
-
-import GUI.Sprite;
 import GUI.Spritesheet;
 
 public class SpritesMarioModo1 implements SpriteFactory {

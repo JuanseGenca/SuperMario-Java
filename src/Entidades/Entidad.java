@@ -4,7 +4,6 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import GUI.Observer;
-import GUI.Sprite;
 import Logica.*;
 
 public abstract class Entidad implements Visitable, EntidadLogica{   

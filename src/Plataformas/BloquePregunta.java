@@ -1,12 +1,12 @@
 package Plataformas;
 
 import Entidades.Entidad;
-import GUI.Sprite;
+import java.awt.image.BufferedImage;
 import Logica.Visitor;
 
 public class BloquePregunta extends BloqueIrrompible{
     
-    public BloquePregunta(int x, int y,Sprite sprite){
+    public BloquePregunta(int x, int y, BufferedImage[] sprite){
         super(x, y,sprite);
     }
     public Entidad getEntidadContenida(){

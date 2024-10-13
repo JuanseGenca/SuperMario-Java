@@ -1,10 +1,9 @@
 package GUI;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+
 import Entidades.EntidadLogica;
 
 
-public abstract class ObserverGrafico extends JLabel implements Observer{
+public abstract class ObserverGrafico  implements Observer{
     
     protected EntidadLogica entidadObservada;
 
@@ -14,8 +13,6 @@ public abstract class ObserverGrafico extends JLabel implements Observer{
 	}
 
     public void actualizar(){
-        String ruta_imagen = entidadObservada.getSprite().get_ruta_imagen();
-		ImageIcon icono = new ImageIcon(getClass().getClassLoader().getResource(ruta_imagen));
-		setIcon(icono);
+        
     }
 }

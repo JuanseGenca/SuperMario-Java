@@ -1,9 +1,9 @@
 package Entidades;
 
-import GUI.Sprite;
+import java.awt.image.BufferedImage;
 
 public interface EntidadLogica{
-    public Sprite getSprite();
+    public BufferedImage[] getSprite();
     public int getPosicionX();
     public int getPosicionY();
 }
