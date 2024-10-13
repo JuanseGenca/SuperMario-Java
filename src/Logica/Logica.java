@@ -51,6 +51,9 @@ public class Logica {
     public void setNivelActual(Nivel nivel) {
         this.nivelActual=nivel;
     }
+    public GUI getGUI(){
+        return gui;
+    }
     
     public int getPuntaje() {
         return puntaje;
