@@ -15,11 +15,11 @@ import Logica.ManejadorDeColisiones;
 import Nivel.Nivel;
 
 public class Parserint {
-    protected int nivel;
+    protected Nivel nivel;
     protected EntidadesFactory fabricaEnt;
 
-    public Parserint(int nivel,EntidadesFactory fabricaEntidades){
-        this.nivel=nivel;
+    public Parserint(Nivel nivelActual,EntidadesFactory fabricaEntidades){
+        this.nivel=nivelActual;
         fabricaEnt=fabricaEntidades;
     }
 
@@ -31,12 +31,13 @@ public class Parserint {
         
     }
 
-    protected String obtenerArchivoNivel(int nivel){
+    protected String obtenerArchivoNivel(Nivel nivel){
         String archivo;
-        if(nivel == 1){
+        int numeroNivel=nivel.getNivel();
+        if(numeroNivel == 1){
             archivo = "ruta del archivo para nivel 1"; //poner ruta real cuando tengamos el archivo
         } else{
-            if(nivel == 2){
+            if(numeroNivel == 2){
                 archivo = "ruta del archivo para nivel 2";
             } else{
                 archivo = "ruta del archivo para nivel 3";

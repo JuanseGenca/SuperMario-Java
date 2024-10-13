@@ -1,8 +1,8 @@
 package Paneles;
 
-import javax.swing.JPanel;
 import GUI.GUI;
 import Logica.Logica;
+import javax.swing.JPanel;
 
 public class CentralPaneles {
     protected JPanel panelPrincipal;
@@ -25,6 +25,12 @@ public class CentralPaneles {
         miPanelScore.agregarAJFrame();
     }
 
+	public void limpiarPaneles() {
+		miPanelScore=new PanelScore(this);
+		miPanelCamara=new PanelCamara(this);
+		miPanelTiempo=new PanelTiempo(this);
+		miPanelVidas=new PanelVidas(this);
+	}
 	public void actualizarScore(int score) {
 		miPanelScore.actualizarScore(score);
 	}

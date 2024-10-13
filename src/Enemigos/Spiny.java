@@ -1,6 +1,6 @@
 package Enemigos;
-import java.awt.image.BufferedImage;
 import Logica.Visitor;
+import java.awt.image.BufferedImage;
 
 public class Spiny extends Enemigo{
     public Spiny(int x, int y,BufferedImage[] sprite){

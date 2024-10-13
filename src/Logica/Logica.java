@@ -24,6 +24,7 @@ public class Logica {
     protected GUI gui;
     protected Mario jugador;
     protected Nivel nivelActual;
+    
 
     //Constructor
     public Logica() {
@@ -81,7 +82,7 @@ public class Logica {
     }
 
     public void actualizarVidas() {
-        gui.actualizarVidas(cantidadVidas);
+        gui.actualizarVidas();
     }
 
     public void saltarJugador() {

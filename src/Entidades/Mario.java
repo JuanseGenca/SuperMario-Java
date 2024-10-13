@@ -1,8 +1,7 @@
 package Entidades;
-import java.awt.image.BufferedImage;
-
 import Logica.*;
 import Plataformas.Plataforma;
+import java.awt.image.BufferedImage;
 
 public class Mario extends Entidad{
     protected EstadoMario estado;

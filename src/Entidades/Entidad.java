@@ -1,10 +1,9 @@
 package Entidades;
 
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
-
 import GUI.Observer;
 import Logica.*;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 
 public abstract class Entidad implements Visitable, EntidadLogica{   
  //Atributos
