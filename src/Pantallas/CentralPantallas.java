@@ -3,6 +3,10 @@ package Pantallas;
 import javax.swing.JPanel;
 import GUI.GUI;
 import Logica.Logica;
+import Paneles.PanelCamara;
+import Paneles.PanelScore;
+import Paneles.PanelTiempo;
+import Paneles.PanelVidas;
 
 
 public class CentralPantallas {
@@ -10,6 +14,7 @@ public class CentralPantallas {
     protected GUI miGUI;
     protected Logica miLogica;
     private PantallaMenuPrincipal miPantallaMenuPrincipal;
+    private PantallaJuego miPantallaJuego;
     private int WIDTH = 1200;
     private int HEIGHT = 800;
 
@@ -27,6 +32,11 @@ public class CentralPantallas {
 
     private void agregarFuncionalidadBotones() {
         //TODO
+    }
+
+    public PantallaJuego mostrarJuego(PanelCamara pc, PanelScore ps, PanelTiempo pt, PanelVidas pv) {
+        miPantallaJuego = new PantallaJuego(pc, ps, pt, pv);
+        return miPantallaJuego;
     }
 
  
