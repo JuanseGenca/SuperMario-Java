@@ -14,7 +14,7 @@ public class Mario extends Entidad{
     //Hay que ver si conviene ponerlo en mario y para cada entidad mover() se comporta de forma diferente
     //O si conviene hacer mover() en clase entidad y que todas se muevan igual.
     public void mover(){
-        if(direccion == 15001){
+        if(direccion == 15000){
             posicionY+=velocidadY;
         }
         if(direccion == 15001){
@@ -26,10 +26,14 @@ public class Mario extends Entidad{
         if(direccion == 15003){
             posicionX+= velocidadX;
         }
+        miObserver.actualizar();
     }
+
     public void saltar(){
         posicionY += velocidadY;
+        miObserver.actualizar();
     }
+
     public void recibirDanio(){
         estado.recibirDanio();
     }

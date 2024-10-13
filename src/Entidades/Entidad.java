@@ -70,4 +70,8 @@ public abstract class Entidad implements Visitable, EntidadLogica{
    public void establecerDireccion(int x){
       direccion = x;
    }
+
+   public int getDireccion(){
+      return direccion;
+   }
 }
