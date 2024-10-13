@@ -70,4 +70,9 @@ public abstract class Entidad implements Visitable, EntidadLogica{
    public void establecerDireccion(int x){
       direccion = x;
    }
+   public void aplicarGravedad(){
+      if(!sobreSuelo){
+         posicionY-=velocidadY; //DEFINIR UN NUMERO PARA LA GRAVEDAD.
+      }
+   }
 }

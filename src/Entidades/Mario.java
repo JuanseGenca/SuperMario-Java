@@ -26,6 +26,7 @@ public class Mario extends Entidad{
         if(direccion == 15003){
             posicionX+= velocidadX;
         }
+        aplicarGravedad();
     }
     public void saltar(){
         posicionY += velocidadY;
