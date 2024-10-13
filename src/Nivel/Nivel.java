@@ -15,9 +15,10 @@ public class Nivel {
     protected ArrayList<BolaDeFuego> bolasFuego;
     protected Mario jugador;
     protected GUI miGui;
-    protected ManejadorDeColisiones manejadorColisiones;
+    protected ManejadorDeColisiones manejadorColisiones; //TESTEO DE BRANCH
     protected HiloEntidades hiloEntidades;
     protected int numeroNivel;
+    protected int chequep;
 
     public Nivel(GUI gui, ManejadorDeColisiones manejador){
         miGui = gui;
