@@ -8,8 +8,8 @@ public class ObserverEntidades extends ObserverGrafico {
 	
 	private static final long serialVersionUID = -331627302579244451L;
 	
-	public ObserverEntidades(EntidadLogica entidadObservada,GUI miGui) {
-		super(entidadObservada,miGui);
+	public ObserverEntidades(EntidadLogica entidadObservada) {
+		super(entidadObservada);
 		actualizar();
 	}
 

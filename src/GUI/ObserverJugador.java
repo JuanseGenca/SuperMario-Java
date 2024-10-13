@@ -12,7 +12,7 @@ public class ObserverJugador extends ObserverGrafico{
     
 	
 	
-	public ObserverJugador(PanelCamara PanelCamara, EntidadLogica entidadObservada,GUI miGui) {
+	public ObserverJugador(PanelPantallaCarrera PanelPantallaCarrera, EntidadLogica entidadObservada,GUI miGui) {
 		super(entidadObservada,miGui);
 		this.panelCamara = PanelCamara;
 		actualizar();
