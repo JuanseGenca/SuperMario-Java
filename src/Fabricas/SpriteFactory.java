@@ -1,7 +1,7 @@
 package Fabricas;
 
 public interface SpriteFactory {
-    
+
     public Sprite crearSpriteChampinionVerde();
     public Sprite crearSpriteSuperChampinion();
     public Sprite crearSpriteFlorDeFuego();
@@ -18,6 +18,7 @@ public interface SpriteFactory {
     public Sprite crearSpriteTuberia();
     public Sprite crearSpriteMeta();
     public Sprite crearSpriteVacio();
-    public Sprite crearSpriteLadrilloSolido();
+    public Sprite crearSpriteLadrilloRompible();
+    public Sprite crearSpriteBloquePregunta();
 
 }

@@ -80,10 +80,10 @@ public class Parserint {
                         int tuberiaY = Integer.parseInt(parametros[1]);
                         nivelActual.agregarPlataforma(fabricaEnt.crearTuberia(tuberiaX,tuberiaY));
                         break;
-                    case "Ladrillo Solido":
+                    case "Ladrillo Rompible":
                         int ladrilloX = Integer.parseInt(parametros[0]);
                         int ladrilloY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPlataforma(fabricaEnt.crearLadrilloSolido(ladrilloX,ladrilloY));
+                        nivelActual.agregarPlataforma(fabricaEnt.crearLadrilloRompible(ladrilloX,ladrilloY));
                         break;
                     case "Meta":
                         int metaX = Integer.parseInt(parametros[0]);
@@ -95,7 +95,11 @@ public class Parserint {
                         int vacioY = Integer.parseInt(parametros[1]);
                         nivelActual.agregarPlataforma(fabricaEnt.crearVacio(vacioX,vacioY));
                         break;
-
+                    case "Bloque Pregunta":
+                        int bloquePreguntaX = Integer.parseInt(parametros[0]);
+                        int bloquePreguntaY = Integer.parseInt(parametros[1]);
+                        nivelActual.agregarPlataforma(fabricaEnt.crearBloquePregunta(bloquePreguntaX, bloquePreguntaY));
+                        break;
                     case "Goomba":
                         int goombaX = Integer.parseInt(parametros[0]);
                         int goombaY = Integer.parseInt(parametros[1]);

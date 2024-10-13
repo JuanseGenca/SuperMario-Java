@@ -113,7 +113,7 @@ public class EntidadesFactory {
     }
 
     public LadrilloRompible crearLadrilloRompible(int x,int y){
-        Sprite spriteLadrilloRompible = spriteFactory.crearSpriteLadrilloSolido();
+        Sprite spriteLadrilloRompible = spriteFactory.crearSpriteLadrilloRompible();
         LadrilloRompible ladrilloRompible = new LadrilloRompible(x,y,spriteLadrilloRompible);
         return ladrilloRompible;
     }
