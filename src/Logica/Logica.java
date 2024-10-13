@@ -22,7 +22,6 @@ public class Logica {
     protected EntidadesFactory fabricaEntidades;
     protected SpriteFactory fabricaSprites;
     protected GUI gui;
-    protected KeyListener keyListener;
     protected Mario jugador;
     protected Nivel nivelActual;
 
@@ -51,10 +50,6 @@ public class Logica {
 
     public void setNivelActual(Nivel nivel) {
         this.nivelActual=nivel;
-    }
-
-    public void setKeyListener(KeyListener keyListener) {
-        this.keyListener=keyListener;
     }
     
     public int getPuntaje() {

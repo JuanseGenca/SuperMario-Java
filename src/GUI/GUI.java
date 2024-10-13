@@ -1,8 +1,9 @@
 package GUI;
 
-import Logica.Logica;
+import Logica.*;
 import Paneles.CentralPaneles;
 import Pantallas.CentralPantallas;
+import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 
 public class GUI  extends JFrame {
@@ -12,8 +13,6 @@ public class GUI  extends JFrame {
     //protected Sonido miSonido;
     //protected PositionList<Sprites> sprites;
     //protected NivelGrafico miNivelGrafico;
-    protected KeyListener keyListener;
-
     public static final int ARRIBA = 15000;
     public static final int ABAJO = 15001;
     public static final int IZQUIERDA = 15002;
@@ -43,6 +42,8 @@ public class GUI  extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
+    public void agregarSprite(BufferedImage Sprite,int posX, int posY) {
 
+    }
 
 }

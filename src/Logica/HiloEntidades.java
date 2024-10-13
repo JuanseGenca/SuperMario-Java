@@ -40,4 +40,6 @@ public class HiloEntidades {
     public void removeActionListener(Entidad oyente) {
         oyentes.remove(oyente);
     }
+
+   
 }

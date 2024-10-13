@@ -19,15 +19,18 @@ public class Nivel {
     protected HiloEntidades hiloEntidades;
     protected int numeroNivel;
 
-    public Nivel(GUI gui, ManejadorDeColisiones manejador, HiloEntidades hiloEntidades){
+    public Nivel(GUI gui, ManejadorDeColisiones manejador){
         miGui = gui;
         manejadorColisiones = manejador;
         enemigos = new ArrayList<>();
         plataformas = new ArrayList<>();
         powerUps = new ArrayList<>();
         bolasFuego = new ArrayList<>();
-        this.hiloEntidades = hiloEntidades;
         //falta inicializar a Mario, como consigo los parametros?
+    }
+
+    public void setManejadorDeColisiones(ManejadorDeColisiones manejadorDeColisiones){
+        this.manejadorColisiones=manejadorDeColisiones;
     }
     public ArrayList<Enemigo> getEnemigos(){
         return enemigos;
@@ -118,4 +121,21 @@ public class Nivel {
         }
     }
 
+    public void pasarEntidads(HiloEntidades hiloEntidades) {
+        for(BolaDeFuego bolaDeFuego: bolasFuego) {
+            hiloEntidades.addActionListener(bolaDeFuego);
+        }
+
+        for(Enemigo enemigo: enemigos) {    
+            hiloEntidades.addActionListener(enemigo);
+        }
+
+        for(PowerUp powerUp: powerUps) {
+            hiloEntidades.addActionListener(powerUp);
+        }
+
+        for(Plataforma plataforma: plataformas) {
+            hiloEntidades.addActionListener(plataforma);
+        }
+    }
 }
