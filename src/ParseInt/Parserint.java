@@ -9,18 +9,17 @@ import Fabricas.EntidadesFactory;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import GUI.GUI;
+import Logica.Logica;
+import Logica.HiloEntidades;
 import Logica.ManejadorDeColisiones;
 import Nivel.Nivel;
 
 public class Parserint {
     protected int nivel;
-    protected String modo;
     protected EntidadesFactory fabricaEnt;
 
-    public Parserint(int nivel,String modo,EntidadesFactory fabricaEntidades){
+    public Parserint(int nivel,EntidadesFactory fabricaEntidades){
         this.nivel=nivel;
-        this.modo=modo;
         fabricaEnt=fabricaEntidades;
     }
 
@@ -50,7 +49,9 @@ public class Parserint {
 
 
     public Nivel cargarNivelDesdeArchivo(String path) {
-        Nivel nivelActual = new Nivel(new GUI(),new ManejadorDeColisiones(new ArrayList<Entidad>(),nivelActual));
+        Logica logica = new Logica();
+        Nivel nivelActual = new Nivel(new GUI(),new ManejadorDeColisiones(new ArrayList<Entidad>(),nivelActual),new HiloEntidades(1000));//cambiar esto para que la logica mande todos los datos
+        Nivel nivelAct = new Nivel(logica.getManejadorDeColisiones(),logica.getManejadorDeColisiones().getHiloEntidades(1000));//modificar metodo, la logica le dice al manejador que le de un hilo con un delay especifico
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;
@@ -65,90 +66,90 @@ public class Parserint {
                     case "Mario":
                         int marioX = Integer.parseInt(parametros[0]);
                         int marioY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarMario(fabricaEnt.crearMario(marioX, marioY, modo));
+                        nivelActual.agregarMario(fabricaEnt.crearMario(marioX, marioY));
                         break;
 
                     case "Bloque Solido":
                         int bloqueSolidoX = Integer.parseInt(parametros[0]);
                         int bloqueSolidoY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPlataforma(fabricaEnt.crearBloqueSolido(bloqueSolidoX, bloqueSolidoY,modo));
+                        nivelActual.agregarPlataforma(fabricaEnt.crearBloqueSolido(bloqueSolidoX, bloqueSolidoY));
                         break;
 
                     case "Tuberia":
                         int tuberiaX = Integer.parseInt(parametros[0]);
                         int tuberiaY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPlataforma(fabricaEnt.crearTuberia(tuberiaX,tuberiaY,modo));
+                        nivelActual.agregarPlataforma(fabricaEnt.crearTuberia(tuberiaX,tuberiaY));
                         break;
                     case "Ladrillo Solido":
                         int ladrilloX = Integer.parseInt(parametros[0]);
                         int ladrilloY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPlataforma(fabricaEnt.crearLadrilloSolido(ladrilloX,ladrilloY,modo));
+                        nivelActual.agregarPlataforma(fabricaEnt.crearLadrilloSolido(ladrilloX,ladrilloY));
                         break;
                     case "Meta":
                         int metaX = Integer.parseInt(parametros[0]);
                         int metaY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPlataforma(fabricaEnt.crearMeta(metaX,metaY,modo));
+                        nivelActual.agregarPlataforma(fabricaEnt.crearMeta(metaX,metaY));
                         break;
                     case "Vacio":
                         int vacioX = Integer.parseInt(parametros[0]);
                         int vacioY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPlataforma(fabricaEnt.crearVacio(vacioX,vacioY,modo));
+                        nivelActual.agregarPlataforma(fabricaEnt.crearVacio(vacioX,vacioY));
                         break;
 
                     case "Goomba":
                         int goombaX = Integer.parseInt(parametros[0]);
                         int goombaY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarEnemigo(fabricaEnt.crearGoomba(goombaX, goombaY, modo));
+                        nivelActual.agregarEnemigo(fabricaEnt.crearGoomba(goombaX, goombaY));
                         break;
                     case "Lakitu":
                         int lakituX = Integer.parseInt(parametros[0]);
                         int lakituY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarEnemigo(fabricaEnt.crearLakitu(lakituX,lakituY, modo));
+                        nivelActual.agregarEnemigo(fabricaEnt.crearLakitu(lakituX,lakituY));
                         break;
                     case "Piranha Plant":
                         int piranhaPlantX = Integer.parseInt(parametros[0]);
                         int piranhaPlantY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarEnemigo(fabricaEnt.crearPiranhaPlant(piranhaPlantX,piranhaPlantY, modo));
+                        nivelActual.agregarEnemigo(fabricaEnt.crearPiranhaPlant(piranhaPlantX,piranhaPlantY));
                         break;
                     case "Koopa Troopa":
                         int koopaTroopaX = Integer.parseInt(parametros[0]);
                         int koopaTroopaY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarEnemigo(fabricaEnt.crearKoopaTroopa(koopaTroopaX,koopaTroopaY, modo));
+                        nivelActual.agregarEnemigo(fabricaEnt.crearKoopaTroopa(koopaTroopaX,koopaTroopaY));
                         break;
                     case "Spiny":
                         int spinyX = Integer.parseInt(parametros[0]);
                         int spinyY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarEnemigo(fabricaEnt.crearSpiny(spinyX,spinyY, modo));
+                        nivelActual.agregarEnemigo(fabricaEnt.crearSpiny(spinyX,spinyY));
                         break;
                     case "Buzzy Beetle":
                         int buzzyBeetleX = Integer.parseInt(parametros[0]);
                         int buzzyBeetleY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarEnemigo(fabricaEnt.crearBuzzyBeetle(buzzyBeetleX,buzzyBeetleY, modo));
+                        nivelActual.agregarEnemigo(fabricaEnt.crearBuzzyBeetle(buzzyBeetleX,buzzyBeetleY));
                         break;
                     case "Moneda":
                         int monedaX = Integer.parseInt(parametros[0]);
                         int monedaY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPowerUp(fabricaEnt.crearMoneda(monedaX,monedaY, modo));
+                        nivelActual.agregarPowerUp(fabricaEnt.crearMoneda(monedaX,monedaY));
                         break;
                     case "Estrella":
                         int estrellaX = Integer.parseInt(parametros[0]);
                         int estrellaY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPowerUp(fabricaEnt.crearEstrella(estrellaX,estrellaY, modo));
+                        nivelActual.agregarPowerUp(fabricaEnt.crearEstrella(estrellaX,estrellaY));
                         break;
                     case "Flor de Fuego":
                         int florDeFuegoX = Integer.parseInt(parametros[0]);
                         int florDeFuegoY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPowerUp(fabricaEnt.crearFlorDeFuego(florDeFuegoX,florDeFuegoY, modo));
+                        nivelActual.agregarPowerUp(fabricaEnt.crearFlorDeFuego(florDeFuegoX,florDeFuegoY));
                         break;
                     case "Super Champinion":
                         int superChampinionX = Integer.parseInt(parametros[0]);
                         int superChampinionY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPowerUp(fabricaEnt.crearSuperChampinion(superChampinionX,superChampinionY, modo));
+                        nivelActual.agregarPowerUp(fabricaEnt.crearSuperChampinion(superChampinionX,superChampinionY));
                         break;
                     case "Champinion Verde":
                         int champinionVerdeX = Integer.parseInt(parametros[0]);
                         int champinionVerdeY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPowerUp(fabricaEnt.crearChampinionVerde(champinionVerdeX,champinionVerdeY, modo));
+                        nivelActual.agregarPowerUp(fabricaEnt.crearChampinionVerde(champinionVerdeX,champinionVerdeY));
                         break;
 
                 }
