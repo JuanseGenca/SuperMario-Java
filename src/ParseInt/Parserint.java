@@ -1,18 +1,13 @@
 package ParseInt;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import Entidades.Entidad;
+
 import Fabricas.EntidadesFactory;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import Logica.Logica;
-import Logica.HiloEntidades;
-import Logica.ManejadorDeColisiones;
 import Nivel.Nivel;
+
 
 public class Parserint {
     protected Nivel nivel;
@@ -51,8 +46,7 @@ public class Parserint {
 
     public Nivel cargarNivelDesdeArchivo(String path) {
         Logica logica = new Logica();
-        Nivel nivelActual = new Nivel(new GUI(),new ManejadorDeColisiones(new ArrayList<Entidad>(),nivelActual),new HiloEntidades(1000));//cambiar esto para que la logica mande todos los datos
-        Nivel nivelAct = new Nivel(logica.getManejadorDeColisiones(),logica.getManejadorDeColisiones().getHiloEntidades(1000));//modificar metodo, la logica le dice al manejador que le de un hilo con un delay especifico
+        Nivel nivelActual = new Nivel(logica.getGUI(),logica.getManejadorDeColisiones());//modificar metodo, la logica le dice al manejador que le de un hilo con un delay especifico
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;

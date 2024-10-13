@@ -1,17 +1,29 @@
-package Logica;
+package Visitors;
 
-import Enemigos.*;
-import Entidades.*;
+import Enemigos.BuzzyBeetle;
+import Enemigos.Goomba;
+import Enemigos.KoopaTroopa;
+import Enemigos.Lakitu;
+import Enemigos.PiranhaPlant;
+import Enemigos.Spiny;
+import Entidades.BolaDeFuego;
+import Entidades.Mario;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
 import Plataformas.Plataforma;
 import Plataformas.Vacio;
-import PowerUps.*;
+import PowerUps.ChampinionVerde;
+import PowerUps.Estrella;
+import PowerUps.FlorDeFuego;
+import PowerUps.Moneda;
+import PowerUps.PowerUp;
+import PowerUps.SuperChampinion;
 
+public class VisitorTuberia extends VisitorPlataforma{
+    public VisitorTuberia(){
 
-public class VisitorEnemigo implements Visitor{
-    
+    }
     public void visit(KoopaTroopa k){}
     public void visit(Goomba g){}
     public void visit(Lakitu l){}
