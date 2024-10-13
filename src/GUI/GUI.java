@@ -1,7 +1,7 @@
 package GUI;
 
 import Logica.*;
-import Paneles.CentralPaneles;
+import Paneles.*;
 import Pantallas.CentralPantallas;
 
 import java.awt.event.KeyAdapter;
@@ -30,14 +30,14 @@ public class GUI  extends JFrame {
     public GUI(Logica miLogica) {
         this.miLogica = miLogica;
         this.panelPantallaPrincipal = new PanelPantallaPrincipal(this);
-        this.panelPantallaCarrera = new panelPantallaCarrera;
+        this.panelPantallaCarrera = new PanelPantallaCarrera();
         configurarVentana();
         registrarOyenteVentana();
         
     }
 
     private void configurarVentana() {
-        ventana = new JFrame("TdP :: Mini Road Fighter");
+        ventana = new JFrame("Super Mario Bros TDP 15");
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.setResizable(false);
 		ventana.setSize(ConstantesVistas.VENTANA_ANCHO, ConstantesVistas.VENTANA_ALTO);
@@ -72,22 +72,22 @@ public class GUI  extends JFrame {
 		mostrarPantallaInicial();
 	}
 
-    public Observer registrar_entidad(EntidadLogica entidad_logica) {
-		Observer observer_entidad = panelPantallaCarrera.incorporar_entidad(entidad_logica);
+    public Observer registrarEntidad(EntidadLogica entidadLogica) {
+		Observer observerEntidad = panelPantallaCarrera.incorporarEntidad(entidadLogica);
 		refrescar();
-		return observer_entidad;
+		return observerEntidad;
 	}
     
-    public Observer registrar_entidad(EntidadJugador entidad_jugador) {
-		Observer observer_jugador = panelPantallaCarrera.incorporar_entidad_jugador(entidad_jugador);
+    public Observer registrarEntidad(EntidadJugador entidadJugador) {
+		Observer observerJugador = panelPantallaCarrera.incorporarEntidadJugador(entidadJugador);
 		refrescar();
-		return observer_jugador;
+		return observerJugador;
 	}
 
-    public Observer registrar_silueta(EntidadLogica silueta) {
-		Observer observer_silueta = panelPantallaCarrera.incorporar_silueta(silueta);
+    public Observer registrarSilueta(EntidadLogica silueta) {
+		Observer observerSilueta = panelPantallaCarrera.incorporarSilueta(silueta);
 		refrescar();
-		return observer_silueta;
+		return observerSilueta;
 	}
 
     public void mostrarPantallaCarrera() {
@@ -95,7 +95,7 @@ public class GUI  extends JFrame {
 		refrescar();
 	}
 
-    public void mostrar_pantalla_fin_juego() {
+    public void mostrarPantallaFinJuego() {
 		// To Do
 	}
 

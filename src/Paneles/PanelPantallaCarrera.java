@@ -28,8 +28,8 @@ public class PanelPantallaCarrera extends JPanel {
 	public PanelPantallaCarrera() {
 		setPreferredSize(new Dimension(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO));
 		setLayout(new BorderLayout());
-		agregar_panel_informacion();
-		agregar_panel_carrera_con_fondo_y_scroll();
+		agregarPanelInformacion();
+		agregarPanelCarreraConFondoYScroll();
 	}
 	
 	// Operaciones para ControladorVistas
@@ -40,50 +40,50 @@ public class PanelPantallaCarrera extends JPanel {
 		return observerEntidad;
 	}
 	
-	public Observer incorporar_entidad_jugador(Entidad entidadJugador) {
+	public Observer incorporarEntidadJugador(Entidad entidadJugador) {
 		ObserverJugador observerJugador = new ObserverJugador(this, entidadJugador);
 		imagenFondoPanelCarreras.add(observerJugador);
 		actualizarInfoJugador(entidadJugador);
 		return observerJugador;
 	}
 	
-	public Observer incorporar_silueta(EntidadLogica entidad_logica) {
-		ObserverEntidades observer_entidad = new ObserverEntidades(entidad_logica);
-		imagenFondoPanelCarreras.setIcon(new ImageIcon(getClass().getClassLoader().getResource(entidad_logica.get_sprite().get_ruta_imagen())));
+	public Observer incorporarSilueta(EntidadLogica entidadLogica) {
+		ObserverEntidades observerEntidad = new ObserverEntidades(entidadLogica);
+		imagenFondoPanelCarreras.setIcon(new ImageIcon(getClass().getClassLoader().getResource(entidadLogica.getSprite().getRutaImagen())));
 		imagenFondoPanelCarreras.setBounds(0,0, imagenFondoPanelCarreras.getIcon().getIconWidth(), imagenFondoPanelCarreras.getIcon().getIconHeight());
 		panelCarreras.setPreferredSize(new Dimension(imagenFondoPanelCarreras.getIcon().getIconWidth(), imagenFondoPanelCarreras.getIcon().getIconHeight()));
-		return observer_entidad;
+		return observerEntidad;
 	}
 		
 	protected void actualizarInfoJugador(Entidad jugador) {
-		actualizar_labels_informacion(jugador);
-		actualizar_scroll_hacia_jugador(jugador);
+		actualizarLabelsInformacion(jugador);
+		actualizarScrollHaciaJugador(jugador);
 	}
 	
-	protected void actualizar_labels_informacion(Entidad jugador) {
-		labelPuntaje.setText( texto_con_cantidad_digitos(jugador.get_puntaje(), 5) );
+	protected void actualizarLabelsInformacion(Entidad jugador) {
+		labelPuntaje.setText( textoConCantidadDigitos(jugador.getPuntaje(), 5) );
 	}
 	
-	protected String texto_con_cantidad_digitos(int numero, int digitos) {
-		String texto_autocompletado = "";
+	protected String textoConCantidadDigitos(int numero, int digitos) {
+		String textoAutocompletado = "";
 		if (en_rango(numero, 0, 9)) {
-			texto_autocompletado = "0000" + numero;
+			textoAutocompletado = "0000" + numero;
 		}else {
 			if (en_rango(numero, 10, 99)) {
-				texto_autocompletado = "000" + numero;
+				textoAutocompletado = "000" + numero;
 			}else {
 				if (en_rango(numero, 100, 999)) {
-					texto_autocompletado = "00" + numero;
+					textoAutocompletado = "00" + numero;
 				}else {
 					if(en_rango(numero, 1000, 9999)) {
-						texto_autocompletado = "0" + numero;
+						textoAutocompletado = "0" + numero;
 					}else {
-						texto_autocompletado += numero;
+						textoAutocompletado += numero;
 					}
 				}
 			}
 		}
-		return texto_autocompletado;
+		return textoAutocompletado;
 	}
 	
 	protected boolean en_rango(int numero, int piso, int techo) {
@@ -95,14 +95,14 @@ public class PanelPantallaCarrera extends JPanel {
 	
 	// Operacion para observer de jugador
 	
-	protected void actualizar_scroll_hacia_jugador(Entidad jugador) {
+	protected void actualizarScrollHaciaJugador(Entidad jugador) {
 		// To DO
 		//panel_scroll_carrera.getVerticalScrollBar().setValue( panel_scroll_carrera.getVerticalScrollBar().getValue() + jugador.get_velocidad() );
 	}
 	
 	// Operaciones propias para construccion de PanelPantallaCarrera
 	
-	protected void agregar_panel_carrera_con_fondo_y_scroll() {
+	protected void agregarPanelCarreraConFondoYScroll() {
 		imagenFondoPanelCarreras = new JLabel();
 		imagenFondoPanelCarreras.setLayout(null);
 		imagenFondoPanelCarreras.setBounds(0,0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
@@ -119,32 +119,32 @@ public class PanelPantallaCarrera extends JPanel {
 		add(panelScrollCarrera, BorderLayout.CENTER);
 	}
 		
-	protected void agregar_panel_informacion() {
+	protected void agregarPanelInformacion() {
 		panelInformacion = new JPanel();
 		panelInformacion.setLayout(null);
 		panelInformacion.setPreferredSize(new Dimension(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO));
-		agregar_imagen_fondo_panel_informacion();
-		agregar_labels_editables_informacion();
+		agregarImagenFondoPanelInformacion();
+		agregarLabelsEditablesInformacion();
 		add(panelInformacion, BorderLayout.EAST);
 	}
 	
-	protected void agregar_imagen_fondo_panel_informacion() {
+	protected void agregarImagenFondoPanelInformacion() {
 		imagenFondoPanelInformacion = new JLabel();
-		ImageIcon icono_imagen = new ImageIcon(this.getClass().getResource("/imagenes/pantalla-informacion.png"));
-		Image imagen_escalada = icono_imagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
-		Icon icono_imagen_escalado = new ImageIcon(imagen_escalada);
-		imagenFondoPanelInformacion.setIcon(icono_imagen_escalado);
+		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/imagenes/pantalla-informacion.png"));
+		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
+		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
+		imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
 		imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO);
 		panelInformacion.add(imagenFondoPanelInformacion);
 	}
 	
-	protected void agregar_labels_editables_informacion() {
+	protected void agregarLabelsEditablesInformacion() {
 		labelPuntaje = new JLabel("00000");
-		decorar_labels_informacion();
+		decorarLabelsInformacion();
 		imagenFondoPanelInformacion.add(labelPuntaje);
 	}	
 	
-	protected void decorar_labels_informacion() {
+	protected void decorarLabelsInformacion() {
 		labelPuntaje.setBounds(49, 120, 150, 50);
 		
 		labelPuntaje.setForeground(Color.WHITE);
