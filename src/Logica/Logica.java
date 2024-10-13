@@ -1,9 +1,13 @@
 package Logica;
 
 import Entidades.Mario;
+import Fabricas.EntidadesFactory;
 import GUI.GUI;
 import Nivel.Nivel;
+import ParseInt.Parserint;
 import Puntaje.AdministradorDePuntaje;
+import ParseInt.*;
+import Fabricas.*;
 
 public class Logica {
     //Atributos de instancia
@@ -15,13 +19,19 @@ public class Logica {
     protected int tiempoRestante;
     protected Reloj relojGlobal;
     protected Parserint parseint;
+    protected EntidadesFactory fabricaEntidades;
+    protected SpriteFactory fabricaSprites;
     protected GUI gui;
     protected KeyListener keyListener;
     protected Mario jugador;
     protected Nivel nivelActual;
 
     //Constructor
-    public Logica() {}
+    public Logica() {
+        fabricaSprites = new SpriteFactory();
+		fabricaEntidades = new EntidadesFactory(fabricaSprites);
+        parseint = new Parseint(nivelActual,fabricaEntidades);
+    }
 
     public void setManejadorDeColisiones(ManejadorDeColisiones manejadorDeColisiones) {
         this.manejadorDeColisiones=manejadorDeColisiones;
@@ -121,4 +131,11 @@ public class Logica {
     public void establecerDireccionMario(int x){
         jugador.establecerDireccion(x);
     }
+
+    //AGREGAR UN METODO SIMILAR, este codigo es el de fede joaquin.
+    /*public void iniciar() {
+		ruta_actual = generador_ruta.generar_ruta(1);
+		registrar_observers();
+		controlador_vistas.mostrar_pantalla_carrera();
+	}*/
 }
