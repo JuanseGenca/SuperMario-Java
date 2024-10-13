@@ -1,24 +1,27 @@
 package Fabricas;
 
+import java.awt.image.BufferedImage;
+
+
 public interface SpriteFactory {
 
-    public Sprite crearSpriteChampinionVerde();
-    public Sprite crearSpriteSuperChampinion();
-    public Sprite crearSpriteFlorDeFuego();
-    public Sprite crearSpriteMoneda();
-    public Sprite crearSpriteEstrella();
-    public Sprite crearSpriteMario();
-    public Sprite crearSpriteBuzzyBeetle();
-    public Sprite crearSpriteSpiny();
-    public Sprite crearSpriteLakitu();
-    public Sprite crearSpriteGoomba();
-    public Sprite crearSpritePiranhaPlant();
-    public Sprite crearSpriteKoopaTroopa();
-    public Sprite crearSpriteBloqueSolido();
-    public Sprite crearSpriteTuberia();
-    public Sprite crearSpriteMeta();
-    public Sprite crearSpriteVacio();
-    public Sprite crearSpriteLadrilloRompible();
-    public Sprite crearSpriteBloquePregunta();
+    public BufferedImage[] crearSpriteChampinionVerde();
+    public BufferedImage[] crearSpriteSuperChampinion();
+    public BufferedImage[] crearSpriteFlorDeFuego();
+    public BufferedImage[] crearSpriteMoneda();
+    public BufferedImage[] crearSpriteEstrella();
+    public BufferedImage[] crearSpriteMario();
+    public BufferedImage[] crearSpriteBuzzyBeetle();
+    public BufferedImage[] crearSpriteSpiny();
+    public BufferedImage[] crearSpriteLakitu();
+    public BufferedImage[] crearSpriteGoomba();
+    public BufferedImage[] crearSpritePiranhaPlant();
+    public BufferedImage[] crearSpriteKoopaTroopa();
+    public BufferedImage[] crearSpriteBloqueSolido();
+    public BufferedImage[] crearSpriteTuberia();
+    public BufferedImage[] crearSpriteMeta();
+    public BufferedImage[] crearSpriteVacio();
+    public BufferedImage[] crearSpriteLadrilloRompible();
+    public BufferedImage[] crearSpriteBloquePregunta();
 
 }

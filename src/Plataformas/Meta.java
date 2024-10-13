@@ -1,10 +1,10 @@
 package Plataformas;
 
-import GUI.Sprite;
+import java.awt.image.BufferedImage;
 import Logica.Visitor;
 
 public class Meta extends Plataforma{
-    public Meta(int x, int y,Sprite sprite){
+    public Meta(int x, int y,BufferedImage[] sprite){
         super(x,y, sprite);
     }
 

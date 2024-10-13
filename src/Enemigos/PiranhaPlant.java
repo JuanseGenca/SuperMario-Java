@@ -1,9 +1,9 @@
 package Enemigos;
-import GUI.Sprite;
+import java.awt.image.BufferedImage;
 import Logica.Visitor;
 
 public class PiranhaPlant extends Enemigo{
-    public PiranhaPlant(int x, int y,Sprite sprite){
+    public PiranhaPlant(int x, int y,BufferedImage[] sprite){
         super(x,y,sprite);
     }
     

@@ -1,9 +1,8 @@
 package Enemigos;
-import GUI.Sprite;
 import Logica.Visitor;
 
 public class BuzzyBeetle extends Enemigo{
-    public BuzzyBeetle(int x, int y,Sprite sprite){
+    public BuzzyBeetle(int x, int y,BufferedImage[] misSprites){
         super(x,y,sprite);
     }
    

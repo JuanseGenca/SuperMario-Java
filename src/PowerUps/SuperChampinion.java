@@ -1,8 +1,9 @@
 package PowerUps;
-import GUI.Sprite;
+
+import java.awt.image.BufferedImage;
 import Logica.Visitor;
 public class SuperChampinion extends PowerUp{
-    public SuperChampinion(int x, int y,Sprite sprite){
+    public SuperChampinion(int x, int y,BufferedImage[] sprite){
         super(x,y, sprite);
     }
     public void mover(){

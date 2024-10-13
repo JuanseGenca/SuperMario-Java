@@ -1,10 +1,11 @@
 package Enemigos;
 
-import GUI.Sprite;
+
+import java.awt.image.BufferedImage;
 import Logica.Visitor;
 
 public class Lakitu extends Enemigo{
-    public Lakitu(int x, int y,Sprite sprite){
+    public Lakitu(int x, int y,BufferedImage[] sprite){
         super(x,y,sprite);
     }
    

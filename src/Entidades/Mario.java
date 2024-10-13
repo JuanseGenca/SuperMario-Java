@@ -1,5 +1,6 @@
 package Entidades;
-import GUI.Sprite;
+import java.awt.image.BufferedImage;
+
 import Logica.*;
 import Plataformas.Plataforma;
 
@@ -7,7 +8,7 @@ public class Mario extends Entidad{
     protected EstadoMario estado;
     protected Logica miLogica;
 
-    public Mario(int x, int y,Sprite sprite){
+    public Mario(int x, int y,BufferedImage[] sprite){
         super(x,y,sprite);
     }
     //Hay que ver si conviene ponerlo en mario y para cada entidad mover() se comporta de forma diferente
