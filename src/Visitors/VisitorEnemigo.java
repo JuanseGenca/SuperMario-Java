@@ -1,27 +1,20 @@
-package Logica;
+package Visitors;
 
-import Enemigos.BuzzyBeetle;
-import Enemigos.Goomba;
-import Enemigos.KoopaTroopa;
-import Enemigos.Lakitu;
-import Enemigos.PiranhaPlant;
-import Enemigos.Spiny;
-import Entidades.BolaDeFuego;
-import Entidades.Mario;
+import Enemigos.*;
+import Entidades.*;
+import Logica.Visitor;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
 import Plataformas.Plataforma;
 import Plataformas.Vacio;
-import PowerUps.ChampinionVerde;
-import PowerUps.Estrella;
-import PowerUps.FlorDeFuego;
-import PowerUps.Moneda;
-import PowerUps.PowerUp;
-import PowerUps.SuperChampinion;
+import PowerUps.*;
 
-public class VisitorMario implements Visitor{
-    //DEFINIR TODAS MENOS LA DE MARIO :)
+
+public class VisitorEnemigo implements Visitor{
+    public VisitorEnemigo(){
+
+    }
     public void visit(KoopaTroopa k){}
     public void visit(Goomba g){}
     public void visit(Lakitu l){}

@@ -1,4 +1,4 @@
-package Logica;
+package Visitors;
 
 import Enemigos.BuzzyBeetle;
 import Enemigos.Goomba;
@@ -20,8 +20,10 @@ import PowerUps.Moneda;
 import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
-public class VisitorBolaDeFuego implements Visitor{
-    //HAY QUE DEFINIR TODOS
+public class VisitorLadrilloRompible extends VisitorPlataforma{
+    public VisitorLadrilloRompible(){
+
+    }
     public void visit(KoopaTroopa k){}
     public void visit(Goomba g){}
     public void visit(Lakitu l){}
