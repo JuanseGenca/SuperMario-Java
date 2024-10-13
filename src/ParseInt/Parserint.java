@@ -1,21 +1,27 @@
 package ParseInt;
 
 import Fabricas.EntidadesFactory;
+import GUI.GUI;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import Logica.Logica;
+import Logica.ManejadorDeColisiones;
 import Nivel.Nivel;
 
 
 public class Parserint {
-    protected Nivel nivel;
+    protected int nivel;
     protected EntidadesFactory fabricaEnt;
+    protected ManejadorDeColisiones manejador;
+    protected GUI gui;
 
-    public Parserint(Nivel nivelActual,EntidadesFactory fabricaEntidades){
-        this.nivel=nivelActual;
+    public Parserint(int nivel,EntidadesFactory fabricaEntidades,ManejadorDeColisiones manejador,GUI gui){
+        this.nivel=nivel;
         fabricaEnt=fabricaEntidades;
+        this.manejador = manejador;
+        this.gui = gui;
     }
 
     
@@ -26,13 +32,12 @@ public class Parserint {
         
     }
 
-    protected String obtenerArchivoNivel(Nivel nivel){
+    protected String obtenerArchivoNivel(int nivel){
         String archivo;
-        int numeroNivel=nivel.getNivel();
-        if(numeroNivel == 1){
+        if(nivel == 1){
             archivo = "ruta del archivo para nivel 1"; //poner ruta real cuando tengamos el archivo
         } else{
-            if(numeroNivel == 2){
+            if(nivel == 2){
                 archivo = "ruta del archivo para nivel 2";
             } else{
                 archivo = "ruta del archivo para nivel 3";
@@ -45,8 +50,8 @@ public class Parserint {
 
 
     public Nivel cargarNivelDesdeArchivo(String path) {
-        Logica logica = new Logica();
-        Nivel nivelActual = new Nivel(logica.getGUI(),logica.getManejadorDeColisiones());//modificar metodo, la logica le dice al manejador que le de un hilo con un delay especifico
+
+        Nivel nivelActual = new Nivel(gui,manejador);
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;
