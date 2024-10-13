@@ -1,5 +1,6 @@
 package Paneles;
 
+import GUI.ConstantesVistas;
 import GUI.GUI;
 import java.awt.Image;
 import java.awt.event.ActionEvent;

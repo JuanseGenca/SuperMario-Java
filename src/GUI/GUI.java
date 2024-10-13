@@ -2,7 +2,6 @@ package GUI;
 
 import Logica.*;
 import Paneles.*;
-import Pantallas.CentralPantallas;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -55,7 +54,7 @@ public class GUI  extends JFrame {
 		refrescar();
 	}
 
-    public void accionariniciojuego() {
+    public void accionarInicioJuego() {
 		miLogica.iniciar();
 	}
 	
