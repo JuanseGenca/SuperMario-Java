@@ -75,6 +75,13 @@ public class Logica {
 		nivelActual.getMario().establecerDireccion(direccion);
 	}
 
+	public void setMarioVelocidad(double velocidad) {
+		nivelActual.getMario().setVelocidad(velocidad);
+	}
+
+	public double getMarioVelocidad() {
+		return nivelActual.getMario().getVelocidad();
+	}
     public void shootMario() {
         nivelActual.getMario().disparar();
     }

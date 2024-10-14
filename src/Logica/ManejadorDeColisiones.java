@@ -33,9 +33,9 @@ public class ManejadorDeColisiones {
         for(Entidad entidadC:entidadesAux) {
             Entidad entidadComprobar=entidadC;
             for(Entidad entidad:entidadesAux) {
-                if(entidad.getHitBox().intersects(entidadComprobar.getHitBox())) {
+              /*   if(entidad.getHitBox().intersects(entidadComprobar.getHitBox())) {
                     //Mensaje a entidad y entidadComprobar de colision
-                } 
+                } */
             }       
         }
     }

@@ -14,6 +14,7 @@ public abstract class Entidad implements EntidadLogica{
  protected int puntaje;
  protected Sprite miSprite;
  protected Observer miObserver;
+ protected double velocidad;
 
  public Entidad(int posicionX, int posicionY,Sprite sprites) {
    this.posicionX=posicionX;
@@ -41,6 +42,13 @@ public abstract class Entidad implements EntidadLogica{
     miObserver=observer;
  }
 
+ public void setVelocidad(double velocidad) {
+   this.velocidad = velocidad;
+ }
+
+ public double getVelocidad() {
+   return velocidad;
+ }
    public void morir() {}
 
    public void recibirDanio() {}
@@ -55,7 +63,10 @@ public abstract class Entidad implements EntidadLogica{
 
    public void establecerDireccion(int x){
       direccion = x;
+      mover();
+      System.out.println("Estableciendo direccion: "+x);
    }
+
    public int getDireccion(){
       return direccion;
    }
