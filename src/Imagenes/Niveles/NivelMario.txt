@@ -1,1 +1,2 @@
-Mario:1,1
+Mario:100,150
+Moneda:200,150

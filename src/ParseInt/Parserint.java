@@ -18,15 +18,15 @@ public class Parserint {
         fabricaEnt=fabricaEntidades;
     }
 
-    public Nivel generarNivel(int numero) {
+   /*  public Nivel generarNivel(int numero) {
 		// To DO
 		return generar_ruta_harcoding(numero);
-	}
+	}*/
 
-    /*public Nivel cargarArchivoNivel(int nivel){
-        String path = obtenerArchivoNivel(this.nivel);
-        return cargarNivelDesdeArchivo(path);
-    }*/
+    public Nivel generarNivel(int nivel){
+        String path = obtenerArchivoNivel(nivel);
+        return cargarNivelDesdeArchivo(path,nivel);
+    }
 
     protected String obtenerArchivoNivel(int nivel){
         /* String archivo;
@@ -40,14 +40,15 @@ public class Parserint {
             }
         } */
 
-        return "Imagenes/Niveles/NivelMario.txt";
+        return "src/Imagenes/Niveles/NivelMario.txt";
 
     }
 
 
-   /*  public Nivel cargarNivelDesdeArchivo(String path) {
+    public Nivel cargarNivelDesdeArchivo(String path,int numero) {
 
-        Nivel nivelActual = new Nivel(1);
+        Silueta silueta = fabricaEnt.getSilueta(numero);
+		Nivel nivelActual = new Nivel(silueta, numero);
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;
@@ -159,14 +160,14 @@ public class Parserint {
         }
 
         return nivelActual;
-    }*/
+    }
 
-    public Nivel generar_ruta_harcoding(int numero) {
+    /*public Nivel generar_ruta_harcoding(int numero) {
 		Silueta silueta = fabricaEnt.getSilueta(numero);
 		Nivel ruta = new Nivel(silueta, numero);
 		ruta.agregarMario(fabricaEnt.crearMario(200, 75));
         ruta.agregarEnemigo(fabricaEnt.crearBuzzyBeetle(250, 120));
 		return ruta;
-	}
+	}*/
 
 }
