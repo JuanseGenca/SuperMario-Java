@@ -17,16 +17,14 @@ public class Parserint {
     protected ManejadorDeColisiones manejador;
     protected GUI gui;
 
-    public Parserint(int nivel,EntidadesFactory fabricaEntidades,ManejadorDeColisiones manejador,GUI gui){
+    public Parserint(int nivel,EntidadesFactory fabricaEntidades){
         this.nivel=nivel;
         fabricaEnt=fabricaEntidades;
-        this.manejador = manejador;
-        this.gui = gui;
     }
 
     
 
-    public Nivel cargarArchivoNivel(int nivel){
+    public Nivel cargarArchivoNivel(int nivel,ManejadorDeColisiones manejador,GUI gui){
         String path = obtenerArchivoNivel(this.nivel);
         return cargarNivelDesdeArchivo(path);
         
