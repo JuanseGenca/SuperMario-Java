@@ -131,12 +131,21 @@ public class PanelPantallaCarrera extends JPanel {
 			return;
 		}
 		imagenFondoPanelInformacion = new JLabel();
-		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/imagenes/pantalla-informacion.png"));
-		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
-		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
-		imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
-		imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO);
-		panelInformacion.add(imagenFondoPanelInformacion);
+		try {
+			ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/imagenes/pantalla-informacion.png"));
+			if (iconoImagen == null) {
+				throw new NullPointerException();
+			}
+			Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
+			Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
+			imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
+			imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO);
+			panelInformacion.add(imagenFondoPanelInformacion);
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	
