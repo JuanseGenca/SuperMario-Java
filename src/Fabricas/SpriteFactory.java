@@ -1,9 +1,7 @@
 package Fabricas;
 
-import java.awt.image.BufferedImage;
 
 import GUI.Sprite;
-import PowerUps.PowerUp;
 
 
 public abstract class SpriteFactory {
@@ -64,26 +62,26 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getBloqueSolido() {
-		return new Sprite(rutaCarpeta + "/anciana.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/bloque_solido.png");
 	}
 	
 	public Sprite getTuberia() {
-		return new Sprite(rutaCarpeta + "/perro.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/tuberia.png");
 	}
 	
 	public Sprite getMeta() {
-		return new Sprite(rutaCarpeta + "/lobo.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/meta.png");
 	}
 	
 	public Sprite getVacio() {
-		return new Sprite(rutaCarpeta + "/bache.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/vacio.png");
 	}
     public Sprite getLadrilloRompible() {
-		return new Sprite(rutaCarpeta + "/lobo.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/bloque_ladrillo.png");
 	}
 	
 	public Sprite getBloquePregunta() {
-		return new Sprite(rutaCarpeta + "/bache.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta.png");
 	}
 
 }
