@@ -15,7 +15,6 @@ public class Parserint {
     protected int nivel;
     protected EntidadesFactory fabricaEnt;
 
-
     public Parserint(int nivel,EntidadesFactory fabricaEntidades){
         this.nivel=nivel;
         fabricaEnt=fabricaEntidades;
