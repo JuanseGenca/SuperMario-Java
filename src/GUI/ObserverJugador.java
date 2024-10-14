@@ -21,4 +21,3 @@ public class ObserverJugador extends ObserverGrafico{
 		panelPantallaCarreras.actualizarScrollHaciaJugador(entidadObservada);
 	}
 }
-}

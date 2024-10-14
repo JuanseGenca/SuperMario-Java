@@ -1,13 +1,13 @@
 package Enemigos;
 
-import java.awt.image.BufferedImage;
+import GUI.Sprite;
 import Logica.Visitor;
 
 public abstract class KoopaTroopa extends Enemigo{
     //Atributos (saco estado mientras no este implementado para que no haya tantos errores)
     //protected EstadoKoopaTroopa estadoKoopaTroopa;
 
-    public KoopaTroopa(int x, int y,BufferedImage[] sprite){
+    public KoopaTroopa(int x, int y,Sprite sprite){
         super(x, y,sprite);
     }
     

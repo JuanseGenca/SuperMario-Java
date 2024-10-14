@@ -9,7 +9,7 @@ public class Sprite {
 		this.rutaImagen = rutaImagen;
 	}
 	
-	public String get_ruta_imagen() {
+	public String getRutaImagen() {
 		return rutaImagen;
 	}
 

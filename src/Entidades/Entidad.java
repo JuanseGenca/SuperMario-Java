@@ -1,9 +1,10 @@
 package Entidades;
 
 import GUI.Observer;
+import GUI.Sprite;
 import Logica.*;
 import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
+
 
 public abstract class Entidad implements Visitable, EntidadLogica{   
  //Atributos
@@ -14,7 +15,7 @@ public abstract class Entidad implements Visitable, EntidadLogica{
  protected int direccion;
  protected boolean sobreSuelo;
  protected int puntaje;
- protected BufferedImage[] misSprites;
+ protected Sprite miSprite;
  protected Observer miObserver;
  protected Rectangle miHitBox;
 
@@ -24,10 +25,10 @@ public abstract class Entidad implements Visitable, EntidadLogica{
     this.posicionY=posicionY;
  }
 
- public Entidad(int posicionX, int posicionY,BufferedImage[] sprites) {
+ public Entidad(int posicionX, int posicionY,Sprite sprites) {
    this.posicionX=posicionX;
    this.posicionY=posicionY;
-   misSprites = sprites;
+   miSprite = sprites;
 }
 
  public int getPuntaje() {
@@ -42,8 +43,8 @@ public abstract class Entidad implements Visitable, EntidadLogica{
     return posicionY;
  }
 
- public BufferedImage[] getSprite() {
-    return misSprites;
+ public Sprite getSprite() {
+    return miSprite;
  }
 
  public Rectangle getHitBox() {

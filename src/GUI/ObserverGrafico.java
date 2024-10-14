@@ -16,7 +16,7 @@ public abstract class ObserverGrafico extends JLabel implements Observer{
 	}
 
     public void actualizar(){
-        String rutaImagen = entidadObservada.getSprite().getRutaimagen();
+        String rutaImagen = entidadObservada.getSprite().getRutaImagen();
 		ImageIcon icono = new ImageIcon(getClass().getClassLoader().getResource(rutaImagen));
 		setIcon(icono);
     }
