@@ -127,14 +127,18 @@ public class PanelPantallaCarrera extends JPanel {
 	}
 	
 	protected void agregarImagenFondoPanelInformacion() {
+		if (panelInformacion == null) {
+			return;
+		}
 		imagenFondoPanelInformacion = new JLabel();
-		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("x"));
+		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/imagenes/pantalla-informacion.png"));
 		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
 		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
 		imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
 		imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO);
 		panelInformacion.add(imagenFondoPanelInformacion);
 	}
+
 	
 	protected void agregarLabelsEditablesInformacion() {
 		labelPuntaje = new JLabel("00000");
