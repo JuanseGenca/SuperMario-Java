@@ -26,9 +26,8 @@ public class PanelPantallaCarrera extends JPanel {
 	public PanelPantallaCarrera() {
 		setPreferredSize(new Dimension(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO));
 		setLayout(new BorderLayout());
-		agregarPanelCarreraConFondoYScroll();
 		agregarPanelInformacion();
-		
+		agregarPanelCarreraConFondoYScroll();
 	}
 	
 	// Operaciones para ControladorVistas
@@ -42,8 +41,16 @@ public class PanelPantallaCarrera extends JPanel {
 	public Observer incorporarEntidadJugador(EntidadJugador entidadJugador) {
 		ObserverJugador observerJugador = new ObserverJugador(this, entidadJugador);
 		imagenFondoPanelCarreras.add(observerJugador);
-		//actualizarInfoJugador(entidadJugador);
+		actualizarInfoJugador(entidadJugador);
 		return observerJugador;
+	}
+
+	public Observer incorporarSilueta(EntidadLogica entidadLogica) {
+		ObserverEntidades observerEntidad = new ObserverEntidades(entidadLogica);
+		imagenFondoPanelCarreras.setIcon(new ImageIcon(getClass().getClassLoader().getResource(entidadLogica.getSprite().getRutaImagen())));
+		imagenFondoPanelCarreras.setBounds(0,0, imagenFondoPanelCarreras.getIcon().getIconWidth(), imagenFondoPanelCarreras.getIcon().getIconHeight());
+		panelCarreras.setPreferredSize(new Dimension(imagenFondoPanelCarreras.getIcon().getIconWidth(), imagenFondoPanelCarreras.getIcon().getIconHeight()));
+		return observerEntidad;
 	}
 		
 	protected void actualizarInfoJugador(EntidadJugador jugador) {
@@ -93,7 +100,7 @@ public class PanelPantallaCarrera extends JPanel {
 	
 	// Operaciones propias para construccion de PanelPantallaCarrera
 	
-	/*protected void agregarPanelCarreraConFondoYScroll() {
+	protected void agregarPanelCarreraConFondoYScroll() {
 		imagenFondoPanelCarreras = new JLabel();
 		imagenFondoPanelCarreras.setLayout(null);
 		imagenFondoPanelCarreras.setBounds(0,0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
@@ -108,39 +115,7 @@ public class PanelPantallaCarrera extends JPanel {
 		panelScrollCarrera.setBounds(0, 0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
 			
 		add(panelScrollCarrera, BorderLayout.CENTER);
-	}*/
-
-	protected void agregarPanelCarreraConFondoYScroll() {
-		panelCarreras = new JPanel();
-		panelCarreras.setLayout(null);
-		panelCarreras.setPreferredSize(new Dimension(ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO));
-		agregarImagenFondoPanelCarrera();
-		add(panelCarreras, BorderLayout.EAST);
-
-		panelScrollCarrera = new JScrollPane(panelCarreras);
-		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-		panelScrollCarrera.setBounds(0, 0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
-			
-		add(panelScrollCarrera, BorderLayout.CENTER);
 	}
-	
-	protected void agregarImagenFondoPanelCarrera() {
-		imagenFondoPanelCarreras = new JLabel();
-		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/bg.png"));
-		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
-		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
-		imagenFondoPanelCarreras.setIcon(iconoImagenEscalado);
-		imagenFondoPanelCarreras.setBounds(0,0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
-		panelCarreras.add(imagenFondoPanelCarreras);
-		
-	}
-	
-	
-	
-	
-	
-	
 	
 	
 	protected void agregarPanelInformacion() {
@@ -160,7 +135,6 @@ public class PanelPantallaCarrera extends JPanel {
 		imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
 		imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO);
 		panelInformacion.add(imagenFondoPanelInformacion);
-		
 	}
 
 	

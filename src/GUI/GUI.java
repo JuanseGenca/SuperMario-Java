@@ -1,6 +1,7 @@
 package GUI;
 
 import Entidades.Entidad;
+import Entidades.EntidadJugador;
 import Entidades.EntidadLogica;
 import Entidades.Mario;
 import Logica.*;
@@ -9,7 +10,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 
-public class GUI  extends JFrame {
+public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     
     protected JFrame ventana;
     protected PanelPantallaPrincipal panelPantallaPrincipal;
@@ -75,11 +76,17 @@ public class GUI  extends JFrame {
 		return observerEntidad;
 	}
     
-   public Observer registrarEntidadJugador(Mario entidad) {
+   public Observer registrarEntidad(EntidadJugador entidad) {
 		Observer observerJugador = panelPantallaCarrera.incorporarEntidadJugador(entidad);
 		refrescar();
 		return observerJugador;
 	} 
+
+    public Observer registrarSilueta(EntidadLogica silueta) {
+		Observer observer_silueta = panelPantallaCarrera.incorporarSilueta(silueta);
+		refrescar();
+		return observer_silueta;
+	}
 
     public void mostrarPantallaCarrera() {
 		ventana.setContentPane(panelPantallaCarrera);
