@@ -95,7 +95,7 @@ public class PanelPantallaCarrera extends JPanel {
 	
 	// Operacion para observer de jugador
 	
-	protected void actualizarScrollHaciaJugador(Entidad jugador) {
+	public void actualizarScrollHaciaJugador(EntidadLogica jugador) {
 		// To DO
 		//panel_scroll_carrera.getVerticalScrollBar().setValue( panel_scroll_carrera.getVerticalScrollBar().getValue() + jugador.get_velocidad() );
 	}
