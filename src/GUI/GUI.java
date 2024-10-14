@@ -156,6 +156,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     public void mostrarPantallaCarrera() {
         ventana.setContentPane(panelPantallaCarrera);
+        ventana.requestFocusInWindow();
         refrescar();
     }
 

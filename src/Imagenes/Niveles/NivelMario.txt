@@ -1,14 +1,2 @@
-Mario:100,150
-Ladrillo Solido:300,400
-Meta:400,450
-Goomba:500,150
-Lakitu:500,220
-Piranha Plant:500,330
-Koopa Troopa:300,150
-Spiny:200,170
-Buzzy Beetle:400,300
-Moneda:100,1
-Estrella:1200,220
-Flor de Fuego:200,240
-Super Champinion:140,260
-Champinion Verde:100,300
+Mario:1,1
+Estrella:100,1
