@@ -29,7 +29,7 @@ public class PanelPantallaPrincipal extends JPanel{
 
     protected void agregarImagenFondo(){
         imagenFondo = new JLabel();
-        ImageIcon iconoImagen = new ImageIcon("assets/pantalla-inicial.png");
+        ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-inicial.png"));
         Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_ANCHO,ConstantesVistas.PANEL_ALTO,Image.SCALE_SMOOTH);
         Icon iconoImagenEscalada = new ImageIcon(imagenEscalada);
         imagenFondo.setIcon(iconoImagenEscalada);

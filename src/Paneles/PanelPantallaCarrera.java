@@ -134,7 +134,7 @@ public class PanelPantallaCarrera extends JPanel {
 	
 	protected void agregarImagenFondoPanelCarrera() {
 		imagenFondoPanelCarreras = new JLabel();
-		ImageIcon iconoImagen = new ImageIcon("assets/bg.png");
+		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/bg.png"));
 		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
 		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
 		imagenFondoPanelCarreras.setIcon(iconoImagenEscalado);
@@ -161,7 +161,7 @@ public class PanelPantallaCarrera extends JPanel {
 	
 	protected void agregarImagenFondoPanelInformacion() {
 		imagenFondoPanelInformacion = new JLabel();
-		ImageIcon iconoImagen = new ImageIcon("assets/pantalla-informacion.png");
+		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-informacion.png"));
 		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
 		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
 		imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
