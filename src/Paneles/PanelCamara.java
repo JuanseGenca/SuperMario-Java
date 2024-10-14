@@ -46,7 +46,7 @@ public class PanelCamara extends JPanel implements Paneles{
         int backgroundWidth = backgroundImage.getWidth(null);
 
         if (marioX >= ANCHO_PANTALLA) {
-            fondoX -= 5; // Move the background left
+            fondoX -= 5;
         }
 
         if (fondoX <= -backgroundWidth) {

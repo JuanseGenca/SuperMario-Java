@@ -37,7 +37,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getMario() {
-		return new Sprite(rutaCarpeta + "/mario.png");
+		return new Sprite(rutaCarpeta + "/Mario/miniMarioQuieto.png");
 	}
 	
 	public Sprite getBuzzyBeetle() {
