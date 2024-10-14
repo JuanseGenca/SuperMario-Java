@@ -128,7 +128,7 @@ public class PanelPantallaCarrera extends JPanel {
 	
 	protected void agregarImagenFondoPanelInformacion() {
 		imagenFondoPanelInformacion = new JLabel();
-		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/imagenes/pantalla-informacion.png"));
+		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("x"));
 		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
 		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
 		imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);

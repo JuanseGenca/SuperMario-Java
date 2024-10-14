@@ -31,7 +31,7 @@ public class Parserint {
     protected String obtenerArchivoNivel(int nivel){
         String archivo;
         if(nivel == 1){
-            archivo = "ruta del archivo para nivel 1"; //poner ruta real cuando tengamos el archivo
+            archivo = "assets/Niveles/NivelMario.txt"; 
         } else{
             if(nivel == 2){
                 archivo = "ruta del archivo para nivel 2";
