@@ -26,6 +26,11 @@ public class Mario extends Entidad implements EntidadJugador{
                 posicionX+=velocidad;
                 System.out.println("posicionX despues de moverme a derecha: "+posicionX);
             }
+            else if(direccion==ARRIBA) {
+                System.out.println("posicionX despues de moverme a derecha: "+posicionX);
+                posicionY+=velocidad;
+                System.out.println("posicionX despues de moverme a derecha: "+posicionX);
+            }
             actualizar();
         } 
     }
