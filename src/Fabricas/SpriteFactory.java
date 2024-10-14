@@ -34,7 +34,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getMario() {
-		return new Sprite(rutaCarpeta + "/moto-power-up.gif");
+		return new Sprite(rutaCarpeta + "/PowerUps/champinion_verde");
 	}
 	
 	public Sprite getBuzzyBeetle() {
