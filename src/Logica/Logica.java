@@ -37,9 +37,9 @@ public class Logica {
 
 
     public void iniciar() {
-		nivelActual = parseint.cargarArchivoNivel(1);
+		nivelActual = parseint.generar_ruta_harcoding(1);
 		gui.mostrarPantallaCarrera();
-        registrarObservers();
+		registrarObservers();
 	}
 
     protected void registrarObservers() {

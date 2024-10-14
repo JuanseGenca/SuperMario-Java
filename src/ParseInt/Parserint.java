@@ -38,7 +38,7 @@ public class Parserint {
             }
         } */
 
-        return "assets/Niveles/NivelMario.txt";
+        return "Imagenes/Niveles/NivelMario.txt";
 
     }
 
@@ -159,5 +159,11 @@ public class Parserint {
         return nivelActual;
     }
 
+    public Nivel generar_ruta_harcoding(int numero) {
+		
+		Nivel ruta = new Nivel(numero);
+		ruta.agregarMario(fabricaEnt.crearMario(200, 75));
+		return ruta;
+	}
 
 }
