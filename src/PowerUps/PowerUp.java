@@ -11,18 +11,6 @@ public abstract class PowerUp extends Entidad{
     public abstract void aceptar(Visitor visitor);
     
     public void mover(){
-        if(direccion == 15001){
-            posicionY+=velocidadY;
-        }
-        if(direccion == 15001){
-            posicionY-=velocidadY;
-        }
-        if(direccion == 15002){
-            posicionX-= velocidadX;
-        }
-        if(direccion == 15003){
-            posicionX+= velocidadX;
-        }
-        aplicarGravedad();
+        
     }
 }

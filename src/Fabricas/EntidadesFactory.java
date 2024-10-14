@@ -3,6 +3,7 @@ package Fabricas;
 import PowerUps.*;
 import Entidades.Mario;
 import GUI.Sprite;
+import Nivel.Silueta;
 import Plataformas.*;
 
 import Enemigos.*;
@@ -16,7 +17,7 @@ public class EntidadesFactory {
         this.spriteFactory = spriteFactory;
     }
 
-    public Silueta getSilueta(int numero_ruta) {
+    public Silueta getSilueta(int numeroRuta) {
 		Sprite spriteSilueta = spriteFactory.getSilueta(numeroRuta);
 		Silueta silueta = new Silueta(spriteSilueta);
 		return silueta;

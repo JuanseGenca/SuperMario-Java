@@ -4,27 +4,29 @@ import Fabricas.EntidadesFactory;
 import GUI.GUI;
 import Logica.ManejadorDeColisiones;
 import Nivel.Nivel;
+import Nivel.Silueta;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 
 public class Parserint {
-    protected int nivel;
     protected EntidadesFactory fabricaEnt;
 
     public Parserint(int nivel,EntidadesFactory fabricaEntidades){
-        this.nivel=nivel;
         fabricaEnt=fabricaEntidades;
     }
 
-    
+    public Nivel generarNivel(int numero) {
+		// To DO
+		return generar_ruta_harcoding(numero);
+	}
 
-    public Nivel cargarArchivoNivel(int nivel){
+    /*public Nivel cargarArchivoNivel(int nivel){
         String path = obtenerArchivoNivel(this.nivel);
         return cargarNivelDesdeArchivo(path);
-        
-    }
+    }*/
 
     protected String obtenerArchivoNivel(int nivel){
         /* String archivo;
@@ -43,7 +45,7 @@ public class Parserint {
     }
 
 
-    public Nivel cargarNivelDesdeArchivo(String path) {
+   /*  public Nivel cargarNivelDesdeArchivo(String path) {
 
         Nivel nivelActual = new Nivel(1);
 
@@ -157,12 +159,13 @@ public class Parserint {
         }
 
         return nivelActual;
-    }
+    }*/
 
     public Nivel generar_ruta_harcoding(int numero) {
-		
-		Nivel ruta = new Nivel(numero);
+		Silueta silueta = fabricaEnt.getSilueta(numero);
+		Nivel ruta = new Nivel(silueta, numero);
 		ruta.agregarMario(fabricaEnt.crearMario(200, 75));
+        ruta.agregarEnemigo(fabricaEnt.crearBuzzyBeetle(250, 120));
 		return ruta;
 	}
 
