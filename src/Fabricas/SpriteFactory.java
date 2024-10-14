@@ -53,7 +53,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getGoomba() {
-		return new Sprite(rutaCarpeta + "/Enemgigos/Goomba.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/Goomba.png");
 	}
 	
 	public Sprite getPiranhaPlant() {

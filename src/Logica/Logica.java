@@ -39,7 +39,7 @@ public class Logica {
 
 
     public void iniciar() {
-		nivelActual = parseint.generar_ruta_harcoding(1);
+		nivelActual = parseint.generarNivel(1);
 		registrarObservers();
 		gui.mostrarPantallaCarrera();
 	}
