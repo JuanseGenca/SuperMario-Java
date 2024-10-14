@@ -14,21 +14,18 @@ import Nivel.Nivel;
 public class Parserint {
     protected int nivel;
     protected EntidadesFactory fabricaEnt;
-    protected ManejadorDeColisiones manejador;
-    protected GUI gui;
 
-    public Parserint(int nivel,EntidadesFactory fabricaEntidades,ManejadorDeColisiones manejador,GUI gui){
+
+    public Parserint(int nivel,EntidadesFactory fabricaEntidades){
         this.nivel=nivel;
         fabricaEnt=fabricaEntidades;
-        this.manejador = manejador;
-        this.gui = gui;
     }
 
     
 
-    public Nivel cargarArchivoNivel(int nivel){
+    public Nivel cargarArchivoNivel(int nivel,GUI gui,ManejadorDeColisiones manejador){
         String path = obtenerArchivoNivel(this.nivel);
-        return cargarNivelDesdeArchivo(path);
+        return cargarNivelDesdeArchivo(path,gui,manejador);
         
     }
 
@@ -49,7 +46,7 @@ public class Parserint {
     }
 
 
-    public Nivel cargarNivelDesdeArchivo(String path) {
+    public Nivel cargarNivelDesdeArchivo(String path,GUI gui,ManejadorDeColisiones manejador) {
 
         Nivel nivelActual = new Nivel(gui,manejador);
 
