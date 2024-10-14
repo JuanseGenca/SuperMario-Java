@@ -29,6 +29,7 @@ public class Logica {
         fabricaSprites = new SpritesMarioModo1();
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
         parseint = new Parserint(1,fabricaEntidades);
+        parseint = new Parserint(1,fabricaEntidades);
        
     }
    
@@ -46,6 +47,7 @@ public class Logica {
     protected void registrarObservers() {
 		registrarObserverJugador(nivelActual.getMario());
 		registrarObserverSilueta(nivelActual.getSilueta());
+		registrarObserverSilueta(nivelActual.getSilueta());
 		registrarObserversParaEntidades(nivelActual.getPowerUps());
 		registrarObserversParaEntidades(nivelActual.getEnemigos());
 		registrarObserversParaEntidades(nivelActual.getPlataformas());
@@ -58,6 +60,7 @@ public class Logica {
 
 	protected void registrarObserverSilueta(Silueta siluetaRuta) {
 		Observer observer = gui.registrarSilueta(siluetaRuta);
+		siluetaRuta.setObserver(observer);
 		siluetaRuta.setObserver(observer);
 	}
 	
