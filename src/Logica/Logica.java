@@ -1,7 +1,5 @@
 package Logica;
 
-import Enemigos.Enemigo;
-import Entidades.BolaDeFuego;
 import Entidades.Entidad;
 import Entidades.Mario;
 import Fabricas.*;
@@ -10,8 +8,6 @@ import GUI.Observer;
 import Nivel.Nivel;
 import Nivel.Silueta;
 import ParseInt.Parserint;
-import Plataformas.Plataforma;
-import PowerUps.PowerUp;
 import java.util.List;
 
 public class Logica {
@@ -41,7 +37,7 @@ public class Logica {
     public void iniciar() {
 		nivelActual = parseint.generarNivel(1);
 		registrarObservers();
-		gui.mostrarPantallaCarrera();
+		gui.mostrarPantallaJuego();
 	}
 
     protected void registrarObservers() {

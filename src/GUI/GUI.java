@@ -6,14 +6,13 @@ import Logica.*;
 import Paneles.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
 import javax.swing.JFrame;
 
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     protected JFrame ventana;
     protected PanelPantallaPrincipal panelPantallaPrincipal;
-    protected PanelPantallaCarrera panelPantallaCarrera;
+    protected PanelPantallaJuego panelPantallaJuego;
     protected Logica miLogica;
     private boolean isMovingRight = false;
     private boolean isMovingLeft = false;
@@ -28,7 +27,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     public GUI(Logica miLogica) {
         this.miLogica = miLogica;
         this.panelPantallaPrincipal = new PanelPantallaPrincipal(this);
-        this.panelPantallaCarrera = new PanelPantallaCarrera();
+        this.panelPantallaJuego = new PanelPantallaJuego();
         configurarVentana();
         registrarOyenteVentana();
     }
@@ -137,25 +136,25 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     }
 
     public Observer registrarEntidad(EntidadLogica entidadLogica) {
-        Observer observerEntidad = panelPantallaCarrera.incorporarEntidad(entidadLogica);
+        Observer observerEntidad = panelPantallaJuego.incorporarEntidad(entidadLogica);
         refrescar();
         return observerEntidad;
     }
 
     public Observer registrarEntidad(EntidadJugador entidad) {
-        Observer observerJugador = panelPantallaCarrera.incorporarEntidadJugador(entidad);
+        Observer observerJugador = panelPantallaJuego.incorporarEntidadJugador(entidad);
         refrescar();
         return observerJugador;
     }
 
     public Observer registrarSilueta(EntidadLogica silueta) {
-        Observer observer_silueta = panelPantallaCarrera.incorporarSilueta(silueta);
+        Observer observer_silueta = panelPantallaJuego.incorporarSilueta(silueta);
         refrescar();
         return observer_silueta;
     }
 
-    public void mostrarPantallaCarrera() {
-        ventana.setContentPane(panelPantallaCarrera);
+    public void mostrarPantallaJuego() {
+        ventana.setContentPane(panelPantallaJuego);
         ventana.requestFocusInWindow();
         refrescar();
     }
@@ -168,4 +167,5 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         ventana.revalidate();
         ventana.repaint();
     }
+
 }

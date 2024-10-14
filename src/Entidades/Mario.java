@@ -1,8 +1,7 @@
 package Entidades;
+import GUI.Sprite;
 import Logica.*;
 import Plataformas.Plataforma;
-
-import GUI.Sprite;
 
 public class Mario extends Entidad implements EntidadJugador{
     protected EstadoMario estado;
@@ -18,18 +17,12 @@ public class Mario extends Entidad implements EntidadJugador{
     public void mover(){
         if(direccion!=0) {
             if(direccion==IZQUIERDA) {
-                System.out.println("posicionX despues de moverme a izquierda: "+posicionX);
                 posicionX-=velocidad;
-                System.out.println("posicionX antes de moverme a izquierda: "+posicionX);
             } else if(direccion==DERECHA) {
-                System.out.println("posicionX despues de moverme a derecha: "+posicionX);
                 posicionX+=velocidad;
-                System.out.println("posicionX despues de moverme a derecha: "+posicionX);
             }
             else if(direccion==ARRIBA) {
-                System.out.println("posicionX despues de moverme a derecha: "+posicionX);
                 posicionY+=velocidad;
-                System.out.println("posicionX despues de moverme a derecha: "+posicionX);
             }
             actualizar();
         } 

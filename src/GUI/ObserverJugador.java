@@ -1,25 +1,24 @@
 package GUI;
 
 import Entidades.EntidadJugador;
-import Entidades.EntidadLogica;
-import Paneles.PanelPantallaCarrera;
+import Paneles.PanelPantallaJuego;
 
 public class ObserverJugador extends ObserverGrafico{
 	
 	private static final long serialVersionUID = 7017967195998406908L;
-	private PanelPantallaCarrera panelPantallaCarreras;
+	private PanelPantallaJuego panelPantallaJuego;
 	private EntidadJugador jugadorObservado;
 	
 	
-	public ObserverJugador(PanelPantallaCarrera panelPantallaCarreras, EntidadJugador jugadorObservado) {
+	public ObserverJugador(PanelPantallaJuego panelPantallaJuego, EntidadJugador jugadorObservado) {
 		super(jugadorObservado);
-		this.panelPantallaCarreras = panelPantallaCarreras;
+		this.panelPantallaJuego = panelPantallaJuego;
 		this.jugadorObservado = jugadorObservado;
 		actualizar();
 	}
 	
 	public void actualizar() {
 		super.actualizar();
-		panelPantallaCarreras.actualizarScrollHaciaJugador(entidadObservada);
+		panelPantallaJuego.actualizarScrollHaciaJugador(entidadObservada);
 	}
 }

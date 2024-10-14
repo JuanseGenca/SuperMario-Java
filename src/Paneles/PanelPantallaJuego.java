@@ -15,30 +15,27 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
 
-public class PanelPantallaCarrera extends JPanel {
+public class PanelPantallaJuego extends JPanel {
 
 	private static final long serialVersionUID = -1366756178696496543L;
-	private JPanel panelCarreras;
+	private JPanel panelJuego;
 	private JPanel panelInformacion;
-	private JLabel imagenFondoPanelCarreras;
+	private JLabel imagenFondoPanelJuego;
 	private JLabel imagenFondoPanelInformacion;
-	private JScrollPane panelScrollCarrera;
+	private JScrollPane panelPantallaJuego;
 	private JLabel labelPuntaje;
 	private int posicionXAnterior = 0;
 	private int posicionYAnterior = 0;
-	private double zoom = 1.0; // Valor inicial de zoom
-    private double zoomMin = 0.5; // Zoom mínimo permitido
-    private double zoomMax = 2.0; // Zoom máximo permitido
 
-	public PanelPantallaCarrera() {
+	public PanelPantallaJuego() {
 		setPreferredSize(new Dimension(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO));
 		setLayout(new BorderLayout());
 		agregarPanelInformacion();
-		agregarPanelCarreraConFondoYScroll();
-		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-		JViewport viewport = panelScrollCarrera.getViewport();
-    	Dimension viewSize = panelCarreras.getPreferredSize();
+		agregarPanelJuegoConFondoYScroll();
+		panelPantallaJuego.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		panelPantallaJuego.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+		JViewport viewport = panelPantallaJuego.getViewport();
+    	Dimension viewSize = panelJuego.getPreferredSize();
     	Dimension extentSize = viewport.getExtentSize();
     	viewport.setViewPosition(new Point(0, viewSize.height - extentSize.height));//no se si van aca estos dos :)
 	}
@@ -47,22 +44,22 @@ public class PanelPantallaCarrera extends JPanel {
 	
 	public Observer incorporarEntidad(EntidadLogica entidadLogica) {
 		ObserverEntidades observerEntidad = new ObserverEntidades(entidadLogica);
-		imagenFondoPanelCarreras.add(observerEntidad);
+		imagenFondoPanelJuego.add(observerEntidad);
 		return observerEntidad;
 	}
 	
 	public Observer incorporarEntidadJugador(EntidadJugador entidadJugador) {
 		ObserverJugador observerJugador = new ObserverJugador(this, entidadJugador);
-		imagenFondoPanelCarreras.add(observerJugador);
+		imagenFondoPanelJuego.add(observerJugador);
 		actualizarInfoJugador(entidadJugador);
 		return observerJugador;
 	}
 
 	public Observer incorporarSilueta(EntidadLogica entidadLogica) {
 		ObserverEntidades observerEntidad = new ObserverEntidades(entidadLogica);
-		imagenFondoPanelCarreras.setIcon(new ImageIcon(getClass().getClassLoader().getResource(entidadLogica.getSprite().getRutaImagen())));
-		imagenFondoPanelCarreras.setBounds(0,0, imagenFondoPanelCarreras.getIcon().getIconWidth(), imagenFondoPanelCarreras.getIcon().getIconHeight());
-		panelCarreras.setPreferredSize(new Dimension(imagenFondoPanelCarreras.getIcon().getIconWidth(), imagenFondoPanelCarreras.getIcon().getIconHeight()));
+		imagenFondoPanelJuego.setIcon(new ImageIcon(getClass().getClassLoader().getResource(entidadLogica.getSprite().getRutaImagen())));
+		imagenFondoPanelJuego.setBounds(0,0, imagenFondoPanelJuego.getIcon().getIconWidth(), imagenFondoPanelJuego.getIcon().getIconHeight());
+		panelJuego.setPreferredSize(new Dimension(imagenFondoPanelJuego.getIcon().getIconWidth(), imagenFondoPanelJuego.getIcon().getIconHeight()));
 		return observerEntidad;
 	}
 		
@@ -119,14 +116,14 @@ public class PanelPantallaCarrera extends JPanel {
 	
 		// Solo ajustamos el viewport si la posición de Mario ha cambiado significativamente
 		if (Math.abs(posicionXJugador - posicionXAnterior) > 10) {
-			JViewport viewport = panelScrollCarrera.getViewport();
+			JViewport viewport = panelPantallaJuego.getViewport();
 			
 			// Asegurar valores positivos
 			int newX = Math.max(0, posicionXJugador - viewport.getWidth() / 2);
 			int newY = 800; // Coloca en la parte inferior
 			
 			// Verificar límites para X
-			Dimension viewSize = panelCarreras.getPreferredSize();
+			Dimension viewSize = panelJuego.getPreferredSize();
 			Dimension extentSize = viewport.getExtentSize();
 			newX = Math.min(newX, viewSize.width - extentSize.width);
 			
@@ -136,23 +133,23 @@ public class PanelPantallaCarrera extends JPanel {
 		}
 	}
 	
-	// Operaciones propias para construccion de PanelPantallaCarrera
+	// Operaciones propias para construccion de PanelPantallaJuego
 	
-	protected void agregarPanelCarreraConFondoYScroll() {
-		imagenFondoPanelCarreras = new JLabel();
-		imagenFondoPanelCarreras.setLayout(null);
-		imagenFondoPanelCarreras.setBounds(0,0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
+	protected void agregarPanelJuegoConFondoYScroll() {
+		imagenFondoPanelJuego = new JLabel();
+		imagenFondoPanelJuego.setLayout(null);
+		imagenFondoPanelJuego.setBounds(0,0, ConstantesVistas.PANEL_JUEGO_ANCHO, ConstantesVistas.PANEL_ALTO);
 		
-		panelCarreras = new JPanel(null);
-		panelCarreras.setPreferredSize(new Dimension(ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO));
-		panelCarreras.add(imagenFondoPanelCarreras);
+		panelJuego = new JPanel(null);
+		panelJuego.setPreferredSize(new Dimension(ConstantesVistas.PANEL_JUEGO_ANCHO, ConstantesVistas.PANEL_ALTO));
+		panelJuego.add(imagenFondoPanelJuego);
 		
-		panelScrollCarrera = new JScrollPane(panelCarreras);
-		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
-		panelScrollCarrera.setBounds(0, 0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
+		panelPantallaJuego = new JScrollPane(panelJuego);
+		panelPantallaJuego.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		panelPantallaJuego.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+		panelPantallaJuego.setBounds(0, 0, ConstantesVistas.PANEL_JUEGO_ANCHO, ConstantesVistas.PANEL_ALTO);
 			
-		add(panelScrollCarrera, BorderLayout.CENTER);
+		add(panelPantallaJuego, BorderLayout.CENTER);
 	}
 	
 	

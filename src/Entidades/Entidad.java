@@ -64,7 +64,6 @@ public abstract class Entidad implements EntidadLogica{
    public void establecerDireccion(int x){
       direccion = x;
       mover();
-      System.out.println("Estableciendo direccion: "+x);
    }
 
    public int getDireccion(){
