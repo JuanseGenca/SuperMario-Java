@@ -37,8 +37,7 @@ public class Mario extends Entidad implements EntidadJugador{
     }
     @Override
     public int getPuntaje() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get_puntaje'");
+        return 0;
     }
     @Override
     public int getTiempo() {
