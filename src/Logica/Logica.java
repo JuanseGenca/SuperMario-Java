@@ -1,5 +1,6 @@
 package Logica;
 
+import Entidades.Entidad;
 import Entidades.Mario;
 import GUI.GUI;
 import GUI.Observer;
@@ -31,7 +32,7 @@ public class Logica {
     public Logica() {
         fabricaSprites = new SpritesMarioModo1();
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
-        parseint = new Parseint(nivelActual,fabricaEntidades);
+        parseint = new Parserint(nivel,fabricaEntidades);
     }
    
     public void setControladorVistas(GUI controladorVistas) {
@@ -44,13 +45,39 @@ public class Logica {
 		gui.mostrarPantallaCarrera();
 	}
 
+    protected void registrar_observers() {
+		registrar_observer_jugador(ruta_actual.get_vehiculo_jugador());
+		registrar_observer_silueta(ruta_actual.get_silueta());
+		registrar_observers_para_entidades(ruta_actual.get_vehiculos_carrera());
+		registrar_observers_para_entidades(ruta_actual.get_vehiculos_transito());
+		registrar_observers_para_entidades(ruta_actual.get_obstaculos());
+		registrar_observers_para_entidades(ruta_actual.get_power_ups());
+	}
+	
+	protected void registrar_observer_jugador(Jugador vehiculo_jugador) {
+		Observer observer_jugador = controlador_vistas.registrar_entidad(vehiculo_jugador);
+		vehiculo_jugador.registrar_observer(observer_jugador);
+	}
+	
+	protected void registrar_observer_silueta(Silueta silueta_ruta) {
+		Observer observer = controlador_vistas.registrar_silueta(silueta_ruta);
+		silueta_ruta.registrar_observer(observer);
+	}
+	
+	protected void registrar_observers_para_entidades(List<? extends Entidad> entidades) {
+		for(Entidad entidad : entidades) {
+			Observer observer = controlador_vistas.registrar_entidad(entidad);
+			entidad.registrar_observer(observer);
+		}
+	}
+
     public void setManejadorDeColisiones(ManejadorDeColisiones manejadorDeColisiones) {
         this.manejadorDeColisiones=manejadorDeColisiones;
     }
 
-    public void setAdministradorDePuntaje(AdministradorDePuntaje administradorDePuntaje) {
+    /*  public void setAdministradorDePuntaje(AdministradorDePuntaje administradorDePuntaje) {
         this.administradorDePuntaje=administradorDePuntaje;
-    }
+    }*/
 
     public void setCantidadDeVidas(int vidas) {
         this.cantidadVidas=vidas;
@@ -79,9 +106,9 @@ public class Logica {
         return manejadorDeColisiones;
     }
 
-    public AdministradorDePuntaje getAdministradorDePuntaje() {
-        return administradorDePuntaje;
-    }
+    //public AdministradorDePuntaje getAdministradorDePuntaje() {
+    //    return administradorDePuntaje;
+    //}
 
     public int getCantidadDeVidas() {
         return cantidadVidas;
@@ -95,9 +122,9 @@ public class Logica {
         return nivelActual;
     }
 
-    public void actualizarVidas() {
-        gui.actualizarVidas();
-    }
+    //public void actualizarVidas() {
+    //    gui.actualizarVidas();
+    //}
 
     public void saltarJugador() {
         jugador.saltar();
@@ -107,17 +134,17 @@ public class Logica {
         jugador.disparar();
     }
 
-    public void actualizarPuntaje(int puntajeExtra) {
-        puntaje=puntaje+puntajeExtra;
-        administradorDePuntaje.actualizarPuntaje(puntajeExtra);
-    }
+    //public void actualizarPuntaje(int puntajeExtra) {
+    //    puntaje=puntaje+puntajeExtra;
+    //    administradorDePuntaje.actualizarPuntaje(puntajeExtra);
+    //}
 
-    public void ganarVidas() {
-        cantidadVidas=cantidadVidas+1;
-        this.actualizarVidas();
-    }
+    //public void ganarVidas() {
+    //    cantidadVidas=cantidadVidas+1;
+    //    this.actualizarVidas();
+    //}
 
-    public void perderVidas() {
+    /*public void perderVidas() {
         cantidadVidas=cantidadVidas-1;
         this.actualizarVidas();
 
@@ -128,15 +155,15 @@ public class Logica {
                 administradorDePuntaje.mejorJugador(jugador.getNombre());
             }
         }
-    }
+    }*/
 
-    public void agregarMoneda() {
+    /*public void agregarMoneda() {
         monedas=monedas+1;
         if(monedas==100) {
             this.ganarVidas();
             monedas=0;
         }
-    }
+    }*/
 
     public void establecerDireccionMario(int x){
         jugador.establecerDireccion(x);
