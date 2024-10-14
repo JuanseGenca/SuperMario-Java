@@ -36,11 +36,13 @@ public class Logica {
         fabricaSprites = new SpritesMarioModo1();
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
         parseint = new Parserint(nivel,fabricaEntidades);
+        manejadorDeColisiones = new ManejadorDeColisiones();
     }
    
     public void setControladorVistas(GUI controladorVistas) {
 		gui = controladorVistas;
 	}
+
 
     public void iniciar() {
 		nivelActual = parseint.cargarArchivoNivel(nivel, gui, manejadorDeColisiones);

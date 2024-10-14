@@ -2,13 +2,11 @@ package ParseInt;
 
 import Fabricas.EntidadesFactory;
 import GUI.GUI;
-
+import Logica.ManejadorDeColisiones;
+import Nivel.Nivel;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import Logica.Logica;
-import Logica.ManejadorDeColisiones;
-import Nivel.Nivel;
 
 
 public class Parserint {
@@ -29,18 +27,18 @@ public class Parserint {
     }
 
     protected String obtenerArchivoNivel(int nivel){
-        String archivo;
+        /* String archivo;
         if(nivel == 1){
             archivo = "assets/Niveles/NivelMario.txt"; 
         } else{
             if(nivel == 2){
-                archivo = "ruta del archivo para nivel 2";
+                archivo = "assets/Niveles/NivelMario.txt";
             } else{
-                archivo = "ruta del archivo para nivel 3";
+                archivo = "assets/Niveles/NivelMario.txt";
             }
-        }
+        } */
 
-        return archivo;
+        return "assets/Niveles/NivelMario.txt";
 
     }
 

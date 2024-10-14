@@ -19,6 +19,7 @@ public class Nivel {
     protected HiloEntidades hiloEntidades;
     protected int numeroNivel;
     protected int chequep;
+    protected static final int temporizador=1000;
 
     public Nivel(GUI gui, ManejadorDeColisiones manejador){
         miGui = gui;
@@ -27,6 +28,7 @@ public class Nivel {
         plataformas = new ArrayList<>();
         powerUps = new ArrayList<>();
         bolasFuego = new ArrayList<>();
+        hiloEntidades = new HiloEntidades(temporizador);
         //falta inicializar a Mario, como consigo los parametros?
     }
 

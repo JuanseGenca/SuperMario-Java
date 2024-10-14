@@ -8,9 +8,8 @@ public class ManejadorDeColisiones {
     protected LinkedList<Entidad> entidades;
     protected Nivel nivelActual;
 
-    public ManejadorDeColisiones(LinkedList<Entidad> entidades, Nivel nivelActual) {
-        this.nivelActual=nivelActual;
-        this.entidades = entidades;
+    public ManejadorDeColisiones() {
+        this.entidades = new LinkedList<Entidad>();
     }
 
     public void eliminarEntidad(Entidad entidad) {
