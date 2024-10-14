@@ -1,11 +1,9 @@
 package Fabricas;
 
-import Entidades.Entidad;
 import PowerUps.*;
 import Entidades.Mario;
+import GUI.Sprite;
 import Plataformas.*;
-
-import java.awt.image.BufferedImage;
 
 import Enemigos.*;
 
@@ -19,109 +17,111 @@ public class EntidadesFactory {
     }
 
     public ChampinionVerde crearChampinionVerde(int x,int y){
-        BufferedImage[] spriteChampinionVerde = spriteFactory.crearSpriteChampinionVerde();
+        Sprite spriteChampinionVerde = spriteFactory.getChampinionVerde();
         ChampinionVerde champinionVerde = new ChampinionVerde(x,y,spriteChampinionVerde);
         return champinionVerde;
     }
 
     public SuperChampinion crearSuperChampinion(int x,int y){
-        BufferedImage[] spriteSuperChampinion = spriteFactory.crearSpriteSuperChampinion();
+        Sprite spriteSuperChampinion = spriteFactory.getSuperChampinion();
         SuperChampinion superChampinion = new SuperChampinion(x,y,spriteSuperChampinion);
         return superChampinion;
     }
 
     public FlorDeFuego crearFlorDeFuego(int x,int y){
-        BufferedImage[] spriteFlorDeFuego = spriteFactory.crearSpriteFlorDeFuego();
+        Sprite spriteFlorDeFuego = spriteFactory.getFlorDeFuego();
         FlorDeFuego florDeFuego = new FlorDeFuego(x,y,spriteFlorDeFuego);
         return florDeFuego;
     }
 
     public Moneda crearMoneda(int x,int y){
-        BufferedImage[] spriteMoneda = spriteFactory.crearSpriteMoneda();
+        Sprite spriteMoneda = spriteFactory.getMoneda();
         Moneda moneda = new Moneda(x,y,spriteMoneda);
         return moneda;
     }
 
     public Estrella crearEstrella(int x,int y){
-        BufferedImage[] spriteEstrella = spriteFactory.crearSpriteEstrella();
+        Sprite spriteEstrella = spriteFactory.getEstrella();
         Estrella estrella = new Estrella(x,y,spriteEstrella);
         return estrella;
     }
 
     public Mario crearMario(int x,int y){
-        BufferedImage[] spriteMario = spriteFactory.crearSpriteMario();
+        Sprite spriteMario = spriteFactory.getMario();
         Mario mario = new Mario(x,y,spriteMario);
         return mario;
     }
 
     public BuzzyBeetle crearBuzzyBeetle(int x,int y){
-        BufferedImage[] spriteBuzzyBeetle = spriteFactory.crearSpriteBuzzyBeetle();
+        Sprite spriteBuzzyBeetle = spriteFactory.getBuzzyBeetle();
         BuzzyBeetle buzzyBeetle = new BuzzyBeetle(x,y,spriteBuzzyBeetle);
         return buzzyBeetle;
     }
 
     public Spiny crearSpiny(int x,int y){
-        BufferedImage[] spriteSpiny = spriteFactory.crearSpriteSpiny();
+        Sprite spriteSpiny = spriteFactory.getSpiny();
         Spiny spiny = new Spiny(x,y,spriteSpiny);
         return spiny;
     }
 
     public Lakitu crearLakitu(int x,int y){
-        BufferedImage[] spriteLakitu = spriteFactory.crearSpriteLakitu();
+        Sprite spriteLakitu = spriteFactory.getLakitu();
         Lakitu lakitu = new Lakitu(x,y,spriteLakitu);
         return lakitu;
     }
 
     public Goomba crearGoomba(int x,int y){
-        BufferedImage[] spriteGoomba = spriteFactory.crearSpriteGoomba();
+        Sprite spriteGoomba = spriteFactory.getGoomba();
         Goomba goomba = new Goomba(x,y,spriteGoomba);
         return goomba;
     }
 
     public PiranhaPlant crearPiranhaPlant(int x,int y){
-        BufferedImage[] spritePiranhaPlant = spriteFactory.crearSpritePiranhaPlant();
+        Sprite spritePiranhaPlant = spriteFactory.getPiranhaPlant();
         PiranhaPlant piranhaPlant = new PiranhaPlant(x,y,spritePiranhaPlant);
         return piranhaPlant;
     }
 
     public KoopaTroopa crearKoopaTroopa(int x,int y){
-        BufferedImage[] spriteKoopaTroopa = spriteFactory.crearSpriteKoopaTroopa();
-        KoopaTroopa koopaTroopa = new KoopaTroopa(x,y,spriteKoopaTroopa);
+        Sprite spriteKoopaTroopa = spriteFactory.getKoopaTroopa();
+        KoopaTroopa koopaTroopa = new KoopaTroopa(x,y,spriteKoopaTroopa) {
+            
+        };
         return koopaTroopa;
     }
 
     public BloqueSolido crearBloqueSolido(int x,int y){
-        BufferedImage[] spriteBloqueSolido = spriteFactory.crearSpriteBloqueSolido();
+        Sprite spriteBloqueSolido = spriteFactory.getBloqueSolido();
         BloqueSolido bloqueSolido = new BloqueSolido(x,y,spriteBloqueSolido);
         return bloqueSolido;
     }
 
     public Tuberia crearTuberia(int x,int y){
-        BufferedImage[] spriteTuberia = spriteFactory.crearSpriteTuberia();
+        Sprite spriteTuberia = spriteFactory.getTuberia();
         Tuberia tuberia = new Tuberia(x,y,spriteTuberia);
         return tuberia;
     }
 
     public Meta crearMeta(int x,int y){
-        BufferedImage[] spriteMeta = spriteFactory.crearSpriteMeta();
+        Sprite spriteMeta = spriteFactory.getMeta();
         Meta meta = new Meta(x,y,spriteMeta);
         return meta;
     }
 
     public Vacio crearVacio(int x,int y){
-        BufferedImage[] spriteVacio = spriteFactory.crearSpriteVacio();
+        Sprite spriteVacio = spriteFactory.getVacio();
         Vacio vacio = new Vacio(x,y,spriteVacio);
         return vacio;
     }
 
     public LadrilloRompible crearLadrilloRompible(int x,int y){
-        BufferedImage[] spriteLadrilloRompible = spriteFactory.crearSpriteLadrilloRompible();
+        Sprite spriteLadrilloRompible = spriteFactory.getLadrilloRompible();
         LadrilloRompible ladrilloRompible = new LadrilloRompible(x,y,spriteLadrilloRompible);
         return ladrilloRompible;
     }
 
     public BloquePregunta crearBloquePregunta(int x,int y){
-        BufferedImage[] spriteBloquePregunta = spriteFactory.crearSpriteBloquePregunta();
+        Sprite spriteBloquePregunta = spriteFactory.getBloquePregunta();
         BloquePregunta bloquePregunta = new BloquePregunta(x,y,spriteBloquePregunta);
         return bloquePregunta;
     }    

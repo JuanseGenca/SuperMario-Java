@@ -3,7 +3,7 @@ package Enemigos;
 import GUI.Sprite;
 import Logica.Visitor;
 
-public abstract class KoopaTroopa extends Enemigo{
+public class KoopaTroopa extends Enemigo{
     //Atributos (saco estado mientras no este implementado para que no haya tantos errores)
     //protected EstadoKoopaTroopa estadoKoopaTroopa;
 
