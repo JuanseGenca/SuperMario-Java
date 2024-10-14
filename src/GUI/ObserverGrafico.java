@@ -1,5 +1,7 @@
 package GUI;
 
+import java.io.File;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -22,7 +24,8 @@ public abstract class ObserverGrafico extends JLabel implements Observer{
 
     public void actualizarImagen(){
         String rutaImagen = entidadObservada.getSprite().getRutaImagen();
-		ImageIcon icono = new ImageIcon(getClass().getClassLoader().getResource(rutaImagen));
+		File file = new File(rutaImagen);
+		ImageIcon icono = new ImageIcon(file.getAbsolutePath());
 		setIcon(icono);
     }
 
