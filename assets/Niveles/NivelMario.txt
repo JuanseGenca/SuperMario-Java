@@ -1,0 +1,13 @@
+Mario:1,1
+Ladrillo Rompible:1,0
+Ladrillo Rompible:1,0
+Ladrillo Rompible:2,0
+Ladrillo Rompible:3,0
+Ladrillo Rompible:4,0
+Ladrillo Rompible:5,0
+Ladrillo Rompible:6,0
+Ladrillo Rompible:7,0
+Ladrillo Rompible:8,0
+Ladrillo Rompible:9,0
+Ladrillo Rompible:10,0
+Meta:10,1
