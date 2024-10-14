@@ -26,7 +26,7 @@ public class Nivel {
         bolasFuego = new ArrayList<>();
     }
 
-    public Silueta get_silueta(){
+    public Silueta getSilueta(){
 		return silueta;
 	}
 
