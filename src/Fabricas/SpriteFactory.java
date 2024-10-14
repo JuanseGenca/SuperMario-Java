@@ -12,6 +12,9 @@ public abstract class SpriteFactory {
 		rutaCarpeta = ruta;
 	}
 	
+	public Sprite getSilueta(int numero) {
+		return new Sprite(rutaCarpeta + "/ruta.png");	
+	}
 	
 	public Sprite getChampinionVerde() {
 		return new Sprite(rutaCarpeta + "/PowerUps/champinion_verde.png");

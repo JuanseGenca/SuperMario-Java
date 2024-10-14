@@ -16,6 +16,12 @@ public class EntidadesFactory {
         this.spriteFactory = spriteFactory;
     }
 
+    public Silueta getSilueta(int numero_ruta) {
+		Sprite spriteSilueta = spriteFactory.getSilueta(numeroRuta);
+		Silueta silueta = new Silueta(spriteSilueta);
+		return silueta;
+	}
+
     public ChampinionVerde crearChampinionVerde(int x,int y){
         Sprite spriteChampinionVerde = spriteFactory.getChampinionVerde();
         ChampinionVerde champinionVerde = new ChampinionVerde(x,y,spriteChampinionVerde);
