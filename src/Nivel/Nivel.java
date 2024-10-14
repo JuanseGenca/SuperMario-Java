@@ -14,16 +14,21 @@ public class Nivel {
     protected ArrayList<PowerUp> powerUps;
     protected ArrayList<BolaDeFuego> bolasFuego;
     protected Mario jugador;
+    protected Silueta silueta;
     protected int numeroNivel;
-    protected int chequep;
 
-    public Nivel(int numero){
+    public Nivel(Silueta silueta,int numero){
+        this.silueta = silueta;
         numeroNivel = numero;
         enemigos = new ArrayList<>();
         plataformas = new ArrayList<>();
         powerUps = new ArrayList<>();
         bolasFuego = new ArrayList<>();
     }
+
+    public Silueta get_silueta(){
+		return silueta;
+	}
 
     public ArrayList<Enemigo> getEnemigos(){
         return enemigos;
@@ -59,19 +64,9 @@ public class Nivel {
             enemigos.remove(enemigo);
         }
     }
-    public void eliminarBolaDeFuego(BolaDeFuego bola){
-        if(bolasFuego.contains(bola)){
-            bolasFuego.remove(bola);
-        }
-    }
     public void agregarPlataforma(Plataforma plataforma){
         if(plataforma!=null) {
             plataformas.add(plataforma);
-        }
-    }
-    public void agregarBolaDeFuego(BolaDeFuego bola){
-        if(bola!=null) {
-            bolasFuego.add(bola);
         }
     }
     public void agregarMario(Mario mario){

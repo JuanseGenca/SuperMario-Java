@@ -27,7 +27,7 @@ public class Logica {
     public Logica() {
         fabricaSprites = new SpritesMarioModo1();
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
-        parseint = new Parserint(1,fabricaEntidades);
+        parseint = new Parserint(fabricaEntidades);
        
     }
    
@@ -38,21 +38,26 @@ public class Logica {
 
     public void iniciar() {
 		nivelActual = parseint.generar_ruta_harcoding(1);
-		gui.mostrarPantallaCarrera();
 		registrarObservers();
+		gui.mostrarPantallaCarrera();
 	}
 
     protected void registrarObservers() {
 		registrarObserverJugador(nivelActual.getMario());
+		registrar_observer_silueta(nivelActual.getSilueta());
 		registrarObserversParaEntidades(nivelActual.getPowerUps());
 		registrarObserversParaEntidades(nivelActual.getEnemigos());
 		registrarObserversParaEntidades(nivelActual.getPlataformas());
-		registrarObserversParaEntidades(nivelActual.getBolaDeFuego());
 	}
 	
 	protected void registrarObserverJugador(Mario jugador) {
 		Observer observerJugador = gui.registrarEntidadJugador(jugador);
 		jugador.setObserver(observerJugador);
+	}
+
+	protected void registrarObserverSilueta(Silueta siluetaRuta) {
+		Observer observer = gui.registrarSilueta(siluetaRuta);
+		siluetaRuta.registrarObserver(observer);
 	}
 	
 	protected void registrarObserversParaEntidades(List<? extends Entidad> entidades) {
