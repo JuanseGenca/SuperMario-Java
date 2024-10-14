@@ -13,7 +13,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getSilueta(int numero) {
-		return new Sprite(rutaCarpeta + "/ruta.png");	
+		return new Sprite(rutaCarpeta + "/bg.png");	
 	}
 	
 	public Sprite getChampinionVerde() {
