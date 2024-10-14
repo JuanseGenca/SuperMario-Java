@@ -4,7 +4,7 @@ import Plataformas.Plataforma;
 
 import GUI.Sprite;
 
-public class Mario extends Entidad{
+public class Mario extends Entidad implements EntidadJugador{
     protected EstadoMario estado;
     protected Logica miLogica;
 
@@ -50,5 +50,20 @@ public class Mario extends Entidad{
     }
     public void aceptar(Visitor v){
         v.visit(this);
+    }
+    @Override
+    public int getPuntaje() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'get_puntaje'");
+    }
+    @Override
+    public int getTiempo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'get_tiempo'");
+    }
+    @Override
+    public int getVida() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'get_vida'");
     }
 }

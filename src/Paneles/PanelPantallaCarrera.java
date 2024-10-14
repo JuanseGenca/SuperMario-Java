@@ -28,6 +28,7 @@ public class PanelPantallaCarrera extends JPanel {
 		setLayout(new BorderLayout());
 		agregarPanelCarreraConFondoYScroll();
 		agregarPanelInformacion();
+		
 	}
 	
 	// Operaciones para ControladorVistas
@@ -38,27 +39,19 @@ public class PanelPantallaCarrera extends JPanel {
 		return observerEntidad;
 	}
 	
-	public Observer incorporarEntidadJugador(Entidad entidadJugador) {
+	public Observer incorporarEntidadJugador(EntidadJugador entidadJugador) {
 		ObserverJugador observerJugador = new ObserverJugador(this, entidadJugador);
 		imagenFondoPanelCarreras.add(observerJugador);
-		actualizarInfoJugador(entidadJugador);
+		//actualizarInfoJugador(entidadJugador);
 		return observerJugador;
 	}
-	
-	public Observer incorporarSilueta(EntidadLogica entidadLogica) {
-		ObserverEntidades observerEntidad = new ObserverEntidades(entidadLogica);
-		imagenFondoPanelCarreras.setIcon(new ImageIcon(getClass().getClassLoader().getResource(entidadLogica.getSprite().getRutaImagen())));
-		imagenFondoPanelCarreras.setBounds(0,0, imagenFondoPanelCarreras.getIcon().getIconWidth(), imagenFondoPanelCarreras.getIcon().getIconHeight());
-		panelCarreras.setPreferredSize(new Dimension(imagenFondoPanelCarreras.getIcon().getIconWidth(), imagenFondoPanelCarreras.getIcon().getIconHeight()));
-		return observerEntidad;
-	}
 		
-	protected void actualizarInfoJugador(Entidad jugador) {
+	protected void actualizarInfoJugador(EntidadJugador jugador) {
 		actualizarLabelsInformacion(jugador);
 		actualizarScrollHaciaJugador(jugador);
 	}
 	
-	protected void actualizarLabelsInformacion(Entidad jugador) {
+	protected void actualizarLabelsInformacion(EntidadJugador jugador) {
 		labelPuntaje.setText( textoConCantidadDigitos(jugador.getPuntaje(), 5) );
 	}
 	

@@ -1,7 +1,5 @@
 package GUI;
 
-import java.io.File;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -10,6 +8,7 @@ import Entidades.EntidadLogica;
 
 public abstract class ObserverGrafico extends JLabel implements Observer{
     
+	private static final long serialVersionUID = 1L;
     protected EntidadLogica entidadObservada;
 
     protected ObserverGrafico(EntidadLogica entidadObservada)  {
