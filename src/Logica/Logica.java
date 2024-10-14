@@ -1,7 +1,6 @@
 package Logica;
 
 import Entidades.Mario;
-import Fabricas.EntidadesFactory;
 import GUI.GUI;
 import Nivel.Nivel;
 import ParseInt.Parserint;
@@ -32,6 +31,16 @@ public class Logica {
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
         parseint = new Parseint(nivelActual,fabricaEntidades);
     }
+   
+    public void setControladorVistas(GUI controladorVistas) {
+		gui = controladorVistas;
+	}
+
+    public void iniciar() {
+		nivelActual = parseint.cargarNivelDesdeArchivo(1);
+		registrarObservers();
+		gui.mostrarPantallaCarrera();
+	}
 
     public void setManejadorDeColisiones(ManejadorDeColisiones manejadorDeColisiones) {
         this.manejadorDeColisiones=manejadorDeColisiones;

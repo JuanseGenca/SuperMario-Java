@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 
+import Entidades.Entidad;
 import Entidades.EntidadLogica;
 
 public class GUI  extends JFrame {
@@ -67,7 +68,7 @@ public class GUI  extends JFrame {
 		// To Do
 	}
 
-    public void cambiar_modo_juego(int modo) {
+    public void cambiarModoJuego(int modo) {
 		// To Do
 		mostrarPantallaInicial();
 	}
@@ -78,7 +79,7 @@ public class GUI  extends JFrame {
 		return observerEntidad;
 	}
     
-    public Observer registrarEntidad(EntidadJugador entidadJugador) {
+    public Observer registrarEntidad(Entidad entidadJugador) {
 		Observer observerJugador = panelPantallaCarrera.incorporarEntidadJugador(entidadJugador);
 		refrescar();
 		return observerJugador;
