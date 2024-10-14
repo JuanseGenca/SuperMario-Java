@@ -20,9 +20,9 @@ public class Parserint {
 
     
 
-    public Nivel cargarArchivoNivel(int nivel,GUI gui,ManejadorDeColisiones manejador){
+    public Nivel cargarArchivoNivel(int nivel){
         String path = obtenerArchivoNivel(this.nivel);
-        return cargarNivelDesdeArchivo(path,gui,manejador);
+        return cargarNivelDesdeArchivo(path);
         
     }
 
@@ -43,9 +43,9 @@ public class Parserint {
     }
 
 
-    public Nivel cargarNivelDesdeArchivo(String path,GUI gui,ManejadorDeColisiones manejador) {
+    public Nivel cargarNivelDesdeArchivo(String path) {
 
-        Nivel nivelActual = new Nivel(gui,manejador);
+        Nivel nivelActual = new Nivel(1);
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;

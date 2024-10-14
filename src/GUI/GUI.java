@@ -2,6 +2,7 @@ package GUI;
 
 import Entidades.Entidad;
 import Entidades.EntidadLogica;
+import Entidades.Mario;
 import Logica.*;
 import Paneles.*;
 import java.awt.event.KeyAdapter;
@@ -74,10 +75,10 @@ public class GUI  extends JFrame {
 		return observerEntidad;
 	}
     
-   public Observer registrarEntidad(Entidad entidad) {
-		Observer observerEntidad = panelPantallaCarrera.incorporarEntidadJugador(entidad);
+   public Observer registrarEntidadJugador(Mario entidad) {
+		Observer observerJugador = panelPantallaCarrera.incorporarEntidadJugador(entidad);
 		refrescar();
-		return observerEntidad;
+		return observerJugador;
 	} 
 
     public void mostrarPantallaCarrera() {

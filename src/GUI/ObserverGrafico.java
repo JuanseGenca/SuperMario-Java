@@ -22,12 +22,11 @@ public abstract class ObserverGrafico extends JLabel implements Observer{
 		actualizarPosicionTamano();
 	}
 
-    public void actualizarImagen(){
-        String rutaImagen = entidadObservada.getSprite().getRutaImagen();
-		File file = new File(rutaImagen);
-		ImageIcon icono = new ImageIcon(file.getAbsolutePath());
+    protected void actualizarImagen() {
+		String ruta_imagen = entidadObservada.getSprite().getRutaImagen();
+		ImageIcon icono = new ImageIcon(getClass().getClassLoader().getResource(ruta_imagen));
 		setIcon(icono);
-    }
+	}
 
     protected void actualizarPosicionTamano() {
 		int x = AdaptadorPosicionPixel.transformarX(entidadObservada.getPosicionX());
