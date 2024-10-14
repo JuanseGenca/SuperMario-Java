@@ -1,19 +1,22 @@
 package Logica;
 
+import Enemigos.Enemigo;
+import Entidades.BolaDeFuego;
 import Entidades.Entidad;
 import Entidades.Mario;
+import Fabricas.*;
 import GUI.GUI;
 import GUI.Observer;
 import Nivel.Nivel;
 import ParseInt.Parserint;
-import Puntaje.AdministradorDePuntaje;
-import ParseInt.*;
-import Fabricas.*;
+import Plataformas.Plataforma;
+import PowerUps.PowerUp;
+import java.util.List;
 
 public class Logica {
     //Atributos de instancia
     protected ManejadorDeColisiones manejadorDeColisiones;
-    protected AdministradorDePuntaje administradorDePuntaje;
+    //protected AdministradorDePuntaje administradorDePuntaje;
     protected int cantidadVidas;
     protected int puntaje;
     protected int monedas;
@@ -45,29 +48,43 @@ public class Logica {
 		gui.mostrarPantallaCarrera();
 	}
 
-    protected void registrar_observers() {
-		registrar_observer_jugador(ruta_actual.get_vehiculo_jugador());
-		registrar_observer_silueta(ruta_actual.get_silueta());
-		registrar_observers_para_entidades(ruta_actual.get_vehiculos_carrera());
-		registrar_observers_para_entidades(ruta_actual.get_vehiculos_transito());
-		registrar_observers_para_entidades(ruta_actual.get_obstaculos());
-		registrar_observers_para_entidades(ruta_actual.get_power_ups());
+    protected void registrarObservers() {
+		registrarObserverJugador(nivelActual.getMario());
+		registrarObserversParaEntidades(nivelActual.getPowerUps());
+		registrarObserversParaEntidades(nivelActual.getEnemigos());
+		registrarObserversParaEntidades(nivelActual.getPlataformas());
+		registrarObserversParaEntidades(nivelActual.getBolaDeFuego());
 	}
 	
-	protected void registrar_observer_jugador(Jugador vehiculo_jugador) {
-		Observer observer_jugador = controlador_vistas.registrar_entidad(vehiculo_jugador);
-		vehiculo_jugador.registrar_observer(observer_jugador);
+	protected void registrarObserverJugador(Mario jugador) {
+		Observer observerJugador = gui.registrarEntidad(jugador);
+		jugador.setObserver(observerJugador);
 	}
 	
-	protected void registrar_observer_silueta(Silueta silueta_ruta) {
-		Observer observer = controlador_vistas.registrar_silueta(silueta_ruta);
-		silueta_ruta.registrar_observer(observer);
+	protected void registrarObserversParaEntidades(PowerUp powerUp) {
+		Observer observerPowerUp = gui.registrarEntidad(powerUp);
+		powerUp.setObserver(observerPowerUp);
+	}
+
+    protected void registrarObserversParaEntidades(Enemigo enemigo) {
+		Observer observerEnemigo = gui.registrarEntidad(enemigo);
+		enemigo.setObserver(observerEnemigo);
+	}
+
+    protected void registrarObserversParaEntidades(Plataforma plataforma) {
+		Observer observerPlataforma = gui.registrarEntidad(plataforma);
+		plataforma.setObserver(observerPlataforma);
+	}
+
+    protected void registrarObserversParaEntidades(BolaDeFuego bolaDeFuego) {
+		Observer observerBolaDeFuego = gui.registrarEntidad(bolaDeFuego);
+		bolaDeFuego.setObserver(observerBolaDeFuego);
 	}
 	
-	protected void registrar_observers_para_entidades(List<? extends Entidad> entidades) {
+	protected void registrarObserversParaEntidades(List<? extends Entidad> entidades) {
 		for(Entidad entidad : entidades) {
-			Observer observer = controlador_vistas.registrar_entidad(entidad);
-			entidad.registrar_observer(observer);
+			Observer observer = gui.registrarEntidad(entidad);
+			entidad.setObserver(observer);
 		}
 	}
 
@@ -107,7 +124,7 @@ public class Logica {
     }
 
     //public AdministradorDePuntaje getAdministradorDePuntaje() {
-    //    return administradorDePuntaje;
+      // return administradorDePuntaje;
     //}
 
     public int getCantidadDeVidas() {

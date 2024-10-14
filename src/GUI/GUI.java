@@ -1,14 +1,12 @@
 package GUI;
 
+import Entidades.Entidad;
+import Entidades.EntidadLogica;
 import Logica.*;
 import Paneles.*;
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
-
-import Entidades.Entidad;
-import Entidades.EntidadLogica;
 
 public class GUI  extends JFrame {
     
@@ -69,23 +67,18 @@ public class GUI  extends JFrame {
 		mostrarPantallaInicial();
 	}
 
+
     public Observer registrarEntidad(EntidadLogica entidadLogica) {
 		Observer observerEntidad = panelPantallaCarrera.incorporarEntidad(entidadLogica);
 		refrescar();
 		return observerEntidad;
 	}
     
-    public Observer registrarEntidad(Entidad entidadJugador) {
-		Observer observerJugador = panelPantallaCarrera.incorporarEntidadJugador(entidadJugador);
+   public Observer registrarEntidad(Entidad entidad) {
+		Observer observerEntidad = panelPantallaCarrera.incorporarEntidadJugador(entidad);
 		refrescar();
-		return observerJugador;
-	}
-
-    public Observer registrarSilueta(EntidadLogica silueta) {
-		Observer observerSilueta = panelPantallaCarrera.incorporarSilueta(silueta);
-		refrescar();
-		return observerSilueta;
-	}
+		return observerEntidad;
+	} 
 
     public void mostrarPantallaCarrera() {
 		ventana.setContentPane(panelPantallaCarrera);
