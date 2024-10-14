@@ -132,7 +132,7 @@ public class PanelPantallaCarrera extends JPanel {
 		}
 		imagenFondoPanelInformacion = new JLabel();
 		try {
-			ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/imagenes/pantalla-informacion.png"));
+			ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("assets/pantalla-informacion.png.png"));
 			if (iconoImagen == null) {
 				throw new NullPointerException();
 			}
