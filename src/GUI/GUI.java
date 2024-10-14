@@ -95,7 +95,7 @@ public class GUI  extends JFrame {
 		ventana.repaint();
 	}
 
-
+    /* 
     public void inicializarTeclado() {
         addKeyListener(new KeyAdapter() {
             @Override
@@ -108,7 +108,7 @@ public class GUI  extends JFrame {
                 }
             }
         });
-    }
+    }*/
 
     
 

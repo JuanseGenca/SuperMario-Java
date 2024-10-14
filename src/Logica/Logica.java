@@ -38,8 +38,8 @@ public class Logica {
 
     public void iniciar() {
 		nivelActual = parseint.cargarArchivoNivel(1);
-		registrarObservers();
 		gui.mostrarPantallaCarrera();
+        registrarObservers();
 	}
 
     protected void registrarObservers() {
