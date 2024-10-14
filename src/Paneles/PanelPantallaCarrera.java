@@ -2,14 +2,12 @@ package Paneles;
 
 import Entidades.*;
 import GUI.*;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -27,6 +25,7 @@ public class PanelPantallaCarrera extends JPanel {
 	private JScrollPane panelScrollCarrera;
 	private JLabel labelPuntaje;
 	private int posicionXAnterior = 0;
+	private int posicionYAnterior = 0;
 	private double zoom = 1.0; // Valor inicial de zoom
     private double zoomMin = 0.5; // Zoom mínimo permitido
     private double zoomMax = 2.0; // Zoom máximo permitido
@@ -36,8 +35,12 @@ public class PanelPantallaCarrera extends JPanel {
 		setLayout(new BorderLayout());
 		agregarPanelInformacion();
 		agregarPanelCarreraConFondoYScroll();
-		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);//no se si van aca estos dos :)
+		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+		JViewport viewport = panelScrollCarrera.getViewport();
+    	Dimension viewSize = panelCarreras.getPreferredSize();
+    	Dimension extentSize = viewport.getExtentSize();
+    	viewport.setViewPosition(new Point(0, viewSize.height - extentSize.height));//no se si van aca estos dos :)
 	}
 	
 	// Operaciones para ControladorVistas
@@ -104,13 +107,15 @@ public class PanelPantallaCarrera extends JPanel {
 	// Operacion para observer de jugador
 	
 	public void actualizarScrollHaciaJugador(EntidadLogica jugador) {
-		centrarEnJugador(jugador);
-		
+		double interpolationFactor = 0.1; // Adjust this value to control smoothness
+	
+		int posicionInterpoladaX = (int) (posicionXAnterior + (jugador.getPosicionX() - posicionXAnterior) * interpolationFactor);
+		int posicionInterpoladaY = (int) (posicionYAnterior + (jugador.getPosicionY() - posicionYAnterior) * interpolationFactor);
+	
+		centrarEnJugador(posicionInterpoladaX, posicionInterpoladaY);
 	}
 
-	protected void centrarEnJugador(EntidadLogica jugador) {
-		int posicionXJugador = jugador.getPosicionX();
-		int posicionYJugador = jugador.getPosicionY();
+	protected void centrarEnJugador(int posicionXJugador, int posicionYJugador) {
 	
 		// Solo ajustamos el viewport si la posición de Mario ha cambiado significativamente
 		if (Math.abs(posicionXJugador - posicionXAnterior) > 10) {
@@ -118,7 +123,7 @@ public class PanelPantallaCarrera extends JPanel {
 			
 			// Asegurar valores positivos
 			int newX = Math.max(0, posicionXJugador - viewport.getWidth() / 2);
-			int newY = Math.max(0, panelCarreras.getPreferredSize().height - viewport.getHeight()); // Coloca en la parte inferior
+			int newY = 800; // Coloca en la parte inferior
 			
 			// Verificar límites para X
 			Dimension viewSize = panelCarreras.getPreferredSize();
