@@ -44,7 +44,7 @@ public class Logica {
 
     public void iniciar() {
 		nivelActual = parseint.cargarArchivoNivel(nivel, gui, manejadorDeColisiones);
-		registrarObservers();
+		//registrarObservers();
 		gui.mostrarPantallaCarrera();
 	}
 

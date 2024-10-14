@@ -127,25 +127,14 @@ public class PanelPantallaCarrera extends JPanel {
 	}
 	
 	protected void agregarImagenFondoPanelInformacion() {
-		if (panelInformacion == null) {
-			return;
-		}
 		imagenFondoPanelInformacion = new JLabel();
-		try {
-			ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("assets/pantalla-informacion.png.png"));
-			if (iconoImagen == null) {
-				throw new NullPointerException();
-			}
-			Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
-			Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
-			imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
-			imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO);
-			panelInformacion.add(imagenFondoPanelInformacion);
-		} catch (NullPointerException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		ImageIcon iconoImagen = new ImageIcon("assets/pantalla-informacion.png");
+		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO, Image.SCALE_SMOOTH);
+		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
+		imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
+		imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO);
+		panelInformacion.add(imagenFondoPanelInformacion);
+		
 	}
 
 	
