@@ -36,6 +36,8 @@ public class PanelPantallaCarrera extends JPanel {
 		setLayout(new BorderLayout());
 		agregarPanelInformacion();
 		agregarPanelCarreraConFondoYScroll();
+		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);//no se si van aca estos dos :)
 	}
 	
 	// Operaciones para ControladorVistas
@@ -103,31 +105,31 @@ public class PanelPantallaCarrera extends JPanel {
 	
 	public void actualizarScrollHaciaJugador(EntidadLogica jugador) {
 		centrarEnJugador(jugador);
+		
 	}
 
 	protected void centrarEnJugador(EntidadLogica jugador) {
-        int posicionXJugador = jugador.getPosicionX();
-        int posicionYJugador = jugador.getPosicionY();
-
-        // Solo ajustamos el viewport si la posición de Mario ha cambiado significativamente
+		int posicionXJugador = jugador.getPosicionX();
+		int posicionYJugador = jugador.getPosicionY();
+	
+		// Solo ajustamos el viewport si la posición de Mario ha cambiado significativamente
 		if (Math.abs(posicionXJugador - posicionXAnterior) > 10) {
 			JViewport viewport = panelScrollCarrera.getViewport();
-		
+			
 			// Asegurar valores positivos
 			int newX = Math.max(0, posicionXJugador - viewport.getWidth() / 2);
-			int desplazamientoVertical = 50; // Puedes ajustar este valor según tus necesidades
-    		int newY = Math.max(0, posicionYJugador - viewport.getHeight() / 2 + desplazamientoVertical);
-		
-			// Verificar límites (opcional)
-			Dimension viewSize = viewport.getViewSize();
+			int newY = Math.max(0, panelCarreras.getPreferredSize().height - viewport.getHeight()); // Coloca en la parte inferior
+			
+			// Verificar límites para X
+			Dimension viewSize = panelCarreras.getPreferredSize();
 			Dimension extentSize = viewport.getExtentSize();
 			newX = Math.min(newX, viewSize.width - extentSize.width);
-			newY = Math.min(newY, viewSize.height - extentSize.height);
 			
+			// Actualiza la posición del viewport
 			viewport.setViewPosition(new Point(newX, newY));
 			posicionXAnterior = posicionXJugador;
 		}
-    }
+	}
 	
 	// Operaciones propias para construccion de PanelPantallaCarrera
 	
