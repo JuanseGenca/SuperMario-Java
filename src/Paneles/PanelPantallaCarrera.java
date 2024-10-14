@@ -26,8 +26,8 @@ public class PanelPantallaCarrera extends JPanel {
 	public PanelPantallaCarrera() {
 		setPreferredSize(new Dimension(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO));
 		setLayout(new BorderLayout());
-		agregarPanelInformacion();
 		agregarPanelCarreraConFondoYScroll();
+		agregarPanelInformacion();
 	}
 	
 	// Operaciones para ControladorVistas
