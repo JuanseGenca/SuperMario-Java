@@ -44,9 +44,35 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     }
 
     protected void registrarOyenteVentana(){
-
+        addWindowKeyListener();
     }
    
+    private void addWindowKeyListener() {
+        ventana.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent event) {
+                if (event == null) {
+                    return;
+                }
+
+                int keyCode = event.getKeyCode();
+                if (keyCode == KeyEvent.VK_A) {
+                    miLogica.setMarioDirection(IZQUIERDA);
+                    System.out.println("Izquierda");
+                } else if (keyCode == KeyEvent.VK_D) {
+                    miLogica.setMarioDirection(DERECHA);
+                    System.err.println("Derecha");
+                } else if (keyCode == KeyEvent.VK_W) {
+                    miLogica.setMarioDirection(ARRIBA);
+                    System.err.println("Arriba");
+                } else if (keyCode == KeyEvent.VK_SPACE) {
+                    //miLogica.shootMario();
+                    System.out.println("Disparar");
+                }
+            }
+        });
+    }
+
     public void mostrarPantallaInicial() {
 		ventana.setContentPane(panelPantallaPrincipal);
 		refrescar();

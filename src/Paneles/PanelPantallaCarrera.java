@@ -2,16 +2,20 @@ package Paneles;
 
 import Entidades.*;
 import GUI.*;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Point;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JViewport;
 
 public class PanelPantallaCarrera extends JPanel {
 
@@ -22,6 +26,10 @@ public class PanelPantallaCarrera extends JPanel {
 	private JLabel imagenFondoPanelInformacion;
 	private JScrollPane panelScrollCarrera;
 	private JLabel labelPuntaje;
+	private int posicionXAnterior = 0;
+	private double zoom = 1.0; // Valor inicial de zoom
+    private double zoomMin = 0.5; // Zoom mínimo permitido
+    private double zoomMax = 2.0; // Zoom máximo permitido
 
 	public PanelPantallaCarrera() {
 		setPreferredSize(new Dimension(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO));
@@ -94,9 +102,32 @@ public class PanelPantallaCarrera extends JPanel {
 	// Operacion para observer de jugador
 	
 	public void actualizarScrollHaciaJugador(EntidadLogica jugador) {
-		// To DO
-		//panel_scroll_carrera.getVerticalScrollBar().setValue( panel_scroll_carrera.getVerticalScrollBar().getValue() + jugador.get_velocidad() );
+		centrarEnJugador(jugador);
 	}
+
+	protected void centrarEnJugador(EntidadLogica jugador) {
+        int posicionXJugador = jugador.getPosicionX();
+        int posicionYJugador = jugador.getPosicionY();
+
+        // Solo ajustamos el viewport si la posición de Mario ha cambiado significativamente
+		if (Math.abs(posicionXJugador - posicionXAnterior) > 10) {
+			JViewport viewport = panelScrollCarrera.getViewport();
+		
+			// Asegurar valores positivos
+			int newX = Math.max(0, posicionXJugador - viewport.getWidth() / 2);
+			int desplazamientoVertical = 50; // Puedes ajustar este valor según tus necesidades
+    		int newY = Math.max(0, posicionYJugador - viewport.getHeight() / 2 + desplazamientoVertical);
+		
+			// Verificar límites (opcional)
+			Dimension viewSize = viewport.getViewSize();
+			Dimension extentSize = viewport.getExtentSize();
+			newX = Math.min(newX, viewSize.width - extentSize.width);
+			newY = Math.min(newY, viewSize.height - extentSize.height);
+			
+			viewport.setViewPosition(new Point(newX, newY));
+			posicionXAnterior = posicionXJugador;
+		}
+    }
 	
 	// Operaciones propias para construccion de PanelPantallaCarrera
 	
@@ -110,8 +141,8 @@ public class PanelPantallaCarrera extends JPanel {
 		panelCarreras.add(imagenFondoPanelCarreras);
 		
 		panelScrollCarrera = new JScrollPane(panelCarreras);
-		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
 		panelScrollCarrera.setBounds(0, 0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
 			
 		add(panelScrollCarrera, BorderLayout.CENTER);

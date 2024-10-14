@@ -49,4 +49,5 @@ public class Mario extends Entidad implements EntidadJugador{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'get_vida'");
     }
+    
 }

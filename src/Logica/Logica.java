@@ -71,4 +71,12 @@ public class Logica {
 		}
 	}
 
+	public void setMarioDirection(int direccion) {
+		nivelActual.getMario().establecerDireccion(direccion);
+	}
+
+    public void shootMario() {
+        nivelActual.getMario().disparar();
+    }
+
 }
