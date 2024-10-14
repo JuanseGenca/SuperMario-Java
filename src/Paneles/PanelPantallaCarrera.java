@@ -26,8 +26,8 @@ public class PanelPantallaCarrera extends JPanel {
 	public PanelPantallaCarrera() {
 		setPreferredSize(new Dimension(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO));
 		setLayout(new BorderLayout());
-		agregarPanelInformacion();
 		agregarPanelCarreraConFondoYScroll();
+		agregarPanelInformacion();
 	}
 	
 	// Operaciones para ControladorVistas
@@ -123,6 +123,13 @@ public class PanelPantallaCarrera extends JPanel {
 		panelCarreras.setPreferredSize(new Dimension(ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO));
 		agregarImagenFondoPanelCarrera();
 		add(panelCarreras, BorderLayout.EAST);
+
+		panelScrollCarrera = new JScrollPane(panelCarreras);
+		panelScrollCarrera.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		panelScrollCarrera.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+		panelScrollCarrera.setBounds(0, 0, ConstantesVistas.PANEL_CARRERA_ANCHO, ConstantesVistas.PANEL_ALTO);
+			
+		add(panelScrollCarrera, BorderLayout.CENTER);
 	}
 	
 	protected void agregarImagenFondoPanelCarrera() {
