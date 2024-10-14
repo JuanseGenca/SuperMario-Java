@@ -1,10 +1,10 @@
 package Plataformas;
 
-import java.awt.image.BufferedImage;
+import GUI.Sprite;
 import Logica.Visitor;
 
 public class LadrilloRompible extends Plataforma{
-    public LadrilloRompible(int x, int y,BufferedImage[] sprite){
+    public LadrilloRompible(int x, int y,Sprite sprite){
         super(x, y, sprite);
     }
     public void aceptar(Visitor v){

@@ -1,11 +1,11 @@
 package Plataformas;
 
 import Entidades.Entidad;
-import java.awt.image.BufferedImage;
+import GUI.Sprite;
 import Logica.Visitor;
 
 public class Tuberia extends BloqueIrrompible{
-    public Tuberia(int x, int y, BufferedImage[] sprite){
+    public Tuberia(int x, int y, Sprite sprite){
         super(x, y, sprite);
     }
     public Entidad getEntidadContenida(){

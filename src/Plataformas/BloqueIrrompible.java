@@ -1,14 +1,16 @@
 package Plataformas;
 
 import Entidades.Entidad;
-import java.awt.image.BufferedImage;
+import GUI.Sprite;
+
+
 import Logica.Visitor;
 
 public abstract class BloqueIrrompible extends Plataforma{
     //ATRIBUTOS
     protected Entidad entidadContenida;
 
-    public BloqueIrrompible(int x ,int y, BufferedImage[] sprite ){
+    public BloqueIrrompible(int x ,int y,Sprite sprite ){
         super(x,y,sprite);
     }
     public abstract void aceptar(Visitor v);

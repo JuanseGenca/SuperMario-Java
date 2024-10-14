@@ -1,10 +1,10 @@
 package PowerUps;
 
-import java.awt.image.BufferedImage;
+import GUI.Sprite;
 import Logica.*;
 
 public class Moneda extends PowerUp{
-    public Moneda(int x, int y,BufferedImage[] sprite){
+    public Moneda(int x, int y,Sprite sprite){
         super(x,y, sprite);
     }
     public void mover(){

@@ -1,7 +1,5 @@
 package GUI;
 
-import java.awt.image.BufferedImage;
-
 import Entidades.EntidadLogica;
 import Paneles.PanelPantallaCarrera;
 
