@@ -30,11 +30,11 @@ public class PanelPantallaPrincipal extends JPanel{
 
     protected void agregarImagenFondo(){
         imagenFondo = new JLabel();
-        ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-inicial.png"));
-        Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_ANCHO,ConstantesVistas.PANEL_ALTO,Image.SCALE_SMOOTH);
+        ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-principal.png"));
+        Image imagenEscalada = iconoImagen.getImage().getScaledInstance(1200,768,Image.SCALE_SMOOTH);
         Icon iconoImagenEscalada = new ImageIcon(imagenEscalada);
         imagenFondo.setIcon(iconoImagenEscalada);
-        imagenFondo.setBounds(0,0,ConstantesVistas.PANEL_ANCHO,ConstantesVistas.PANEL_ALTO);
+        imagenFondo.setBounds(0,0,1200,768);
         add(imagenFondo);
     }
 
@@ -52,11 +52,11 @@ public class PanelPantallaPrincipal extends JPanel{
     }
     protected void decorarBotonIniciar(){
         transparentarBoton(botonIniciar);
-        botonIniciar.setBounds((ConstantesVistas.PANEL_ANCHO / 2) - 100 ,ConstantesVistas.PANEL_ALTO - 150, 200 , 50);
+        botonIniciar.setBounds(370 ,510, 430 , 50);
     }
     protected void decorarBotonPuntajes(){
         transparentarBoton(botonPuntajes);
-        botonPuntajes.setBounds((ConstantesVistas.PANEL_ANCHO / 2) - 130 ,ConstantesVistas.PANEL_ALTO - 90, 260 , 50);
+        botonPuntajes.setBounds(410 ,650, 300 , 50);
     }
     protected void registrarOyenteBotonIniciar(){
         botonIniciar.addActionListener(new ActionListener() {
