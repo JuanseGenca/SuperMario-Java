@@ -25,15 +25,15 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getFlorDeFuego() {
-		return new Sprite(rutaCarpeta + "/PowerUps/flor_de_fuego.png");
+		return new Sprite(rutaCarpeta + "/PowerUps/flor_de_fuego3.png");
 	}
 	
 	public Sprite getMoneda() {
-		return new Sprite(rutaCarpeta + "/PowerUps/moneda.png");
+		return new Sprite(rutaCarpeta + "/PowerUps/moneda1.png");
 	}
 	
 	public Sprite getEstrella() {
-		return new Sprite(rutaCarpeta + "/PowerUps/estrella.png");
+		return new Sprite(rutaCarpeta + "/PowerUps/estrella1.png");
 	}
 	
 	public Sprite getMario() {

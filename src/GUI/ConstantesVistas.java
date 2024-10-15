@@ -12,5 +12,5 @@ public class ConstantesVistas {
 	public static final int PADDING = 24;
 	
 	public static final int PANEL_JUEGO_ANCHO = 625;
-	public static final int PANEL_INFORMACION_ANCHO = 175;
+	public static final int PANEL_INFORMACION_ANCHO = 180;
 }

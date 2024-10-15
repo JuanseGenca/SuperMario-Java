@@ -1,7 +1,7 @@
 Mario:0,0
 Goomba:200,0
 Lakitu:300,400
-Piranha Plant:576,24
+Piranha Plant:744,216
 Koopa Troopa:350,24
 Ladrillo Rompible:534,192
 Ladrillo Rompible:438,192
@@ -18,3 +18,4 @@ Vacio:912,-96
 Vacio:1008,-96
 Vacio:960,-96
 Meta:1152,48
+Tuberia:720,144
