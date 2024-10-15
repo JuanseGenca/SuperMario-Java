@@ -1,11 +1,11 @@
 package Plataformas;
 
 import Entidades.Entidad;
-import java.awt.image.BufferedImage;
+import GUI.Sprite;
 import Logica.Visitor;
 
 public class BloqueSolido extends BloqueIrrompible{
-    public BloqueSolido(int x, int y, BufferedImage[] sprite){
+    public BloqueSolido(int x, int y, Sprite sprite){
         super(x,y,sprite);
     }
     public Entidad getEntidadContenida(){

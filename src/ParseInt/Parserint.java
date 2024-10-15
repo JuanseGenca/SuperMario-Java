@@ -2,52 +2,53 @@ package ParseInt;
 
 import Fabricas.EntidadesFactory;
 import GUI.GUI;
+import Logica.ManejadorDeColisiones;
+import Nivel.Nivel;
+import Nivel.Silueta;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import Logica.Logica;
-import Logica.ManejadorDeColisiones;
-import Nivel.Nivel;
 
 
 public class Parserint {
-    protected int nivel;
     protected EntidadesFactory fabricaEnt;
 
     public Parserint(int nivel,EntidadesFactory fabricaEntidades){
-        this.nivel=nivel;
         fabricaEnt=fabricaEntidades;
     }
 
-    
+   /*  public Nivel generarNivel(int numero) {
+		// To DO
+		return generar_ruta_harcoding(numero);
+	}*/
 
-    public Nivel cargarArchivoNivel(int nivel,GUI gui,ManejadorDeColisiones manejador){
-        String path = obtenerArchivoNivel(this.nivel);
-        return cargarNivelDesdeArchivo(path,gui,manejador);
-        
+    public Nivel generarNivel(int nivel){
+        String path = obtenerArchivoNivel(nivel);
+        return cargarNivelDesdeArchivo(path,nivel);
     }
 
     protected String obtenerArchivoNivel(int nivel){
-        String archivo;
+        /* String archivo;
         if(nivel == 1){
-            archivo = "ruta del archivo para nivel 1"; //poner ruta real cuando tengamos el archivo
+            archivo = "assets/Niveles/NivelMario.txt"; 
         } else{
             if(nivel == 2){
-                archivo = "ruta del archivo para nivel 2";
+                archivo = "assets/Niveles/NivelMario.txt";
             } else{
-                archivo = "ruta del archivo para nivel 3";
+                archivo = "assets/Niveles/NivelMario.txt";
             }
-        }
+        } */
 
-        return archivo;
+        return "src/Niveles/NivelMario.txt";
 
     }
 
 
-    public Nivel cargarNivelDesdeArchivo(String path,GUI gui,ManejadorDeColisiones manejador) {
+    public Nivel cargarNivelDesdeArchivo(String path,int numero) {
 
-        Nivel nivelActual = new Nivel(gui,manejador);
+        Silueta silueta = fabricaEnt.getSilueta(numero);
+		Nivel nivelActual = new Nivel(silueta, numero);
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;
@@ -161,5 +162,12 @@ public class Parserint {
         return nivelActual;
     }
 
+    /*public Nivel generar_ruta_harcoding(int numero) {
+		Silueta silueta = fabricaEnt.getSilueta(numero);
+		Nivel ruta = new Nivel(silueta, numero);
+		ruta.agregarMario(fabricaEnt.crearMario(200, 75));
+        ruta.agregarEnemigo(fabricaEnt.crearBuzzyBeetle(250, 120));
+		return ruta;
+	}*/
 
 }

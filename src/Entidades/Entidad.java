@@ -1,33 +1,25 @@
 package Entidades;
 
 import GUI.Observer;
+import GUI.Sprite;
 import Logica.*;
-import java.awt.Rectangle;
-import java.awt.image.BufferedImage;
 
-public abstract class Entidad implements Visitable, EntidadLogica{   
+
+public abstract class Entidad implements EntidadLogica{   
  //Atributos
  protected int posicionX;
  protected int posicionY;
- protected final int velocidadX = 10; //¿QUE VELOCIDADES VAMOS A USAR?
- protected final int velocidadY = 10;
  protected int direccion;
  protected boolean sobreSuelo;
  protected int puntaje;
- protected BufferedImage[] misSprites;
+ protected Sprite miSprite;
  protected Observer miObserver;
- protected Rectangle miHitBox;
+ protected double velocidad;
 
- //Metodos
- public Entidad(int posicionX, int posicionY) {
-    this.posicionX=posicionX;
-    this.posicionY=posicionY;
- }
-
- public Entidad(int posicionX, int posicionY,BufferedImage[] sprites) {
+ public Entidad(int posicionX, int posicionY,Sprite sprites) {
    this.posicionX=posicionX;
    this.posicionY=posicionY;
-   misSprites = sprites;
+   miSprite = sprites;
 }
 
  public int getPuntaje() {
@@ -42,18 +34,21 @@ public abstract class Entidad implements Visitable, EntidadLogica{
     return posicionY;
  }
 
- public BufferedImage[] getSprite() {
-    return misSprites;
- }
-
- public Rectangle getHitBox() {
-    return miHitBox;
+ public Sprite getSprite() {
+    return miSprite;
  }
 
  public void setObserver(Observer observer) {
     miObserver=observer;
  }
 
+ public void setVelocidad(double velocidad) {
+   this.velocidad = velocidad;
+ }
+
+ public double getVelocidad() {
+   return velocidad;
+ }
    public void morir() {}
 
    public void recibirDanio() {}
@@ -68,11 +63,7 @@ public abstract class Entidad implements Visitable, EntidadLogica{
 
    public void establecerDireccion(int x){
       direccion = x;
-   }
-   public void aplicarGravedad(){
-      if(!sobreSuelo){
-         posicionY-=velocidadY; //DEFINIR UN NUMERO PARA LA GRAVEDAD.
-      }
+      mover();
    }
 
    public int getDireccion(){

@@ -3,60 +3,9 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 
 
-public class SpritesMarioModo2 implements SpriteFactory {
-    public Sprite crearSpriteChampinionVerde(){
-       
-    }
-    public Sprite crearSpriteSuperChampinion(){
-
-    }
-    public Sprite crearSpriteFlorDeFuego(){
-
-    }
-    public Sprite crearSpriteMoneda(){
-
-    }
-    public Sprite crearSpriteEstrella(){
-
-    }
-    public Sprite crearSpriteMario(){
-
-    }
-    public Sprite crearSpriteBuzzyBeetle(){
-
-    }
-    public Sprite crearSpriteSpiny(){
-
-    }
-    public Sprite crearSpriteLakitu(){
-
-    }
-    public Sprite crearSpriteGoomba(){
-
-    }
-    public Sprite crearSpritePiranhaPlant(){
-
-    }
-    public Sprite crearSpriteKoopaTroopa(){
-
-    }
-    public Sprite crearSpriteBloqueSolido(){
-
-    }
-    public Sprite crearSpriteTuberia(){
-
-    }
-    public Sprite crearSpriteMeta(){
-
-    }
-    public Sprite crearSpriteVacio(){
-
-    }
-    public Sprite crearSpriteLadrilloRompible(){
-
-    }
-    public Sprite crearSpriteBloquePregunta(){
-
+public class SpritesMarioModo2 extends SpriteFactory {
+    public SpritesMarioModo2(){
+        super("assets");
     }
     
 }

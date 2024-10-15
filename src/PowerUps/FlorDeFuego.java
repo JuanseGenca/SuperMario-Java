@@ -1,10 +1,10 @@
 package PowerUps;
 
-import java.awt.image.BufferedImage;
+import GUI.Sprite;
 import Logica.Visitor;
 
 public class FlorDeFuego extends PowerUp{
-    public FlorDeFuego(int x, int y,BufferedImage[] sprite){
+    public FlorDeFuego(int x, int y,Sprite sprite){
         super(x,y, sprite);
     }
     public void mover(){

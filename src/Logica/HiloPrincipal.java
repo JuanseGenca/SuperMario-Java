@@ -17,7 +17,7 @@ public class HiloPrincipal {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-               manejadorDeColisiones.chequearColisiones();
+               //manejadorDeColisiones.chequearColisiones();
                jugador.actualizar();
             }
         }, 0, delay); // Iniciar inmediatamente y repetir cada 'delay' milisegundos

@@ -1,40 +1,36 @@
 package Entidades;
+import GUI.Sprite;
 import Logica.*;
 import Plataformas.Plataforma;
-import java.awt.image.BufferedImage;
 
-public class Mario extends Entidad{
+public class Mario extends Entidad implements EntidadJugador{
     protected EstadoMario estado;
     protected Logica miLogica;
+    protected static final int ARRIBA = 15000;
+    protected static final int ABAJO = 15001;
+    protected static final int IZQUIERDA = 15002;
+    protected static final int DERECHA = 15003;
 
-    public Mario(int x, int y,BufferedImage[] sprite){
+    public Mario(int x, int y,Sprite sprite){
         super(x,y,sprite);
     }
-    //Hay que ver si conviene ponerlo en mario y para cada entidad mover() se comporta de forma diferente
-    //O si conviene hacer mover() en clase entidad y que todas se muevan igual.
     public void mover(){
-        if(direccion == 15000){
-            posicionY+=velocidadY;
-        }
-        if(direccion == 15001){
-            posicionY-=velocidadY;
-        }
-        if(direccion == 15002){
-            posicionX-= velocidadX;
-        }
-        if(direccion == 15003){
-            posicionX+= velocidadX;
-     
-        }
-        aplicarGravedad();
-        miObserver.actualizar();
+        if(direccion!=0) {
+            if(direccion==IZQUIERDA) {
+                posicionX-=velocidad;
+            } else if(direccion==DERECHA) {
+                posicionX+=velocidad;
+            }
+            else if(direccion==ARRIBA) {
+                posicionY+=velocidad;
+            }
+            actualizar();
+        } 
     }
 
     
 
     public void saltar(){
-        posicionY += velocidadY;
-        miObserver.actualizar();
     }
 
     public void recibirDanio(){
@@ -50,4 +46,24 @@ public class Mario extends Entidad{
     public void aceptar(Visitor v){
         v.visit(this);
     }
+    @Override
+    public int getPuntaje() {
+        return 0;
+    }
+    @Override
+    public int getTiempo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'get_tiempo'");
+    }
+
+    @Override
+    public int getVida() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'get_vida'");
+    }
+
+    public void setVelocidad(int velocidad) {
+       this.velocidad=velocidad;
+    }
+    
 }

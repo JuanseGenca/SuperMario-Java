@@ -10,14 +10,13 @@ import javax.swing.JPanel;
 
 
 public class PanelCamara extends JPanel implements Paneles{
-    private CentralPaneles miCentral;
+   // private CentralPaneles miCentral;
     private Image backgroundImage;
     private int fondoX;
     private final int ANCHO_PANTALLA = 1200;
 
-    public PanelCamara(CentralPaneles mi_central) {
-        miCentral = mi_central;
-    }
+    public PanelCamara() {
+    } 
 
     public void crearPanel() {
         fondoX = 0;
@@ -47,7 +46,7 @@ public class PanelCamara extends JPanel implements Paneles{
         int backgroundWidth = backgroundImage.getWidth(null);
 
         if (marioX >= ANCHO_PANTALLA) {
-            fondoX -= 5; // Move the background left
+            fondoX -= 5;
         }
 
         if (fondoX <= -backgroundWidth) {

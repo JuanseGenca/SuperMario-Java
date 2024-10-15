@@ -1,129 +1,171 @@
 package GUI;
 
+import Entidades.EntidadJugador;
+import Entidades.EntidadLogica;
 import Logica.*;
-import Paneles.CentralPaneles;
-import Pantallas.CentralPantallas;
-
+import Paneles.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JFrame;
 
-public class GUI  extends JFrame {
-    protected CentralPaneles miCentralPaneles;
-    protected CentralPantallas miCentralPantallas; 
+public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
+
+    protected JFrame ventana;
+    protected PanelPantallaPrincipal panelPantallaPrincipal;
+    protected PanelPantallaJuego panelPantallaJuego;
     protected Logica miLogica;
+    private boolean seMueveDerecha = false;
+    private boolean seMueveIzquierda = false;
     //protected Sonido miSonido;
-    protected NivelGrafico miNivelGrafico;
+
     protected static final int ARRIBA = 15000;
     protected static final int ABAJO = 15001;
     protected static final int IZQUIERDA = 15002;
     protected static final int DERECHA = 15003;
-    private List<Sprite> sprites = new ArrayList<>();
+    protected static final int QUIETO = 0;
 
-    public GUI(Logica mi_logica) {
-        miLogica = mi_logica;
-        
-        inicializarGUI();
+    public GUI(Logica miLogica) {
+        this.miLogica = miLogica;
+        this.panelPantallaPrincipal = new PanelPantallaPrincipal(this);
+        this.panelPantallaJuego = new PanelPantallaJuego();
+        configurarVentana();
+        registrarOyenteVentana();
     }
 
-    private void inicializarGUI() {
-        miCentralPaneles = new CentralPaneles(this, miLogica);
-        miCentralPantallas = new CentralPantallas(this, miLogica);
-
-        setearJFrame();
-
-        miCentralPantallas.mostrarMenuPrincipal();
+    private void configurarVentana() {
+        ventana = new JFrame("Super Mario Bros TDP 15");
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.setResizable(false);
+        ventana.setSize(ConstantesVistas.VENTANA_ANCHO, ConstantesVistas.VENTANA_ALTO);
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
     }
 
-    private void setearJFrame() {
-        setTitle("Proyecto Super Mario Bros - Comision 15");
-		setSize(1200,800);
-		setLocationRelativeTo(null);
-		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+    protected void registrarOyenteVentana() {
+        addWindowKeyListener();
     }
 
-    public void agregarSprite(BufferedImage imagen, int posX, int posY) {
-        Sprite sprite = new Sprite(imagen, posX, posY);
-        sprites.add(sprite);
-        repaint();
-    }
-    //Replantear donde se almacenan los sprites por el tema de nivel grafico
-    public void eliminarSprite(BufferedImage sprite) {
-        for (Sprite spr : sprites) {
-            if (spr.getImagen() == sprite) {
-                sprites.remove(spr);
-                break;
-            }
-        }
-        repaint();
-    }
-
-    public void inicializarPaneles() {
-        miCentralPaneles.mostrarPanelScore();
-        miCentralPaneles.mostrarPanelCamara();
-        miCentralPaneles.mostrarPanelTimer();
-        miCentralPaneles.mostrarPanelVidas();
-    }
-
-    public void mostrarMenuPrincipal() {
-        miCentralPantallas.mostrarMenuPrincipal();
-    }
-
-    public void mostrarPantallaVictoria() {
-        miCentralPantallas.mostrarPantallaVictoria();
-    }
- 
-    public void mostrarPantallaSigNivel() {
-        miCentralPantallas.mostrarPantallaSigNivel();
-    }
-
-    public void mostrarPantallaTopScore() {
-        miCentralPantallas.mostrarPantallaTopScore();
-    }
-
-    public void mostrarPantallaVidaPerdida() {
-        miCentralPantallas.mostrarPantallaVidaPerdida();
-    }
-
-    public void limpiarGUI() {
-        miNivelGrafico.limpiarNivel();
-        miCentralPaneles.limpiarPaneles();
-        miCentralPantallas.limpiarPantallas();
-    }
-
-    public void inicializarNivel() {
-        miNivelGrafico.inicializarNivel();
-    }
-    public void resetear() {
-        this.limpiarGUI();
-        this.inicializarGUI();
-        this.inicializarNivel();
-        this.inicializarPaneles();
-    }
-
-    public void inicializarTeclado() {
-        addKeyListener(new KeyAdapter() {
+    private void addWindowKeyListener() {
+        ventana.addKeyListener(new KeyAdapter() {
             @Override
-            public void keyPressed(KeyEvent e) {
-                switch (e.getKeyCode()) {
-                    case KeyEvent.VK_LEFT -> miLogica.establecerDireccionMario(IZQUIERDA);
-                    case KeyEvent.VK_RIGHT -> miLogica.establecerDireccionMario(DERECHA);
-                    case KeyEvent.VK_UP -> miLogica.establecerDireccionMario(ARRIBA);
-                    case KeyEvent.VK_SPACE -> miLogica.dispararJugador();
+            public void keyPressed(KeyEvent event) {
+
+                int keyCode = event.getKeyCode();
+                if (keyCode == KeyEvent.VK_A) {
+                    seMueveIzquierda = true;
+                    miLogica.setMarioDirection(IZQUIERDA);
+                    mover();
+                } else if (keyCode == KeyEvent.VK_D) {
+                    seMueveDerecha = true;
+                    miLogica.setMarioDirection(DERECHA);
+                    mover();
+                } else if (keyCode == KeyEvent.VK_W) {
+                    miLogica.setMarioDirection(ARRIBA);
+                } else if (keyCode == KeyEvent.VK_SPACE) {
+                    //miLogica.shootMario();
                 }
             }
-        });
+
+            @Override
+            public void keyReleased(KeyEvent event) {
+                int keyCode = event.getKeyCode();
+                if (keyCode == KeyEvent.VK_A) {
+                    seMueveIzquierda = false;
+                } else if (keyCode == KeyEvent.VK_D) {
+                    seMueveDerecha = false;
+                }
+                if (keyCode == KeyEvent.VK_A || keyCode == KeyEvent.VK_D) {
+                    miLogica.setMarioDirection(QUIETO);
+                } // Detener el movimiento cuando se suelta la tecla
+                }
+            }
+        );
     }
 
-    public void actualizarEntidad(Sprite entidad) {
-        miNivelGrafico.actualizar(entidad);
+    private void updateMarioVelocity() {
+        double acceleration = 0.5;
+        double deceleration = 0.2;
+        double maxVelocity = 10;
+        double currentVelocity = miLogica.getMarioVelocidad();
+
+        if (seMueveDerecha) {
+            currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
+        } else if (seMueveIzquierda) {
+            currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
+        } else {
+            if (currentVelocity > 0) {
+                currentVelocity = Math.max(currentVelocity - deceleration, 0);
+            } else if (currentVelocity < 0) {
+                currentVelocity = Math.min(currentVelocity + deceleration, 0);
+            }
+
+        }
+
+        miLogica.setMarioVelocidad(currentVelocity);
     }
 
-    public void actualizarVidas() {
-        miCentralPaneles.actualizarVidas();
+    
+    
+
+    public void mover() {
+        updateMarioVelocity();
+        refrescar();
     }
+
+
+    public void mostrarPantallaInicial() {
+        ventana.setContentPane(panelPantallaPrincipal);
+        refrescar();
+    }
+
+    public void accionarInicioJuego() {
+        miLogica.iniciar();
+    }
+
+    public void accionarPantallaPuntajes() {
+        // To Do
+    }
+
+    public void accionarPantallaModoJuego() {
+        // To Do
+    }
+
+    public void cambiarModoJuego(int modo) {
+        // To Do
+        mostrarPantallaInicial();
+    }
+
+    public Observer registrarEntidad(EntidadLogica entidadLogica) {
+        Observer observerEntidad = panelPantallaJuego.incorporarEntidad(entidadLogica);
+        refrescar();
+        return observerEntidad;
+    }
+
+    public Observer registrarEntidad(EntidadJugador entidad) {
+        Observer observerJugador = panelPantallaJuego.incorporarEntidadJugador(entidad);
+        refrescar();
+        return observerJugador;
+    }
+
+    public Observer registrarSilueta(EntidadLogica silueta) {
+        Observer observer_silueta = panelPantallaJuego.incorporarSilueta(silueta);
+        refrescar();
+        return observer_silueta;
+    }
+
+    public void mostrarPantallaJuego() {
+        ventana.setContentPane(panelPantallaJuego);
+        ventana.requestFocusInWindow();
+        refrescar();
+    }
+
+    public void mostrarPantallaFinJuego() {
+        // To Do
+    }
+
+    protected void refrescar() {
+        ventana.revalidate();
+        ventana.repaint();
+    }
+
 }

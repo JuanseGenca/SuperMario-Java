@@ -8,9 +8,8 @@ public class ManejadorDeColisiones {
     protected LinkedList<Entidad> entidades;
     protected Nivel nivelActual;
 
-    public ManejadorDeColisiones(LinkedList<Entidad> entidades, Nivel nivelActual) {
-        this.nivelActual=nivelActual;
-        this.entidades = entidades;
+    public ManejadorDeColisiones() {
+        this.entidades = new LinkedList<Entidad>();
     }
 
     public void eliminarEntidad(Entidad entidad) {
@@ -34,9 +33,9 @@ public class ManejadorDeColisiones {
         for(Entidad entidadC:entidadesAux) {
             Entidad entidadComprobar=entidadC;
             for(Entidad entidad:entidadesAux) {
-                if(entidad.getHitBox().intersects(entidadComprobar.getHitBox())) {
+              /*   if(entidad.getHitBox().intersects(entidadComprobar.getHitBox())) {
                     //Mensaje a entidad y entidadComprobar de colision
-                } 
+                } */
             }       
         }
     }
