@@ -165,10 +165,10 @@ public class PanelPantallaJuego extends JPanel {
 	protected void agregarImagenFondoPanelInformacion() {
 		imagenFondoPanelInformacion = new JLabel();
 		ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-informacion.png"));
-		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, 720, Image.SCALE_SMOOTH);
+		Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.VENTANA_ALTO, Image.SCALE_SMOOTH);
 		Icon iconoImagenEscalado = new ImageIcon(imagenEscalada);
 		imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
-		imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, 720);
+		imagenFondoPanelInformacion.setBounds(0,0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.VENTANA_ALTO);
 		panelInformacion.add(imagenFondoPanelInformacion);
 	}
 
