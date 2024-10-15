@@ -14,8 +14,8 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     protected PanelPantallaPrincipal panelPantallaPrincipal;
     protected PanelPantallaJuego panelPantallaJuego;
     protected Logica miLogica;
-    private boolean isMovingRight = false;
-    private boolean isMovingLeft = false;
+    private boolean seMueveDerecha = false;
+    private boolean seMueveIzquierda = false;
     //protected Sonido miSonido;
 
     protected static final int ARRIBA = 15000;
@@ -52,11 +52,11 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
                 int keyCode = event.getKeyCode();
                 if (keyCode == KeyEvent.VK_A) {
-                    isMovingLeft = true;
+                    seMueveIzquierda = true;
                     miLogica.setMarioDirection(IZQUIERDA);
                     mover();
                 } else if (keyCode == KeyEvent.VK_D) {
-                    isMovingRight = true;
+                    seMueveDerecha = true;
                     miLogica.setMarioDirection(DERECHA);
                     mover();
                 } else if (keyCode == KeyEvent.VK_W) {
@@ -70,9 +70,9 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
             public void keyReleased(KeyEvent event) {
                 int keyCode = event.getKeyCode();
                 if (keyCode == KeyEvent.VK_A) {
-                    isMovingLeft = false;
+                    seMueveIzquierda = false;
                 } else if (keyCode == KeyEvent.VK_D) {
-                    isMovingRight = false;
+                    seMueveDerecha = false;
                 }
                 if (keyCode == KeyEvent.VK_A || keyCode == KeyEvent.VK_D) {
                     miLogica.setMarioDirection(QUIETO);
@@ -88,9 +88,9 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         double maxVelocity = 10;
         double currentVelocity = miLogica.getMarioVelocidad();
 
-        if (isMovingRight) {
+        if (seMueveDerecha) {
             currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
-        } else if (isMovingLeft) {
+        } else if (seMueveIzquierda) {
             currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
         } else {
             if (currentVelocity > 0) {
