@@ -41,27 +41,27 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getBuzzyBeetle() {
-		return new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle_caminando1.png");
 	}
 	
 	public Sprite getSpiny() {
-		return new Sprite(rutaCarpeta + "/Enemigos/spiny.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/spiny_caminando1.png");
 	}
 	
 	public Sprite getLakitu() {
-		return new Sprite(rutaCarpeta + "/Enemigos/Lakitu.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/lakitu_volando.png");
 	}
 	
 	public Sprite getGoomba() {
-		return new Sprite(rutaCarpeta + "/Enemigos/Goomba.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/goomba_caminando1.png");
 	}
 	
 	public Sprite getPiranhaPlant() {
-		return new Sprite(rutaCarpeta + "/Enemigos/piranha_plant.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/piranha_plant1.png");
 	}
 	
 	public Sprite getKoopaTroopa() {
-		return new Sprite(rutaCarpeta + "/Enemigos/Koopa_Troopa.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/koopa_caminando1.png");
 	}
 	
 	public Sprite getBloqueSolido() {
@@ -73,7 +73,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getMeta() {
-		return new Sprite(rutaCarpeta + "/Plataformas/meta.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/meta1.png");
 	}
 	
 	public Sprite getVacio() {
@@ -84,7 +84,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getBloquePregunta() {
-		return new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta1.png");
 	}
 
 }
