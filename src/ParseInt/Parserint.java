@@ -40,7 +40,7 @@ public class Parserint {
             }
         } */
 
-        return "src/Imagenes/Niveles/NivelMario.txt";
+        return "src/Niveles/NivelMario.txt";
 
     }
 
