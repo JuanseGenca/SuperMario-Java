@@ -31,10 +31,10 @@ public class PanelPantallaPrincipal extends JPanel{
     protected void agregarImagenFondo(){
         imagenFondo = new JLabel();
         ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-principal.png"));
-        Image imagenEscalada = iconoImagen.getImage().getScaledInstance(1200,768,Image.SCALE_SMOOTH);
+        Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.VENTANA_ANCHO,ConstantesVistas.VENTANA_ALTO,Image.SCALE_SMOOTH);
         Icon iconoImagenEscalada = new ImageIcon(imagenEscalada);
         imagenFondo.setIcon(iconoImagenEscalada);
-        imagenFondo.setBounds(0,0,1200,768);
+        imagenFondo.setBounds(0,0,ConstantesVistas.VENTANA_ANCHO,ConstantesVistas.VENTANA_ALTO);
         add(imagenFondo);
     }
 
