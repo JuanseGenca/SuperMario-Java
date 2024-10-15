@@ -1,2 +1,20 @@
-Mario:1,1
-Estrella:100,1
+Mario:0,0
+Goomba:200,0
+Lakitu:300,400
+Piranha Plant:576,24
+Koopa Troopa:350,24
+Ladrillo Rompible:534,192
+Ladrillo Rompible:438,192
+Ladrillo Rompible:342,192
+Bloque Pregunta:192,192
+Bloque Pregunta:486,192
+Bloque Pregunta:390,192
+Bloque Pregunta:438,390
+Estrella:438,438
+Vacio:1008,-48
+Vacio:912,-48
+Vacio:960,-48
+Vacio:912,-96
+Vacio:1008,-96
+Vacio:960,-96
+Meta:1152,48
