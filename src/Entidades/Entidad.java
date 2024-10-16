@@ -10,45 +10,64 @@ public abstract class Entidad implements EntidadLogica{
  protected int posicionX;
  protected int posicionY;
  protected int direccion;
+ protected int estadoAereo;
  protected boolean sobreSuelo;
  protected int puntaje;
  protected Sprite miSprite;
  protected Observer miObserver;
- protected double velocidad;
+ protected double velocidadX, velocidadY;
 
- public Entidad(int posicionX, int posicionY,Sprite sprites) {
-   this.posicionX=posicionX;
-   this.posicionY=posicionY;
-   miSprite = sprites;
-}
+protected static final int IZQUIERDA = 15002;
+protected static final int DERECHA = 15003;
+protected static final int QUIETO = 0;
 
- public int getPuntaje() {
-    return puntaje;
- }
+protected static final int AIRE = 20000;
+protected static final int SUELO = 20001;
 
- public int getPosicionX() {
-    return posicionX;
- }
 
- public int getPosicionY() {
-    return posicionY;
- }
+   public Entidad(int posicionX, int posicionY,Sprite sprites) {
+      this.posicionX=posicionX;
+      this.posicionY=posicionY;
+      estadoAereo = SUELO;
+      miSprite = sprites;
+   }
 
- public Sprite getSprite() {
-    return miSprite;
- }
+   public int getPuntaje() {
+      return puntaje;
+   }
 
- public void setObserver(Observer observer) {
-    miObserver=observer;
- }
+   public int getPosicionX() {
+      return posicionX;
+   }
 
- public void setVelocidad(double velocidad) {
-   this.velocidad = velocidad;
- }
+   public int getPosicionY() {
+      return posicionY;
+   }
 
- public double getVelocidad() {
-   return velocidad;
- }
+   public Sprite getSprite() {
+      return miSprite;
+   }
+
+   public void setObserver(Observer observer) {
+      miObserver=observer;
+   }
+
+   public void setVelocidadX(double vX) {
+      velocidadX = vX;
+   }
+
+   public void setVelocidadY(double vY) {
+      velocidadY = vY;
+   }
+
+   public double getVelocidadX() {
+      return velocidadX;
+   }
+
+   public double getVelocidadY() {
+      System.out.println("mi velocidad Y es"+velocidadY);
+      return velocidadY;
+   }
    public void morir() {}
 
    public void recibirDanio() {}
@@ -68,6 +87,15 @@ public abstract class Entidad implements EntidadLogica{
 
    public int getDireccion(){
       return direccion;
+   }
+
+   public void establecerEstadoAereo(int x){
+      estadoAereo = x;
+      mover();
+   }
+
+   public int getEstadoAereo(){
+      return estadoAereo;
    }
 
 }
