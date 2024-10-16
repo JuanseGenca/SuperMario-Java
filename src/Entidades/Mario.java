@@ -67,5 +67,49 @@ public class Mario extends Entidad implements EntidadJugador{
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'get_vida'");
     }
+
+    public void actualizarVelocidadXMario() {
+        double acceleration = 0.5;
+        double deceleration = 0.2;
+        double maxVelocity = 10;
+        double currentVelocity = getVelocidadX();
+  
+        if (direccion == DERECHA) {
+            currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
+        } else if (direccion == IZQUIERDA) {
+            currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
+        } else {
+            if (currentVelocity > 0) {
+                currentVelocity = Math.max(currentVelocity - deceleration, 0);
+            } else if (currentVelocity < 0) {
+                currentVelocity = Math.min(currentVelocity + deceleration, 0);
+            }
+  
+        }
+  
+        setVelocidadX(currentVelocity);
+    }
+
+    public void actualizarVelocidadYMario() {
+        double velInicialSalto = 15;
+        double gravedad = -1;
+        double velTerminal = -10;
+        double velYActual = velocidadY;
+        
+        if (tocandoSuelo) {
+            velYActual = velInicialSalto;
+            tocandoSuelo = false;
+        } else {
+            velYActual = Math.max(velYActual + gravedad, velTerminal);
+
+            if (posicionY < 0) {
+                velYActual = 0;
+                tocandoSuelo = true;
+                estadoAereo = SUELO;
+            }
+        }
+
+        velocidadY = velYActual;
+    }
     
 }

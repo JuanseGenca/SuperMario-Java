@@ -83,9 +83,14 @@ public class Logica {
 		nivelActual.getMario().establecerEstadoAereo(estado);
 	}
 
-	public void marioTocoSuelo() {
-		nivelActual.getMario().tocoSuelo();
+	public void actualizarVelocidadXMario() {
+		nivelActual.getMario().actualizarVelocidadXMario();
 	}
+
+	public void actualizarVelocidadYMario() {
+		nivelActual.getMario().actualizarVelocidadYMario();
+	}
+
 	public void setMarioVelocidadX(double velocidad) {
 		nivelActual.getMario().setVelocidadX(velocidad);
 	}

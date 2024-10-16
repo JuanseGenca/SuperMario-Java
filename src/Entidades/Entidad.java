@@ -11,7 +11,7 @@ public abstract class Entidad implements EntidadLogica{
  protected int posicionY;
  protected int direccion;
  protected int estadoAereo;
- protected boolean sobreSuelo;
+ protected boolean tocandoSuelo;
  protected int puntaje;
  protected Sprite miSprite;
  protected Observer miObserver;
@@ -65,9 +65,9 @@ protected static final int SUELO = 20001;
    }
 
    public double getVelocidadY() {
-      System.out.println("mi velocidad Y es"+velocidadY);
       return velocidadY;
    }
+
    public void morir() {}
 
    public void recibirDanio() {}
