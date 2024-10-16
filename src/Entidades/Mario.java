@@ -6,31 +6,31 @@ import Plataformas.Plataforma;
 public class Mario extends Entidad implements EntidadJugador{
     protected EstadoMario estado;
     protected Logica miLogica;
-    protected static final int ARRIBA = 15000;
-    protected static final int ABAJO = 15001;
-    protected static final int IZQUIERDA = 15002;
-    protected static final int DERECHA = 15003;
+    
 
     public Mario(int x, int y,Sprite sprite){
         super(x,y,sprite);
     }
     public void mover(){
-        if(direccion!=0) {
+        if(direccion!= QUIETO || estadoAereo == AIRE) {
             if(direccion==IZQUIERDA) {
-                posicionX-=velocidad;
+                posicionX-=velocidadX;
             } else if(direccion==DERECHA) {
-                posicionX+=velocidad;
+                posicionX+=velocidadX;
             }
-            else if(direccion==ARRIBA) {
-                posicionY+=velocidad;
+
+            if(estadoAereo == AIRE) {
+                System.out.println("actualizo posicion Mario");
+                System.out.println("Velocidad Mario Y:"+velocidadY);
+                posicionY += velocidadY;
             }
+
             actualizar();
-        } 
-    }
+        }
 
-    
-
-    public void saltar(){
+        System.err.println("X: "+posicionX+" Y: "+posicionY);
+        System.err.println("Direccion:"+direccion);
+        System.err.println("Estado:"+estadoAereo);
     }
 
     public void recibirDanio(){
@@ -46,6 +46,12 @@ public class Mario extends Entidad implements EntidadJugador{
     public void aceptar(Visitor v){
         v.visit(this);
     }
+
+    //Vamos a tener que cambiarlo cuando agreguemos colisiones con plataformas, esta implementacion solo funciona si Mario pisa el suelo
+    public void tocoSuelo() {
+        posicionY = 0;
+    }
+
     @Override
     public int getPuntaje() {
         return 0;
@@ -60,10 +66,6 @@ public class Mario extends Entidad implements EntidadJugador{
     public int getVida() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'get_vida'");
-    }
-
-    public void setVelocidad(int velocidad) {
-       this.velocidad=velocidad;
     }
     
 }

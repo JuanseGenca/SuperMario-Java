@@ -16,13 +16,16 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     protected Logica miLogica;
     private boolean seMueveDerecha = false;
     private boolean seMueveIzquierda = false;
+    private boolean tocandoSuelo = true;
     //protected Sonido miSonido;
 
-    protected static final int ARRIBA = 15000;
     protected static final int ABAJO = 15001;
     protected static final int IZQUIERDA = 15002;
     protected static final int DERECHA = 15003;
     protected static final int QUIETO = 0;
+
+    protected static final int AIRE = 20000;
+    protected static final int SUELO = 20001;
 
     public GUI(Logica miLogica) {
         this.miLogica = miLogica;
@@ -60,7 +63,8 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
                     miLogica.setMarioDirection(DERECHA);
                     mover();
                 } else if (keyCode == KeyEvent.VK_W) {
-                    miLogica.setMarioDirection(ARRIBA);
+                    miLogica.setMarioEstadoAereo(AIRE);
+                    mover();
                 } else if (keyCode == KeyEvent.VK_SPACE) {
                     //miLogica.shootMario();
                 }
@@ -82,11 +86,12 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         );
     }
 
-    private void updateMarioVelocity() {
+    //MOVER A MARIO, ESTO NO CORRESPONDE A LA GUI
+    private void updateMarioXVelocity() {
         double acceleration = 0.5;
         double deceleration = 0.2;
         double maxVelocity = 10;
-        double currentVelocity = miLogica.getMarioVelocidad();
+        double currentVelocity = miLogica.getMarioVelocidadX();
 
         if (seMueveDerecha) {
             currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
@@ -101,14 +106,38 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
         }
 
-        miLogica.setMarioVelocidad(currentVelocity);
+        miLogica.setMarioVelocidadX(currentVelocity);
     }
 
-    
-    
+    private void updateMarioYVelocity() {
+        double velInicialSalto = 15;
+        double gravedad = -1;
+        double velTerminal = -10;
+        double velYActual = miLogica.getMarioVelocidadY();
+        
+        if (tocandoSuelo) {
+            velYActual = velInicialSalto;
+            tocandoSuelo = false;
+        } else {
+            velYActual = Math.max(velYActual + gravedad, velTerminal);
+
+            if (miLogica.getMarioPosicionY() < 0) {
+                velYActual = 0;
+                tocandoSuelo = true;
+                miLogica.marioTocoSuelo();
+                miLogica.setMarioEstadoAereo(SUELO);
+            }
+        }
+
+        miLogica.setMarioVelocidadY(velYActual);
+    }
 
     public void mover() {
-        updateMarioVelocity();
+        updateMarioXVelocity();
+
+        if(miLogica.getMarioEstadoAereo() == AIRE) {
+            updateMarioYVelocity();
+        }
         refrescar();
     }
 
