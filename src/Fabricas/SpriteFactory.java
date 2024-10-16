@@ -33,7 +33,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getEstrella() {
-		return new Sprite(rutaCarpeta + "/PowerUps/estrella1.png");
+		return new Sprite(rutaCarpeta + "/PowerUps/estrella.gif");
 	}
 	
 	public Sprite getMario() {
@@ -61,15 +61,15 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getGoomba() {
-		return new Sprite(rutaCarpeta + "/Enemigos/goomba_caminando1.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/goomba_caminando.gif");
 	}
 	
 	public Sprite getPiranhaPlant() {
-		return new Sprite(rutaCarpeta + "/Enemigos/piranha_plant1.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/piranha_plant.gif");
 	}
 	
 	public Sprite getKoopaTroopa() {
-		return new Sprite(rutaCarpeta + "/Enemigos/koopa_caminando1.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/koopa_troopa_caminando.gif");
 	}
 	
 	public Sprite getBloqueSolido() {
@@ -92,7 +92,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getBloquePregunta() {
-		return new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta1.png");
+		return new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta.gif");
 	}
 
 }
