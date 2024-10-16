@@ -17,18 +17,14 @@ public abstract class Entidad implements EntidadLogica{
  protected Observer miObserver;
  protected double velocidadX, velocidadY;
 
-protected static final int IZQUIERDA = 15002;
-protected static final int DERECHA = 15003;
-protected static final int QUIETO = 0;
 
-protected static final int AIRE = 20000;
-protected static final int SUELO = 20001;
+
 
 
    public Entidad(int posicionX, int posicionY,Sprite sprites) {
       this.posicionX=posicionX;
       this.posicionY=posicionY;
-      estadoAereo = SUELO;
+      estadoAereo = constantesEntidades.SUELO;
       miSprite = sprites;
    }
 
@@ -72,8 +68,8 @@ protected static final int SUELO = 20001;
 
    public void recibirDanio() {}
 
-   public void actualizar(){
-      miObserver.actualizar();
+   public void actualizar(int direccion, int estadoAereo){
+      miObserver.actualizar(direccion, estadoAereo);
    }
 
    public abstract void aceptar(Visitor visitor);

@@ -113,22 +113,23 @@ public class PanelPantallaJuego extends JPanel {
 	}
 
 	protected void centrarEnJugador(int posicionXJugador, int posicionYJugador) {
+
+		JViewport viewport = panelPantallaJuego.getViewport();
+		Dimension viewSize = panelJuego.getPreferredSize();
+		Dimension extentSize = viewport.getExtentSize();
 	
-		// Solo ajustamos el viewport si la posición de Mario ha cambiado significativamente
-		if (Math.abs(posicionXJugador - posicionXAnterior) > 10) {
-			JViewport viewport = panelPantallaJuego.getViewport();
-			
-			// Asegurar valores positivos
-			int newX = Math.max(0, posicionXJugador - viewport.getWidth() / 2);
-			int newY = 800; // Coloca en la parte inferior
-			
-			// Verificar límites para X
-			Dimension viewSize = panelJuego.getPreferredSize();
-			Dimension extentSize = viewport.getExtentSize();
+		// Determine the threshold to start moving the viewport
+		int thresholdX = extentSize.width / 3;
+	
+		if (posicionXJugador > posicionXAnterior && posicionXJugador > thresholdX) {
+			int newX = posicionXJugador - thresholdX;
+	
 			newX = Math.min(newX, viewSize.width - extentSize.width);
-			
-			// Actualiza la posición del viewport
-			viewport.setViewPosition(new Point(newX, newY));
+	
+			// Update the viewport position
+			viewport.setViewPosition(new Point(newX, 800)); // Keep Y constant
+	
+			// Update previous X position to the current one
 			posicionXAnterior = posicionXJugador;
 		}
 	}

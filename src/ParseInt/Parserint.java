@@ -1,8 +1,6 @@
 package ParseInt;
 
 import Fabricas.EntidadesFactory;
-import GUI.GUI;
-import Logica.ManejadorDeColisiones;
 import Nivel.Nivel;
 import Nivel.Silueta;
 

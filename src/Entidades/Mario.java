@@ -12,20 +12,23 @@ public class Mario extends Entidad implements EntidadJugador{
         super(x,y,sprite);
     }
     public void mover(){
-        if(direccion!= QUIETO || estadoAereo == AIRE) {
-            if(direccion==IZQUIERDA) {
+        if(direccion!= constantesEntidades.QUIETO || estadoAereo == constantesEntidades.AIRE) {
+            if(direccion==constantesEntidades.IZQUIERDA) {
                 posicionX-=velocidadX;
-            } else if(direccion==DERECHA) {
+                if (posicionX < 0) {
+                    posicionX = 0;
+                }
+            } else if(direccion==constantesEntidades.DERECHA) {
                 posicionX+=velocidadX;
             }
 
-            if(estadoAereo == AIRE) {
+            if(estadoAereo == constantesEntidades.AIRE) {
                 System.out.println("actualizo posicion Mario");
                 System.out.println("Velocidad Mario Y:"+velocidadY);
                 posicionY += velocidadY;
             }
 
-            actualizar();
+            actualizar(direccion, estadoAereo);
         }
 
         System.err.println("X: "+posicionX+" Y: "+posicionY);
@@ -74,9 +77,9 @@ public class Mario extends Entidad implements EntidadJugador{
         double maxVelocity = 10;
         double currentVelocity = getVelocidadX();
   
-        if (direccion == DERECHA) {
+        if (direccion == constantesEntidades.DERECHA) {
             currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
-        } else if (direccion == IZQUIERDA) {
+        } else if (direccion == constantesEntidades.IZQUIERDA) {
             currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
         } else {
             if (currentVelocity > 0) {
@@ -105,7 +108,7 @@ public class Mario extends Entidad implements EntidadJugador{
             if (posicionY < 0) {
                 velYActual = 0;
                 tocandoSuelo = true;
-                estadoAereo = SUELO;
+                estadoAereo = constantesEntidades.SUELO;
             }
         }
 

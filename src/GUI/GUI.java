@@ -7,6 +7,7 @@ import Paneles.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import Entidades.constantesEntidades;
 
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
@@ -14,16 +15,8 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     protected PanelPantallaPrincipal panelPantallaPrincipal;
     protected PanelPantallaJuego panelPantallaJuego;
     protected Logica miLogica;
-    private boolean tocandoSuelo = true;
     //protected Sonido miSonido;
 
-    protected static final int ABAJO = 15001;
-    protected static final int IZQUIERDA = 15002;
-    protected static final int DERECHA = 15003;
-    protected static final int QUIETO = 0;
-
-    protected static final int AIRE = 20000;
-    protected static final int SUELO = 20001;
 
     public GUI(Logica miLogica) {
         this.miLogica = miLogica;
@@ -53,13 +46,13 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
                 int keyCode = event.getKeyCode();
                 if (keyCode == KeyEvent.VK_A) {
-                    miLogica.setMarioDirection(IZQUIERDA);
+                    miLogica.setMarioDirection(constantesEntidades.IZQUIERDA);
                     mover();
                 } else if (keyCode == KeyEvent.VK_D) {
-                    miLogica.setMarioDirection(DERECHA);
+                    miLogica.setMarioDirection(constantesEntidades.DERECHA);
                     mover();
                 } else if (keyCode == KeyEvent.VK_W) {
-                    miLogica.setMarioEstadoAereo(AIRE);
+                    miLogica.setMarioEstadoAereo(constantesEntidades.AIRE);
                     mover();
                 } else if (keyCode == KeyEvent.VK_SPACE) {
                     //miLogica.shootMario();
@@ -71,7 +64,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
                 int keyCode = event.getKeyCode();
 
                 if (keyCode == KeyEvent.VK_A || keyCode == KeyEvent.VK_D) {
-                    miLogica.setMarioDirection(QUIETO);
+                    miLogica.setMarioDirection(constantesEntidades.QUIETO);
                 } // Detener el movimiento cuando se suelta la tecla
                 }
             }
@@ -81,7 +74,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     public void mover() {
         miLogica.actualizarVelocidadXMario();
 
-        if(miLogica.getMarioEstadoAereo() == AIRE) {
+        if(miLogica.getMarioEstadoAereo() == constantesEntidades.AIRE) {
             miLogica.actualizarVelocidadYMario();
         }
         refrescar();
