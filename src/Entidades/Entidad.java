@@ -3,7 +3,8 @@ package Entidades;
 import GUI.Observer;
 import GUI.Sprite;
 import Logica.*;
-
+import Fabricas.EntidadesFactory;
+import Fabricas.SpriteFactory;
 
 public abstract class Entidad implements EntidadLogica{   
  //Atributos
@@ -16,16 +17,17 @@ public abstract class Entidad implements EntidadLogica{
  protected Sprite miSprite;
  protected Observer miObserver;
  protected double velocidadX, velocidadY;
+ protected SpriteFactory miSpriteFactory;
 
 
 
 
-
-   public Entidad(int posicionX, int posicionY,Sprite sprites) {
+   public Entidad(int posicionX, int posicionY,Sprite sprites, SpriteFactory sf) {
       this.posicionX=posicionX;
       this.posicionY=posicionY;
       estadoAereo = constantesEntidades.SUELO;
       miSprite = sprites;
+      miSpriteFactory = sf;
    }
 
    public int getPuntaje() {
@@ -62,6 +64,10 @@ public abstract class Entidad implements EntidadLogica{
 
    public double getVelocidadY() {
       return velocidadY;
+   }
+
+   public void setSprite(Sprite spriteNuevo) {
+      miSprite = spriteNuevo;
    }
 
    public void morir() {}

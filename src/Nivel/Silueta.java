@@ -1,13 +1,14 @@
 package Nivel;
 
 import Entidades.Entidad;
+import Fabricas.SpriteFactory;
 import GUI.*;
 import Logica.Visitor;
 
 public class Silueta extends Entidad {
 	
-	public Silueta(Sprite mi_sprite) {
-		super( 0, 0,mi_sprite);
+	public Silueta(Sprite mi_sprite, SpriteFactory sf) {
+		super( 0, 0,mi_sprite, sf);
 	}
 
     @Override

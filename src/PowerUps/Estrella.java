@@ -1,11 +1,12 @@
 package PowerUps;
 
+import Fabricas.SpriteFactory;
 import GUI.Sprite;
 import Logica.Visitor;
 
 public class Estrella extends PowerUp{
-    public Estrella(int x, int y,Sprite sprite){
-        super(x,y, sprite);
+    public Estrella(int x, int y,Sprite sprite, SpriteFactory sf){
+        super(x,y, sprite, sf);
     }
     public void mover(){
 

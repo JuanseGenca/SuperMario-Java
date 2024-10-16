@@ -1,4 +1,5 @@
 package Entidades;
+import Fabricas.SpriteFactory;
 import GUI.Sprite;
 import Logica.*;
 import Plataformas.Plataforma;
@@ -8,9 +9,10 @@ public class Mario extends Entidad implements EntidadJugador{
     protected Logica miLogica;
     
 
-    public Mario(int x, int y,Sprite sprite){
-        super(x,y,sprite);
+    public Mario(int x, int y,Sprite sprite, SpriteFactory sf){
+        super(x,y,sprite, sf);
     }
+
     public void mover(){
         if(direccion!= constantesEntidades.QUIETO || estadoAereo == constantesEntidades.AIRE) {
             if(direccion==constantesEntidades.IZQUIERDA) {
@@ -23,17 +25,13 @@ public class Mario extends Entidad implements EntidadJugador{
             }
 
             if(estadoAereo == constantesEntidades.AIRE) {
-                System.out.println("actualizo posicion Mario");
-                System.out.println("Velocidad Mario Y:"+velocidadY);
                 posicionY += velocidadY;
             }
 
+            actualizarSprite();
             actualizar(direccion, estadoAereo);
         }
 
-        System.err.println("X: "+posicionX+" Y: "+posicionY);
-        System.err.println("Direccion:"+direccion);
-        System.err.println("Estado:"+estadoAereo);
     }
 
     public void recibirDanio(){
@@ -107,6 +105,7 @@ public class Mario extends Entidad implements EntidadJugador{
 
             if (posicionY < 0) {
                 velYActual = 0;
+                posicionY = 0;
                 tocandoSuelo = true;
                 estadoAereo = constantesEntidades.SUELO;
             }
@@ -115,4 +114,15 @@ public class Mario extends Entidad implements EntidadJugador{
         velocidadY = velYActual;
     }
     
+    private void actualizarSprite() {
+        Sprite nuevoSprite = miSpriteFactory.getMario();
+        if(constantesEntidades.AIRE == estadoAereo) {
+            nuevoSprite = miSpriteFactory.getMarioSaltando();
+        }
+        else if(constantesEntidades.QUIETO != direccion) {
+                nuevoSprite = miSpriteFactory.getMarioCaminando();
+            }
+        
+        miSprite = nuevoSprite;
+    }
 }

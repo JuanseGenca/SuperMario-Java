@@ -1,12 +1,13 @@
 package Plataformas;
 
 import Entidades.Entidad;
+import Fabricas.SpriteFactory;
 import GUI.Sprite;
 import Logica.Visitor;
 
 public class BloqueSolido extends BloqueIrrompible{
-    public BloqueSolido(int x, int y, Sprite sprite){
-        super(x,y,sprite);
+    public BloqueSolido(int x, int y, Sprite sprite, SpriteFactory sf){
+        super(x,y,sprite, sf);
     }
     public Entidad getEntidadContenida(){
         return entidadContenida;
