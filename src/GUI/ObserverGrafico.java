@@ -44,7 +44,7 @@ public abstract class ObserverGrafico extends JLabel implements Observer{
 		String ruta_imagen = entidadObservada.getSprite().getRutaImagen();
 		ImageIcon icono = new ImageIcon(getClass().getClassLoader().getResource(ruta_imagen));
 
-		if(direccion == constantesEntidades.DERECHA) {
+		if(direccion != constantesEntidades.IZQUIERDA) {
 			icono = rotarImagen(icono);
 		}
 

@@ -27,7 +27,7 @@ public class Mario extends Entidad implements EntidadJugador{
             if(estadoAereo == constantesEntidades.AIRE) {
                 posicionY += velocidadY;
             }
-
+            actualizarHitboxes();
             actualizarSprite();
             actualizar(direccion, estadoAereo);
         }

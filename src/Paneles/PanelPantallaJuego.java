@@ -134,6 +134,7 @@ public class PanelPantallaJuego extends JPanel {
 		}
 	}
 	
+	
 	// Operaciones propias para construccion de PanelPantallaJuego
 	
 	protected void agregarPanelJuegoConFondoYScroll() {

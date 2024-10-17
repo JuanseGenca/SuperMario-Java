@@ -3,6 +3,7 @@ package Entidades;
 import GUI.Observer;
 import GUI.Sprite;
 import Logica.*;
+import java.awt.Rectangle;
 import Fabricas.EntidadesFactory;
 import Fabricas.SpriteFactory;
 
@@ -12,14 +13,17 @@ public abstract class Entidad implements EntidadLogica{
  protected int posicionY;
  protected int direccion;
  protected int estadoAereo;
+ protected int alto, ancho;
  protected boolean tocandoSuelo;
  protected int puntaje;
  protected Sprite miSprite;
  protected Observer miObserver;
  protected double velocidadX, velocidadY;
  protected SpriteFactory miSpriteFactory;
-
-
+  // Hitboxes
+  protected Rectangle hitboxSuperior;
+  protected Rectangle hitboxInferior;
+  protected Rectangle hitboxLateral;
 
 
    public Entidad(int posicionX, int posicionY,Sprite sprites, SpriteFactory sf) {
@@ -28,6 +32,12 @@ public abstract class Entidad implements EntidadLogica{
       estadoAereo = constantesEntidades.SUELO;
       miSprite = sprites;
       miSpriteFactory = sf;
+      alto = miSprite.getWidth();
+      ancho = miSprite.getHeight();
+
+        hitboxSuperior = new Rectangle(posicionX, posicionY, ancho, ancho / 4);
+        hitboxInferior = new Rectangle(posicionX, posicionY + (3 * ancho / 4), ancho, ancho / 4);
+        hitboxLateral = new Rectangle(posicionX, posicionY + (alto / 4), ancho, alto / 2);
    }
 
    public int getPuntaje() {
@@ -76,6 +86,12 @@ public abstract class Entidad implements EntidadLogica{
 
    public void actualizar(int direccion, int estadoAereo){
       miObserver.actualizar(direccion, estadoAereo);
+   }
+
+   public void actualizarHitboxes() {
+        hitboxSuperior.setBounds(posicionX, posicionY, ancho, alto / 4);
+        hitboxInferior.setBounds(posicionX, posicionY + (3 * alto / 4), ancho, alto / 4);
+        hitboxLateral = new Rectangle(posicionX, posicionY + (alto / 4), ancho, alto / 2);
    }
 
    public abstract void aceptar(Visitor visitor);

@@ -49,7 +49,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite getBuzzyBeetle() {
-		return new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle_caminando1.png");
+		return new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle.gif");
 	}
 	
 	public Sprite getSpiny() {
