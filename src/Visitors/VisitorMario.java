@@ -8,7 +8,7 @@ import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
-import Entidades.constantesEntidades;
+import Entidades.ConstantesEntidades;
 import Logica.ConstantesColisiones;
 import Logica.Visitor;
 import Plataformas.BloqueIrrompible;
@@ -24,30 +24,31 @@ import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
 public class VisitorMario implements Visitor{
+    protected Mario mario;
     public VisitorMario(){
 
     }
     //DEFINIR TODAS MENOS LA DE MARIO :)
     public void visit(KoopaTroopa k){
-        if(direccion==ConstantesColisiones.ABAJO) {
+        if(mario.getDireccion()==ConstantesColisiones.ABAJO) {
             k.recibirDanio();
 
         }
     }
     public void visit(Goomba g){
-        if(direccion==ConstantesColisiones.ABAJO) {
+        if(mario.getDireccion()==ConstantesColisiones.ABAJO) {
             g.recibirDanio();
 
         }
     }
     public void visit(Lakitu l){
-        if(direccion==ConstantesColisiones.ABAJO) {
+        if(mario.getDireccion()==ConstantesColisiones.ABAJO) {
             l.recibirDanio();
 
         }
     }
     public void visit(BuzzyBeetle b){
-        if(direccion==ConstantesColisiones.ABAJO) {
+        if(mario.getDireccion()==ConstantesColisiones.ABAJO) {
             b.recibirDanio();
 
         }
@@ -72,12 +73,12 @@ public class VisitorMario implements Visitor{
         e.recibirDanio();
     }
     public void visit(LadrilloRompible lr){
-        if(direccion==ConstantesColisiones.ARRIBA && mario.getEstado()!=ConstantesPowerUp.NORMAL) {
+        if(mario.getDireccion()==ConstantesColisiones.ARRIBA && mario.getEstado()!=ConstantesPowerUp.NORMAL) {
             lr.recibirDanio();
         }
     }
     public void visit(BloqueIrrompible bi){
-        if(direccion==ConstantesColisiones.ARRIBA && mario.getEstado()!=ConstantesPowerUp.NORMAL) {
+        if(mario.getDireccion()==ConstantesColisiones.ARRIBA && mario.getEstado()!=ConstantesPowerUp.NORMAL) {
             bi.recibirDanio();
         }
     }

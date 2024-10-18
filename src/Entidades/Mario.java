@@ -149,4 +149,7 @@ public class Mario extends Entidad implements EntidadJugador{
         
         spriteActual = nuevoSprite;
     }
+    public int getDireccion(){
+        return direccion;
+    }
 }

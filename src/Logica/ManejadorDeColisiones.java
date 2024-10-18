@@ -2,6 +2,8 @@ package Logica;
 
 import Entidades.*;
 import Nivel.*;
+import Visitors.VisitorMario;
+
 import java.util.*;
 
 public class ManejadorDeColisiones {
@@ -44,7 +46,8 @@ public class ManejadorDeColisiones {
     }
 
     private void manejarColision(Entidad entidad1, Entidad entidad2){
-
+        Visitor visitor = new VisitorMario();
+        entidad1.aceptar(visitor);
     } 
     
 }
