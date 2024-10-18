@@ -31,7 +31,7 @@ public class Mario extends Entidad implements EntidadJugador{
             direccion = 0;
         }
 
-        actualizarHitboxes();
+            miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
             actualizarSprite();
             actualizar(direccion, estadoAereo);
 

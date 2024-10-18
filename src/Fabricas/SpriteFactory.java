@@ -41,7 +41,7 @@ public abstract class SpriteFactory {
 	}
 
 	public Sprite getMarioCaminando() {
-		return new Sprite(rutaCarpeta + "/Mario/miniMarioCaminando.png");
+		return new Sprite(rutaCarpeta + "/Mario/miniMarioCaminando.gif");
 	}
 
 	public Sprite getMarioSaltando() {
