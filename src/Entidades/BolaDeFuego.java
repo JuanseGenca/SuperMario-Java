@@ -11,5 +11,5 @@ public class BolaDeFuego extends Entidad{
     }
     public void aceptar(Visitor v){
         v.visit(this);
-    }
+    } //Agrego el comentario para probar si le anda a agus, dsp lo borro
 }
