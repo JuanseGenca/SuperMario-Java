@@ -1,11 +1,9 @@
 package Logica;
 
 import Enemigos.Enemigo;
-import Entidades.*;
 import GUI.GUI;
 
 public class HiloSecundario extends Thread {
-    private Mario jugador;
     private ManejadorDeColisiones manejadorDeColisiones;
     private GUI miGui;
     private Logica miLogica;
