@@ -36,18 +36,16 @@ public abstract class SpriteFactory {
 		return new Sprite(rutaCarpeta + "/PowerUps/estrella.gif");
 	}
 	
-	public Sprite getMario() {
-		return new Sprite(rutaCarpeta + "/Mario/miniMarioQuieto.png");
+	public Sprite[] getMario() {
+		Sprite[] devolver = new Sprite[9];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/Mario/miniMarioQuieto.png");
+		devolver[1] = new Sprite(rutaCarpeta + "/Mario/miniMarioCaminando.gif");
+		devolver[2] = new Sprite(rutaCarpeta + "/Mario/miniMarioSaltando.png");
+
+		return devolver;
 	}
 
-	public Sprite getMarioCaminando() {
-		return new Sprite(rutaCarpeta + "/Mario/miniMarioCaminando.gif");
-	}
-
-	public Sprite getMarioSaltando() {
-		return new Sprite(rutaCarpeta + "/Mario/miniMarioSaltando.png");
-	}
-	
 	public Sprite getBuzzyBeetle() {
 		return new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle.gif");
 	}

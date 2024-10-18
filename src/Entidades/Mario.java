@@ -7,10 +7,12 @@ import Plataformas.Plataforma;
 public class Mario extends Entidad implements EntidadJugador{
     protected EstadoMario estado;
     protected Logica miLogica;
+    protected Sprite[] misSprites;
     
 
-    public Mario(int x, int y,Sprite sprite, SpriteFactory sf){
-        super(x,y,sprite, sf);
+    public Mario(int x, int y,Sprite[] sprite, SpriteFactory sf){
+        super(x,y,sprite[0], sf);
+        misSprites = sprite;
     }
 
     public void mover(){
@@ -136,14 +138,14 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     private void actualizarSprite() {
-        Sprite nuevoSprite = miSpriteFactory.getMario();
+        Sprite nuevoSprite = misSprites[ConstantesEntidades.SPRITEQUIETO];
         if(ConstantesEntidades.AIRE == estadoAereo) {
-            nuevoSprite = miSpriteFactory.getMarioSaltando();
+            nuevoSprite = misSprites[ConstantesEntidades.SPRITESALTAR];
         }
         else if(ConstantesEntidades.QUIETO == direccion) {
-                nuevoSprite = miSpriteFactory.getMario();
+                nuevoSprite = misSprites[ConstantesEntidades.SPRITEQUIETO];
             } else if(ConstantesEntidades.QUIETO != direccion) {
-                nuevoSprite = miSpriteFactory.getMarioCaminando();
+                nuevoSprite = misSprites[ConstantesEntidades.SPRITECAMINAR];
             }
         
         miSprite = nuevoSprite;

@@ -54,7 +54,7 @@ public class EntidadesFactory {
     }
 
     public Mario crearMario(int x,int y){
-        Sprite spriteMario = spriteFactory.getMario();
+        Sprite[] spriteMario = spriteFactory.getMario();
         Mario mario = new Mario(x,y,spriteMario, spriteFactory);
         return mario;
     }
