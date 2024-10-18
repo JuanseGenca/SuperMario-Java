@@ -68,7 +68,9 @@ public abstract class Entidad implements EntidadLogica{
       return velocidadY;
    }
 
-   public void morir() {}
+   public void morir(){
+      //IMPLEMENTAR
+   }
 
    public void recibirDanio() {}
 

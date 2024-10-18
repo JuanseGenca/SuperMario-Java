@@ -1,4 +1,6 @@
 package Entidades;
+import Estados.EstadoMario;
+import Estados.EstadoMarioComun;
 import Fabricas.SpriteFactory;
 import GUI.Sprite;
 import Logica.*;
@@ -11,6 +13,7 @@ public class Mario extends Entidad implements EntidadJugador{
 
     public Mario(int x, int y,Sprite[] sprites){
         super(x,y,sprites);
+        estado = new EstadoMarioComun(this);
     }
 
     public void mover(){
@@ -148,5 +151,8 @@ public class Mario extends Entidad implements EntidadJugador{
             }
         
         spriteActual = nuevoSprite;
+    }
+    public void setEstado(EstadoMario m){
+        estado = m;
     }
 }
