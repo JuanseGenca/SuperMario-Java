@@ -27,16 +27,18 @@ public class Mario extends Entidad implements EntidadJugador{
             if(estadoAereo == constantesEntidades.AIRE) {
                 posicionY += velocidadY;
             }
-            actualizarHitboxes();
+        }else{
+            direccion = 0;
+        }
+
+        actualizarHitboxes();
             actualizarSprite();
             actualizar(direccion, estadoAereo);
 
             actualizarVelocidadXMario();
-
             if(getEstadoAereo() == constantesEntidades.AIRE) {
                 actualizarVelocidadYMario();
             }
-        }
 
     }
 
@@ -125,7 +127,9 @@ public class Mario extends Entidad implements EntidadJugador{
         if(constantesEntidades.AIRE == estadoAereo) {
             nuevoSprite = miSpriteFactory.getMarioSaltando();
         }
-        else if(constantesEntidades.QUIETO != direccion) {
+        else if(constantesEntidades.QUIETO == direccion) {
+                nuevoSprite = miSpriteFactory.getMario();
+            } else if(constantesEntidades.QUIETO != direccion) {
                 nuevoSprite = miSpriteFactory.getMarioCaminando();
             }
         
