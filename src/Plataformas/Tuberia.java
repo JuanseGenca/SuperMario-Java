@@ -1,13 +1,12 @@
 package Plataformas;
 
 import Entidades.Entidad;
-import Fabricas.SpriteFactory;
 import GUI.Sprite;
 import Logica.Visitor;
 
 public class Tuberia extends BloqueIrrompible{
-    public Tuberia(int x, int y, Sprite sprite, SpriteFactory sf){
-        super(x, y, sprite, sf);
+    public Tuberia(int x, int y, Sprite[] sprite){
+        super(x, y, sprite);
     }
     public Entidad getEntidadContenida(){
         return entidadContenida;

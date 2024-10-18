@@ -12,28 +12,52 @@ public abstract class SpriteFactory {
 		rutaCarpeta = ruta;
 	}
 	
-	public Sprite getSilueta(int numero) {
-		return new Sprite(rutaCarpeta + "/bg.png");	
+	public Sprite[] getSilueta(int numero) {
+		Sprite[] devolver = new Sprite[1];
+
+		devolver[0] = new Sprite(rutaCarpeta +  "/bg.png");
+
+		return devolver;
 	}
 	
-	public Sprite getChampinionVerde() {
-		return new Sprite(rutaCarpeta + "/PowerUps/champinion_verde.png");
+	public Sprite[] getChampinionVerde() {
+		Sprite[] devolver = new Sprite[1];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/champinion_verde.png");
+
+		return devolver;
 	}
 	
-	public Sprite getSuperChampinion() {
-		return new Sprite(rutaCarpeta + "/PowerUps/super_champinion.png");
+	public Sprite[] getSuperChampinion() {
+		Sprite[] devolver = new Sprite[1];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/super_champinion.png");
+
+		return devolver;
 	}
 	
-	public Sprite getFlorDeFuego() {
-		return new Sprite(rutaCarpeta + "/PowerUps/flor_de_fuego3.png");
+	public Sprite[] getFlorDeFuego() {
+		Sprite[] devolver = new Sprite[1];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/flor_de_fuego3.png");
+
+		return devolver;
 	}
 	
-	public Sprite getMoneda() {
-		return new Sprite(rutaCarpeta + "/PowerUps/moneda1.png");
+	public Sprite[] getMoneda() {
+		Sprite[] devolver = new Sprite[1];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/moneda1.png");
+
+		return devolver;
 	}
 	
-	public Sprite getEstrella() {
-		return new Sprite(rutaCarpeta + "/PowerUps/estrella.gif");
+	public Sprite[] getEstrella() {
+		Sprite[] devolver = new Sprite[1];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/estrella.gif");
+
+		return devolver;
 	}
 	
 	public Sprite[] getMario() {
@@ -46,51 +70,96 @@ public abstract class SpriteFactory {
 		return devolver;
 	}
 
-	public Sprite getBuzzyBeetle() {
-		return new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle.gif");
+	public Sprite[] getBuzzyBeetle() {
+		Sprite[] devolver = new Sprite[1];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle.gif");
+
+		return devolver;
 	}
 	
-	public Sprite getSpiny() {
-		return new Sprite(rutaCarpeta + "/Enemigos/spiny_caminando1.png");
+	public Sprite[] getSpiny() {
+		Sprite[] devolver = new Sprite[1];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/spiny_caminando1.png");
+
+		return devolver;
 	}
 	
-	public Sprite getLakitu() {
-		return new Sprite(rutaCarpeta + "/Enemigos/lakitu_volando.png");
+	public Sprite[] getLakitu() {
+		Sprite[] devolver = new Sprite[2];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/lakitu_volando.png");
+		devolver[1] = new Sprite(rutaCarpeta + "/Enemigos/lakitu_atacando.png");
+
+		return devolver;
 	}
 	
-	public Sprite getGoomba() {
-		return new Sprite(rutaCarpeta + "/Enemigos/goomba_caminando.gif");
+	public Sprite[] getGoomba() {
+		Sprite[] devolver = new Sprite[2];
+
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/goomba_caminando.gif");
+		devolver[1] = new Sprite(rutaCarpeta + "/Enemigos/goomba_golpeado.png");
+
+		return devolver;
 	}
 	
-	public Sprite getPiranhaPlant() {
-		return new Sprite(rutaCarpeta + "/Enemigos/piranha_plant.gif");
+	public Sprite[] getPiranhaPlant() {
+		Sprite[] devolver = new Sprite[1];
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/piranha_plant.gif");
+
+		return devolver;
 	}
 	
-	public Sprite getKoopaTroopa() {
-		return new Sprite(rutaCarpeta + "/Enemigos/koopa_troopa_caminando.gif");
+	public Sprite[] getKoopaTroopa() {
+		Sprite[] devolver = new Sprite[2];
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/koopa_troopa_caminando.gif");
+		devolver[1] = new Sprite(rutaCarpeta + "/Enemigos/koopa_golpeado.png");
+
+		return devolver;
 	}
 	
-	public Sprite getBloqueSolido() {
-		return new Sprite(rutaCarpeta + "/Plataformas/bloque_solido.png");
+	public Sprite[] getBloqueSolido() {
+		Sprite[] devolver = new Sprite[1];
+		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/bloque_solido.png");
+
+		return devolver;
 	}
 	
-	public Sprite getTuberia() {
-		return new Sprite(rutaCarpeta + "/Plataformas/tuberia.png");
+	public Sprite[] getTuberia() {
+		Sprite[] devolver = new Sprite[1];
+		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/tuberia.png");
+		
+		return devolver;
 	}
 	
-	public Sprite getMeta() {
-		return new Sprite(rutaCarpeta + "/Plataformas/meta1.png");
+	public Sprite[] getMeta() {
+		Sprite[] devolver = new Sprite[2];
+		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/meta1.png");
+		devolver[1] = new Sprite(rutaCarpeta + "/Plataformas/meta2.png");
+		
+		return devolver;
 	}
 	
-	public Sprite getVacio() {
-		return new Sprite(rutaCarpeta + "/Plataformas/vacio.png");
+	public Sprite[] getVacio() {
+		Sprite[] devolver = new Sprite[1];
+		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/vacio.png");
+		
+		return devolver;
 	}
-    public Sprite getLadrilloRompible() {
-		return new Sprite(rutaCarpeta + "/Plataformas/bloque_ladrillo.png");
+
+    public Sprite[] getLadrilloRompible() {
+		Sprite[] devolver = new Sprite[1];
+		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/bloque_ladrillo.png");
+		
+		return devolver;
 	}
 	
-	public Sprite getBloquePregunta() {
-		return new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta.gif");
+	public Sprite[] getBloquePregunta() {
+		Sprite[] devolver = new Sprite[1];
+		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta.gif");
+		
+		return devolver;
 	}
 
 }

@@ -1,7 +1,6 @@
 package Plataformas;
 
 import Entidades.Entidad;
-import Fabricas.SpriteFactory;
 import GUI.Sprite;
 
 
@@ -11,8 +10,8 @@ public abstract class BloqueIrrompible extends Plataforma{
     //ATRIBUTOS
     protected Entidad entidadContenida;
 
-    public BloqueIrrompible(int x ,int y,Sprite sprite, SpriteFactory sf){
-        super(x,y,sprite, sf);
+    public BloqueIrrompible(int x ,int y,Sprite sprite[]){
+        super(x,y,sprite);
     }
     public abstract void aceptar(Visitor v);
     public abstract Entidad getEntidadContenida();
