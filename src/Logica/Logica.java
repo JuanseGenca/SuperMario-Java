@@ -12,6 +12,8 @@ import java.util.List;
 
 import Enemigos.Enemigo;
 
+//La clase tiene como 800 metodos de mario, hay que ver cuales se pueden eliminar
+
 
 public class Logica {
     //Atributos de instancia
