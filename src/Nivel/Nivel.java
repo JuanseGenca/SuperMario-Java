@@ -24,6 +24,7 @@ public class Nivel {
         plataformas = new ArrayList<>();
         powerUps = new ArrayList<>();
         bolasFuego = new ArrayList<>();
+        manejadorDeColisiones = new ManejadorDeColisiones();
     }
 
     public Silueta getSilueta(){
