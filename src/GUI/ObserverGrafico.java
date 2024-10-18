@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Entidades.EntidadLogica;
-import Entidades.constantesEntidades;
+import Entidades.ConstantesEntidades;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.geom.AffineTransform;
@@ -42,7 +42,7 @@ public abstract class ObserverGrafico extends JLabel implements Observer{
 		String ruta_imagen = entidadObservada.getSprite().getRutaImagen();
 		ImageIcon icono = new ImageIcon(getClass().getClassLoader().getResource(ruta_imagen));
 
-		if(direccion != constantesEntidades.IZQUIERDA) {
+		if(direccion != ConstantesEntidades.IZQUIERDA) {
 			icono = rotarImagen(icono);
 		}
 

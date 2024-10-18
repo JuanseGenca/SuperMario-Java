@@ -7,7 +7,7 @@ import Paneles.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
-import Entidades.constantesEntidades;
+import Entidades.ConstantesEntidades;
 
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
@@ -46,13 +46,13 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
                 int keyCode = event.getKeyCode();
                 if (keyCode == KeyEvent.VK_A) {
-                    miLogica.setMarioDirection(constantesEntidades.IZQUIERDA);
+                    miLogica.setMarioDirection(ConstantesEntidades.IZQUIERDA);
                     
                 } else if (keyCode == KeyEvent.VK_D) {
-                    miLogica.setMarioDirection(constantesEntidades.DERECHA);
+                    miLogica.setMarioDirection(ConstantesEntidades.DERECHA);
                     
                 } else if (keyCode == KeyEvent.VK_W) {
-                    miLogica.setMarioEstadoAereo(constantesEntidades.AIRE);
+                    miLogica.setMarioEstadoAereo(ConstantesEntidades.AIRE);
                     
                 } else if (keyCode == KeyEvent.VK_SPACE) {
                     //miLogica.shootMario();
@@ -64,7 +64,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
                 int keyCode = event.getKeyCode();
 
                 if (keyCode == KeyEvent.VK_A || keyCode == KeyEvent.VK_D) {
-                    miLogica.setMarioDirection(constantesEntidades.QUIETO);
+                    miLogica.setMarioDirection(ConstantesEntidades.QUIETO);
                 } // Detener el movimiento cuando se suelta la tecla
                 }
             }

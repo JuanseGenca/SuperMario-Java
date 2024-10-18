@@ -2,6 +2,7 @@ package Nivel;
 import Enemigos.*;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
+import Logica.ManejadorDeColisiones;
 import Plataformas.Plataforma;
 import PowerUps.PowerUp;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class Nivel {
     protected Mario jugador;
     protected Silueta silueta;
     protected int numeroNivel;
+    protected ManejadorDeColisiones manejadorDeColisiones;
 
     public Nivel(Silueta silueta,int numero){
         this.silueta = silueta;
@@ -44,9 +46,14 @@ public class Nivel {
         return jugador;
     }
 
+    public ManejadorDeColisiones getManejadorDeColisiones(){
+        return manejadorDeColisiones;
+    }
+
     public void eliminarPlataforma(Plataforma plataforma){
         if(plataformas.contains(plataforma)) {
             plataformas.remove(plataforma);
+            manejadorDeColisiones.eliminarEntidad(plataforma);
         }
     }
     public void eliminarMario(Mario mario){
@@ -55,31 +62,37 @@ public class Nivel {
     public void eliminarPowerUp(PowerUp powerUp){
         if(powerUps.contains(powerUp)){
             powerUps.remove(powerUp);
+            manejadorDeColisiones.eliminarEntidad(powerUp);
         }
     }
     public void eliminarEnemigo(Enemigo enemigo){
         if(enemigos.contains(enemigo)){
             enemigos.remove(enemigo);
+            manejadorDeColisiones.eliminarEntidad(enemigo);
         }
     }
     public void agregarPlataforma(Plataforma plataforma){
         if(plataforma!=null) {
             plataformas.add(plataforma);
+            manejadorDeColisiones.agregarEntidad(plataforma);
         }
     }
     public void agregarMario(Mario mario){
         if(mario!=null) {
             this.jugador = mario;
+            manejadorDeColisiones.agregarEntidad(mario);
         }
     }
     public void agregarPowerUp(PowerUp powerUp){
         if(powerUp!=null) {
             powerUps.add(powerUp);
+            manejadorDeColisiones.agregarEntidad(powerUp);
         }
     }
     public void agregarEnemigo(Enemigo enemigo){
         if(enemigo!=null) { 
             enemigos.add(enemigo);
+            manejadorDeColisiones.agregarEntidad(enemigo);
         }
     }
 

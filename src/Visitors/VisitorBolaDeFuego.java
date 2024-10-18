@@ -26,12 +26,30 @@ public class VisitorBolaDeFuego implements Visitor{
 
     }
     //HAY QUE DEFINIR TODOS
-    public void visit(KoopaTroopa k){}
-    public void visit(Goomba g){}
-    public void visit(Lakitu l){}
-    public void visit(BuzzyBeetle b){}
-    public void visit(PiranhaPlant p){}
-    public void visit(Spiny s){}
+    public void visit(KoopaTroopa k) {
+        k.recibirDanio();
+    }
+
+    public void visit(Goomba g) {
+        g.recibirDanio();
+    }
+
+    public void visit(Lakitu l) {
+        l.recibirDanio();
+    }
+
+    public void visit(BuzzyBeetle b){
+        b.recibirDanio();
+    }
+
+    public void visit(PiranhaPlant p){
+        p.recibirDanio();
+    }
+
+    public void visit(Spiny s){
+        s.recibirDanio();
+    } 
+
     public void visit(Mario m){}
     public void visit(ChampinionVerde cv){}
     public void visit(SuperChampinion sc){}

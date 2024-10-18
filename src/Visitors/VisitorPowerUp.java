@@ -22,9 +22,7 @@ import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
 public abstract class VisitorPowerUp implements Visitor{
-    public VisitorPowerUp(){
-
-    }
+    public VisitorPowerUp(){}
     public void visit(KoopaTroopa k){}
     public void visit(Goomba g){}
     public void visit(Lakitu l){}

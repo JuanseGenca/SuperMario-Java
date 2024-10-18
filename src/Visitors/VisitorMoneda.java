@@ -30,7 +30,9 @@ public class VisitorMoneda extends VisitorPowerUp{
     public void visit(BuzzyBeetle b){}
     public void visit(PiranhaPlant p){}
     public void visit(Spiny s){}
-    public void visit(Mario m){}
+    public void visit(Mario m){ 
+        m.aniadirMoneda();
+    }
     public void visit(ChampinionVerde cv){}
     public void visit(SuperChampinion sc){}
     public void visit(FlorDeFuego f){}

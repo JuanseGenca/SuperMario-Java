@@ -36,7 +36,8 @@ public class ManejadorDeColisiones {
               /*   if(entidad.getHitBox().intersects(entidadComprobar.getHitBox())) {
                     //Mensaje a entidad y entidadComprobar de colision
                 } */
-            }       
+            }
+            entidadesAux.remove(entidadComprobar);        
         }
     }
 }

@@ -22,6 +22,7 @@ public class Logica {
     protected EntidadesFactory fabricaEntidades;
     protected SpriteFactory fabricaSprites;
     protected GUI gui;
+	protected int vidas;
     protected Nivel nivelActual;
 	protected HiloMario hilo1;
 	protected HiloSecundario hilo2;
@@ -33,6 +34,7 @@ public class Logica {
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
         parseint = new Parserint(1,fabricaEntidades);
         parseint = new Parserint(1,fabricaEntidades);
+		vidas=3;
        
     }
    
@@ -124,5 +126,17 @@ public class Logica {
 
 	public List<Enemigo> getEnemigos(){
 		return nivelActual.getEnemigos();
+	}
+
+	public void actualizarVida(int vida) {
+		vidas= vidas +vida;
+	}
+
+	public ManejadorDeColisiones getManejadorDeColisiones() {
+		return nivelActual.getManejadorDeColisiones();
+	}
+
+	public int getVidas() {
+		return vidas;
 	}
 }

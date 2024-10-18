@@ -8,6 +8,7 @@ import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
+import Entidades.constantesEntidades;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
@@ -30,7 +31,9 @@ public class VisitorFlorDeFuego extends VisitorPowerUp{
     public void visit(BuzzyBeetle b){}
     public void visit(PiranhaPlant p){}
     public void visit(Spiny s){}
-    public void visit(Mario m){}
+    public void visit(Mario m){
+        m.actualizarEstadoMario(ConstantesPowerUp.FLORDEFUEGO);
+    }
     public void visit(ChampinionVerde cv){}
     public void visit(SuperChampinion sc){}
     public void visit(FlorDeFuego f){}

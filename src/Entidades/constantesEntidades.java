@@ -1,6 +1,6 @@
 package Entidades;
 
-public class constantesEntidades {
+public class ConstantesEntidades {
     //Constantes estadoAereo
     public static final int AIRE = 20000;
     public static final int SUELO = 20001;

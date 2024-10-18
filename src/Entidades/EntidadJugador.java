@@ -5,5 +5,5 @@ public interface EntidadJugador extends EntidadLogica {
 
     public int getTiempo();
 
-    public int getVida();
+    public int getVidas();
 }

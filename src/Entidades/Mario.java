@@ -14,17 +14,17 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     public void mover(){
-        if(direccion!= constantesEntidades.QUIETO || estadoAereo == constantesEntidades.AIRE) {
-            if(direccion==constantesEntidades.IZQUIERDA) {
+        if(direccion!= ConstantesEntidades.QUIETO || estadoAereo == ConstantesEntidades.AIRE) {
+            if(direccion==ConstantesEntidades.IZQUIERDA) {
                 posicionX-=velocidadX;
                 if (posicionX < 0) {
                     posicionX = 0;
                 }
-            } else if(direccion==constantesEntidades.DERECHA) {
+            } else if(direccion==ConstantesEntidades.DERECHA) {
                 posicionX+=velocidadX;
             }
 
-            if(estadoAereo == constantesEntidades.AIRE) {
+            if(estadoAereo == ConstantesEntidades.AIRE) {
                 posicionY += velocidadY;
             }
         }else{
@@ -36,7 +36,7 @@ public class Mario extends Entidad implements EntidadJugador{
             actualizar(direccion, estadoAereo);
 
             actualizarVelocidadXMario();
-            if(getEstadoAereo() == constantesEntidades.AIRE) {
+            if(getEstadoAereo() == ConstantesEntidades.AIRE) {
                 actualizarVelocidadYMario();
             }
 
@@ -48,9 +48,19 @@ public class Mario extends Entidad implements EntidadJugador{
     public void disparar(){
         estado.disparar();
     }
-    //¿Hace falta?
-    public void chocarBloque(Plataforma bloque){
-        
+
+    public void aniadirVida() {
+        miLogica.actualizarVida(1);
+    }
+
+    public void aniadirMoneda() {
+        //Como llega esto a nivel?
+        //Esta seria la logica de monedas. Si va aca, borrar comentarios. Sino mover a la clase correspondiente
+        monedas++;
+        if(monedas==100) {
+            miLogica.actualizarVida(1);
+            monedas==0;
+        }
     }
     public void aceptar(Visitor v){
         v.visit(this);
@@ -72,9 +82,8 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     @Override
-    public int getVida() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get_vida'");
+    public int getVidas() {
+        return miLogica.getVidas();
     }
 
     public void actualizarVelocidadXMario() {
@@ -83,9 +92,9 @@ public class Mario extends Entidad implements EntidadJugador{
         double maxVelocity = 10;
         double currentVelocity = getVelocidadX();
   
-        if (direccion == constantesEntidades.DERECHA) {
+        if (direccion == ConstantesEntidades.DERECHA) {
             currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
-        } else if (direccion == constantesEntidades.IZQUIERDA) {
+        } else if (direccion == ConstantesEntidades.IZQUIERDA) {
             currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
         } else {
             if (currentVelocity > 0) {
@@ -115,21 +124,25 @@ public class Mario extends Entidad implements EntidadJugador{
                 velYActual = 0;
                 posicionY = 0;
                 tocandoSuelo = true;
-                estadoAereo = constantesEntidades.SUELO;
+                estadoAereo = ConstantesEntidades.SUELO;
             }
         }
 
         velocidadY = velYActual;
     }
     
+    public void actualizarEstadoMario(int powerUp) {
+        //Una vez implementados los estados especiales. Conectar
+    }
+
     private void actualizarSprite() {
         Sprite nuevoSprite = miSpriteFactory.getMario();
-        if(constantesEntidades.AIRE == estadoAereo) {
+        if(ConstantesEntidades.AIRE == estadoAereo) {
             nuevoSprite = miSpriteFactory.getMarioSaltando();
         }
-        else if(constantesEntidades.QUIETO == direccion) {
+        else if(ConstantesEntidades.QUIETO == direccion) {
                 nuevoSprite = miSpriteFactory.getMario();
-            } else if(constantesEntidades.QUIETO != direccion) {
+            } else if(ConstantesEntidades.QUIETO != direccion) {
                 nuevoSprite = miSpriteFactory.getMarioCaminando();
             }
         

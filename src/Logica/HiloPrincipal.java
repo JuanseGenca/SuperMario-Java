@@ -1,34 +1,45 @@
 package Logica;
 
-import Entidades.*;
-import java.util.Timer;
-import java.util.TimerTask;
+import Enemigos.Enemigo;
+import GUI.GUI;
 
-public class HiloPrincipal {
-    private Timer timer;
-    private Mario jugador;
+public class HiloPrincipal extends Thread {
     private ManejadorDeColisiones manejadorDeColisiones;
+    private GUI miGui;
+    private Logica miLogica;
+    boolean ejecutando;
 
-    public HiloPrincipal(int delay, Mario jugador, ManejadorDeColisiones manejadorDeColisiones) {
-        this.timer = new Timer();
-        this.manejadorDeColisiones=manejadorDeColisiones;
-        this.jugador = jugador;
+    public HiloPrincipal(GUI gui,Logica mLogica) {
+        miGui = gui;
+        miLogica = mLogica;
+        ejecutando = true;
+        manejadorDeColisiones=miLogica.getManejadorDeColisiones();
+    }
 
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-               //manejadorDeColisiones.chequearColisiones();
-               jugador.actualizar();
+    public void run() {
+        while(ejecutando){
+                tick();
+                dibujar();
+                try {
+                    sleep(15);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-        }, 0, delay); // Iniciar inmediatamente y repetir cada 'delay' milisegundos
+        }
+
+    public void parar(){
+        ejecutando = false;
+    }
+    
+    private void tick(){
+        manejadorDeColisiones.chequearColisiones();  
     }
 
-    public void iniciar() {
-        // Si el timer ya está corriendo, no hacer nada
+    private void dibujar(){
+        miGui.refrescar();
+    }
     }
 
-    public void parar() {
-        timer.cancel();
-    }
+   
 
-}

@@ -2,6 +2,7 @@ package Visitors;
 
 import Enemigos.*;
 import Entidades.*;
+import Logica.ConstantesColisiones;
 import Logica.Visitor;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
@@ -21,7 +22,12 @@ public class VisitorEnemigo implements Visitor{
     public void visit(BuzzyBeetle b){}
     public void visit(PiranhaPlant p){}
     public void visit(Spiny s){}
-    public void visit(Mario m){}
+    public void visit(Mario m){ 
+        //Ver como coseguir la direccion en la que colisionan
+        if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA) {
+            m.recibirDanio();
+        }
+    }
     public void visit(ChampinionVerde cv){}
     public void visit(SuperChampinion sc){}
     public void visit(FlorDeFuego f){}

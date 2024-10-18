@@ -24,23 +24,49 @@ public class VisitorVacio extends VisitorPlataforma{
     public VisitorVacio(){
 
     }
-    public void visit(KoopaTroopa k){}
-    public void visit(Goomba g){}
-    public void visit(Lakitu l){}
-    public void visit(BuzzyBeetle b){}
-    public void visit(PiranhaPlant p){}
-    public void visit(Spiny s){}
-    public void visit(Mario m){}
-    public void visit(ChampinionVerde cv){}
-    public void visit(SuperChampinion sc){}
-    public void visit(FlorDeFuego f){}
-    public void visit(Moneda m){}
+    public void visit(KoopaTroopa k){
+        k.morir();
+    }
+    public void visit(Goomba g){
+        g.morir();
+    }
+    public void visit(Lakitu l){
+        l.morir();
+    }
+    public void visit(BuzzyBeetle b){
+        b.morir();
+    }
+    public void visit(PiranhaPlant p){
+        p.morir();
+    }
+    public void visit(Spiny s){
+        s.morir();
+    }
+    public void visit(Mario m){
+        m.morir();
+    }
+    public void visit(ChampinionVerde cv){
+        cv.morir();
+    }
+    public void visit(SuperChampinion sc){
+        sc.morir();
+    }
+    public void visit(FlorDeFuego f){
+        f.morir();
+    }
+    public void visit(Moneda m){
+        m.morir();
+    }
     public void visit(Plataforma p){}
-    public void visit(Estrella e){}
+    public void visit(Estrella e){
+        e.morir();
+    }
     public void visit(LadrilloRompible lr){}
     public void visit(BloqueIrrompible bi){}
     public void visit(Meta m){}
     public void visit(Vacio v){}
     public void visit(PowerUp pu){}
-    public void visit(BolaDeFuego bf){}
+    public void visit(BolaDeFuego bf){
+        bf.morir();
+    }
 }

@@ -28,7 +28,9 @@ public class VisitorTuberia extends VisitorPlataforma{
     public void visit(Goomba g){}
     public void visit(Lakitu l){}
     public void visit(BuzzyBeetle b){}
-    public void visit(PiranhaPlant p){}
+    public void visit(PiranhaPlant p){
+        //Charlar como se maneja esto
+    }
     public void visit(Spiny s){}
     public void visit(Mario m){}
     public void visit(ChampinionVerde cv){}

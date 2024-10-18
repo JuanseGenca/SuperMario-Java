@@ -29,7 +29,7 @@ public abstract class Entidad implements EntidadLogica{
    public Entidad(int posicionX, int posicionY,Sprite sprites, SpriteFactory sf) {
       this.posicionX=posicionX;
       this.posicionY=posicionY;
-      estadoAereo = constantesEntidades.SUELO;
+      estadoAereo = ConstantesEntidades.SUELO;
       miSprite = sprites;
       miSpriteFactory = sf;
       alto = miSprite.getWidth();
