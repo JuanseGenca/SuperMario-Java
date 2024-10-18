@@ -18,6 +18,7 @@ public class Logica {
     protected SpriteFactory fabricaSprites;
     protected GUI gui;
     protected Nivel nivelActual;
+	protected HiloMario hilo1;
     
 
     //Constructor
@@ -38,6 +39,8 @@ public class Logica {
 		nivelActual = parseint.generarNivel(1);
 		registrarObservers();
 		gui.mostrarPantallaJuego();
+		hilo1 = new HiloMario(nivelActual.getMario(),gui,this);
+		hilo1.start();
 	}
 
     protected void registrarObservers() {

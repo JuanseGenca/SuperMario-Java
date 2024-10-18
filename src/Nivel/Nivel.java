@@ -2,8 +2,6 @@ package Nivel;
 import Enemigos.*;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
-import GUI.GUI;
-import Logica.*;
 import Plataformas.Plataforma;
 import PowerUps.PowerUp;
 import java.util.ArrayList;
