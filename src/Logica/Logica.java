@@ -10,6 +10,9 @@ import Nivel.Silueta;
 import ParseInt.Parserint;
 import java.util.List;
 
+import Enemigos.Enemigo;
+
+
 public class Logica {
     //Atributos de instancia
 
@@ -19,6 +22,7 @@ public class Logica {
     protected GUI gui;
     protected Nivel nivelActual;
 	protected HiloMario hilo1;
+	protected HiloSecundario hilo2;
     
 
     //Constructor
@@ -41,6 +45,8 @@ public class Logica {
 		gui.mostrarPantallaJuego();
 		hilo1 = new HiloMario(nivelActual.getMario(),gui,this);
 		hilo1.start();
+		hilo2 = new HiloSecundario(gui,this);
+		hilo2.start();
 	}
 
     protected void registrarObservers() {
@@ -114,4 +120,7 @@ public class Logica {
         nivelActual.getMario().disparar();
     }
 
+	public List<Enemigo> getEnemigos(){
+		return nivelActual.getEnemigos();
+	}
 }

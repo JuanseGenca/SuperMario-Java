@@ -28,6 +28,10 @@ public class HiloMario extends Thread {
                 }
             }
         }
+
+    public void parar(){
+        ejecutando = false;
+    }
     
     private void tick(){
         jugador.mover();
@@ -36,6 +40,8 @@ public class HiloMario extends Thread {
         if(miLogica.getMarioEstadoAereo() == constantesEntidades.AIRE) {
             miLogica.actualizarVelocidadYMario();
         }
+
+
     }
 
     private void dibujar(){
