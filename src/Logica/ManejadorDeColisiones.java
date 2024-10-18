@@ -29,15 +29,22 @@ public class ManejadorDeColisiones {
     }
 
     public void chequearColisiones() { 
-        LinkedList<Entidad> entidadesAux= entidades;
-        for(Entidad entidadC:entidadesAux) {
-            Entidad entidadComprobar=entidadC;
-            for(Entidad entidad:entidadesAux) {
-              /*   if(entidad.getHitBox().intersects(entidadComprobar.getHitBox())) {
-                    //Mensaje a entidad y entidadComprobar de colision
-                } */
+        for(int i=0;i<entidades.size();i++){
+            Entidad entidadComprobar = entidades.get(i);
+            for(int j=i+1;j<entidades.size();j++){
+                Entidad entidadActual = entidades.get(j);
+                if(hayColision(entidadComprobar,entidadActual)){
+                    manejarColision(entidadComprobar,entidadActual);
+                }
             }
-            entidadesAux.remove(entidadComprobar);        
-        }
+        }    
     }
+    private boolean hayColision(Entidad entidad1, Entidad entidad2){
+        return (entidad1.getHitbox().getHitboxLateral().intersects(entidad2.getHitbox().getHitboxLateral()) || entidad1.getHitbox().getHitboxInferior().intersects(entidad2.getHitbox().getHitboxInferior()) || entidad1.getHitbox().getHitboxLateral().intersects(entidad2.getHitbox().getHitboxInferior()) || entidad1.getHitbox().getHitboxSuperior().intersects(entidad2.getHitbox().getHitboxInferior()) || entidad1.getHitbox().getHitboxInferior().intersects(entidad2.getHitbox().getHitboxLateral()) || entidad1.getHitbox().getHitboxInferior().intersects(entidad2.getHitbox().getHitboxSuperior()));
+    }
+
+    private void manejarColision(Entidad entidad1, Entidad entidad2){
+
+    } 
+    
 }

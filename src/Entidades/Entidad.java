@@ -79,6 +79,9 @@ public abstract class Entidad implements EntidadLogica{
    public void actualizarHitboxes(int posicionX, int posicionY, int ancho, int alto) {
       miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
    }
+   public HitboxesEntidad getHitbox(){
+      return miHitboxes;
+   }
 
    public abstract void aceptar(Visitor visitor);
 
