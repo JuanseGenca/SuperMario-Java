@@ -47,13 +47,13 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
                 int keyCode = event.getKeyCode();
                 if (keyCode == KeyEvent.VK_A) {
                     miLogica.setMarioDirection(constantesEntidades.IZQUIERDA);
-                    //mover();
+                    
                 } else if (keyCode == KeyEvent.VK_D) {
                     miLogica.setMarioDirection(constantesEntidades.DERECHA);
-                    //mover();
+                    
                 } else if (keyCode == KeyEvent.VK_W) {
                     miLogica.setMarioEstadoAereo(constantesEntidades.AIRE);
-                    //mover();
+                    
                 } else if (keyCode == KeyEvent.VK_SPACE) {
                     //miLogica.shootMario();
                 }
@@ -70,16 +70,6 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
             }
         );
     }
-
-    public void mover() {
-        miLogica.actualizarVelocidadXMario();
-
-        if(miLogica.getMarioEstadoAereo() == constantesEntidades.AIRE) {
-            miLogica.actualizarVelocidadYMario();
-        }
-        //refrescar();
-    }
-
 
     public void mostrarPantallaInicial() {
         ventana.setContentPane(panelPantallaPrincipal);

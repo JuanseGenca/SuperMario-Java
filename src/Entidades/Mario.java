@@ -30,6 +30,12 @@ public class Mario extends Entidad implements EntidadJugador{
             actualizarHitboxes();
             actualizarSprite();
             actualizar(direccion, estadoAereo);
+
+            actualizarVelocidadXMario();
+
+            if(getEstadoAereo() == constantesEntidades.AIRE) {
+                actualizarVelocidadYMario();
+            }
         }
 
     }

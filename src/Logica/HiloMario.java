@@ -35,12 +35,6 @@ public class HiloMario extends Thread {
     
     private void tick(){
         jugador.mover();
-        miLogica.actualizarVelocidadXMario();
-
-        if(miLogica.getMarioEstadoAereo() == constantesEntidades.AIRE) {
-            miLogica.actualizarVelocidadYMario();
-        }
-
 
     }
 
