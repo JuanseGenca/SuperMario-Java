@@ -154,6 +154,7 @@ public class Mario extends Entidad implements EntidadJugador{
     }
     public int getDireccion(){
         return direccion;
+    }
     public void setEstado(EstadoMario m){
         estado = m;
     }

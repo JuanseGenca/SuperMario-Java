@@ -39,7 +39,15 @@ public abstract class SpriteFactory {
 	public Sprite[] getFlorDeFuego() {
 		Sprite[] devolver = new Sprite[1];
 
-		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/flor_de_fuego3.png");
+		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/flor_de_fuego.gif");
+
+		return devolver;
+	}
+
+	public Sprite[] getBolaDeFuego() {
+		Sprite[] devolver = new Sprite[2];
+		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/bola_de_fuego.gif");
+		devolver[1] = new Sprite(rutaCarpeta + "/PowerUps/bola_de_fuego.gif");
 
 		return devolver;
 	}
@@ -47,7 +55,7 @@ public abstract class SpriteFactory {
 	public Sprite[] getMoneda() {
 		Sprite[] devolver = new Sprite[1];
 
-		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/moneda1.png");
+		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/moneda.gif");
 
 		return devolver;
 	}
@@ -77,17 +85,17 @@ public abstract class SpriteFactory {
 	}
 
 	public Sprite[] getBuzzyBeetle() {
-		Sprite[] devolver = new Sprite[1];
+		Sprite[] devolver = new Sprite[2];
 
-		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle.gif");
-
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle_caminando.gif");
+		devolver[1] = new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle_golpeado.png");
 		return devolver;
 	}
 	
 	public Sprite[] getSpiny() {
 		Sprite[] devolver = new Sprite[1];
 
-		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/spiny_caminando1.png");
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/spiny.gif");
 
 		return devolver;
 	}
@@ -118,9 +126,10 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite[] getKoopaTroopa() {
-		Sprite[] devolver = new Sprite[2];
-		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/koopa_troopa_caminando.gif");
+		Sprite[] devolver = new Sprite[3];
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/koopa_caminando.gif");
 		devolver[1] = new Sprite(rutaCarpeta + "/Enemigos/koopa_golpeado.png");
+		devolver[2] = new Sprite(rutaCarpeta + "/Enemigos/koopa_saliendo.gif");
 
 		return devolver;
 	}
@@ -155,15 +164,17 @@ public abstract class SpriteFactory {
 	}
 
     public Sprite[] getLadrilloRompible() {
-		Sprite[] devolver = new Sprite[1];
+		Sprite[] devolver = new Sprite[2];
 		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/bloque_ladrillo.png");
-		
+		devolver[1] = new Sprite(rutaCarpeta + "/Plataformas/bloque_ladrillo_roto.png");
+
 		return devolver;
 	}
 	
 	public Sprite[] getBloquePregunta() {
-		Sprite[] devolver = new Sprite[1];
+		Sprite[] devolver = new Sprite[2];
 		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta.gif");
+		devolver[1] = new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta_vacio.png");
 		
 		return devolver;
 	}
