@@ -1,48 +1,51 @@
 package Entidades;
-import Estados.EstadoMario;
-import Estados.EstadoMarioComun;
+//import Estados.EstadoMario;
+//import Estados.EstadoMarioComun;
 import Fabricas.SpriteFactory;
 import GUI.Sprite;
 import Logica.*;
 import Plataformas.Plataforma;
 
 public class Mario extends Entidad implements EntidadJugador{
-    protected EstadoMario estado;
+    //protected EstadoMario estado;
     protected Logica miLogica;
+    private int dirTickAnterior;
     
 
     public Mario(int x, int y,Sprite[] sprites){
         super(x,y,sprites);
-        estado = new EstadoMarioComun(this);
+        //estado = new EstadoMarioComun(this);
     }
 
     public void mover(){
-        if(direccion!= ConstantesEntidades.QUIETO || estadoAereo == ConstantesEntidades.AIRE) {
+        if(direccion != ConstantesEntidades.QUIETO || estadoAereo == ConstantesEntidades.AIRE) {
             if(direccion==ConstantesEntidades.IZQUIERDA) {
                 posicionX-=velocidadX;
+                dirTickAnterior = ConstantesEntidades.IZQUIERDA;
                 if (posicionX < 0) {
                     posicionX = 0;
                 }
             } else if(direccion==ConstantesEntidades.DERECHA) {
                 posicionX+=velocidadX;
+                dirTickAnterior = ConstantesEntidades.DERECHA;
             }
 
             if(estadoAereo == ConstantesEntidades.AIRE) {
                 posicionY += velocidadY;
             }
         }else{
-            direccion = 0;
+            direccion = ConstantesEntidades.QUIETO;
         }
 
-            miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
-            actualizarSprite();
-            actualizar(direccion, estadoAereo);
+        miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
+        actualizarSprite();
+        int direccionSprite = getDireccionSpriteMario();
+        actualizar(direccionSprite, estadoAereo);
 
-            actualizarVelocidadXMario();
-            if(getEstadoAereo() == ConstantesEntidades.AIRE) {
-                actualizarVelocidadYMario();
-            }
-
+        actualizarVelocidadXMario();
+        if(getEstadoAereo() == ConstantesEntidades.AIRE) {
+            actualizarVelocidadYMario();
+        }
     }
 
     public void recibirDanio(){
@@ -155,7 +158,22 @@ public class Mario extends Entidad implements EntidadJugador{
     public int getDireccion(){
         return direccion;
     }
+
     public void setEstado(EstadoMario m){
         estado = m;
+    }
+
+    private int getDireccionSpriteMario() {
+        int devolver = ConstantesEntidades.QUIETO;
+        
+        if(dirTickAnterior == ConstantesEntidades.IZQUIERDA) {
+            devolver = ConstantesEntidades.IZQUIERDA;
+        }
+
+        if(dirTickAnterior == ConstantesEntidades.DERECHA) {
+            devolver = ConstantesEntidades.DERECHA;
+        }
+
+        return devolver;
     }
 }

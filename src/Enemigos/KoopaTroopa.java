@@ -1,6 +1,6 @@
 package Enemigos;
 
-import Estados.EstadoKoopaTroopa;
+//import Estados.EstadoKoopaTroopa;
 import GUI.Sprite;
 import Logica.Visitor;
 
