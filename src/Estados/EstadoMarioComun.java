@@ -12,4 +12,7 @@ public class EstadoMarioComun implements EstadoMario{
     public void recibirDanio(){
         m.morir();
     }
+    public boolean puedeRomper(){
+        return false;
+    }
 }

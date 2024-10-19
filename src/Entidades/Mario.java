@@ -1,4 +1,5 @@
 package Entidades;
+import Estados.*;
 //import Estados.EstadoMario;
 //import Estados.EstadoMarioComun;
 import Fabricas.SpriteFactory;
@@ -7,14 +8,14 @@ import Logica.*;
 import Plataformas.Plataforma;
 
 public class Mario extends Entidad implements EntidadJugador{
-    //protected EstadoMario estado;
+    protected EstadoMario estado;
     protected Logica miLogica;
     private int dirTickAnterior;
     
 
     public Mario(int x, int y,Sprite[] sprites){
         super(x,y,sprites);
-        //estado = new EstadoMarioComun(this);
+        estado = new EstadoMarioComun(this);
     }
 
     public void mover(){
@@ -138,7 +139,7 @@ public class Mario extends Entidad implements EntidadJugador{
     }
     
     public void actualizarEstadoMario(int powerUp) {
-        //Una vez implementados los estados especiales. Conectar
+        //Una vez implementados los estados especiales. Conectar, Creo que con el setEstado ya alcanza.
     }
 
     private void actualizarSprite() {
@@ -157,6 +158,10 @@ public class Mario extends Entidad implements EntidadJugador{
     }
     public int getDireccion(){
         return direccion;
+    }
+
+    public EstadoMario getEstado(){
+        return estado;
     }
 
     public void setEstado(EstadoMario m){

@@ -72,10 +72,14 @@ public class VisitorMario implements Visitor{
     public void visit(Estrella e){
         e.recibirDanio();
     }
+    //Reveer esto, ¿no es un instance of?, dejo planteada mi solucion, no se si es del todo correcta.
     public void visit(LadrilloRompible lr){
         if(mario.getDireccion()==ConstantesColisiones.ARRIBA && mario.getEstado()!=ConstantesPowerUp.NORMAL) {
             lr.recibirDanio();
         }
+        //if(mario.getDireccion()==ConstantesColisiones.ARRIBA && mario.getEstado().puedeRomper() == true), es el mismo caso.
+        //Si quedan dudas mirar las clases de los estados de mario, capaz es medio chancha la solucion.
+        //Otra solucion seria que los estados implementes interfaces, puede romper y no puede romper, y de ahi resolver. Seria lo mas correcto.
     }
     public void visit(BloqueIrrompible bi){
         if(mario.getDireccion()==ConstantesColisiones.ARRIBA && mario.getEstado()!=ConstantesPowerUp.NORMAL) {

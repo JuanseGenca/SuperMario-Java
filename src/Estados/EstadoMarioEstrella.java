@@ -9,4 +9,7 @@ public class EstadoMarioEstrella implements EstadoMario{
     }
     public void disparar(){}
     public void recibirDanio(){}
+    public boolean puedeRomper(){
+        return true;
+    }
 }

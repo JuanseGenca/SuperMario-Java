@@ -17,4 +17,7 @@ public class EstadoMarioFuego implements EstadoMario{
     public void recibirDanio(){
         m.morir();
     }
+    public boolean puedeRomper(){
+        return true;
+    }
 }
