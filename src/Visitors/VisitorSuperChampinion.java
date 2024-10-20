@@ -8,6 +8,7 @@ import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
+import Estados.EstadoSuperMario;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
@@ -46,7 +47,7 @@ public class VisitorSuperChampinion extends VisitorPowerUp {
 
     @Override
     public void visit(Mario m, int direccion) {
-        m.actualizarEstadoMario(ConstantesPowerUp.SUPERCHAMPINION);
+        m.setEstado(new EstadoSuperMario(m));
     }
 
     @Override
