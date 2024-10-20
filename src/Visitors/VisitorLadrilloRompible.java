@@ -36,7 +36,9 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
     @Override
     public void visit(Spiny s, int direccion){}
     @Override
-    public void visit(Mario m, int direccion){}
+    public void visit(Mario m, int direccion){
+        m.setVelocidadY(0);
+    }
     @Override
     public void visit(ChampinionVerde cv, int direccion){}
     @Override
