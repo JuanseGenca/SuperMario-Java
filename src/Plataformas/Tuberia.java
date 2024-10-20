@@ -29,4 +29,7 @@ public class Tuberia extends BloqueIrrompible{
     public void mover(){
         
     }
+
+    @Override
+    public void recibirDanio() {}
 }

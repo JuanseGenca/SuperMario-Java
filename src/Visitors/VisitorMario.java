@@ -25,8 +25,8 @@ import PowerUps.SuperChampinion;
 public class VisitorMario implements Visitor {
     protected Mario mario;
 
-    public VisitorMario() {
-
+    public VisitorMario(Mario mario) {
+        this.mario = mario;
     }
 
     @Override
@@ -118,14 +118,14 @@ public class VisitorMario implements Visitor {
 
     @Override
     public void visit(LadrilloRompible lr, int direccion) {
-        if (direccion == ConstantesColisiones.ARRIBA) {// && mario.getEstado() != ConstantesPowerUp.NORMAL) {
+        if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
             lr.recibirDanio();
         }
     }
 
     @Override
     public void visit(BloqueIrrompible bi, int direccion) {
-        if (direccion == ConstantesColisiones.ARRIBA) { //&& mario.getEstado() != ConstantesPowerUp.NORMAL) {
+        if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
             bi.recibirDanio();
         }
     }
