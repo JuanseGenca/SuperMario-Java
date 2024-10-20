@@ -15,4 +15,7 @@ public class EstadoMarioComun implements EstadoMario{
     public boolean puedeRomper(){
         return false;
     }
+    public int getModificador(){
+        return 0;
+    }
 }

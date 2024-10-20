@@ -20,4 +20,7 @@ public class EstadoMarioFuego implements EstadoMario{
     public boolean puedeRomper(){
         return true;
     }
+    public int getModificador(){
+        return 6;
+    }
 }

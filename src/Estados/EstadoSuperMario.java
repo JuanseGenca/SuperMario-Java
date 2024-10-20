@@ -16,4 +16,7 @@ public class EstadoSuperMario implements EstadoMario{
     public boolean puedeRomper(){
         return true;
     }
+    public int getModificador(){
+        return 3;
+    }
 }

@@ -1,5 +1,6 @@
 package Enemigos;
 
+import Entidades.HitboxesEntidad;
 import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
@@ -16,4 +17,5 @@ public class BuzzyBeetle extends Enemigo{
     public void eliminar(){
         ManejadorEntidades.getInstancia().eliminarEnemigo(this);
     }
+    
 }

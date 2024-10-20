@@ -155,15 +155,15 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     private void actualizarSprite() {
-        Sprite nuevoSprite = misSprites[ConstantesEntidades.SPRITEQUIETO];
+        Sprite nuevoSprite = misSprites[ConstantesEntidades.SPRITEQUIETO + estado.getModificador()];
 
         if(ConstantesEntidades.AIRE == estadoAereo) {
-            nuevoSprite = misSprites[ConstantesEntidades.SPRITESALTAR];
+            nuevoSprite = misSprites[ConstantesEntidades.SPRITESALTAR + estado.getModificador()];
         }
         else if(ConstantesEntidades.QUIETO == direccion) {
-                nuevoSprite = misSprites[ConstantesEntidades.SPRITEQUIETO];
+                nuevoSprite = misSprites[ConstantesEntidades.SPRITEQUIETO + estado.getModificador()];
             } else if(ConstantesEntidades.QUIETO != direccion) {
-                nuevoSprite = misSprites[ConstantesEntidades.SPRITECAMINAR];
+                nuevoSprite = misSprites[ConstantesEntidades.SPRITECAMINAR + estado.getModificador()];
             }
         
         spriteActual = nuevoSprite;
@@ -194,4 +194,6 @@ public class Mario extends Entidad implements EntidadJugador{
 
         return devolver;
     }
+
+    
 }

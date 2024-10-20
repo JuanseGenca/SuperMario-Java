@@ -1,5 +1,5 @@
 Mario:0,0
-Estrella:200,0
+Flor de Fuego:200,0
 Lakitu:300,400
 Piranha Plant:744,216
 Buzzy Beetle:342,0
