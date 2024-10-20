@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import Entidades.ManejadorEntidades;
+
 
 public class Parserint {
     protected EntidadesFactory fabricaEnt;
@@ -47,6 +49,7 @@ public class Parserint {
 
         Silueta silueta = fabricaEnt.getSilueta(numero);
 		Nivel nivelActual = new Nivel(silueta, numero);
+        ManejadorEntidades.inicializar(nivelActual);
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;

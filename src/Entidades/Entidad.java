@@ -70,14 +70,14 @@ public abstract class Entidad implements EntidadLogica{
    }
 
    public void morir(){
-      //IMPLEMENTAR
-      System.out.println("mori");
+
    }
 
    public void recibirDanio() {
       velocidadX = 0;
       spriteActual = misSprites[1];
-      
+      System.out.println("cambiosprite");
+      actualizar(direccion, estadoAereo);
    }
 
    public void actualizar(int direccion, int estadoAereo){

@@ -1,5 +1,6 @@
 package Enemigos;
 
+import Entidades.ManejadorEntidades;
 import Estados.EstadoKoopaTroopa;
 //import Estados.EstadoKoopaTroopa;
 import GUI.Sprite;
@@ -19,5 +20,8 @@ public class KoopaTroopa extends Enemigo{
     }
     public void setEstado(EstadoKoopaTroopa e){
         //estadoKoopaTroopa = e;
+    }
+    public void eliminar(){
+        ManejadorEntidades.getInstancia().eliminarEnemigo(this);
     }
 }

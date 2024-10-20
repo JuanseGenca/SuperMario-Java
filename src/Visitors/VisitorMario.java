@@ -33,6 +33,7 @@ public class VisitorMario implements Visitor {
     public void visit(KoopaTroopa k, int direccion) {
         if (direccion == ConstantesColisiones.ABAJO) {
             k.recibirDanio();
+            k.eliminar();
             System.out.println("Mate koopa");
         }
     }
@@ -41,6 +42,8 @@ public class VisitorMario implements Visitor {
     public void visit(Goomba g, int direccion) {
         if (direccion == ConstantesColisiones.ABAJO) {
             g.recibirDanio();
+            g.eliminar();
+            System.out.println("mate goomba");
         }
     }
 
