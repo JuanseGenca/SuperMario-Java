@@ -31,4 +31,5 @@ public class HitboxesEntidad {
     public Rectangle getHitboxInferior() {
         return hitboxInferior;
     }
+
 }

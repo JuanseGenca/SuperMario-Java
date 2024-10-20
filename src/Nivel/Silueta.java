@@ -11,7 +11,7 @@ public class Silueta extends Entidad {
 	}
 
     @Override
-    public void aceptar(Visitor visitor) {
+    public void aceptar(Visitor visitor, int direccion) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'aceptar'");
     }

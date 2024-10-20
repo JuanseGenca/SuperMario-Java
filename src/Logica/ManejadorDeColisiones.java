@@ -39,8 +39,9 @@ public class ManejadorDeColisiones {
                     manejarColision(entidadComprobar,entidadActual);
                 }
             }
-        }    
+        }
     }
+      
     private boolean hayColision(Entidad entidad1, Entidad entidad2){
         return (entidad1.getHitbox().getHitboxLateral().intersects(entidad2.getHitbox().getHitboxLateral()) || entidad1.getHitbox().getHitboxInferior().intersects(entidad2.getHitbox().getHitboxInferior()) || entidad1.getHitbox().getHitboxLateral().intersects(entidad2.getHitbox().getHitboxInferior()) || entidad1.getHitbox().getHitboxSuperior().intersects(entidad2.getHitbox().getHitboxInferior()) || entidad1.getHitbox().getHitboxInferior().intersects(entidad2.getHitbox().getHitboxLateral()) || entidad1.getHitbox().getHitboxInferior().intersects(entidad2.getHitbox().getHitboxSuperior()));
     }
