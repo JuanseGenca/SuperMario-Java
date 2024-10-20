@@ -7,6 +7,7 @@ import Enemigos.Lakitu;
 import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
+import Entidades.ConstantesEntidades;
 import Entidades.Mario;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;

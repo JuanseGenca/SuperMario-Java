@@ -14,7 +14,7 @@ public abstract class Enemigo extends Entidad{
     public abstract void aceptar(Visitor v, int direccion);
     
     public void mover(){
-        posicionX += 1;
+        posicionX += 0;
         miObserver.actualizar();
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
     }

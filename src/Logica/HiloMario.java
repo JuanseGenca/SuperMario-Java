@@ -22,7 +22,7 @@ public class HiloMario extends Thread {
                 tick();
                 dibujar();
                 try {
-                    sleep(15);
+                    sleep(7);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

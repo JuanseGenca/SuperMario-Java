@@ -36,6 +36,11 @@ public class VisitorEnemigo implements Visitor {
     
     @Override
     public void visit(Mario m, int direccion) { 
+        if(direccion == ConstantesColisiones.ARRIBA) {
+            double nuevaVel = m.getVelocidadY() + 1;
+            m.setVelocidadY(nuevaVel);
+        }
+
         if(direccion == ConstantesColisiones.LATERAL) {
             m.recibirDanio();
         }

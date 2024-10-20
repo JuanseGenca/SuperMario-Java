@@ -8,6 +8,7 @@ import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
+import Logica.ConstantesColisiones;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
@@ -35,8 +36,17 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
     public void visit(PiranhaPlant p, int direccion){}
     @Override
     public void visit(Spiny s, int direccion){}
-    @Override
-    public void visit(Mario m, int direccion) {}
+    public void visit(Mario m, int direccion){
+        if(direccion == ConstantesColisiones.LATERAL){
+            m.setVelocidadX(0);
+        }
+        if(direccion == ConstantesColisiones.ABAJO){
+            m.setVelocidadY(0);
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            m.tocoSuelo();
+        }
+    }
     @Override
     public void visit(ChampinionVerde cv, int direccion){}
     @Override

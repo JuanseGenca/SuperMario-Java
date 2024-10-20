@@ -46,8 +46,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
             m.setVelocidadY(0);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            m.setVelocidadY(1);
-            m.establecerEstadoAereo(ConstantesEntidades.SUELO);
+            m.tocoSuelo();
         }
     }
     @Override

@@ -74,7 +74,11 @@ public abstract class Entidad implements EntidadLogica{
       System.out.println("mori");
    }
 
-   public void recibirDanio() {}
+   public void recibirDanio() {
+      velocidadX = 0;
+      spriteActual = misSprites[1];
+      
+   }
 
    public void actualizar(int direccion, int estadoAereo){
       miObserver.actualizar(direccion, estadoAereo);
@@ -83,6 +87,7 @@ public abstract class Entidad implements EntidadLogica{
    public void actualizarHitboxes(int posicionX, int posicionY, int ancho, int alto) {
       miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
    }
+   
    public HitboxesEntidad getHitbox(){
       return miHitboxes;
    }

@@ -19,6 +19,8 @@ public class Mario extends Entidad implements EntidadJugador{
         super(x,y,sprites);
         estado = new EstadoMarioComun(this);
         monedas=0;
+        tocandoSuelo = true;
+        estadoAereo = ConstantesEntidades.SUELO;
         visitor= new VisitorMario();
     }
 
@@ -80,9 +82,13 @@ public class Mario extends Entidad implements EntidadJugador{
         v.visit(this, direccion);
     }
 
-    //Vamos a tener que cambiarlo cuando agreguemos colisiones con plataformas, esta implementacion solo funciona si Mario pisa el suelo
+    //como no tengo formar de recibir el Y de la plataforma, asumo que la plataforma sigue el estandar de un bloque = 48px
+    //mejorable si encontramos la forma de pasarle la posicion de la plataforma
     public void tocoSuelo() {
-        posicionY = 0;
+        velocidadY = 0;
+        posicionY = alto + (posicionY - posicionY % 48);
+        establecerEstadoAereo(ConstantesEntidades.SUELO);
+        tocandoSuelo = true;
     }
 
     @Override
@@ -103,7 +109,7 @@ public class Mario extends Entidad implements EntidadJugador{
     public void actualizarVelocidadXMario() {
         double acceleration = 0.5;
         double deceleration = 0.2;
-        double maxVelocity = 10;
+        double maxVelocity = 5;
         double currentVelocity = getVelocidadX();
   
         switch (direccion) {
@@ -122,9 +128,9 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     public void actualizarVelocidadYMario() {
-        double velInicialSalto = 15;
-        double gravedad = -1;
-        double velTerminal = -10;
+        double velInicialSalto = 8;
+        double gravedad = -0.1;
+        double velTerminal = -8;
         double velYActual = velocidadY;
         
         if (tocandoSuelo) {
