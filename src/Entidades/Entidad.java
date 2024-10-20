@@ -71,6 +71,7 @@ public abstract class Entidad implements EntidadLogica{
 
    public void morir(){
       //IMPLEMENTAR
+      System.out.println("mori");
    }
 
    public void recibirDanio() {}
