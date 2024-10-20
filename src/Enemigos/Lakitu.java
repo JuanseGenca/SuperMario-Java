@@ -1,5 +1,6 @@
 package Enemigos;
 
+import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
 
@@ -11,5 +12,8 @@ public class Lakitu extends Enemigo{
     @Override
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
+    }
+    public void eliminar(){
+        ManejadorEntidades.getInstancia().eliminarEnemigo(this);
     }
 }

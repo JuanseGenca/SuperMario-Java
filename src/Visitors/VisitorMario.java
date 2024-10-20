@@ -51,6 +51,8 @@ public class VisitorMario implements Visitor {
     public void visit(Lakitu l, int direccion) {
         if (direccion == ConstantesColisiones.ABAJO) {
             l.recibirDanio();
+            l.eliminar();
+            System.out.println("mate lakitu");
         }
     }
 
@@ -58,6 +60,8 @@ public class VisitorMario implements Visitor {
     public void visit(BuzzyBeetle b, int direccion) {
         if (direccion == ConstantesColisiones.ABAJO) {
             b.recibirDanio();
+            b.eliminar();
+            System.out.println("mate beetle");
         }
     }
 
@@ -75,22 +79,30 @@ public class VisitorMario implements Visitor {
 
     @Override
     public void visit(ChampinionVerde cv, int direccion) {
-        cv.recibirDanio();
+        //cv.recibirDanio();
+        cv.eliminar();
+        System.out.println("agarre champverde");
     }
 
     @Override
     public void visit(SuperChampinion sc, int direccion) {
-        sc.recibirDanio();
+        //sc.recibirDanio();
+        sc.eliminar();
+        System.out.println("agarre superchamp");
     }
 
     @Override
     public void visit(FlorDeFuego f, int direccion) {
-        f.recibirDanio();
+        //f.recibirDanio();
+        f.eliminar();
+        System.out.println("agarre flor");
     }
 
     @Override
     public void visit(Moneda m, int direccion) {
-        m.recibirDanio();
+        //m.recibirDanio();
+        m.eliminar();
+        System.out.println("agarre moneda");
     }
 
     @Override
@@ -99,7 +111,9 @@ public class VisitorMario implements Visitor {
 
     @Override
     public void visit(Estrella e, int direccion) {
-        e.recibirDanio();
+        //e.recibirDanio();
+        e.eliminar();
+        System.out.println("agarre estrella");
     }
 
     @Override
