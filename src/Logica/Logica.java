@@ -1,5 +1,6 @@
 package Logica;
 
+import Enemigos.Enemigo;
 import Entidades.Entidad;
 import Entidades.Mario;
 import Fabricas.*;
@@ -9,8 +10,6 @@ import Nivel.Nivel;
 import Nivel.Silueta;
 import ParseInt.Parserint;
 import java.util.List;
-
-import Enemigos.Enemigo;
 
 //La clase tiene como 800 metodos de mario, hay que ver cuales se pueden eliminar
 
@@ -26,6 +25,7 @@ public class Logica {
     protected Nivel nivelActual;
 	protected HiloMario hilo1;
 	protected HiloSecundario hilo2;
+	protected HiloPrincipal hiloPrincipal;
     
 
     //Constructor
@@ -51,6 +51,8 @@ public class Logica {
 		hilo1.start();
 		hilo2 = new HiloSecundario(gui,this);
 		hilo2.start();
+		hiloPrincipal = new HiloPrincipal(gui,this);
+		hiloPrincipal.start();
 	}
 
     protected void registrarObservers() {

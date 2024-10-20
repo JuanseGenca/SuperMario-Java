@@ -3,10 +3,12 @@ package Plataformas;
 import Entidades.Entidad;
 import GUI.Sprite;
 import Logica.Visitor;
+import Visitors.VisitorTuberia;
 
 public class Tuberia extends BloqueIrrompible{
     public Tuberia(int x, int y, Sprite[] sprite){
         super(x, y, sprite);
+        visitor= new VisitorTuberia();
     }
     public Entidad getEntidadContenida(){
         return entidadContenida;
@@ -20,8 +22,9 @@ public class Tuberia extends BloqueIrrompible{
     public void OcultarEntidad(){
         //Resolver como esconderla por pantalla.
     }
-    public void aceptar(Visitor v){
-        v.visit(this);
+    @Override
+    public void aceptar(Visitor v, int direccion){
+        v.visit(this, direccion);
     }
     public void mover(){
         

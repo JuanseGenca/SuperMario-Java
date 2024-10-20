@@ -8,8 +8,9 @@ public class PiranhaPlant extends Enemigo{
         super(x,y,sprite);
     }
     
-    public void aceptar(Visitor v){
-        v.visit(this);
+    @Override
+    public void aceptar(Visitor v, int direccion){
+        v.visit(this, direccion);
     }
 
     public void mover(){

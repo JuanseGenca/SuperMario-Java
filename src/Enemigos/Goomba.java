@@ -6,9 +6,11 @@ import Logica.*;
 public class Goomba extends Enemigo{
     public Goomba(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
+        
     }
     
-    public void aceptar(Visitor v){
-        v.visit(this);
+    @Override
+    public void aceptar(Visitor v, int direccion){
+        v.visit(this, direccion);
     }
 }

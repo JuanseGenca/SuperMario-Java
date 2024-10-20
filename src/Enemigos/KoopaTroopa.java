@@ -1,5 +1,6 @@
 package Enemigos;
 
+import Estados.EstadoKoopaTroopa;
 //import Estados.EstadoKoopaTroopa;
 import GUI.Sprite;
 import Logica.Visitor;
@@ -12,8 +13,9 @@ public class KoopaTroopa extends Enemigo{
         super(x, y,sprite);
     }
     
-    public void aceptar(Visitor v){
-        v.visit(this);
+    @Override
+    public void aceptar(Visitor v, int direccion){
+        v.visit(this, direccion);
     }
     public void setEstado(EstadoKoopaTroopa e){
         //estadoKoopaTroopa = e;

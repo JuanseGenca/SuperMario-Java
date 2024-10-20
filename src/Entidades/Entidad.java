@@ -18,6 +18,7 @@ public abstract class Entidad implements EntidadLogica{
  protected Observer miObserver;
  protected double velocidadX, velocidadY;
  protected HitboxesEntidad miHitboxes;
+ protected Visitor visitor;
   
 
    public Entidad(int posicionX, int posicionY,Sprite[] sprites) {
@@ -85,7 +86,7 @@ public abstract class Entidad implements EntidadLogica{
       return miHitboxes;
    }
 
-   public abstract void aceptar(Visitor visitor);
+   public abstract void aceptar(Visitor visitor, int direccion);
 
    public abstract void mover();
 
@@ -105,6 +106,10 @@ public abstract class Entidad implements EntidadLogica{
 
    public int getEstadoAereo(){
       return estadoAereo;
+   }
+
+   public Visitor getVisitor(){
+      return visitor;
    }
 
 }

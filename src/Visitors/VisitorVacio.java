@@ -22,51 +22,50 @@ import PowerUps.SuperChampinion;
 
 public class VisitorVacio extends VisitorPlataforma{
     public VisitorVacio(){
-
     }
-    public void visit(KoopaTroopa k){
+    public void visit(KoopaTroopa k, int direccion){
         k.morir();
     }
-    public void visit(Goomba g){
+    public void visit(Goomba g, int direccion){
         g.morir();
     }
-    public void visit(Lakitu l){
+    public void visit(Lakitu l, int direccion){
         l.morir();
     }
-    public void visit(BuzzyBeetle b){
+    public void visit(BuzzyBeetle b, int direccion){
         b.morir();
     }
-    public void visit(PiranhaPlant p){
+    public void visit(PiranhaPlant p, int direccion){
         p.morir();
     }
-    public void visit(Spiny s){
+    public void visit(Spiny s, int direccion){
         s.morir();
     }
-    public void visit(Mario m){
+    public void visit(Mario m, int direccion){
         m.morir();
     }
-    public void visit(ChampinionVerde cv){
+    public void visit(ChampinionVerde cv, int direccion){
         cv.morir();
     }
-    public void visit(SuperChampinion sc){
+    public void visit(SuperChampinion sc, int direccion){
         sc.morir();
     }
-    public void visit(FlorDeFuego f){
+    public void visit(FlorDeFuego f, int direccion){
         f.morir();
     }
-    public void visit(Moneda m){
+    public void visit(Moneda m, int direccion){
         m.morir();
     }
-    public void visit(Plataforma p){}
-    public void visit(Estrella e){
+    public void visit(Plataforma p, int direccion){}
+    public void visit(Estrella e, int direccion){
         e.morir();
     }
-    public void visit(LadrilloRompible lr){}
-    public void visit(BloqueIrrompible bi){}
-    public void visit(Meta m){}
-    public void visit(Vacio v){}
-    public void visit(PowerUp pu){}
-    public void visit(BolaDeFuego bf){
+    public void visit(LadrilloRompible lr, int direccion){}
+    public void visit(BloqueIrrompible bi, int direccion){}
+    public void visit(Meta m, int direccion){}
+    public void visit(Vacio v, int direccion){}
+    public void visit(PowerUp pu, int direccion){}
+    public void visit(BolaDeFuego bf, int direccion){
         bf.morir();
     }
 }

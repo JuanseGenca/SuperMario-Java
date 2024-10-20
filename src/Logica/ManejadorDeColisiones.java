@@ -46,8 +46,22 @@ public class ManejadorDeColisiones {
     }
 
     private void manejarColision(Entidad entidad1, Entidad entidad2){
-        Visitor visitor = new VisitorMario();
-        entidad1.aceptar(visitor);
+        int direccionEntidad1 = 0;
+        int direccionEntidad2 = 0;
+        if(entidad1.getHitbox().getHitboxLateral().intersects(entidad2.getHitbox().getHitboxLateral())){
+            direccionEntidad1=ConstantesColisiones.LATERAL;
+            direccionEntidad2=ConstantesColisiones.LATERAL;
+        }
+        else if(entidad1.getHitbox().getHitboxInferior().intersects(entidad2.getHitbox().getHitboxSuperior())){
+            direccionEntidad1=ConstantesColisiones.ABAJO;
+            direccionEntidad2=ConstantesColisiones.ARRIBA;
+        }
+        else if(entidad2.getHitbox().getHitboxInferior().intersects(entidad1.getHitbox().getHitboxSuperior())){
+            direccionEntidad2=ConstantesColisiones.ABAJO;
+            direccionEntidad1=ConstantesColisiones.ARRIBA;
+        }
+        entidad1.aceptar(entidad2.getVisitor(),direccionEntidad1);
+        entidad2.aceptar(entidad1.getVisitor(),direccionEntidad2);
     } 
     
 }

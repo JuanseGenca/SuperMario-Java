@@ -2,15 +2,18 @@ package PowerUps;
 
 import GUI.Sprite;
 import Logica.Visitor;
+import Visitors.VisitorFlorDeFuego;
 
 public class FlorDeFuego extends PowerUp{
     public FlorDeFuego(int x, int y,Sprite[] sprite){
         super(x,y, sprite);
+        visitor=new VisitorFlorDeFuego();
     }
     public void mover(){
         
     }
-    public void aceptar(Visitor v){
-        v.visit(this);
+    @Override
+    public void aceptar(Visitor v, int direccion){
+        v.visit(this, direccion);
     }
 }

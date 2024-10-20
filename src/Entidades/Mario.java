@@ -2,22 +2,27 @@ package Entidades;
 import Estados.*;
 //import Estados.EstadoMario;
 //import Estados.EstadoMarioComun;
-import Fabricas.SpriteFactory;
+//import Fabricas.SpriteFactory;
 import GUI.Sprite;
 import Logica.*;
-import Plataformas.Plataforma;
+import Visitors.VisitorMario;
+//import Plataformas.Plataforma;
 
 public class Mario extends Entidad implements EntidadJugador{
     protected EstadoMario estado;
     protected Logica miLogica;
     private int dirTickAnterior;
+    protected int monedas;
     
 
     public Mario(int x, int y,Sprite[] sprites){
         super(x,y,sprites);
         estado = new EstadoMarioComun(this);
+        monedas=0;
+        visitor= new VisitorMario();
     }
 
+    @Override
     public void mover(){
         if(direccion != ConstantesEntidades.QUIETO || estadoAereo == ConstantesEntidades.AIRE) {
             if(direccion==ConstantesEntidades.IZQUIERDA) {
@@ -49,6 +54,7 @@ public class Mario extends Entidad implements EntidadJugador{
         }
     }
 
+    @Override
     public void recibirDanio(){
         estado.recibirDanio();
     }
@@ -66,11 +72,12 @@ public class Mario extends Entidad implements EntidadJugador{
         monedas++;
         if(monedas==100) {
             miLogica.actualizarVida(1);
-            monedas==0;
+            monedas=0;
         }
     }
-    public void aceptar(Visitor v){
-        v.visit(this);
+    @Override
+    public void aceptar(Visitor v, int direccion){
+        v.visit(this, direccion);
     }
 
     //Vamos a tener que cambiarlo cuando agreguemos colisiones con plataformas, esta implementacion solo funciona si Mario pisa el suelo
@@ -99,17 +106,16 @@ public class Mario extends Entidad implements EntidadJugador{
         double maxVelocity = 10;
         double currentVelocity = getVelocidadX();
   
-        if (direccion == ConstantesEntidades.DERECHA) {
-            currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
-        } else if (direccion == ConstantesEntidades.IZQUIERDA) {
-            currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
-        } else {
-            if (currentVelocity > 0) {
-                currentVelocity = Math.max(currentVelocity - deceleration, 0);
-            } else if (currentVelocity < 0) {
-                currentVelocity = Math.min(currentVelocity + deceleration, 0);
+        switch (direccion) {
+            case ConstantesEntidades.DERECHA -> currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
+            case ConstantesEntidades.IZQUIERDA -> currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
+            default -> {
+                if (currentVelocity > 0) {
+                    currentVelocity = Math.max(currentVelocity - deceleration, 0);
+                } else if (currentVelocity < 0) {
+                    currentVelocity = Math.min(currentVelocity + deceleration, 0);
+                }
             }
-  
         }
   
         setVelocidadX(currentVelocity);
@@ -156,6 +162,7 @@ public class Mario extends Entidad implements EntidadJugador{
         
         spriteActual = nuevoSprite;
     }
+    @Override
     public int getDireccion(){
         return direccion;
     }

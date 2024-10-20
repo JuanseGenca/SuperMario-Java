@@ -8,7 +8,6 @@ import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
-import Entidades.ConstantesEntidades;
 import Logica.ConstantesColisiones;
 import Logica.Visitor;
 import Plataformas.BloqueIrrompible;
@@ -23,71 +22,110 @@ import PowerUps.Moneda;
 import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
-public class VisitorMario implements Visitor{
+public class VisitorMario implements Visitor {
     protected Mario mario;
-    public VisitorMario(){
+
+    public VisitorMario() {
 
     }
-    //DEFINIR TODAS MENOS LA DE MARIO :)
-    public void visit(KoopaTroopa k){
-        if(mario.getDireccion()==ConstantesColisiones.ABAJO) {
+
+    @Override
+    public void visit(KoopaTroopa k, int direccion) {
+        if (direccion == ConstantesColisiones.ABAJO) {
             k.recibirDanio();
-
+            System.out.println("Mate koopa");
         }
     }
-    public void visit(Goomba g){
-        if(mario.getDireccion()==ConstantesColisiones.ABAJO) {
+
+    @Override
+    public void visit(Goomba g, int direccion) {
+        if (direccion == ConstantesColisiones.ABAJO) {
             g.recibirDanio();
-
         }
     }
-    public void visit(Lakitu l){
-        if(mario.getDireccion()==ConstantesColisiones.ABAJO) {
+
+    @Override
+    public void visit(Lakitu l, int direccion) {
+        if (direccion == ConstantesColisiones.ABAJO) {
             l.recibirDanio();
-
         }
     }
-    public void visit(BuzzyBeetle b){
-        if(mario.getDireccion()==ConstantesColisiones.ABAJO) {
+
+    @Override
+    public void visit(BuzzyBeetle b, int direccion) {
+        if (direccion == ConstantesColisiones.ABAJO) {
             b.recibirDanio();
-
         }
     }
-    public void visit(PiranhaPlant p){}
-    public void visit(Spiny s){}
-    public void visit(Mario m){}
-    public void visit(ChampinionVerde cv){
+
+    @Override
+    public void visit(PiranhaPlant p, int direccion) {
+    }
+
+    @Override
+    public void visit(Spiny s, int direccion) {
+    }
+
+    @Override
+    public void visit(Mario m, int direccion) {
+    }
+
+    @Override
+    public void visit(ChampinionVerde cv, int direccion) {
         cv.recibirDanio();
     }
-    public void visit(SuperChampinion sc){
+
+    @Override
+    public void visit(SuperChampinion sc, int direccion) {
         sc.recibirDanio();
     }
-    public void visit(FlorDeFuego f){
+
+    @Override
+    public void visit(FlorDeFuego f, int direccion) {
         f.recibirDanio();
     }
-    public void visit(Moneda m){
+
+    @Override
+    public void visit(Moneda m, int direccion) {
         m.recibirDanio();
     }
-    public void visit(Plataforma p){}
-    public void visit(Estrella e){
+
+    @Override
+    public void visit(Plataforma p, int direccion) {
+    }
+
+    @Override
+    public void visit(Estrella e, int direccion) {
         e.recibirDanio();
     }
-    //Reveer esto, ¿no es un instance of?, dejo planteada mi solucion, no se si es del todo correcta.
-    public void visit(LadrilloRompible lr){
-        if(mario.getDireccion()==ConstantesColisiones.ARRIBA && mario.getEstado()!=ConstantesPowerUp.NORMAL) {
+
+    @Override
+    public void visit(LadrilloRompible lr, int direccion) {
+        if (direccion == ConstantesColisiones.ARRIBA) {// && mario.getEstado() != ConstantesPowerUp.NORMAL) {
             lr.recibirDanio();
         }
-        //if(mario.getDireccion()==ConstantesColisiones.ARRIBA && mario.getEstado().puedeRomper() == true), es el mismo caso.
-        //Si quedan dudas mirar las clases de los estados de mario, capaz es medio chancha la solucion.
-        //Otra solucion seria que los estados implementes interfaces, puede romper y no puede romper, y de ahi resolver. Seria lo mas correcto.
     }
-    public void visit(BloqueIrrompible bi){
-        if(mario.getDireccion()==ConstantesColisiones.ARRIBA && mario.getEstado()!=ConstantesPowerUp.NORMAL) {
+
+    @Override
+    public void visit(BloqueIrrompible bi, int direccion) {
+        if (direccion == ConstantesColisiones.ARRIBA) { //&& mario.getEstado() != ConstantesPowerUp.NORMAL) {
             bi.recibirDanio();
         }
     }
-    public void visit(Meta m){}
-    public void visit(Vacio v){}
-    public void visit(PowerUp pu){}
-    public void visit(BolaDeFuego bf){}
+
+    @Override
+    public void visit(Meta m, int direccion) {
+    }
+
+    @Override
+    public void visit(Vacio v, int direccion) {
+    }
+
+    @Override
+    public void visit(PowerUp pu, int direccion) {
+    }
+
+    @Override
+    public void visit(BolaDeFuego bf, int direccion) {
+    }
 }

@@ -8,5 +8,8 @@ public abstract class Plataforma extends Entidad{
     public Plataforma(int x, int y, Sprite[] sprite){
         super(x,y,sprite);
     }
-    public abstract void aceptar(Visitor v);
+    @Override
+    public void aceptar(Visitor v, int direccion){
+        v.visit(this, direccion);
+    }
 }

@@ -8,7 +8,8 @@ public class BuzzyBeetle extends Enemigo{
         super(x,y,sprites);
     }
    
-    public void aceptar(Visitor v){
-        v.visit(this);
+    @Override
+    public void aceptar(Visitor v, int direccion){
+        v.visit(this, direccion);
     }
 }

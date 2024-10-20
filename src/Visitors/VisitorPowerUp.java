@@ -21,25 +21,63 @@ import PowerUps.Moneda;
 import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
-public abstract class VisitorPowerUp implements Visitor{
-    public VisitorPowerUp(){}
-    public void visit(KoopaTroopa k){}
-    public void visit(Goomba g){}
-    public void visit(Lakitu l){}
-    public void visit(BuzzyBeetle b){}
-    public void visit(PiranhaPlant p){}
-    public void visit(Spiny s){}
-    public abstract void visit(Mario m);
-    public void visit(ChampinionVerde cv){}
-    public void visit(SuperChampinion sc){}
-    public void visit(FlorDeFuego f){}
-    public void visit(Moneda m){}
-    public abstract void visit(Plataforma p);
-    public void visit(Estrella e){}
-    public abstract void visit(LadrilloRompible lr);
-    public abstract void visit(BloqueIrrompible bi);
-    public abstract void visit(Meta m);
-    public abstract void visit(Vacio v);
-    public void visit(PowerUp pu){}
-    public void visit(BolaDeFuego bf){}
+public abstract class VisitorPowerUp implements Visitor {
+    public VisitorPowerUp() {}
+
+    @Override
+    public void visit(KoopaTroopa k, int direccion) {}
+
+    @Override
+    public void visit(Goomba g, int direccion) {}
+
+    @Override
+    public void visit(Lakitu l, int direccion) {}
+
+    @Override
+    public void visit(BuzzyBeetle b, int direccion) {}
+
+    @Override
+    public void visit(PiranhaPlant p, int direccion) {}
+
+    @Override
+    public void visit(Spiny s, int direccion) {}
+
+    @Override
+    public abstract void visit(Mario m, int direccion);
+
+    @Override
+    public void visit(ChampinionVerde cv, int direccion) {}
+
+    @Override
+    public void visit(SuperChampinion sc, int direccion) {}
+
+    @Override
+    public void visit(FlorDeFuego f, int direccion) {}
+
+    @Override
+    public void visit(Moneda m, int direccion) {}
+
+    @Override
+    public abstract void visit(Plataforma p, int direccion);
+
+    @Override
+    public void visit(Estrella e, int direccion) {}
+
+    @Override
+    public abstract void visit(LadrilloRompible lr, int direccion);
+
+    @Override
+    public abstract void visit(BloqueIrrompible bi, int direccion);
+
+    @Override
+    public abstract void visit(Meta m, int direccion);
+
+    @Override
+    public abstract void visit(Vacio v, int direccion);
+
+    @Override
+    public void visit(PowerUp pu, int direccion) {}
+
+    @Override
+    public void visit(BolaDeFuego bf, int direccion) {}
 }

@@ -8,7 +8,8 @@ public abstract class PowerUp extends Entidad{
     public PowerUp(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
     }
-    public abstract void aceptar(Visitor visitor);
+    @Override
+    public abstract void aceptar(Visitor visitor, int direccion);
     
     public void mover(){
         
