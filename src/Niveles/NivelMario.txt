@@ -6,7 +6,7 @@ Buzzy Beetle:342,0
 Koopa Troopa:438,24
 Ladrillo Rompible:534,192
 Ladrillo Rompible:438,192
-Ladrillo Rompible:342,96
+Ladrillo Rompible:342,48
 Bloque Pregunta:192,192
 Bloque Pregunta:486,192
 Bloque Pregunta:390,192

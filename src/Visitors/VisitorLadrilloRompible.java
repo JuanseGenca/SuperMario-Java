@@ -7,7 +7,9 @@ import Enemigos.Lakitu;
 import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
+import Entidades.ConstantesEntidades;
 import Entidades.Mario;
+import Logica.ConstantesColisiones;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
@@ -37,7 +39,16 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
     public void visit(Spiny s, int direccion){}
     @Override
     public void visit(Mario m, int direccion){
-        m.setVelocidadY(0);
+        if(direccion == ConstantesColisiones.LATERAL){
+            m.setVelocidadX(0);
+        }
+        if(direccion == ConstantesColisiones.ABAJO){
+            m.setVelocidadY(0);
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            m.setVelocidadY(1);
+            m.establecerEstadoAereo(ConstantesEntidades.SUELO);
+        }
     }
     @Override
     public void visit(ChampinionVerde cv, int direccion){}
