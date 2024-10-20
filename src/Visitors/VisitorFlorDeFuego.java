@@ -8,6 +8,7 @@ import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
+import Estados.EstadoMarioComun;
 import Estados.EstadoMarioFuego;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
@@ -39,7 +40,12 @@ public class VisitorFlorDeFuego extends VisitorPowerUp{
     public void visit(Spiny s, int direccion){}
     @Override
     public void visit(Mario m, int direccion){
-        m.setEstado(new EstadoMarioFuego(m));
+        if(m.getEstado().getModificador() == ConstantesPowerUp.SUPERCHAMPINION){
+            m.setEstado(new EstadoMarioFuego(m)); 
+        }
+        else {
+             m.setEstado(new EstadoMarioComun(m));
+        }
     }
     @Override
     public void visit(ChampinionVerde cv, int direccion){}
