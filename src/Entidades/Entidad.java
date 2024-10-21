@@ -27,8 +27,8 @@ public abstract class Entidad implements EntidadLogica{
       estadoAereo = ConstantesEntidades.SUELO;
       misSprites = sprites;
       spriteActual = misSprites[0];
-      alto = misSprites[0].getWidth();
-      ancho = misSprites[0].getHeight();
+      alto = misSprites[0].getHeight();
+      ancho = misSprites[0].getWidth();
 
       miHitboxes = new HitboxesEntidad(posicionX, posicionY, ancho, alto);
    }

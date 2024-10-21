@@ -45,15 +45,31 @@ public class Mario extends Entidad implements EntidadJugador{
             direccion = ConstantesEntidades.QUIETO;
         }
 
-        miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
         actualizarSprite();
         int direccionSprite = getDireccionSpriteMario();
         actualizar(direccionSprite, estadoAereo);
+        miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
 
         actualizarVelocidadXMario();
         if(getEstadoAereo() == ConstantesEntidades.AIRE) {
             actualizarVelocidadYMario();
         }
+        System.out.println(miHitboxes.getHitboxInferior().getHeight());
+    }
+
+    public void aplicarGravedad() {
+        double gravedad = -0.1;
+        double velTerminal = -8;
+        double velYActual = velocidadY;
+        velocidadY = Math.max(velYActual + gravedad, velTerminal);
+        estadoAereo = ConstantesEntidades.AIRE;
+        tocandoSuelo = false;
+
+        if(posicionY <= 0) {
+            agregarPaddingEstado();
+            tocandoSuelo = true;
+            estadoAereo = ConstantesEntidades.SUELO;
+        } else {posicionY += velocidadY;}
     }
 
     @Override
@@ -144,6 +160,7 @@ public class Mario extends Entidad implements EntidadJugador{
                 posicionY = 0;
                 tocandoSuelo = true;
                 estadoAereo = ConstantesEntidades.SUELO;
+                agregarPaddingEstado();
             }
         }
 
@@ -179,6 +196,12 @@ public class Mario extends Entidad implements EntidadJugador{
 
     public void setEstado(EstadoMario m){
         estado = m;
+        agregarPaddingEstado();
+        actualizarSprite();
+        alto = spriteActual.getHeight();
+        ancho = spriteActual.getWidth();
+        actualizarHitboxes(posicionX, posicionY, ancho, alto);
+        System.out.println(miHitboxes.getHitboxInferior().getHeight());
     }
 
     private int getDireccionSpriteMario() {
@@ -195,5 +218,8 @@ public class Mario extends Entidad implements EntidadJugador{
         return devolver;
     }
 
+    private void agregarPaddingEstado() {
+        posicionY = posicionY + estado.getPaddingTamanio();
+    }
     
 }

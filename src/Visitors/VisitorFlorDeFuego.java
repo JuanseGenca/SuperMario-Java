@@ -10,6 +10,7 @@ import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import Estados.EstadoMarioComun;
 import Estados.EstadoMarioFuego;
+import Estados.EstadoSuperMario;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
@@ -44,7 +45,7 @@ public class VisitorFlorDeFuego extends VisitorPowerUp{
             m.setEstado(new EstadoMarioFuego(m)); 
         }
         else {
-             m.setEstado(new EstadoMarioComun(m));
+             m.setEstado(new EstadoSuperMario(m));
         }
     }
     @Override

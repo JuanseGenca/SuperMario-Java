@@ -3,6 +3,7 @@ import Entidades.Mario;
 
 public class EstadoMarioComun implements EstadoMario{
     protected Mario m;
+    protected static final int paddingTamanio = 0;
     public EstadoMarioComun(Mario mario){
         m = mario;
     }
@@ -17,5 +18,9 @@ public class EstadoMarioComun implements EstadoMario{
     }
     public int getModificador(){
         return 0;
+    }
+
+    public int getPaddingTamanio() {
+        return paddingTamanio;
     }
 }

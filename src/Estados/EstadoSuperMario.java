@@ -4,6 +4,7 @@ import Entidades.Mario;
 
 public class EstadoSuperMario implements EstadoMario{
     protected Mario m;
+    protected static final int paddingTamanio = 48;
     public EstadoSuperMario(Mario mario){
         m = mario;
     }
@@ -18,5 +19,9 @@ public class EstadoSuperMario implements EstadoMario{
     }
     public int getModificador(){
         return 3;
+    }
+
+    public int getPaddingTamanio() {
+        return paddingTamanio;
     }
 }
