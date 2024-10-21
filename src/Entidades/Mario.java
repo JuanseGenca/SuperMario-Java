@@ -122,11 +122,11 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public int getPuntaje() {
-        return puntaje;
+        return miLogica.getPuntaje();
     }
 
     public void actualizarPuntaje(int puntaje) {
-        this.puntaje = this.puntaje + puntaje;
+        miLogica.actualizarPuntaje(puntaje);
     }
 
     @Override

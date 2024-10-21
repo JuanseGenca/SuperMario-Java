@@ -150,6 +150,10 @@ public class Logica {
         }
     }
 
+	public void actualizarPuntaje(int puntaje) {
+		this.puntaje = this.puntaje + puntaje;
+	}
+
 	public ManejadorDeColisiones getManejadorDeColisiones() {
 		return nivelActual.getManejadorDeColisiones();
 	}
@@ -176,5 +180,9 @@ public class Logica {
 		}else{
 			gui.accionarInicioJuego();
 		}
+	}
+
+	public int getPuntaje() {
+		return puntaje;
 	}
 }	
