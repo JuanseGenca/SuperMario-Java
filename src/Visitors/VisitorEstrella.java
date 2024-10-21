@@ -9,7 +9,6 @@ import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import Estados.EstadoMarioEstrella;
-import Estados.EstadoMarioFuego;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
