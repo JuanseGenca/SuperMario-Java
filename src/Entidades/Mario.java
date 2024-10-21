@@ -66,7 +66,7 @@ public class Mario extends Entidad implements EntidadJugador{
         estadoAereo = ConstantesEntidades.AIRE;
         tocandoSuelo = false;
 
-        if(posicionY <= 0) {
+        if(posicionY <= estado.getPaddingTamanio()) {
             agregarPaddingEstado();
             tocandoSuelo = true;
             estadoAereo = ConstantesEntidades.SUELO;
@@ -97,7 +97,7 @@ public class Mario extends Entidad implements EntidadJugador{
     //mejorable si encontramos la forma de pasarle la posicion de la plataforma
     public void tocoSuelo() {
         velocidadY = 0;
-        posicionY = alto + (posicionY - posicionY % 48);
+        posicionY = alto + (posicionY - posicionY % 48) - estado.getPaddingTamanio();
         establecerEstadoAereo(ConstantesEntidades.SUELO);
         tocandoSuelo = true;
     }
