@@ -3,9 +3,6 @@ package Estados;
 import Entidades.BolaDeFuego;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
-import Fabricas.SpriteFactory;
-import GUI.ObserverEntidades;
-import GUI.Sprite;
 
 public class EstadoMarioFuego implements EstadoMario{
     

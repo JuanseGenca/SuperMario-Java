@@ -16,6 +16,7 @@ public abstract class Enemigo extends Entidad{
     @Override
     public abstract void aceptar(Visitor v, int direccion);
     
+    @Override
     public void mover(){
         if(direccion == ConstantesEntidades.DERECHA){
             posicionX += 2;

@@ -131,8 +131,7 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public int getTiempo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get_tiempo'");
+      return 0;  
     }
 
     @Override
@@ -244,6 +243,7 @@ public class Mario extends Entidad implements EntidadJugador{
         return miLogica.getMonedas();
     } 
 
+    @Override
     public void morir(){
         miLogica.reiniciarNivel();
     }
