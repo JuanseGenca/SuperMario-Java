@@ -9,6 +9,7 @@ import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.ConstantesEntidades;
 import Entidades.Mario;
+import Logica.ConstantesColisiones;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
@@ -59,7 +60,15 @@ public class VisitorTuberia extends VisitorPlataforma{
     
     @Override
     public void visit(Mario m, int direccion){
-        
+        if(direccion == ConstantesColisiones.LATERAL){
+            m.setVelocidadX(0);
+        }
+        if(direccion == ConstantesColisiones.ABAJO){
+            m.setVelocidadY(0);
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            m.tocoSuelo();
+        }
     }
     
     @Override

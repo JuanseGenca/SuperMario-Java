@@ -54,7 +54,6 @@ public class Mario extends Entidad implements EntidadJugador{
         if(getEstadoAereo() == ConstantesEntidades.AIRE) {
             actualizarVelocidadYMario();
         }
-        System.out.println(miHitboxes.getHitboxInferior().getHeight());
     }
 
     public void aplicarGravedad() {
@@ -201,7 +200,6 @@ public class Mario extends Entidad implements EntidadJugador{
         alto = spriteActual.getHeight();
         ancho = spriteActual.getWidth();
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
-        System.out.println(miHitboxes.getHitboxInferior().getHeight());
     }
 
     private int getDireccionSpriteMario() {

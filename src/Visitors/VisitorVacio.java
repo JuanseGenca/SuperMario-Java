@@ -42,7 +42,7 @@ public class VisitorVacio extends VisitorPlataforma{
         s.morir();
     }
     public void visit(Mario m, int direccion){
-        m.morir();
+        m.aplicarGravedad();
     }
     public void visit(ChampinionVerde cv, int direccion){
         cv.morir();
