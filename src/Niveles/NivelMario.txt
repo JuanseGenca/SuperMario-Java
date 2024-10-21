@@ -20,3 +20,4 @@ Vacio:1008,-96
 Vacio:960,-96
 Meta:1152,48
 Tuberia:720,144
+Moneda:1400,0

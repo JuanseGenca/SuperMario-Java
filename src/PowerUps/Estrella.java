@@ -18,7 +18,5 @@ public class Estrella extends PowerUp{
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
-    public void eliminar(){
-        ManejadorEntidades.getInstancia().eliminarPowerUp(this);
-    }
+    
 }

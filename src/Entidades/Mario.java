@@ -12,13 +12,11 @@ public class Mario extends Entidad implements EntidadJugador{
     protected EstadoMario estado;
     protected Logica miLogica;
     private int dirTickAnterior;
-    protected int monedas;
     
 
     public Mario(int x, int y,Sprite[] sprites){
         super(x,y,sprites);
         estado = new EstadoMarioComun(this);
-        monedas=0;
         tocandoSuelo = true;
         estadoAereo = ConstantesEntidades.SUELO;
         visitor= new VisitorMario(this);
@@ -80,17 +78,11 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     public void aniadirVida() {
-        miLogica.actualizarVida(1);
+        miLogica.actualizarVida();
     }
 
     public void aniadirMoneda() {
-        //Como llega esto a nivel?
-        //Esta seria la logica de monedas. Si va aca, borrar comentarios. Sino mover a la clase correspondiente
-        monedas++;
-        if(monedas==100) {
-            miLogica.actualizarVida(1);
-            monedas=0;
-        }
+        miLogica.aniadirMoneda();
     }
     @Override
     public void aceptar(Visitor v, int direccion){
@@ -219,5 +211,9 @@ public class Mario extends Entidad implements EntidadJugador{
     private void agregarPaddingEstado() {
         posicionY = posicionY + estado.getPaddingTamanio();
     }
+    
+    public void setLogica(Logica l){
+        miLogica = l;
+    } 
     
 }
