@@ -21,7 +21,5 @@ public class KoopaTroopa extends Enemigo{
     public void setEstado(EstadoKoopaTroopa e){
         //estadoKoopaTroopa = e;
     }
-    public void eliminar(){
-        ManejadorEntidades.getInstancia().eliminarEnemigo(this);
-    }
+    
 }

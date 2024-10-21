@@ -1,6 +1,7 @@
 package Enemigos;
 
 import Entidades.Entidad;
+import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
 import Visitors.VisitorEnemigo;
@@ -19,4 +20,7 @@ public abstract class Enemigo extends Entidad{
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
     }
     
+    public void eliminar(){
+        ManejadorEntidades.getInstancia().eliminarEnemigo(this);
+    }
 }

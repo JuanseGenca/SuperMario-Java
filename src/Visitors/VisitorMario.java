@@ -120,6 +120,7 @@ public class VisitorMario implements Visitor {
     public void visit(LadrilloRompible lr, int direccion) {
         if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
             lr.recibirDanio();
+            lr.eliminar();
         }
     }
 

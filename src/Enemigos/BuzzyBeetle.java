@@ -14,8 +14,5 @@ public class BuzzyBeetle extends Enemigo{
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
-    public void eliminar(){
-        ManejadorEntidades.getInstancia().eliminarEnemigo(this);
-    }
     
 }
