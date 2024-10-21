@@ -1,12 +1,12 @@
 package Enemigos;
 
-import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
 
 public class Lakitu extends Enemigo{
     public Lakitu(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
+        puntaje=60;
     }
    
     @Override

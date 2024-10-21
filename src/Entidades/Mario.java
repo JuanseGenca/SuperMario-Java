@@ -116,8 +116,13 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public int getPuntaje() {
-        return 0;
+        return puntaje;
     }
+
+    public void actualizarPuntaje(int puntaje) {
+        this.puntaje = this.puntaje + puntaje;
+    }
+
     @Override
     public int getTiempo() {
         // TODO Auto-generated method stub

@@ -3,7 +3,6 @@ package Logica;
 import Enemigos.Enemigo;
 import Entidades.BolaDeFuego;
 import Entidades.Entidad;
-import Entidades.ManejadorEntidades;
 import Entidades.Mario;
 import Fabricas.*;
 import GUI.GUI;
@@ -25,6 +24,7 @@ public class Logica {
     protected GUI gui;
 	protected int vidas;
 	protected int monedas;
+	protected int puntaje;
     protected Nivel nivelActual;
 	protected HiloMario hilo1;
 	protected HiloSecundario hilo2;

@@ -6,6 +6,7 @@ import Logica.Visitor;
 public class PiranhaPlant extends Enemigo{
     public PiranhaPlant(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
+        puntaje=30;
     }
     
     @Override
