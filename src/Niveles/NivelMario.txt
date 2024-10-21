@@ -7,6 +7,8 @@ Lakitu:300,400
 Goomba:650,0
 Buzzy Beetle:850,0
 Koopa Troopa:1100,24
+Ladrillo Rompible:100,0
+Vacio:195,1
 Ladrillo Rompible:534,192
 Ladrillo Rompible:438,192
 Ladrillo Rompible:342,192
@@ -19,5 +21,5 @@ Vacio:629,193
 Vacio:270,193
 Vacio:390,385
 Vacio:486,385
-Meta:1152,48
+Ladrillo Rompible:1152,0
 Moneda:1400,0

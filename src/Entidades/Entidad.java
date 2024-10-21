@@ -98,7 +98,6 @@ public abstract class Entidad implements EntidadLogica{
 
    public void establecerDireccion(int x){
       direccion = x;
-      mover();
    }
 
    public int getDireccion(){
