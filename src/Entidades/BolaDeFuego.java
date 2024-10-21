@@ -15,6 +15,7 @@ public class BolaDeFuego extends Entidad{
         this.angulo = 0; // Ángulo inicial
         visitor = new VisitorBolaDeFuego();
     }
+    @Override
     public void mover(){
         posicionX += velocidadX;
         

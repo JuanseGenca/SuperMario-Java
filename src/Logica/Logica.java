@@ -49,6 +49,7 @@ public class Logica {
 		if (vidas == 0){
 			vidas = 3;
 			monedas = 0;
+			puntaje=0;
 		}
 		nivelActual = parseint.generarNivel(1);
 		nivelActual.getMario().setLogica(this);

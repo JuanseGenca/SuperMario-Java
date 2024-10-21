@@ -13,7 +13,4 @@ public class PiranhaPlant extends Enemigo{
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
-
-    public void mover(){
-    }
 }
