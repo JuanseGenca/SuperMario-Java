@@ -73,7 +73,8 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
             m.setVelocidadX(0);
         }
         if(direccion == ConstantesColisiones.ABAJO){
-            m.setVelocidadY(0);
+            if(m.getVelocidadY() >= 0) 
+                m.setVelocidadY(0);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
             m.tocoSuelo();

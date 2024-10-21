@@ -37,7 +37,7 @@ public class VisitorEnemigo implements Visitor {
     @Override
     public void visit(Mario m, int direccion) { 
         if(direccion == ConstantesColisiones.ARRIBA) {
-            double nuevaVel = m.getVelocidadY() + 1;
+            double nuevaVel = 3;
             m.setVelocidadY(nuevaVel);
         }
 
