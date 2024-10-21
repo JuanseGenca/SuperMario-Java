@@ -1,6 +1,5 @@
 package PowerUps;
 
-import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.*;
 import Visitors.VisitorMoneda;
