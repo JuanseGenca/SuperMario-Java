@@ -31,7 +31,7 @@ public class VisitorMario implements Visitor {
 
     @Override
     public void visit(KoopaTroopa k, int direccion) {
-        if (direccion == ConstantesColisiones.ABAJO) {
+        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA |  direccion == ConstantesColisiones.ABAJO) {
             k.recibirDanio();
             k.eliminar();
             System.out.println("Mate koopa");
@@ -40,7 +40,7 @@ public class VisitorMario implements Visitor {
 
     @Override
     public void visit(Goomba g, int direccion) {
-        if (direccion == ConstantesColisiones.ABAJO) {
+        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
             g.recibirDanio();
             g.eliminar();
             System.out.println("mate goomba");
@@ -49,7 +49,7 @@ public class VisitorMario implements Visitor {
 
     @Override
     public void visit(Lakitu l, int direccion) {
-        if (direccion == ConstantesColisiones.ABAJO) {
+        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
             l.recibirDanio();
             l.eliminar();
             System.out.println("mate lakitu");
@@ -58,7 +58,7 @@ public class VisitorMario implements Visitor {
 
     @Override
     public void visit(BuzzyBeetle b, int direccion) {
-        if (direccion == ConstantesColisiones.ABAJO) {
+        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
             b.recibirDanio();
             b.eliminar();
             System.out.println("mate beetle");
@@ -67,10 +67,20 @@ public class VisitorMario implements Visitor {
 
     @Override
     public void visit(PiranhaPlant p, int direccion) {
+        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA) {
+            p.recibirDanio();
+            p.eliminar();
+            System.out.println("mate beetle");
+        }
     }
 
     @Override
     public void visit(Spiny s, int direccion) {
+        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA) {
+            s.recibirDanio();
+            s.eliminar();
+            System.out.println("mate beetle");
+        }
     }
 
     @Override
