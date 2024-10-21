@@ -42,7 +42,6 @@ public class Mario extends Entidad implements EntidadJugador{
         }else{
             direccion = ConstantesEntidades.QUIETO;
         }
-
         actualizarSprite();
         int direccionSprite = getDireccionSpriteMario();
         actualizar(direccionSprite, estadoAereo);

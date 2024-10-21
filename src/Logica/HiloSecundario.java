@@ -1,6 +1,7 @@
 package Logica;
 
 import Enemigos.Enemigo;
+import Entidades.BolaDeFuego;
 import GUI.GUI;
 
 public class HiloSecundario extends Thread {
@@ -34,6 +35,9 @@ public class HiloSecundario extends Thread {
     private void tick(){
        for(Enemigo e: miLogica.getEnemigos()){
         e.mover();
+       }
+       for(BolaDeFuego bola : miLogica.getBolas()){
+        bola.mover();
        }
 
         

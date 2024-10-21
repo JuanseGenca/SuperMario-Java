@@ -1,6 +1,7 @@
 package Fabricas;
 
 import PowerUps.*;
+import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import GUI.Sprite;
 import Nivel.Silueta;
@@ -131,6 +132,11 @@ public class EntidadesFactory {
         Sprite[] spriteBloquePregunta = spriteFactory.getBloquePregunta();
         BloquePregunta bloquePregunta = new BloquePregunta(x,y,spriteBloquePregunta);
         return bloquePregunta;
+    }
+    public BolaDeFuego crearBolaDeFuego(int x, int y){
+        Sprite[] spriteBolaDeFuego = spriteFactory.getBolaDeFuego();
+        BolaDeFuego bolaDeFuego = new BolaDeFuego(x, y, spriteBolaDeFuego);
+        return bolaDeFuego;
     }    
 
 }

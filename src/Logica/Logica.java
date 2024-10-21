@@ -1,7 +1,9 @@
 package Logica;
 
 import Enemigos.Enemigo;
+import Entidades.BolaDeFuego;
 import Entidades.Entidad;
+import Entidades.ManejadorEntidades;
 import Entidades.Mario;
 import Fabricas.*;
 import GUI.GUI;
@@ -67,6 +69,7 @@ public class Logica {
 		registrarObserversParaEntidades(nivelActual.getPowerUps());
 		registrarObserversParaEntidades(nivelActual.getEnemigos());
 		registrarObserversParaEntidades(nivelActual.getPlataformas());
+		registrarObserversParaEntidades(nivelActual.getBolaDeFuego());
 	}
 	
 	protected void registrarObserverJugador(Mario jugador) {
@@ -157,6 +160,9 @@ public class Logica {
 
 	public int getMonedas(){
 		return monedas;
+	}
+	public List<BolaDeFuego> getBolas(){
+		return nivelActual.getBolaDeFuego();
 	}
 
 	//esta incompleto

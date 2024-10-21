@@ -4,9 +4,12 @@ import Entidades.EntidadJugador;
 import Entidades.EntidadLogica;
 import Logica.*;
 import Paneles.*;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+
+import Entidades.BolaDeFuego;
 import Entidades.ConstantesEntidades;
 
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
@@ -55,7 +58,8 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
                     miLogica.setMarioEstadoAereo(ConstantesEntidades.AIRE);
                     
                 } else if (keyCode == KeyEvent.VK_SPACE) {
-                    //miLogica.shootMario();
+                    miLogica.shootMario();
+
                 }
             }
 
@@ -125,6 +129,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     public void refrescar() {
         ventana.revalidate();
         ventana.repaint();
+    
     }
 
 }

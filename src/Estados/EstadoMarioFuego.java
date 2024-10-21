@@ -1,6 +1,11 @@
 package Estados;
 
+import Entidades.BolaDeFuego;
+import Entidades.ManejadorEntidades;
 import Entidades.Mario;
+import Fabricas.SpriteFactory;
+import GUI.ObserverEntidades;
+import GUI.Sprite;
 
 public class EstadoMarioFuego implements EstadoMario{
     
@@ -11,11 +16,12 @@ public class EstadoMarioFuego implements EstadoMario{
         m = mario;
     }
     public void disparar(){
-        //Hay que ver como crear una bola de fuego, dejo una idea. CREO que deberia conocer al nivel, sino ver como agregar la entidad a la lista.
-        /*
-         * nivel.agregarEntidad(new BolaDeFuego(m.getX(),m.getY(),¿SPRITE?);
-         * 
-         */
+        int posX = m.getPosicionX();
+        int posY = m.getPosicionY();
+
+        BolaDeFuego bola = ManejadorEntidades.getInstancia().crearBolaDeFuego(posX,posY);
+        ManejadorEntidades.getInstancia().agregarBolaDeFuego(bola);
+        
     }
     public void recibirDanio(){
         m.setEstado(new EstadoMarioComun(m));

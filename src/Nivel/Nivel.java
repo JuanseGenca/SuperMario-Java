@@ -96,5 +96,17 @@ public class Nivel {
             manejadorDeColisiones.agregarEntidad(enemigo);
         }
     }
+    public void agregarBolaDeFuego(BolaDeFuego bola){
+        if(bola!=null){
+            bolasFuego.add(bola);
+            manejadorDeColisiones.agregarEntidad(bola);
+        }
+    }
+    public void eliminarBolaDeFuego(BolaDeFuego bola){
+        if(bolasFuego.contains(bola)){
+            bolasFuego.remove(bola);
+            manejadorDeColisiones.eliminarEntidad(bola);
+        }
+    }
 
 }

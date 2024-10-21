@@ -1,6 +1,9 @@
 package Entidades;
 
 import Enemigos.Enemigo;
+import Fabricas.EntidadesFactory;
+import Fabricas.SpriteFactory;
+import GUI.Sprite;
 import Nivel.Nivel;
 import Plataformas.Plataforma;
 import PowerUps.PowerUp;
@@ -8,15 +11,17 @@ import PowerUps.PowerUp;
 public class ManejadorEntidades {
     private Nivel nivel;
     private static ManejadorEntidades instancia;
+    private EntidadesFactory fabricaEnt;
 
     // Constructor privado para evitar instanciación externa
     private ManejadorEntidades() {}
 
     // Método para inicializar la instancia con el nivel
-    public static void inicializar(Nivel nivel) {
+    public static void inicializar(Nivel nivel,EntidadesFactory fabrica) {
         //if (instancia == null) {
             instancia = new ManejadorEntidades();
             instancia.nivel = nivel;
+            instancia.fabricaEnt = fabrica;
         //}
     }
 
@@ -49,4 +54,17 @@ public class ManejadorEntidades {
             System.out.println("Nivel no inicializado");
         }
     }
+    public void agregarBolaDeFuego(BolaDeFuego bola){
+        if(nivel!=null){
+            nivel.agregarBolaDeFuego(bola);
+        } else{
+            System.out.println("Nivel no inicializado");
+        }
+    }
+    public BolaDeFuego crearBolaDeFuego(int x, int y){
+        System.out.println("bola creada pa");
+        return fabricaEnt.crearBolaDeFuego(x,y);
+        
+    }
 }
+
