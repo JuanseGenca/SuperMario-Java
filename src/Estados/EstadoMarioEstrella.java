@@ -50,7 +50,7 @@ public class EstadoMarioEstrella implements EstadoMario {
 
     @Override
     public int getModificador() {
-        return 0;
+        return 9;
         //Cambiar por el int adecuado una vez terminado el estado de estrella
     }
 }

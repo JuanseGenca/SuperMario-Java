@@ -74,7 +74,7 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite[] getMario() {
-		Sprite[] devolver = new Sprite[9];
+		Sprite[] devolver = new Sprite[13];
 
 		devolver[0] = new Sprite(rutaCarpeta + "/Mario/miniMarioQuieto.png");
 		devolver[1] = new Sprite(rutaCarpeta + "/Mario/miniMarioCaminando.gif");
@@ -85,6 +85,9 @@ public abstract class SpriteFactory {
 		devolver[6] = new Sprite(rutaCarpeta + "/Mario/MarioFuegoQuieto.png");
 		devolver[7] = new Sprite(rutaCarpeta + "/Mario/MarioFuegoCaminando.gif");
 		devolver[8] = new Sprite(rutaCarpeta + "/Mario/MarioFuegoSaltando.png");
+		devolver[9] = new Sprite(rutaCarpeta + "/Mario/marioEstrellaQuieto.gif");
+		devolver[10] = new Sprite(rutaCarpeta + "/Mario/marioFuegoCaminando.gif");
+		devolver[11] = new Sprite(rutaCarpeta + "/Mario/superMarioSaltando.png");
 
 		return devolver;
 	}
