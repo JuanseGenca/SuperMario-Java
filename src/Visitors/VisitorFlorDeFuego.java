@@ -41,12 +41,7 @@ public class VisitorFlorDeFuego extends VisitorPowerUp{
     public void visit(Spiny s, int direccion){}
     @Override
     public void visit(Mario m, int direccion){
-        if(m.getEstado().getModificador() == ConstantesPowerUp.SUPERCHAMPINION){
             m.setEstado(new EstadoMarioFuego(m)); 
-        }
-        else {
-             m.setEstado(new EstadoSuperMario(m));
-        }
     }
     @Override
     public void visit(ChampinionVerde cv, int direccion){}

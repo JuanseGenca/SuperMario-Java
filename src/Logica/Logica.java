@@ -35,6 +35,7 @@ public class Logica {
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
         parseint = new Parserint(1,fabricaEntidades);
         parseint = new Parserint(1,fabricaEntidades);
+		vidas = 3;
     }
    
     public void setControladorVistas(GUI controladorVistas) {
@@ -44,6 +45,7 @@ public class Logica {
 
     public void iniciar() {
 		nivelActual = parseint.generarNivel(1);
+		nivelActual.getMario().setLogica(this);
 		registrarObservers();
 		gui.mostrarPantallaJuego();
 		hilo1 = new HiloMario(nivelActual.getMario(),gui,this);
@@ -52,7 +54,6 @@ public class Logica {
 		hilo2.start();
 		hiloPrincipal = new HiloPrincipal(gui,this);
 		hiloPrincipal.start();
-		nivelActual.getMario().setLogica(this);
 		
 	}
 
@@ -132,7 +133,7 @@ public class Logica {
 	}
 
 	public void actualizarVida() {
-		vidas= vidas ++;
+		vidas++;
 	}
 
 	public void aniadirMoneda() {
@@ -149,5 +150,9 @@ public class Logica {
 
 	public int getVidas() {
 		return vidas;
+	}
+
+	public int getMonedas(){
+		return monedas;
 	}
 }

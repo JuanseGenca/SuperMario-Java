@@ -8,6 +8,8 @@ import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
+import Estados.EstadoMarioEstrella;
+import Estados.EstadoMarioFuego;
 import Plataformas.BloqueIrrompible;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
@@ -37,7 +39,7 @@ public class VisitorEstrella extends VisitorPowerUp{
     public void visit(Spiny s, int direccion){}
     @Override
     public void visit(Mario m, int direccion){
-        m.actualizarEstadoMario(ConstantesPowerUp.ESTRELLA);
+        //m.setEstado(new EstadoMarioEstrella(m)); 
     }
     @Override
     public void visit(ChampinionVerde cv, int direccion){}

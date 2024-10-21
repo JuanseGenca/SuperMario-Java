@@ -24,6 +24,6 @@ public class ObserverJugador extends ObserverGrafico{
 
 	public void actualizar(int direccion, int estadoAereo) {
 		super.actualizar(direccion, estadoAereo);
-		panelPantallaJuego.actualizarScrollHaciaJugador(entidadObservada);
+		panelPantallaJuego.actualizarInfoJugador(jugadorObservado);
 	}
 }

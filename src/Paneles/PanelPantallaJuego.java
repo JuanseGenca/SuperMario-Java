@@ -25,6 +25,8 @@ public class PanelPantallaJuego extends JPanel {
     private JLabel imagenFondoPanelInformacion;
     private JScrollPane panelPantallaJuego;
     private JLabel labelPuntaje;
+    private JLabel labelMonedas;
+    private JLabel labelVidas;
     private int posicionXAnterior = 0;
     private int posicionYAnterior = 0;
 
@@ -64,13 +66,23 @@ public class PanelPantallaJuego extends JPanel {
         return observerEntidad;
     }
 
-    protected void actualizarInfoJugador(EntidadJugador jugador) {
+    public void actualizarInfoJugador(EntidadJugador jugador) {
         actualizarLabelsInformacion(jugador);
+        actualizarLabelsMonedas(jugador);
+        actualizarLabelsVidas(jugador);
         actualizarScrollHaciaJugador(jugador);
+    }
+
+    protected void actualizarLabelsVidas(EntidadJugador jugador) {
+        labelVidas.setText(textoConCantidadDigitos(jugador.getVidas(), 5));
     }
 
     protected void actualizarLabelsInformacion(EntidadJugador jugador) {
         labelPuntaje.setText(textoConCantidadDigitos(jugador.getPuntaje(), 5));
+    }
+    
+    protected void actualizarLabelsMonedas(EntidadJugador jugador) {
+        labelMonedas.setText(textoConCantidadDigitos(jugador.getMonedas(), 5));
     }
 
     protected String textoConCantidadDigitos(int numero, int digitos) {
@@ -170,6 +182,8 @@ public class PanelPantallaJuego extends JPanel {
         panelInformacion.setPreferredSize(new Dimension(ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.PANEL_ALTO));
         agregarImagenFondoPanelInformacion();
         agregarLabelsEditablesInformacion();
+        agregarLabelsEditablesMonedas();
+        agregarLabelsEditablesVidas();
         add(panelInformacion, BorderLayout.EAST);
     }
 
@@ -183,15 +197,39 @@ public class PanelPantallaJuego extends JPanel {
         panelInformacion.add(imagenFondoPanelInformacion);
     }
 
+    protected void agregarLabelsEditablesVidas() {
+        labelVidas = new JLabel("00000");
+        decorarLabelsVidas();
+        imagenFondoPanelInformacion.add(labelVidas);
+    }
+
     protected void agregarLabelsEditablesInformacion() {
         labelPuntaje = new JLabel("00000");
         decorarLabelsInformacion();
         imagenFondoPanelInformacion.add(labelPuntaje);
     }
 
+    protected void decorarLabelsVidas() {
+        labelVidas.setBounds(49, 365, 150, 50);
+        labelVidas.setForeground(Color.WHITE);
+        labelVidas.setFont(new Font(labelPuntaje.getFont().getName(), Font.BOLD, 24));
+    }
+
     protected void decorarLabelsInformacion() {
-        labelPuntaje.setBounds(49, 120, 150, 50);
+        labelPuntaje.setBounds(49, 255, 150, 50);
         labelPuntaje.setForeground(Color.WHITE);
         labelPuntaje.setFont(new Font(labelPuntaje.getFont().getName(), Font.BOLD, 24));
+    }
+
+    protected void agregarLabelsEditablesMonedas() {
+        labelMonedas = new JLabel("00000");
+        decorarLabelsMonedas();
+        imagenFondoPanelInformacion.add(labelMonedas);
+    }
+
+    protected void decorarLabelsMonedas() {
+        labelMonedas.setBounds(49, 475, 150, 50);
+        labelMonedas.setForeground(Color.WHITE);
+        labelMonedas.setFont(new Font(labelMonedas.getFont().getName(), Font.BOLD, 24));
     }
 }

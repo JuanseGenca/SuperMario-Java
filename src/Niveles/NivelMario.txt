@@ -1,5 +1,8 @@
 Mario:0,0
-Flor de Fuego:200,0
+Flor de Fuego:1800,0
+Super Champinion:1600,0
+Estrella:2000,0
+Champinion Verde:2200,0
 Lakitu:300,400
 Buzzy Beetle:342,0
 Koopa Troopa:438,24

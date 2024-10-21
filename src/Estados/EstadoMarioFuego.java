@@ -3,8 +3,10 @@ package Estados;
 import Entidades.Mario;
 
 public class EstadoMarioFuego implements EstadoMario{
+    
     protected Mario m;
     protected static final int paddingTamanio = 48;
+    
     public EstadoMarioFuego(Mario mario){
         m = mario;
     }

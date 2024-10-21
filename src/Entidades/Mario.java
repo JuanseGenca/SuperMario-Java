@@ -214,6 +214,11 @@ public class Mario extends Entidad implements EntidadJugador{
     
     public void setLogica(Logica l){
         miLogica = l;
+    }
+
+    @Override
+    public int getMonedas() {
+        return miLogica.getMonedas();
     } 
     
 }
