@@ -9,8 +9,8 @@ public class HitboxesEntidad {
 
 
     public HitboxesEntidad(int posicionX, int posicionY, int ancho, int alto) {
-        hitboxSuperior = new Rectangle(posicionX, posicionY, ancho, ancho / 4);
-        hitboxInferior = new Rectangle(posicionX, posicionY + (3 * ancho / 4), ancho, ancho / 4);
+        hitboxSuperior = new Rectangle(posicionX, posicionY, ancho, alto / 4);
+        hitboxInferior = new Rectangle(posicionX, posicionY + (3 * alto / 4), ancho, alto / 4);
         hitboxLateral = new Rectangle(posicionX, posicionY + (alto / 4), ancho, alto / 2);
     }
 

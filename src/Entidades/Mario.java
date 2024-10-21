@@ -46,7 +46,11 @@ public class Mario extends Entidad implements EntidadJugador{
         actualizarSprite();
         int direccionSprite = getDireccionSpriteMario();
         actualizar(direccionSprite, estadoAereo);
-        miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
+        miHitboxes.actualizarHitboxes(posicionX, posicionY-estado.getPaddingTamanio(), ancho, alto);
+        System.out.println("alto: "+alto);
+        System.out.println(miHitboxes.getHitboxSuperior().getX() + "|" + miHitboxes.getHitboxSuperior().getY() + "|" + miHitboxes.getHitboxSuperior().getWidth() + "|" + miHitboxes.getHitboxSuperior().getHeight());
+        System.out.println(miHitboxes.getHitboxLateral().getX() + "|" + miHitboxes.getHitboxLateral().getY() + "|" + miHitboxes.getHitboxLateral().getWidth() + "|" + miHitboxes.getHitboxLateral().getHeight());
+        System.out.println(miHitboxes.getHitboxInferior().getX() + "|" + miHitboxes.getHitboxInferior().getY() + "|" + miHitboxes.getHitboxInferior().getWidth() + "|" + miHitboxes.getHitboxInferior().getHeight());
 
         actualizarVelocidadXMario();
         if(getEstadoAereo() == ConstantesEntidades.AIRE) {
@@ -146,7 +150,7 @@ public class Mario extends Entidad implements EntidadJugador{
         } else {
             velYActual = Math.max(velYActual + gravedad, velTerminal);
 
-            if (posicionY < 0) {
+            if (miHitboxes.getHitboxInferior().getY() < 0) {
                 velYActual = 0;
                 posicionY = 0;
                 tocandoSuelo = true;
@@ -191,7 +195,7 @@ public class Mario extends Entidad implements EntidadJugador{
         actualizarSprite();
         alto = spriteActual.getHeight();
         ancho = spriteActual.getWidth();
-        actualizarHitboxes(posicionX, posicionY, ancho, alto);
+        System.out.println("---------------CAMBIO DE ESTADO----------------------");
     }
 
     private int getDireccionSpriteMario() {
