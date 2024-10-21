@@ -132,14 +132,14 @@ public class Logica {
 		return nivelActual.getEnemigos();
 	}
 
-	public void actualizarVida() {
-		vidas++;
+	public void actualizarVida(int i) {
+		vidas = vidas + i;
 	}
 
 	public void aniadirMoneda() {
         monedas++;
         if(monedas==100) {
-        	actualizarVida();
+        	actualizarVida(1);
             monedas=0;
         }
     }
@@ -155,4 +155,18 @@ public class Logica {
 	public int getMonedas(){
 		return monedas;
 	}
-}
+
+	//esta incompleto
+	/*public void reiniciarNivel(){
+		vidas--;
+		if (vidas == 0){
+			gui.mostrarPantallaFinJuego();
+		}else{
+			hilo1.parar();
+			hilo2.parar();
+			hiloPrincipal.parar();
+			gui.mostrarPantallaReinicioNivel();
+			iniciar();
+		}
+	}*/
+}	

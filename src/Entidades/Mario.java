@@ -78,7 +78,7 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     public void aniadirVida() {
-        miLogica.actualizarVida();
+        miLogica.actualizarVida(1);
     }
 
     public void aniadirMoneda() {
@@ -220,5 +220,9 @@ public class Mario extends Entidad implements EntidadJugador{
     public int getMonedas() {
         return miLogica.getMonedas();
     } 
+
+    public void morir(){
+        miLogica.actualizarVida(-1);
+    }
     
 }

@@ -2,10 +2,11 @@ Mario:0,0
 Flor de Fuego:1800,0
 Super Champinion:1600,0
 Estrella:2000,0
-Champinion Verde:2200,0
+Champinion Verde:2100,0
 Lakitu:300,400
-Buzzy Beetle:342,0
-Koopa Troopa:438,24
+Goomba:650,0
+Buzzy Beetle:850,0
+Koopa Troopa:1100,24
 Ladrillo Rompible:534,192
 Ladrillo Rompible:438,192
 Ladrillo Rompible:342,192
@@ -13,14 +14,8 @@ Bloque Pregunta:192,192
 Bloque Pregunta:486,192
 Bloque Pregunta:390,192
 Bloque Pregunta:438,390
-Estrella:438,438
 Vacio:97,193
-Vacio:1008,-47
-Vacio:912,-47
-Vacio:960,-47
-Vacio:912,-96
-Vacio:1008,-96
-Vacio:960,-96
+Vacio:629,193
+Vacio:270,193
 Meta:1152,48
-Tuberia:720,144
 Moneda:1400,0
