@@ -47,11 +47,7 @@ public class Mario extends Entidad implements EntidadJugador{
         int direccionSprite = getDireccionSpriteMario();
         actualizar(direccionSprite, estadoAereo);
         miHitboxes.actualizarHitboxes(posicionX, posicionY-estado.getPaddingTamanio(), ancho, alto);
-        System.out.println("alto: "+alto);
-        System.out.println(miHitboxes.getHitboxSuperior().getX() + "|" + miHitboxes.getHitboxSuperior().getY() + "|" + miHitboxes.getHitboxSuperior().getWidth() + "|" + miHitboxes.getHitboxSuperior().getHeight());
-        System.out.println(miHitboxes.getHitboxLateral().getX() + "|" + miHitboxes.getHitboxLateral().getY() + "|" + miHitboxes.getHitboxLateral().getWidth() + "|" + miHitboxes.getHitboxLateral().getHeight());
-        System.out.println(miHitboxes.getHitboxInferior().getX() + "|" + miHitboxes.getHitboxInferior().getY() + "|" + miHitboxes.getHitboxInferior().getWidth() + "|" + miHitboxes.getHitboxInferior().getHeight());
-
+       
         actualizarVelocidadXMario();
         if(getEstadoAereo() == ConstantesEntidades.AIRE) {
             actualizarVelocidadYMario();
@@ -67,7 +63,7 @@ public class Mario extends Entidad implements EntidadJugador{
         tocandoSuelo = false;
 
         if(posicionY <= estado.getPaddingTamanio()) {
-            agregarPaddingEstado();
+            posicionY = posicionY + estado.getPaddingTamanio();
             tocandoSuelo = true;
             estadoAereo = ConstantesEntidades.SUELO;
         } else {posicionY += velocidadY;}
@@ -155,7 +151,7 @@ public class Mario extends Entidad implements EntidadJugador{
                 posicionY = 0;
                 tocandoSuelo = true;
                 estadoAereo = ConstantesEntidades.SUELO;
-                agregarPaddingEstado();
+                posicionY = posicionY + estado.getPaddingTamanio();
             }
         }
 
@@ -190,12 +186,13 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     public void setEstado(EstadoMario m){
+        int paddingAnterior = estado.getPaddingTamanio();
         estado = m;
-        agregarPaddingEstado();
+        int paddingReal = estado.getPaddingTamanio() - paddingAnterior;
+        posicionY = posicionY + paddingReal;
         actualizarSprite();
         alto = spriteActual.getHeight();
         ancho = spriteActual.getWidth();
-        System.out.println("---------------CAMBIO DE ESTADO----------------------");
     }
 
     private int getDireccionSpriteMario() {
@@ -210,10 +207,6 @@ public class Mario extends Entidad implements EntidadJugador{
         }
 
         return devolver;
-    }
-
-    private void agregarPaddingEstado() {
-        posicionY = posicionY + estado.getPaddingTamanio();
     }
     
     public void setLogica(Logica l){
