@@ -1,17 +1,19 @@
 package Entidades;
+
 import Estados.*;
-//import Estados.EstadoMario;
-//import Estados.EstadoMarioComun;
-//import Fabricas.SpriteFactory;
 import GUI.Sprite;
 import Logica.*;
 import Visitors.VisitorMario;
+import java.util.Timer;
+import java.util.TimerTask;
+
 //import Plataformas.Plataforma;
 
 public class Mario extends Entidad implements EntidadJugador{
     protected EstadoMario estado;
     protected Logica miLogica;
     private int dirTickAnterior;
+    protected boolean invencible;
     
 
     public Mario(int x, int y,Sprite[] sprites){
@@ -71,8 +73,23 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public void recibirDanio(){
-        estado.recibirDanio();
+        if(!invencible){
+            estado.recibirDanio();
+            establecerInvencibilidad();
+        } 
     }
+
+    private void establecerInvencibilidad() {
+        invencible = true;
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                invencible =false;
+            }
+        }, 500); // 0.5 segundos
+    }
+
     public void disparar(){
         estado.disparar();
     }
