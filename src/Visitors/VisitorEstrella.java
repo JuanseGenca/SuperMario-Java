@@ -39,7 +39,9 @@ public class VisitorEstrella extends VisitorPowerUp{
     public void visit(Spiny s, int direccion){}
     @Override
     public void visit(Mario m, int direccion){
-        //m.setEstado(new EstadoMarioEstrella(m)); 
+        EstadoMarioEstrella aux=new EstadoMarioEstrella(m);
+        aux.setEstadoPrevio(m.getEstado());
+        m.setEstado(aux); 
     }
     @Override
     public void visit(ChampinionVerde cv, int direccion){}
