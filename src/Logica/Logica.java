@@ -48,6 +48,7 @@ public class Logica {
     public void iniciar() {
 		if (vidas == 0){
 			vidas = 3;
+			monedas = 0;
 		}
 		nivelActual = parseint.generarNivel(1);
 		nivelActual.getMario().setLogica(this);
@@ -172,6 +173,7 @@ public class Logica {
 		hilo2.parar();
 		hiloPrincipal.parar();
 		if (vidas == 0){
+
 			gui.mostrarPantallaInicial();
 		}else{
 			gui.accionarInicioJuego();
