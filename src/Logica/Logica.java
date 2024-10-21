@@ -44,6 +44,9 @@ public class Logica {
 
 
     public void iniciar() {
+		if (vidas == 0){
+			vidas = 3;
+		}
 		nivelActual = parseint.generarNivel(1);
 		nivelActual.getMario().setLogica(this);
 		registrarObservers();
@@ -157,16 +160,15 @@ public class Logica {
 	}
 
 	//esta incompleto
-	/*public void reiniciarNivel(){
+	public void reiniciarNivel(){
 		vidas--;
+		hilo1.parar();
+		hilo2.parar();
+		hiloPrincipal.parar();
 		if (vidas == 0){
-			gui.mostrarPantallaFinJuego();
+			gui.mostrarPantallaInicial();
 		}else{
-			hilo1.parar();
-			hilo2.parar();
-			hiloPrincipal.parar();
-			gui.mostrarPantallaReinicioNivel();
-			iniciar();
+			gui.accionarInicioJuego();
 		}
-	}*/
+	}
 }	

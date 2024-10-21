@@ -14,10 +14,10 @@ public class ManejadorEntidades {
 
     // Método para inicializar la instancia con el nivel
     public static void inicializar(Nivel nivel) {
-        if (instancia == null) {
+        //if (instancia == null) {
             instancia = new ManejadorEntidades();
             instancia.nivel = nivel;
-        }
+        //}
     }
 
     // Método para obtener la instancia

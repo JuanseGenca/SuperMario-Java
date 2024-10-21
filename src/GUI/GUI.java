@@ -77,6 +77,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     }
 
     public void accionarInicioJuego() {
+        this.panelPantallaJuego = new PanelPantallaJuego();
         miLogica.iniciar();
     }
 

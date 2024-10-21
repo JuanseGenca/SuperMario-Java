@@ -222,7 +222,7 @@ public class Mario extends Entidad implements EntidadJugador{
     } 
 
     public void morir(){
-        miLogica.actualizarVida(-1);
+        miLogica.reiniciarNivel();
     }
     
 }
