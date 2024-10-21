@@ -21,7 +21,7 @@ public class Mario extends Entidad implements EntidadJugador{
         monedas=0;
         tocandoSuelo = true;
         estadoAereo = ConstantesEntidades.SUELO;
-        visitor= new VisitorMario();
+        visitor= new VisitorMario(this);
     }
 
     @Override
