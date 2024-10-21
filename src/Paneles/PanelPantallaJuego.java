@@ -27,6 +27,8 @@ public class PanelPantallaJuego extends JPanel {
     private JLabel labelPuntaje;
     private JLabel labelMonedas;
     private JLabel labelVidas;
+    private JLabel labelTiempo;
+    private long startTime;
     private int posicionXAnterior = 0;
     private int posicionYAnterior = 0;
 
@@ -70,11 +72,16 @@ public class PanelPantallaJuego extends JPanel {
         actualizarLabelsInformacion(jugador);
         actualizarLabelsMonedas(jugador);
         actualizarLabelsVidas(jugador);
+        actualizarLabelsTiempo(jugador);
         actualizarScrollHaciaJugador(jugador);
     }
 
     protected void actualizarLabelsVidas(EntidadJugador jugador) {
         labelVidas.setText(textoConCantidadDigitos(jugador.getVidas(), 5));
+    }
+
+    protected void actualizarLabelsTiempo(EntidadJugador jugador) {
+        labelTiempo.setText(Long.toString((System.currentTimeMillis() - startTime)/(-1000)));
     }
 
     protected void actualizarLabelsInformacion(EntidadJugador jugador) {
@@ -184,6 +191,7 @@ public class PanelPantallaJuego extends JPanel {
         agregarLabelsEditablesInformacion();
         agregarLabelsEditablesMonedas();
         agregarLabelsEditablesVidas();
+        agregarLabelsEditablesTiempo();
         add(panelInformacion, BorderLayout.EAST);
     }
 
@@ -197,6 +205,13 @@ public class PanelPantallaJuego extends JPanel {
         panelInformacion.add(imagenFondoPanelInformacion);
     }
 
+    protected void agregarLabelsEditablesTiempo() {
+        startTime = System.currentTimeMillis() + 60000;
+        labelTiempo = new JLabel("00000");
+        decorarLabelsTiempo();
+        imagenFondoPanelInformacion.add(labelTiempo);
+    }
+
     protected void agregarLabelsEditablesVidas() {
         labelVidas = new JLabel("00000");
         decorarLabelsVidas();
@@ -207,6 +222,12 @@ public class PanelPantallaJuego extends JPanel {
         labelPuntaje = new JLabel("00000");
         decorarLabelsInformacion();
         imagenFondoPanelInformacion.add(labelPuntaje);
+    }
+
+    protected void decorarLabelsTiempo() {
+        labelTiempo.setBounds(49, 160, 150, 50);
+        labelTiempo.setForeground(Color.WHITE);
+        labelTiempo.setFont(new Font(labelPuntaje.getFont().getName(), Font.BOLD, 24));
     }
 
     protected void decorarLabelsVidas() {
