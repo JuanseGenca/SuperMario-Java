@@ -26,6 +26,21 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public void mover(){
+        
+        moverX();
+
+        actualizarSprite();
+        int direccionSprite = getDireccionSpriteMario();
+        actualizar(direccionSprite, estadoAereo);
+        miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
+       
+        actualizarVelocidadXMario();
+        if(getEstadoAereo() == ConstantesEntidades.AIRE) {
+            actualizarVelocidadYMario();
+        }
+    }
+
+    private void moverX() {
         if(direccion != ConstantesEntidades.QUIETO || estadoAereo == ConstantesEntidades.AIRE) {
             if(direccion==ConstantesEntidades.IZQUIERDA) {
                 posicionX-=velocidadX;
@@ -43,15 +58,6 @@ public class Mario extends Entidad implements EntidadJugador{
             }
         }else{
             direccion = ConstantesEntidades.QUIETO;
-        }
-        actualizarSprite();
-        int direccionSprite = getDireccionSpriteMario();
-        actualizar(direccionSprite, estadoAereo);
-        miHitboxes.actualizarHitboxes(posicionX, posicionY-estado.getPaddingTamanio(), ancho, alto);
-       
-        actualizarVelocidadXMario();
-        if(getEstadoAereo() == ConstantesEntidades.AIRE) {
-            actualizarVelocidadYMario();
         }
     }
 
@@ -166,8 +172,7 @@ public class Mario extends Entidad implements EntidadJugador{
             tocandoSuelo = false;
         } else {
             velYActual = Math.max(velYActual + gravedad, velTerminal);
-
-            if (miHitboxes.getHitboxInferior().getY() < 0) {
+            if (miHitboxes.getHitboxInferior().getY() < -28) {
                 velYActual = 0;
                 posicionY = 0;
                 tocandoSuelo = true;
