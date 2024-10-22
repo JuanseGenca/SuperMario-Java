@@ -19,7 +19,6 @@ Bloque Pregunta:438,384
 Vacio:97,193
 Vacio:629,193
 Vacio:270,193
-Vacio:390,385
 Vacio:486,385
 Ladrillo Rompible:1152,0
 Moneda:1400,0
