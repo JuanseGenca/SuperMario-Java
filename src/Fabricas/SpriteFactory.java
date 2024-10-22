@@ -87,8 +87,8 @@ public abstract class SpriteFactory {
 		devolver[7] = new Sprite(rutaCarpeta + "/Mario/MarioFuegoCaminando.gif");
 		devolver[8] = new Sprite(rutaCarpeta + "/Mario/MarioFuegoSaltando.png");
 		devolver[9] = new Sprite(rutaCarpeta + "/Mario/marioEstrellaQuieto.gif");
-		devolver[10] = new Sprite(rutaCarpeta + "/Mario/marioFuegoCaminando.gif");
-		devolver[11] = new Sprite(rutaCarpeta + "/Mario/superMarioSaltando.png");
+		devolver[10] = new Sprite(rutaCarpeta + "/Mario/marioEstrellaCaminando.gif");
+		devolver[11] = new Sprite(rutaCarpeta + "/Mario/marioEstrellaSaltando.gif");
 
 		return devolver;
 	}

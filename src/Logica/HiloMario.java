@@ -19,6 +19,7 @@ public class HiloMario extends Thread {
 
     public void run() {
         while(ejecutando){
+            tick();
                 try {
                     sleep(7);
                 } catch (InterruptedException e) {
@@ -29,6 +30,10 @@ public class HiloMario extends Thread {
 
     public void parar(){
         ejecutando = false;
+    }
+    private void tick(){
+        jugador.mover();
+
     }
 }
 
