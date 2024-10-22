@@ -99,40 +99,8 @@ public class Logica {
 		nivelActual.getMario().establecerDireccion(direccion);
 	}
 
-	public int getMarioPosicionY() {
-		return nivelActual.getMario().getPosicionY();
-	}
-
-	public int getMarioEstadoAereo() {
-		return nivelActual.getMario().getEstadoAereo();
-	}
-
 	public void setMarioEstadoAereo(int estado) {
 		nivelActual.getMario().establecerEstadoAereo(estado);
-	}
-
-	public void actualizarVelocidadXMario() {
-		nivelActual.getMario().actualizarVelocidadXMario();
-	}
-
-	public void actualizarVelocidadYMario() {
-		nivelActual.getMario().actualizarVelocidadYMario();
-	}
-
-	public void setMarioVelocidadX(double velocidad) {
-		nivelActual.getMario().setVelocidadX(velocidad);
-	}
-
-	public double getMarioVelocidadX() {
-		return nivelActual.getMario().getVelocidadX();
-	}
-
-	public void setMarioVelocidadY(double velocidad) {
-		nivelActual.getMario().setVelocidadY(velocidad);
-	}
-
-	public double getMarioVelocidadY() {
-		return nivelActual.getMario().getVelocidadY();
 	}
 
     public void shootMario() {
