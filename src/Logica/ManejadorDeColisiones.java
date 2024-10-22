@@ -55,10 +55,15 @@ public class ManejadorDeColisiones {
         int direccionEntidad2 = 0;
 
         int deltaIzquierda = entidad2Hitbox.x + entidad2Hitbox.width - entidad1Hitbox.x;
-        int deltaDerecha = entidad1Hitbox.x + entidad1Hitbox.width - entidad2Hitbox.x;
-        int deltaArriba = entidad2Hitbox.y + entidad2Hitbox.height - entidad1Hitbox.y;
-        int deltaAbajo = entidad1Hitbox.y + entidad1Hitbox.height - entidad2Hitbox.y; 
+        int deltaDerecha = entidad1Hitbox.x + entidad1Hitbox.width - entidad2Hitbox.x + 5;
+        int deltaArriba = entidad2Hitbox.y + entidad2Hitbox.height - entidad1Hitbox.y + 5;
+        int deltaAbajo = entidad1Hitbox.y + entidad1Hitbox.height - entidad2Hitbox.y + 5; 
 
+        System.out.println("--------------"+entidad1+" VS "+entidad2+"--------------");
+        System.out.println("deltaIzquierda: "+deltaIzquierda);
+        System.out.println("deltaDerecha: "+deltaDerecha);
+        System.out.println("deltaArriba: "+deltaArriba);
+        System.out.println("deltaAbajo: "+deltaAbajo);
         int minDelta = Math.min(Math.min(deltaIzquierda, deltaDerecha), Math.min(deltaArriba, deltaAbajo));
 
         if (minDelta == deltaIzquierda || minDelta == deltaDerecha) {
