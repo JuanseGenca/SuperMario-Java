@@ -31,8 +31,11 @@ public class PanelPantallaJuego extends JPanel {
     private long startTime;
     private int posicionXAnterior = 0;
     private int posicionYAnterior = 0;
+    private GUI miGui;
+    private final int TiempoDeJuego = (1 * 1000);
 
-    public PanelPantallaJuego() {
+    public PanelPantallaJuego(GUI gui) {
+        miGui = gui;
         setPreferredSize(new Dimension(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO));
         setLayout(new BorderLayout());
         agregarPanelInformacion();
@@ -81,7 +84,13 @@ public class PanelPantallaJuego extends JPanel {
     }
 
     protected void actualizarLabelsTiempo(EntidadJugador jugador) {
-        labelTiempo.setText(Long.toString((System.currentTimeMillis() - startTime)/(-1000)));
+        if((System.currentTimeMillis() - startTime)/(-1000) == 0){
+            miGui.reiniciarNivel();
+        }else{
+            labelTiempo.setText(Long.toString((System.currentTimeMillis() - startTime)/(-1000)));
+        }
+        
+        //labelTiempo.setText(Long.toString((System.currentTimeMillis() - startTime)/(-1000)));
     }
 
     protected void actualizarLabelsInformacion(EntidadJugador jugador) {
@@ -206,7 +215,7 @@ public class PanelPantallaJuego extends JPanel {
     }
 
     protected void agregarLabelsEditablesTiempo() {
-        startTime = System.currentTimeMillis() + 60000;
+        startTime = System.currentTimeMillis() + (60000 * 2);
         labelTiempo = new JLabel("00000");
         decorarLabelsTiempo();
         imagenFondoPanelInformacion.add(labelTiempo);

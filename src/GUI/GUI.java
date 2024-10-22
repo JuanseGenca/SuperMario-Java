@@ -24,7 +24,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     public GUI(Logica miLogica) {
         this.miLogica = miLogica;
         this.panelPantallaPrincipal = new PanelPantallaPrincipal(this);
-        this.panelPantallaJuego = new PanelPantallaJuego();
+        this.panelPantallaJuego = new PanelPantallaJuego(this);
         configurarVentana();
         registrarOyenteVentana();
     }
@@ -80,8 +80,12 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         refrescar();
     }
 
+    public void reiniciarNivel(){
+        miLogica.reiniciarNivel();
+    }
+
     public void accionarInicioJuego() {
-        this.panelPantallaJuego = new PanelPantallaJuego();
+        this.panelPantallaJuego = new PanelPantallaJuego(this);
         miLogica.iniciar();
     }
 

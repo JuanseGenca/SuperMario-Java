@@ -171,7 +171,6 @@ public class Logica {
 		return nivelActual.getBolaDeFuego();
 	}
 
-	//esta incompleto
 	public void reiniciarNivel(){
 		vidas--;
 		hilo1.parar();
