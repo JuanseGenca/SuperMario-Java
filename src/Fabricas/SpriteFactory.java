@@ -48,9 +48,10 @@ public abstract class SpriteFactory {
 	}
 
 	public Sprite[] getBolaDeFuego() {
-		Sprite[] devolver = new Sprite[2];
+		Sprite[] devolver = new Sprite[3];
 		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/bola_de_fuego.gif");
-		devolver[1] = new Sprite(rutaCarpeta + "/PowerUps/bola_de_fuego.gif");
+		devolver[1] = new Sprite(rutaCarpeta + "/PowerUps/bola_de_fuego_explotando.gif");
+		devolver[2] = new Sprite(rutaCarpeta + "/imagen-vacia.png");
 
 		return devolver;
 	}
