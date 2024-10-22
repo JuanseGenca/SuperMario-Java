@@ -1,7 +1,6 @@
 package GUI;
 
 import java.awt.image.BufferedImage;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Entidades.EntidadLogica;
@@ -11,16 +10,25 @@ import java.awt.Image;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 
-
-public abstract class ObserverGrafico extends JLabel implements Observer{
+public abstract class ObserverGrafico extends JLabel implements Observer {
     
 	private static final long serialVersionUID = 1L;
     protected EntidadLogica entidadObservada;
+    private int zIndex; // New property to manage z-order
 
-    protected ObserverGrafico(EntidadLogica entidadObservada)  {
+    protected ObserverGrafico(EntidadLogica entidadObservada, int zIndex)  {
 		super();
 		this.entidadObservada = entidadObservada;
+        this.zIndex = zIndex; // Initialize zIndex
 	}
+
+    public int getZIndex() {
+        return zIndex;
+    }
+
+    public void setZIndex(int zIndex) {
+        this.zIndex = zIndex;
+    }
 
 	public void actualizar() {
 		actualizarImagen();
@@ -55,6 +63,11 @@ public abstract class ObserverGrafico extends JLabel implements Observer{
 		int ancho = this.getIcon().getIconWidth();
 		int alto = this.getIcon().getIconHeight();
 		setBounds(x, y, ancho, alto);
+
+        // Update z-order in the container whenever position is updated
+        if (getParent() != null) {
+            getParent().setComponentZOrder(this, zIndex);
+        }
 	}
     
     public static ImageIcon rotarImagen(ImageIcon original) {

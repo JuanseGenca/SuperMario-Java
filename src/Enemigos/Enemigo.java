@@ -26,7 +26,7 @@ public abstract class Enemigo extends Entidad{
         }
         miObserver.actualizar();
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
-        }
+    }
     
     
     public void eliminar(){

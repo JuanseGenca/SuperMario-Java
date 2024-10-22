@@ -59,11 +59,6 @@ public class ManejadorDeColisiones {
         int deltaArriba = entidad2Hitbox.y + entidad2Hitbox.height - entidad1Hitbox.y + 5;
         int deltaAbajo = entidad1Hitbox.y + entidad1Hitbox.height - entidad2Hitbox.y + 5; 
 
-        System.out.println("--------------"+entidad1+" VS "+entidad2+"--------------");
-        System.out.println("deltaIzquierda: "+deltaIzquierda);
-        System.out.println("deltaDerecha: "+deltaDerecha);
-        System.out.println("deltaArriba: "+deltaArriba);
-        System.out.println("deltaAbajo: "+deltaAbajo);
         int minDelta = Math.min(Math.min(deltaIzquierda, deltaDerecha), Math.min(deltaArriba, deltaAbajo));
 
         if (minDelta == deltaIzquierda || minDelta == deltaDerecha) {

@@ -105,6 +105,10 @@ public abstract class Entidad implements EntidadLogica{
       return direccion;
    }
 
+   public int getZIndex(){
+      return ConstantesEntidades.PRIORIDAD;
+  }
+
    public void establecerEstadoAereo(int x){
       estadoAereo = x;
       mover();

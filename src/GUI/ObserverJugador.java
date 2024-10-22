@@ -11,7 +11,7 @@ public class ObserverJugador extends ObserverGrafico{
 	
 	
 	public ObserverJugador(PanelPantallaJuego panelPantallaJuego, EntidadJugador jugadorObservado) {
-		super(jugadorObservado);
+		super(jugadorObservado, 0);
 		this.panelPantallaJuego = panelPantallaJuego;
 		this.jugadorObservado = jugadorObservado;
 		actualizar();

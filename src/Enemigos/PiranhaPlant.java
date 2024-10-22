@@ -1,5 +1,6 @@
 package Enemigos;
 
+import Entidades.ConstantesEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
 
@@ -12,5 +13,16 @@ public class PiranhaPlant extends Enemigo{
     @Override
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
+    }
+
+    @Override
+    public void mover(){
+        miObserver.actualizar();
+        actualizarHitboxes(posicionX, posicionY, ancho, alto);
+    }
+
+    @Override
+    public int getZIndex(){
+        return ConstantesEntidades.FONDO;
     }
 }
