@@ -4,6 +4,8 @@ import Enemigos.Enemigo;
 import Entidades.BolaDeFuego;
 import GUI.GUI;
 import Nivel.Nivel;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class HiloSecundario extends Thread {
@@ -11,14 +13,12 @@ public class HiloSecundario extends Thread {
     private Logica miLogica;
     private GUI miGui;
     private ConcurrentLinkedQueue<Enemigo> enemigosAEliminar;
-    private ConcurrentLinkedQueue<BolaDeFuego> bolasAEliminar;
 
     public HiloSecundario(Logica logica, GUI gui) {
         miLogica = logica;
         miGui = gui;
         ejecutando = true;
         enemigosAEliminar = new ConcurrentLinkedQueue<>();
-        bolasAEliminar = new ConcurrentLinkedQueue<>();
     }
 
     public void parar() {
@@ -41,7 +41,8 @@ public class HiloSecundario extends Thread {
         for (Enemigo e : miLogica.getEnemigos()) {
             e.mover();
         }
-        for (BolaDeFuego bola : miLogica.getBolas()) {
+        List<BolaDeFuego> bolasACopiar = new ArrayList<>(miLogica.getBolas());
+        for (BolaDeFuego bola : bolasACopiar) {
             bola.mover();
         }
         eliminarEntidadesPendientes();
@@ -53,18 +54,10 @@ public class HiloSecundario extends Thread {
             Enemigo enemigo = enemigosAEliminar.poll();
             nivel.eliminarEnemigo(enemigo);
         }
-        while (!bolasAEliminar.isEmpty()) {
-            BolaDeFuego bola = bolasAEliminar.poll();
-            nivel.eliminarBolaDeFuego(bola);
-        }
     }
 
     public void marcarParaEliminar(Enemigo enemigo) {
         enemigosAEliminar.add(enemigo);
-    }
-
-    public void marcarParaEliminar(BolaDeFuego bolaDeFuego) {
-        bolasAEliminar.add(bolaDeFuego);
     }
 
     private void dibujar() {

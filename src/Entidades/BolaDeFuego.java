@@ -1,15 +1,21 @@
 package Entidades;
+import Enemigos.Enemigo;
 import GUI.Sprite;
 import Logica.Visitor;
 import Visitors.VisitorBolaDeFuego;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
 
-public class BolaDeFuego extends Entidad{
+public class BolaDeFuego extends Enemigo{
     private double angulo;
     private double velocidadAngular;
     private double amplitud;
     private int colisionesConEjeX;
     private static final int ALTURA_BASE = 0;
     private static final int MAX_COLISIONES = 6;
+    private boolean canCollide = true;
+    private Timer timer;
 
     public BolaDeFuego(int x, int y,Sprite[] miSprite){
         super(x,y, miSprite);
@@ -19,6 +25,14 @@ public class BolaDeFuego extends Entidad{
         this.angulo = 0;
         colisionesConEjeX = 0; 
         visitor = new VisitorBolaDeFuego();
+
+        timer = new Timer(300, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                canCollide = true;
+            }
+        });
+        timer.setRepeats(false);
     }
     @Override
     public void mover(){
@@ -28,14 +42,17 @@ public class BolaDeFuego extends Entidad{
         posicionY = (int) (ALTURA_BASE - (amplitud * Math.cos(frequencia * angulo)));
 
         // Verificar si la bola ha tocado el suelo
-        if (posicionY >= ALTURA_BASE) {
+        if (posicionY >= ALTURA_BASE && canCollide) {
             colisionesConEjeX++;
-            posicionY = ALTURA_BASE; // Ajustar la posición a la base
+            posicionY = ALTURA_BASE;
+    
+            canCollide = false;
+            timer.start(); 
         
 
         // Verificar si se ha alcanzado el límite de colisiones
-            if (colisionesConEjeX >= MAX_COLISIONES) {
-                eliminarBolaDeFuego(); // Método para eliminar la bola
+            if (seDebeEliminar()) {
+                ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
             }
         }   
 
@@ -57,9 +74,7 @@ public class BolaDeFuego extends Entidad{
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
-    private void eliminarBolaDeFuego(){
-        ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
-    }
+
     public boolean seDebeEliminar(){
         return colisionesConEjeX >= MAX_COLISIONES;
     }
