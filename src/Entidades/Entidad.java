@@ -1,5 +1,7 @@
 package Entidades;
 
+import java.awt.Rectangle;
+
 import GUI.Observer;
 import GUI.Sprite;
 import Logica.*;
@@ -76,7 +78,6 @@ public abstract class Entidad implements EntidadLogica{
    public void recibirDanio() {
       velocidadX = 0;
       spriteActual = misSprites[1];
-      System.out.println("cambiosprite");
       actualizar(direccion, estadoAereo);
    }
 
@@ -88,8 +89,8 @@ public abstract class Entidad implements EntidadLogica{
       miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
    }
    
-   public HitboxesEntidad getHitbox(){
-      return miHitboxes;
+   public Rectangle getHitbox(){
+      return miHitboxes.getHitbox();
    }
 
    public abstract void aceptar(Visitor visitor, int direccion);
