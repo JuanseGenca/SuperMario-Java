@@ -17,10 +17,10 @@ public class Reloj {
             @Override
             public void run() {
                 for (ActionListener oyente : oyentes) {
-                    oyente.actionPerformed(null); // Notificar a todos los oyentes
+                    oyente.actionPerformed(null);
                 }
             }
-        }, 0, delay); // Iniciar inmediatamente y repetir cada 'delay' milisegundos
+        }, 0, delay);
     }
 
     public void iniciar() {

@@ -14,7 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
-import javax.swing.SwingUtilities;
 
 public class PanelPantallaJuego extends JPanel {
 
@@ -136,7 +135,6 @@ public class PanelPantallaJuego extends JPanel {
         double interpolationFactor = 0.3; // Controla la suavidad
 
         int posicionInterpoladaX = (int) (posicionXAnterior + (jugador.getPosicionX() - posicionXAnterior) * interpolationFactor);
-        //int posicionInterpoladaY = (int) (posicionYAnterior + (jugador.getPosicionY() - posicionYAnterior) * interpolationFactor);
 
         centrarEnJugador(posicionInterpoladaX);
     }
@@ -145,26 +143,19 @@ public class PanelPantallaJuego extends JPanel {
 		JViewport viewport = panelPantallaJuego.getViewport();
 		Dimension viewSize = panelJuego.getPreferredSize();
 		Dimension extentSize = viewport.getExtentSize();
-	
-		// Define el umbral para mover el viewport
+
 		int thresholdX = extentSize.width / 8;
-	
-		// Calculamos la nueva posición X para centrar al jugador
+
 		int nuevaPosicionX = Math.min(Math.max(posicionXJugador - thresholdX, 0), viewSize.width - extentSize.width);
-	
-		// Mantenemos la posición Y actual sin cambios
+
 		Point posicionActual = viewport.getViewPosition();
 		int posicionYConstante = posicionActual.y;
-	
-		// Solo cambiamos la vista si la nueva posición X es diferente de la actual
+
 		if (posicionActual.x != nuevaPosicionX) {
-			// Actualizamos solo la posición X, manteniendo la Y constante
 			viewport.setViewPosition(new Point(nuevaPosicionX, posicionYConstante));
-	
-			// Actualizamos la posición anterior
+
 			posicionXAnterior = posicionXJugador;
-	
-			// Revalidamos y repintamos solo si es necesario
+
 			viewport.revalidate();
 			viewport.repaint();
 		}

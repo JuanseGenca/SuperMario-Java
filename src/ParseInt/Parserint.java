@@ -1,14 +1,12 @@
 package ParseInt;
 
+import Entidades.ManejadorEntidades;
 import Fabricas.EntidadesFactory;
 import Nivel.Nivel;
 import Nivel.Silueta;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
-import Entidades.ManejadorEntidades;
 
 
 public class Parserint {
@@ -17,11 +15,6 @@ public class Parserint {
     public Parserint(int nivel,EntidadesFactory fabricaEntidades){
         fabricaEnt=fabricaEntidades;
     }
-
-   /*  public Nivel generarNivel(int numero) {
-		// To DO
-		return generar_ruta_harcoding(numero);
-	}*/
 
     public Nivel generarNivel(int nivel){
         String path = obtenerArchivoNivel(nivel);
@@ -162,13 +155,4 @@ public class Parserint {
 
         return nivelActual;
     }
-
-    /*public Nivel generar_ruta_harcoding(int numero) {
-		Silueta silueta = fabricaEnt.getSilueta(numero);
-		Nivel ruta = new Nivel(silueta, numero);
-		ruta.agregarMario(fabricaEnt.crearMario(200, 75));
-        ruta.agregarEnemigo(fabricaEnt.crearBuzzyBeetle(250, 120));
-		return ruta;
-	}*/
-
 }

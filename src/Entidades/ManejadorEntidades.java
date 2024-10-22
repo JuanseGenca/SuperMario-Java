@@ -11,19 +11,14 @@ public class ManejadorEntidades {
     private static ManejadorEntidades instancia;
     private EntidadesFactory fabricaEnt;
 
-    // Constructor privado para evitar instanciación externa
     private ManejadorEntidades() {}
 
-    // Método para inicializar la instancia con el nivel
     public static void inicializar(Nivel nivel,EntidadesFactory fabrica) {
-        //if (instancia == null) {
             instancia = new ManejadorEntidades();
             instancia.nivel = nivel;
             instancia.fabricaEnt = fabrica;
-        //}
     }
 
-    // Método para obtener la instancia
     public static ManejadorEntidades getInstancia() {
         if (instancia == null) {
             throw new IllegalStateException("El ManejadorEntidades no ha sido inicializado");

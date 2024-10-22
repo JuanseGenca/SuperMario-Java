@@ -110,9 +110,6 @@ public class Nivel {
         }
     }
 
-    public void eliminarEntidad(Entidad entidad) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'eliminarEntidad'");
-    }
+    public void eliminarEntidad(Entidad entidad) {}
 
 }

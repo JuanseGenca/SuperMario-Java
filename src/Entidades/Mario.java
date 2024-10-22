@@ -149,15 +149,19 @@ public class Mario extends Entidad implements EntidadJugador{
         double currentVelocity = getVelocidadX();
   
         switch (direccion) {
-            case ConstantesEntidades.DERECHA -> currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
-            case ConstantesEntidades.IZQUIERDA -> currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
-            default -> {
+            case ConstantesEntidades.DERECHA:
+                currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
+                break;
+            case ConstantesEntidades.IZQUIERDA:
+                currentVelocity = Math.min(currentVelocity + acceleration, maxVelocity);
+                break;
+            default:
                 if (currentVelocity > 0) {
                     currentVelocity = Math.max(currentVelocity - deceleration, 0);
                 } else if (currentVelocity < 0) {
                     currentVelocity = Math.min(currentVelocity + deceleration, 0);
                 }
-            }
+                break;
         }
   
         setVelocidadX(currentVelocity);

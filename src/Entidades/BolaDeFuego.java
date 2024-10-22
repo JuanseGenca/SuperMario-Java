@@ -41,7 +41,6 @@ public class BolaDeFuego extends Enemigo{
         double frequencia = 2.0;
         posicionY = (int) (ALTURA_BASE - (amplitud * Math.cos(frequencia * angulo)));
 
-        // Verificar si la bola ha tocado el suelo
         if (posicionY >= ALTURA_BASE && canCollide) {
             colisionesConEjeX++;
             posicionY = ALTURA_BASE;
@@ -49,17 +48,13 @@ public class BolaDeFuego extends Enemigo{
             canCollide = false;
             timer.start(); 
         
-
-        // Verificar si se ha alcanzado el límite de colisiones
             if (seDebeEliminar()) {
                 ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
             }
         }   
 
-        // Incrementar el ángulo para el movimiento coseno
         angulo += velocidadAngular;
 
-        // Actualizar hitboxes y sprite
         miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
         actualizarSprite();
         System.out.println("Posición X: " + posicionX + ", Posición Y: " + posicionY);

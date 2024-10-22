@@ -16,12 +16,8 @@ public class BloqueSolido extends BloqueIrrompible{
     public void setEntidadContenida(Entidad e){
         entidadContenida = e;
     }
-    public void mostrarEntidadContenida(){
-        //Resolver como mostrarla por pantalla.
-    }
-    public void OcultarEntidad(){
-        //Resolver como esconderla por pantalla.
-    }
+    public void mostrarEntidadContenida(){}
+    public void OcultarEntidad(){}
     @Override
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);

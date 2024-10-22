@@ -10,7 +10,7 @@ public class EstadoMarioEstrella implements EstadoMario {
     protected static final int paddingTamanio = 48;
     protected EstadoMario estadoPrevio;
     private Timer timer;
-    private static final long DURACION_ESTRELLA = 10000; // Duración en milisegundos (5 segundos)
+    private static final long DURACION_ESTRELLA = 5000; // Duración en milisegundos (1 segundo=1000 milisegundos)
 
     public EstadoMarioEstrella(Mario mario) {
         m = mario;
@@ -51,6 +51,5 @@ public class EstadoMarioEstrella implements EstadoMario {
     @Override
     public int getModificador() {
         return 9;
-        //Cambiar por el int adecuado una vez terminado el estado de estrella
     }
 }

@@ -34,8 +34,7 @@ import PowerUps.SuperChampinion;
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA |  direccion == ConstantesColisiones.ABAJO) {
                 k.recibirDanio();
                 mario.actualizarPuntaje(90);
-                k.eliminar();
-                System.out.println("Mate koopa");
+                k.eliminar();  
             }
         }
 
@@ -45,7 +44,6 @@ import PowerUps.SuperChampinion;
                 g.recibirDanio();
                 mario.actualizarPuntaje(60);
                 g.eliminar();
-                System.out.println("mate goomba");
             }
         }
 
@@ -55,7 +53,6 @@ import PowerUps.SuperChampinion;
                 l.recibirDanio();
                 mario.actualizarPuntaje(60);
                 l.eliminar();
-                System.out.println("mate lakitu");
             }
         }
 
@@ -65,7 +62,6 @@ import PowerUps.SuperChampinion;
                 b.recibirDanio();
                 mario.actualizarPuntaje(30);
                 b.eliminar();
-                System.out.println("mate beetle");
             }
         }
 
@@ -75,7 +71,6 @@ import PowerUps.SuperChampinion;
                 p.recibirDanio();
                 mario.actualizarPuntaje(30);
                 p.eliminar();
-                System.out.println("mate beetle");
             }
         }
 
@@ -85,7 +80,6 @@ import PowerUps.SuperChampinion;
                 s.recibirDanio();
                 mario.actualizarPuntaje(60);
                 s.eliminar();
-                System.out.println("mate beetle");
             }
         }
 
@@ -95,15 +89,12 @@ import PowerUps.SuperChampinion;
 
         @Override
         public void visit(ChampinionVerde cv, int direccion) {
-            //cv.recibirDanio();
             mario.actualizarPuntaje(100);
             cv.eliminar();
-            System.out.println("agarre champverde");
         }
 
         @Override
         public void visit(SuperChampinion sc, int direccion) {
-            //sc.recibirDanio();
             int puntaje=0;
             if(mario.getEstado().getModificador()==ConstantesPowerUp.SUPERCHAMPINION){
                 puntaje=50;
@@ -112,7 +103,6 @@ import PowerUps.SuperChampinion;
             }
             mario.actualizarPuntaje(puntaje);
             sc.eliminar();
-            System.out.println("agarre superchamp");
         }
 
         @Override
@@ -135,10 +125,8 @@ import PowerUps.SuperChampinion;
 
         @Override
         public void visit(Moneda m, int direccion) {
-            //m.recibirDanio();
             mario.actualizarPuntaje(5);
             m.eliminar();
-            System.out.println("agarre moneda");
         }
 
         @Override
@@ -147,7 +135,6 @@ import PowerUps.SuperChampinion;
 
         @Override
         public void visit(Estrella e, int direccion) {
-            //e.recibirDanio();
             int puntos = 0;
             switch (mario.getEstado().getModificador()) {
                 case ConstantesPowerUp.ESTRELLA:
@@ -161,7 +148,6 @@ import PowerUps.SuperChampinion;
             }
             mario.actualizarPuntaje(puntos);
             e.eliminar();
-            System.out.println("agarre estrella");
         }
 
         @Override

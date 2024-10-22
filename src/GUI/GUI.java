@@ -1,16 +1,13 @@
 package GUI;
 
+import Entidades.ConstantesEntidades;
 import Entidades.EntidadJugador;
 import Entidades.EntidadLogica;
 import Logica.*;
 import Paneles.*;
-
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
-
-import Entidades.BolaDeFuego;
-import Entidades.ConstantesEntidades;
 
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
@@ -69,7 +66,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
                 if (keyCode == KeyEvent.VK_A || keyCode == KeyEvent.VK_D) {
                     miLogica.setMarioDirection(ConstantesEntidades.QUIETO);
-                } // Detener el movimiento cuando se suelta la tecla
+                }
                 }
             }
         );
