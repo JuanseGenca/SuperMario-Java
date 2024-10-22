@@ -110,6 +110,9 @@ public class Mario extends Entidad implements EntidadJugador{
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
+    public int getDirTick(){
+        return dirTickAnterior;
+    }
 
     //como no tengo formar de recibir el Y de la plataforma, asumo que la plataforma sigue el estandar de un bloque = 48px
     //mejorable si encontramos la forma de pasarle la posicion de la plataforma
@@ -241,6 +244,9 @@ public class Mario extends Entidad implements EntidadJugador{
 
     public void morir(){
         miLogica.reiniciarNivel();
+    }
+    public Logica getLogica(){
+        return miLogica;
     }
     
 }

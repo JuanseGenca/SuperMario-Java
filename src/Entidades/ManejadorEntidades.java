@@ -66,5 +66,12 @@ public class ManejadorEntidades {
         return fabricaEnt.crearBolaDeFuego(x,y);
         
     }
+    public void eliminarBolaDeFuego(BolaDeFuego bola){
+        if (nivel != null) {
+            nivel.eliminarBolaDeFuego(bola);
+        } else {
+            System.out.println("Nivel no inicializado");
+        }
+    }
 }
 

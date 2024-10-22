@@ -3,6 +3,7 @@ package Logica;
 import Enemigos.Enemigo;
 import Entidades.BolaDeFuego;
 import GUI.GUI;
+import java.util.ArrayList;
 
 public class HiloSecundario extends Thread {
     private ManejadorDeColisiones manejadorDeColisiones;
@@ -33,12 +34,12 @@ public class HiloSecundario extends Thread {
     }
     
     private void tick(){
-       for(Enemigo e: miLogica.getEnemigos()){
-        e.mover();
-       }
-       for(BolaDeFuego bola : miLogica.getBolas()){
-        bola.mover();
-       }
+        for(Enemigo e: miLogica.getEnemigos()){
+            e.mover();
+        }
+        for(BolaDeFuego bola : miLogica.getBolas()){
+            bola.mover();
+        }
 
         
     }

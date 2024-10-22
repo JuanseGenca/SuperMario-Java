@@ -39,6 +39,9 @@ public class Logica {
         parseint = new Parserint(1,fabricaEntidades);
 		vidas = 3;
     }
+	public GUI getGui(){
+		return gui;
+	}
    
     public void setControladorVistas(GUI controladorVistas) {
 		gui = controladorVistas;
