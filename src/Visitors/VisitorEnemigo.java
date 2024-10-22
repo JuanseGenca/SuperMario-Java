@@ -80,5 +80,8 @@ public class VisitorEnemigo implements Visitor {
     public void visit(PowerUp pu, int direccion) {}
     
     @Override
-    public void visit(BolaDeFuego bf, int direccion) {}
+    public void visit(BolaDeFuego bf, int direccion) {
+        bf.eliminar();
+        bf.recibirDanio();
+    }
 }

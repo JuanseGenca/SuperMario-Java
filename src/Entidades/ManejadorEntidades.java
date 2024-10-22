@@ -66,7 +66,7 @@ public class ManejadorEntidades {
     }
     public void eliminarBolaDeFuego(BolaDeFuego bola){
         if (nivel != null) {
-            nivel.getBolaDeFuego().remove(bola);
+            nivel.eliminarBolaDeFuego(bola);
         } else {
             System.out.println("Nivel no inicializado");
         }

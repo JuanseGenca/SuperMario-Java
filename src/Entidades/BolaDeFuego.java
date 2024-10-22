@@ -78,4 +78,10 @@ public class BolaDeFuego extends Enemigo{
     public boolean seDebeEliminar(){
         return colisionesConEjeX >= MAX_COLISIONES;
     }
+
+    public void eliminar(){
+        spriteActual = misSprites[1];
+        actualizar(direccion, estadoAereo);
+        ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
+    }
 }
