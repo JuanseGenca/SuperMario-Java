@@ -1,6 +1,7 @@
 package Nivel;
 import Enemigos.*;
 import Entidades.BolaDeFuego;
+import Entidades.Entidad;
 import Entidades.Mario;
 import Logica.ManejadorDeColisiones;
 import Plataformas.Plataforma;
@@ -107,6 +108,11 @@ public class Nivel {
             bolasFuego.remove(bola);
             manejadorDeColisiones.eliminarEntidad(bola);
         }
+    }
+
+    public void eliminarEntidad(Entidad entidad) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eliminarEntidad'");
     }
 
 }

@@ -1,10 +1,11 @@
 package Enemigos;
-import Logica.Visitor;
 import GUI.Sprite;
+import Logica.Visitor;
 
 public class Spiny extends Enemigo{
     public Spiny(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
+        puntaje=60;
     }
    
     @Override

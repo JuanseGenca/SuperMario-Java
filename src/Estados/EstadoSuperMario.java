@@ -13,6 +13,7 @@ public class EstadoSuperMario implements EstadoMario{
     }
     public void recibirDanio(){
         m.setEstado(new EstadoMarioComun(m));
+        m.aplicarGravedad();
     }
     public boolean puedeRomper(){
         return true;

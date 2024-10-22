@@ -110,6 +110,9 @@ public class Mario extends Entidad implements EntidadJugador{
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
+    public int getDirTick(){
+        return dirTickAnterior;
+    }
 
     //como no tengo formar de recibir el Y de la plataforma, asumo que la plataforma sigue el estandar de un bloque = 48px
     //mejorable si encontramos la forma de pasarle la posicion de la plataforma
@@ -122,12 +125,16 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public int getPuntaje() {
-        return 0;
+        return miLogica.getPuntaje();
     }
+
+    public void actualizarPuntaje(int puntaje) {
+        miLogica.actualizarPuntaje(puntaje);
+    }
+
     @Override
     public int getTiempo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get_tiempo'");
+      return 0;  
     }
 
     @Override
@@ -241,8 +248,12 @@ public class Mario extends Entidad implements EntidadJugador{
         return miLogica.getMonedas();
     } 
 
+    @Override
     public void morir(){
         miLogica.reiniciarNivel();
+    }
+    public Logica getLogica(){
+        return miLogica;
     }
     
 }

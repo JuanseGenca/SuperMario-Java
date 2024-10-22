@@ -1,5 +1,4 @@
 package Entidades;
-
 public class ConstantesEntidades {
     //Constantes estadoAereo
     public static final int AIRE = 20000;

@@ -1,8 +1,6 @@
 package Enemigos;
 
-import Entidades.ManejadorEntidades;
 import Estados.EstadoKoopaTroopa;
-//import Estados.EstadoKoopaTroopa;
 import GUI.Sprite;
 import Logica.Visitor;
 
@@ -12,6 +10,7 @@ public class KoopaTroopa extends Enemigo{
 
     public KoopaTroopa(int x, int y,Sprite[] sprite){
         super(x, y,sprite);
+        puntaje=90;
     }
     
     @Override

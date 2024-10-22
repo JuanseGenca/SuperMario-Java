@@ -2,8 +2,6 @@ package Entidades;
 
 import Enemigos.Enemigo;
 import Fabricas.EntidadesFactory;
-import Fabricas.SpriteFactory;
-import GUI.Sprite;
 import Nivel.Nivel;
 import Plataformas.Plataforma;
 import PowerUps.PowerUp;
@@ -65,6 +63,13 @@ public class ManejadorEntidades {
         System.out.println("bola creada pa");
         return fabricaEnt.crearBolaDeFuego(x,y);
         
+    }
+    public void eliminarBolaDeFuego(BolaDeFuego bola){
+        if (nivel != null) {
+            nivel.eliminarBolaDeFuego(bola);
+        } else {
+            System.out.println("Nivel no inicializado");
+        }
     }
 }
 
