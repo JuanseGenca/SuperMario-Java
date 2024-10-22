@@ -57,7 +57,7 @@ public class Logica {
 		gui.mostrarPantallaJuego();
 		hilo1 = new HiloMario(nivelActual.getMario(),gui,this);
 		hilo1.start();
-		hilo2 = new HiloSecundario(gui,this);
+		hilo2 = new HiloSecundario(this, gui);
 		hilo2.start();
 		hiloPrincipal = new HiloPrincipal(gui,this);
 		hiloPrincipal.start();
@@ -186,5 +186,9 @@ public class Logica {
 
 	public int getPuntaje() {
 		return puntaje;
+	}
+
+	public Nivel getNivel() {
+		return nivelActual;
 	}
 }	
