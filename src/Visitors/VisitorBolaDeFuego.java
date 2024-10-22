@@ -22,7 +22,9 @@ import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
 public class VisitorBolaDeFuego implements Visitor{
-    public VisitorBolaDeFuego(){
+    Mario mario;
+    public VisitorBolaDeFuego(Mario mario){
+        this.mario = mario;
     }
     @Override
     public void visit(KoopaTroopa k, int direccion) {

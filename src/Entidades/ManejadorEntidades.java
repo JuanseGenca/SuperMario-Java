@@ -59,9 +59,9 @@ public class ManejadorEntidades {
             System.out.println("Nivel no inicializado");
         }
     }
-    public BolaDeFuego crearBolaDeFuego(int x, int y){
+    public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){
         System.out.println("bola creada pa");
-        return fabricaEnt.crearBolaDeFuego(x,y);
+        return fabricaEnt.crearBolaDeFuego(x,y, mario);
         
     }
     public void eliminarBolaDeFuego(BolaDeFuego bola){

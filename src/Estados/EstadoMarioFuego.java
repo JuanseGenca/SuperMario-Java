@@ -4,11 +4,7 @@ import Entidades.BolaDeFuego;
 import Entidades.ConstantesEntidades;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
-import Fabricas.SpriteFactory;
 import GUI.Observer;
-import GUI.ObserverEntidades;
-import GUI.Sprite;
-import Logica.Logica;
 
 public class EstadoMarioFuego implements EstadoMario{
     
@@ -22,7 +18,7 @@ public class EstadoMarioFuego implements EstadoMario{
         int posX = m.getPosicionX();
         int posY = m.getPosicionY();
 
-        BolaDeFuego bola = ManejadorEntidades.getInstancia().crearBolaDeFuego(posX,posY);
+        BolaDeFuego bola = ManejadorEntidades.getInstancia().crearBolaDeFuego(posX,posY, m);
         ManejadorEntidades.getInstancia().agregarBolaDeFuego(bola);
         Observer observerBola = m.getLogica().getGui().registrarEntidad(bola);
         bola.setObserver(observerBola);

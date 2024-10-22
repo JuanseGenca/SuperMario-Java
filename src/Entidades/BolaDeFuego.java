@@ -17,14 +17,14 @@ public class BolaDeFuego extends Enemigo{
     private boolean canCollide = true;
     private Timer timer;
 
-    public BolaDeFuego(int x, int y,Sprite[] miSprite){
+    public BolaDeFuego(int x, int y,Sprite[] miSprite, Mario mario){
         super(x,y, miSprite);
         this.velocidadX = 5; 
         this.amplitud = 30;  
         this.velocidadAngular = 0.10; 
         this.angulo = 0;
         colisionesConEjeX = 0; 
-        visitor = new VisitorBolaDeFuego();
+        visitor = new VisitorBolaDeFuego(mario);
 
         timer = new Timer(300, new ActionListener() {
             @Override
