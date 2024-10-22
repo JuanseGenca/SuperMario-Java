@@ -32,8 +32,8 @@ public class Mario extends Entidad implements EntidadJugador{
         actualizarSprite();
         int direccionSprite = getDireccionSpriteMario();
         actualizar(direccionSprite, estadoAereo);
-        miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
-       
+        miHitboxes.actualizarHitboxes(posicionX, posicionY - estado.getPaddingTamanio(), ancho, alto);
+
         actualizarVelocidadXMario();
         if(getEstadoAereo() == ConstantesEntidades.AIRE) {
             actualizarVelocidadYMario();
@@ -69,8 +69,8 @@ public class Mario extends Entidad implements EntidadJugador{
         estadoAereo = ConstantesEntidades.AIRE;
         tocandoSuelo = false;
 
-        if(posicionY <= estado.getPaddingTamanio()) {
-            posicionY = posicionY + estado.getPaddingTamanio();
+        if(posicionY <= 0) {
+            posicionY = posicionY + 0;
             tocandoSuelo = true;
             estadoAereo = ConstantesEntidades.SUELO;
         } else {posicionY += velocidadY;}
@@ -167,12 +167,12 @@ public class Mario extends Entidad implements EntidadJugador{
             tocandoSuelo = false;
         } else {
             velYActual = Math.max(velYActual + gravedad, velTerminal);
-            if (miHitboxes.getHitboxInferior().getY() < -28) {
+            if (miHitboxes.getHitbox().getY() < 0) {
                 velYActual = 0;
-                posicionY = 0;
+                posicionY = estado.getPaddingTamanio();
                 tocandoSuelo = true;
                 estadoAereo = ConstantesEntidades.SUELO;
-                posicionY = posicionY + estado.getPaddingTamanio();
+                posicionY = posicionY + 0;
             }
         }
 
@@ -197,6 +197,7 @@ public class Mario extends Entidad implements EntidadJugador{
         
         spriteActual = nuevoSprite;
     }
+
     @Override
     public int getDireccion(){
         return direccion;
@@ -209,11 +210,12 @@ public class Mario extends Entidad implements EntidadJugador{
     public void setEstado(EstadoMario m){
         int paddingAnterior = estado.getPaddingTamanio();
         estado = m;
-        int paddingReal = estado.getPaddingTamanio() - paddingAnterior;
+        int paddingReal =  m.getPaddingTamanio() - paddingAnterior;
         posicionY = posicionY + paddingReal;
         actualizarSprite();
         alto = spriteActual.getHeight();
         ancho = spriteActual.getWidth();
+        
     }
 
     private int getDireccionSpriteMario() {

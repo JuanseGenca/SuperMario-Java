@@ -26,8 +26,6 @@ public class BolaDeFuego extends Entidad{
         
         // Actualizar las hitboxes
         miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
-        System.out.println("Posición X: " + posicionX + ", Posición Y: " + posicionY);
-        
     }
     @Override
     public void aceptar(Visitor v, int direccion){

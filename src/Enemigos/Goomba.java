@@ -8,7 +8,6 @@ public class Goomba extends Enemigo{
 
     public Goomba(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
-        
     }
     
     @Override
