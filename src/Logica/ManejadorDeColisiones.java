@@ -2,7 +2,6 @@ package Logica;
 
 import Entidades.*;
 import Nivel.*;
-import Visitors.VisitorMario;
 
 import java.awt.Rectangle;
 import java.util.*;
