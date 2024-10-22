@@ -28,7 +28,7 @@ public class HiloSecundario extends Thread {
     public void run() {
         while (ejecutando) {
             tick();
-            dibujar();
+            //dibujar();
             try {
                 sleep(15);
             } catch (InterruptedException e) {

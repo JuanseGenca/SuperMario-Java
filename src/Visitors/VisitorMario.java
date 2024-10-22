@@ -95,31 +95,13 @@ import PowerUps.SuperChampinion;
 
         @Override
         public void visit(SuperChampinion sc, int direccion) {
-            int puntaje=0;
-            if(mario.getEstado().getModificador()==ConstantesPowerUp.SUPERCHAMPINION){
-                puntaje=50;
-            } else {
-                puntaje=10;
-            }
-            mario.actualizarPuntaje(puntaje);
+            mario.actualizarPuntaje(puntajeSuperChampinion());
             sc.eliminar();
         }
 
         @Override
         public void visit(FlorDeFuego f, int direccion) {
-            int puntos = 0;
-            switch (mario.getEstado().getModificador()) {
-                case ConstantesPowerUp.FLORDEFUEGO:
-                    puntos = 50;
-                    break;
-                case ConstantesPowerUp.SUPERCHAMPINION:
-                    puntos = 30;
-                    break;
-                default:
-                    puntos = 10;
-            }
-
-            mario.actualizarPuntaje(puntos);
+            mario.actualizarPuntaje(puntajeFlorDeFuego());
             f.eliminar();
         }
 
@@ -135,18 +117,7 @@ import PowerUps.SuperChampinion;
 
         @Override
         public void visit(Estrella e, int direccion) {
-            int puntos = 0;
-            switch (mario.getEstado().getModificador()) {
-                case ConstantesPowerUp.ESTRELLA:
-                    puntos = 35;
-                    break;
-                case ConstantesPowerUp.SUPERCHAMPINION:
-                    puntos = 30;
-                    break;
-                default:
-                    puntos = 20;
-            }
-            mario.actualizarPuntaje(puntos);
+            mario.actualizarPuntaje(puntajeEstrella());
             e.eliminar();
         }
 
@@ -180,4 +151,44 @@ import PowerUps.SuperChampinion;
         @Override
         public void visit(BolaDeFuego bf, int direccion) {
         }
+
+    private int puntajeEstrella() {
+        int puntos;
+            switch (mario.getEstado().getModificador()) {
+                case ConstantesPowerUp.ESTRELLA:
+                    puntos = 35;
+                    break;
+                case ConstantesPowerUp.SUPERCHAMPINION:
+                    puntos = 30;
+                    break;
+                default:
+                    puntos = 20;
+            }
+            return puntos;
     }
+
+    private int puntajeFlorDeFuego() {
+        int puntos;
+        switch (mario.getEstado().getModificador()) {
+            case ConstantesPowerUp.FLORDEFUEGO:
+                puntos = 50;
+                break;
+            case ConstantesPowerUp.SUPERCHAMPINION:
+                puntos = 30;
+                break;
+            default:
+                puntos = 10;
+        }
+        return puntos;
+    }
+
+    private int puntajeSuperChampinion() {
+        int puntaje;
+            if(mario.getEstado().getModificador()==ConstantesPowerUp.SUPERCHAMPINION){
+                puntaje=50;
+            } else {
+                puntaje=10;
+            }
+        return puntaje;
+    }
+}

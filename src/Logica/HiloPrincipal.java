@@ -22,7 +22,6 @@ public class HiloPrincipal extends Thread {
     public void run() {
         while (ejecutando) {
             tick();
-            dibujar();
             try {
                 sleep(15);
             } catch (InterruptedException e) {
@@ -49,9 +48,5 @@ public class HiloPrincipal extends Thread {
 
     public void marcarParaEliminar(Entidad entidad) {
         entidadesAEliminar.add(entidad);
-    }
-
-    private void dibujar() {
-        miGui.refrescar();
     }
 }
