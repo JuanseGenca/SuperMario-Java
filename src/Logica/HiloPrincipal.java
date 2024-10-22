@@ -4,6 +4,7 @@ import Enemigos.Enemigo;
 import Entidades.Entidad;
 import GUI.GUI;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class HiloPrincipal extends Thread {
     private ManejadorDeColisiones manejadorDeColisiones;
@@ -16,6 +17,8 @@ public class HiloPrincipal extends Thread {
         miGui = gui;
         miLogica = mLogica;
         ejecutando = true;
+        manejadorDeColisiones = miLogica.getManejadorDeColisiones();
+        entidadesAEliminar = new ConcurrentLinkedQueue<>();
         manejadorDeColisiones = miLogica.getManejadorDeColisiones();
         entidadesAEliminar = new ConcurrentLinkedQueue<>();
     }
@@ -31,7 +34,18 @@ public class HiloPrincipal extends Thread {
             }
         }
     }
+        while (ejecutando) {
+            tick();
+            dibujar();
+            try {
+                sleep(15);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
+    public void parar() {
     public void parar() {
         ejecutando = false;
     }
@@ -50,8 +64,24 @@ public class HiloPrincipal extends Thread {
 
     public void marcarParaEliminar(Entidad entidad) {
         entidadesAEliminar.add(entidad);
+
+    private void tick() {
+        manejadorDeColisiones.chequearColisiones();
+        eliminarEntidadesPendientes();
     }
 
+    private void eliminarEntidadesPendientes() {
+        while (!entidadesAEliminar.isEmpty()) {
+            Entidad entidad = entidadesAEliminar.poll();
+            manejadorDeColisiones.eliminarEntidad(entidad);
+        }
+    }
+
+    public void marcarParaEliminar(Entidad entidad) {
+        entidadesAEliminar.add(entidad);
+    }
+
+    private void dibujar() {
     private void dibujar() {
         miGui.refrescar();
     }

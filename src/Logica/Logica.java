@@ -3,7 +3,6 @@ package Logica;
 import Enemigos.Enemigo;
 import Entidades.BolaDeFuego;
 import Entidades.Entidad;
-import Entidades.ManejadorEntidades;
 import Entidades.Mario;
 import Fabricas.*;
 import GUI.GUI;
@@ -25,6 +24,7 @@ public class Logica {
     protected GUI gui;
 	protected int vidas;
 	protected int monedas;
+	protected int puntaje;
     protected Nivel nivelActual;
 	protected HiloMario hilo1;
 	protected HiloSecundario hilo2;
@@ -51,6 +51,8 @@ public class Logica {
     public void iniciar() {
 		if (vidas == 0){
 			vidas = 3;
+			monedas = 0;
+			puntaje=0;
 		}
 		nivelActual = parseint.generarNivel(1);
 		nivelActual.getMario().setLogica(this);
@@ -58,7 +60,7 @@ public class Logica {
 		gui.mostrarPantallaJuego();
 		hilo1 = new HiloMario(nivelActual.getMario(),gui,this);
 		hilo1.start();
-		hilo2 = new HiloSecundario(gui,this);
+		hilo2 = new HiloSecundario(this, gui);
 		hilo2.start();
 		hiloPrincipal = new HiloPrincipal(gui,this);
 		hiloPrincipal.start();
@@ -153,6 +155,10 @@ public class Logica {
         }
     }
 
+	public void actualizarPuntaje(int puntaje) {
+		this.puntaje = this.puntaje + puntaje;
+	}
+
 	public ManejadorDeColisiones getManejadorDeColisiones() {
 		return nivelActual.getManejadorDeColisiones();
 	}
@@ -168,16 +174,24 @@ public class Logica {
 		return nivelActual.getBolaDeFuego();
 	}
 
-	//esta incompleto
 	public void reiniciarNivel(){
 		vidas--;
 		hilo1.parar();
 		hilo2.parar();
 		hiloPrincipal.parar();
 		if (vidas == 0){
+
 			gui.mostrarPantallaInicial();
 		}else{
 			gui.accionarInicioJuego();
 		}
+	}
+
+	public int getPuntaje() {
+		return puntaje;
+	}
+
+	public Nivel getNivel() {
+		return nivelActual;
 	}
 }	

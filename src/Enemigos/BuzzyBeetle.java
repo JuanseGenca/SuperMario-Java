@@ -1,13 +1,12 @@
 package Enemigos;
 
-import Entidades.HitboxesEntidad;
-import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
 
 public class BuzzyBeetle extends Enemigo{
     public BuzzyBeetle(int x, int y,Sprite[] sprites){
         super(x,y,sprites);
+        puntaje=30;
     }
    
     @Override

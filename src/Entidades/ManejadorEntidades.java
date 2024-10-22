@@ -2,8 +2,6 @@ package Entidades;
 
 import Enemigos.Enemigo;
 import Fabricas.EntidadesFactory;
-import Fabricas.SpriteFactory;
-import GUI.Sprite;
 import Nivel.Nivel;
 import Plataformas.Plataforma;
 import PowerUps.PowerUp;

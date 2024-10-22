@@ -20,6 +20,7 @@ public class BolaDeFuego extends Entidad{
         colisionesConEjeX = 0; 
         visitor = new VisitorBolaDeFuego();
     }
+    @Override
     public void mover(){
         posicionX += velocidadX;
 

@@ -125,12 +125,16 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public int getPuntaje() {
-        return 0;
+        return miLogica.getPuntaje();
     }
+
+    public void actualizarPuntaje(int puntaje) {
+        miLogica.actualizarPuntaje(puntaje);
+    }
+
     @Override
     public int getTiempo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get_tiempo'");
+      return 0;  
     }
 
     @Override
@@ -242,6 +246,7 @@ public class Mario extends Entidad implements EntidadJugador{
         return miLogica.getMonedas();
     } 
 
+    @Override
     public void morir(){
         miLogica.reiniciarNivel();
     }
