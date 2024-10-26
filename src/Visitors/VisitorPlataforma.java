@@ -101,4 +101,5 @@ public abstract class VisitorPlataforma implements Visitor{
     public void visit(BolaDeFuego bf, int direccion) {
     }
 
+    
 }

@@ -100,4 +100,6 @@ public abstract class VisitorPowerUp implements Visitor {
     public void visit(BolaDeFuego bf, int direccion) {
     }
 
+    
+
 }
