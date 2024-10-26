@@ -19,7 +19,7 @@ public abstract class ObserverGrafico extends JLabel implements Observer {
     protected ObserverGrafico(EntidadLogica entidadObservada, int zIndex)  {
 		super();
 		this.entidadObservada = entidadObservada;
-        this.zIndex = zIndex; // Initialize zIndex
+        this.zIndex = zIndex;
 	}
 
     public int getZIndex() {
