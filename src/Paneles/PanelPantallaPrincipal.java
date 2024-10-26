@@ -37,7 +37,7 @@ public class PanelPantallaPrincipal extends JPanel{
         imagenFondo.setBounds(0,0,ConstantesVistas.VENTANA_ANCHO,ConstantesVistas.VENTANA_ALTO);
         add(imagenFondo);
     }
-
+    
     protected void agregarBotonIniciar(){
         botonIniciar = new JButton();
         decorarBotonIniciar();
