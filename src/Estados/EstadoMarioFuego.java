@@ -17,6 +17,7 @@ public class EstadoMarioFuego implements EstadoMario{
     public void disparar(){
         int posX = m.getPosicionX();
         int posY = m.getPosicionY();
+        m.reproducirSonido("bolaFuego");
 
         BolaDeFuego bola = ManejadorEntidades.getInstancia().crearBolaDeFuego(posX,posY, m);
         ManejadorEntidades.getInstancia().agregarBolaDeFuego(bola);

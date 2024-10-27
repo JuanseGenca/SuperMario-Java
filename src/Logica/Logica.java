@@ -10,14 +10,7 @@ import GUI.Observer;
 import Nivel.Nivel;
 import Nivel.Silueta;
 import ParseInt.Parserint;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 
 //La clase tiene como 800 metodos de mario, hay que ver cuales se pueden eliminar
 
@@ -36,12 +29,14 @@ public class Logica {
 	protected HiloMario hilo1;
 	protected HiloSecundario hilo2;
 	protected HiloPrincipal hiloPrincipal;
+	protected ManejadorDeSonidos manejadorDeSonidos;
     
 
     //Constructor
     public Logica() {
         fabricaSprites = new SpritesMarioModo1();
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
+		manejadorDeSonidos = new ManejadorDeSonidos();
         parseint = new Parserint(1,fabricaEntidades);
         parseint = new Parserint(1,fabricaEntidades);
 		vidas = 3;
@@ -120,20 +115,11 @@ public class Logica {
 
 	public void actualizarVida(int i) {
 		vidas = vidas + i;
-		reproducirSonido("src\\Sonidos\\1up.wav");
 	}
 
-	private void reproducirSonido(String rutaArchivo) {
-        try {
-            File archivoSonido = new File(rutaArchivo);
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(archivoSonido);
-            Clip clip = AudioSystem.getClip();
-            clip.open(audioStream);
-            clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
-        }
-    }
+	public void reproducirSonido(String nombre) {
+		manejadorDeSonidos.reproducirSonido(nombre);
+	}
 
 	public void aniadirMoneda() {
         monedas++;

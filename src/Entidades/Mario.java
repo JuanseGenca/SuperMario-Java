@@ -260,4 +260,7 @@ public class Mario extends Entidad implements EntidadJugador{
         return miLogica;
     }
     
+    public void reproducirSonido(String nombre){
+        miLogica.reproducirSonido(nombre);
+    }
 }
