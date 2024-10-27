@@ -20,10 +20,13 @@ public class ManejadorDeSonidos {
         cargarSonido("bolaFuego","src\\Sonidos\\fireball.wav");
         cargarSonido("saltar","src\\Sonidos\\jump.wav");
         cargarSonido("matar","src\\Sonidos\\kick.wav");
-        cargarSonido("dañoMario","src\\Sonidos\\pipe.wav");
+        cargarSonido("danioMario","src\\Sonidos\\pipe.wav");
         cargarSonido("powerUp","src\\Sonidos\\powerup.wav");
         cargarSonido("muerteMario","src\\Sonidos\\Die.wav");
         cargarSonido("romperPlataforma","src\\Sonidos\\Break.wav");
+        cargarSonido("musicaLvl1","src\\Sonidos\\Overworld1.wav");
+        cargarSonido("musicaLvl2","src\\Sonidos\\Overworld2.wav");
+        cargarSonido("musicaLvl3","src\\Sonidos\\Overworld3.wav");
         
     }
 
@@ -44,6 +47,13 @@ public class ManejadorDeSonidos {
         if (clip != null) {
             clip.setFramePosition(0); // Reinicia el clip
             clip.start();
+        }
+    }
+
+    public void detenerSonido(String nombre) {
+        Clip clip = sonidos.get(nombre);
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
         }
     }
 }

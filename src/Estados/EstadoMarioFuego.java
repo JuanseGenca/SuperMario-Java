@@ -34,6 +34,7 @@ public class EstadoMarioFuego implements EstadoMario{
     }
     public void recibirDanio(){
         m.setEstado(new EstadoMarioComun(m));
+        m.reproducirSonido("danioMario");
         m.aplicarGravedad();
     }
     public boolean puedeRomper(){

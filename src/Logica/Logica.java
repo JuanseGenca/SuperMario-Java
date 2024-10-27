@@ -66,6 +66,7 @@ public class Logica {
 		hilo2.start();
 		hiloPrincipal = new HiloPrincipal(gui,this);
 		hiloPrincipal.start();
+		manejadorDeSonidos.reproducirSonido("musicaLvl"+nivelActual.getNumeroNivel());
 		
 	}
 
@@ -102,6 +103,7 @@ public class Logica {
 	}
 
 	public void setMarioEstadoAereo(int estado) {
+		reproducirSonido("saltar");
 		nivelActual.getMario().establecerEstadoAereo(estado);
 	}
 
@@ -119,6 +121,10 @@ public class Logica {
 
 	public void reproducirSonido(String nombre) {
 		manejadorDeSonidos.reproducirSonido(nombre);
+	}
+
+	public void detenerSonido(String nombre) {
+		manejadorDeSonidos.detenerSonido(nombre);
 	}
 
 	public void aniadirMoneda() {
@@ -154,7 +160,7 @@ public class Logica {
 		hilo2.parar();
 		hiloPrincipal.parar();
 		if (vidas == 0){
-
+			
 			gui.mostrarPantallaInicial();
 		}else{
 			gui.accionarInicioJuego();
