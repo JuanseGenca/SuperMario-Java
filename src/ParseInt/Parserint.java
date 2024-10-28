@@ -5,6 +5,8 @@ import Fabricas.EntidadesFactory;
 import Logica.Logica;
 import Nivel.Nivel;
 import Nivel.Silueta;
+import Plataformas.ConstantesBloquePregunta;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -91,7 +93,7 @@ public class Parserint {
                     case "Bloque Pregunta":
                         int bloquePreguntaX = Integer.parseInt(parametros[0]);
                         int bloquePreguntaY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPlataforma(fabricaEnt.crearBloquePregunta(bloquePreguntaX, bloquePreguntaY,miLogica,1));
+                        nivelActual.agregarPlataforma(fabricaEnt.crearBloquePregunta(bloquePreguntaX, bloquePreguntaY,miLogica,getRandomInt()));
                         break;
                     case "Goomba":
                         int goombaX = Integer.parseInt(parametros[0]);
@@ -157,4 +159,10 @@ public class Parserint {
 
         return nivelActual;
     }
+
+    private int getRandomInt() {
+        int numero = (int) (Math.random() * 5 + 1);
+        System.out.println(numero);
+        return numero;
+      }
 }
