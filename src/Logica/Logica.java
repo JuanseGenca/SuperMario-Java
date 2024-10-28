@@ -46,6 +46,17 @@ public class Logica {
 		vidas = 3;
     }
 
+	public void actualizarSprites(SpriteFactory factory){
+		fabricaSprites = factory;
+		actualizarFabricaEntidades();
+	}
+
+	private void actualizarFabricaEntidades(){
+		fabricaEntidades.setFabricaSprites(fabricaSprites);
+	}
+
+	
+
 	public GUI getGui(){
 		return gui;
 	}
