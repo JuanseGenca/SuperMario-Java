@@ -136,6 +136,9 @@ public class EntidadesFactory {
         Sprite[] spriteBolaDeFuego = spriteFactory.getBolaDeFuego();
         BolaDeFuego bolaDeFuego = new BolaDeFuego(x, y, spriteBolaDeFuego, mario);
         return bolaDeFuego;
-    }    
+    }
+    public void setFabricaSprites(SpriteFactory fabrica){
+        spriteFactory = fabrica;
+    }   
 
 }

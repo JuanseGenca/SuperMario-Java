@@ -107,6 +107,9 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     public void reiniciarNivel(){
         miLogica.reiniciarNivel();
     }
+    public Logica getLogica(){
+        return miLogica;
+    }
 
    public void accionarInicioJuego() {
     // Create and show the level start panel
