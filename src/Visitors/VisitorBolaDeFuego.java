@@ -35,35 +35,35 @@ public class VisitorBolaDeFuego implements Visitor{
 
     @Override
     public void visit(Goomba g, int direccion) {
-        g.recibirDanio();
+        g.recibirDanio(0);
         mario.actualizarPuntaje(90);
         g.eliminar();
     }
 
     @Override
     public void visit(Lakitu l, int direccion) {
-        l.recibirDanio();
+        l.recibirDanio(0);
         mario.actualizarPuntaje(60);
         l.eliminar();
     }
 
     @Override
     public void visit(BuzzyBeetle b, int direccion){
-        b.recibirDanio();
+        b.recibirDanio(0);
         mario.actualizarPuntaje(30);
         b.eliminar();
     }
 
     @Override
     public void visit(PiranhaPlant p, int direccion){
-        p.recibirDanio();
+        p.recibirDanio(0);
         mario.actualizarPuntaje(30);
         p.eliminar();
     }
 
     @Override
     public void visit(Spiny s, int direccion){
-        s.recibirDanio();
+        s.recibirDanio(0);
         mario.actualizarPuntaje(60);
         s.eliminar();
     } 

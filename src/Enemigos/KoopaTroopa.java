@@ -1,12 +1,9 @@
 package Enemigos;
 
 import Estados.EstadoKoopaTroopa;
-import Estados.EstadoKoopaTroopaCaparazon;
 import Estados.EstadoKoopaTroopaNormal;
 import GUI.Sprite;
 import Logica.Visitor;
-import Visitors.VisitorEnemigo;
-import Visitors.VisitorKoopaTroopa;
 
 public class KoopaTroopa extends Enemigo{
     //Atributos (saco estado mientras no este implementado para que no haya tantos errores)

@@ -1,16 +1,16 @@
 package Enemigos;
 
-import Logica.ConstantesEntidades;
 import Entidades.Entidad;
 import Entidades.ManejadorEntidades;
 import GUI.Sprite;
+import Logica.ConstantesEntidades;
 import Logica.Visitor;
 import Visitors.VisitorEnemigo;
 
 public abstract class Enemigo extends Entidad{
     public Enemigo(int x, int y, Sprite[] sprite){
         super(x,y,sprite);
-        visitor = new VisitorEnemigo();
+        visitor = new VisitorEnemigo(this);
         direccion = ConstantesEntidades.DERECHA;
         velocidadX = 2;
     }

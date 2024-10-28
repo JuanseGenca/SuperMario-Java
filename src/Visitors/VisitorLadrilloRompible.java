@@ -6,9 +6,9 @@ import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
 import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
-import Logica.ConstantesEntidades;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
+import Logica.ConstantesEntidades;
 
 public class VisitorLadrilloRompible extends VisitorPlataforma{
     public VisitorLadrilloRompible() {
@@ -57,8 +57,13 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
     }
     @Override
     public void visit(Mario m, int direccion){
-        if(direccion == ConstantesColisiones.LATERAL){
+        if(direccion == ConstantesColisiones.DERECHA){
             m.setVelocidadX(0);
+            m.setPosicionx(m.getPosicionX() - 2);
+        }
+        if(direccion == ConstantesColisiones.IZQUIERDA){
+            m.setVelocidadX(0);
+            m.setPosicionx(m.getPosicionX() + 2);
         }
         if(direccion == ConstantesColisiones.ABAJO){
             if(m.getVelocidadY() >= 0) 

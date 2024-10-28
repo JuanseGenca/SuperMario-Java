@@ -1,14 +1,14 @@
 package GUI;
 
-import java.awt.image.BufferedImage;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import Entidades.EntidadLogica;
 import Logica.ConstantesEntidades;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public abstract class ObserverGrafico extends JLabel implements Observer {
     
@@ -67,6 +67,8 @@ public abstract class ObserverGrafico extends JLabel implements Observer {
         // Update z-order in the container whenever position is updated
         if (getParent() != null) {
             getParent().setComponentZOrder(this, zIndex);
+            getParent().revalidate();
+            getParent().repaint();
         }
 	}
     

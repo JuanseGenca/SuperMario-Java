@@ -77,9 +77,9 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     @Override
-    public void recibirDanio(){
+    public void recibirDanio(int puntaje){
         if(!invencible){
-            estado.recibirDanio();
+            estado.recibirDanio(puntaje);
             establecerInvencibilidad();
         } 
     }

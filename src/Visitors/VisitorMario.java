@@ -43,7 +43,7 @@ import PowerUps.SuperChampinion;
         @Override
         public void visit(Goomba g, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
-                g.recibirDanio();
+                g.recibirDanio(0);
                 mario.reproducirSonido("matar");
                 mario.actualizarPuntaje(60);
                 g.eliminar();
@@ -53,7 +53,7 @@ import PowerUps.SuperChampinion;
         @Override
         public void visit(Lakitu l, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
-                l.recibirDanio();
+                l.recibirDanio(0);
                 mario.reproducirSonido("matar");
                 mario.actualizarPuntaje(60);
                 l.eliminar();
@@ -63,7 +63,7 @@ import PowerUps.SuperChampinion;
         @Override
         public void visit(BuzzyBeetle b, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
-                b.recibirDanio();
+                b.recibirDanio(0);
                 mario.reproducirSonido("matar");
                 mario.actualizarPuntaje(30);
                 b.eliminar();
@@ -73,7 +73,7 @@ import PowerUps.SuperChampinion;
         @Override
         public void visit(PiranhaPlant p, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA) {
-                p.recibirDanio();
+                p.recibirDanio(0);
                 mario.reproducirSonido("matar");
                 mario.actualizarPuntaje(30);
                 p.eliminar();   
@@ -83,7 +83,7 @@ import PowerUps.SuperChampinion;
         @Override
         public void visit(Spiny s, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA) {
-                s.recibirDanio();
+                s.recibirDanio(0);
                 mario.reproducirSonido("matar");
                 mario.actualizarPuntaje(60);
                 s.eliminar();
@@ -137,7 +137,7 @@ import PowerUps.SuperChampinion;
         public void visit(LadrilloRompible lr, int direccion) {
             if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
                 mario.reproducirSonido("romperPlataforma");
-                lr.recibirDanio();
+                lr.recibirDanio(0);
                 lr.eliminar();
             }
         }
@@ -146,7 +146,7 @@ import PowerUps.SuperChampinion;
         public void visit(BloqueIrrompible bi, int direccion) {
             if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
                 mario.reproducirSonido("romperPlataforma");
-                bi.recibirDanio();
+                bi.recibirDanio(0);
             }
             System.out.println("choque bloque irrompibel");
         }
@@ -155,7 +155,7 @@ import PowerUps.SuperChampinion;
             if(direccion == ConstantesColisiones.ARRIBA){
                 System.out.println("choque bloque pregunta");
                 bp.getEntidadContenida();
-                bp.recibirDanio();
+                bp.recibirDanio(0);
             }
         }
 

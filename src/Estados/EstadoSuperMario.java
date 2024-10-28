@@ -11,7 +11,7 @@ public class EstadoSuperMario implements EstadoMario{
     public void disparar(){
 
     }
-    public void recibirDanio(){
+    public void recibirDanio(int puntaje){
         m.setEstado(new EstadoMarioComun(m));
         m.reproducirSonido("danioMario");
         m.aplicarGravedad();
