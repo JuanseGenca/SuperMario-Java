@@ -71,7 +71,6 @@ public class PanelPantallaPrincipal extends JPanel{
     protected void registrarOyenteBotonPuntajes(){
         botonPuntajes.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                System.out.println("Puntajes");
                 gui.accionarPantallaPuntajes();
             }
         });
