@@ -4,7 +4,6 @@ import Entidades.BolaDeFuego;
 import Logica.ConstantesEntidades;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
-import GUI.Observer;
 
 public class EstadoMarioFuego implements EstadoMario{
     
@@ -21,8 +20,6 @@ public class EstadoMarioFuego implements EstadoMario{
 
         BolaDeFuego bola = ManejadorEntidades.getInstancia().crearBolaDeFuego(posX,posY, m);
         ManejadorEntidades.getInstancia().agregarBolaDeFuego(bola);
-        Observer observerBola = m.getLogica().getGui().registrarEntidad(bola);
-        bola.setObserver(observerBola);
 
         if (m.getDirTick() == ConstantesEntidades.IZQUIERDA) { // Si Mario está mirando hacia la izquierda
             bola.setVelocidadX(-Math.abs(bola.getVelocidadX())); // Asegurarse de que la velocidad X sea negativa

@@ -63,6 +63,8 @@ public class ManejadorEntidades {
     public void agregarBolaDeFuego(BolaDeFuego bola){
         if(nivel!=null){
             nivel.agregarBolaDeFuego(bola);
+            Observer observerBola = miLogica.getGui().registrarEntidad(bola);
+            bola.setObserver(observerBola);
         } else{
             System.out.println("Nivel no inicializado");
         }
