@@ -14,6 +14,8 @@ public class EstadoMarioEstrella implements EstadoMario {
 
     public EstadoMarioEstrella(Mario mario) {
         m = mario;
+        m.pausarSonido("musicaLvl"+m.getLogica().getNivel().getNumeroNivel());
+        m.reproducirSonido("MarioEstrella");
         iniciarTemporizador();
     }
 
@@ -21,14 +23,18 @@ public class EstadoMarioEstrella implements EstadoMario {
         this.estadoPrevio = estado;
     }
     
+    @SuppressWarnings("override")
     public void disparar() {}
     
+    @SuppressWarnings("override")
     public void recibirDanio() {}
     
+    @Override
     public boolean puedeRomper() {
         return true;
     }
 
+    @SuppressWarnings("override")
     public int getPaddingTamanio() {
         return paddingTamanio;
     }
@@ -44,6 +50,7 @@ public class EstadoMarioEstrella implements EstadoMario {
     }
 
     private void finalizarEstadoEstrella() {
+        m.reanudarSonido("musicaLvl"+m.getLogica().getNivel().getNumeroNivel());
         m.setEstado(estadoPrevio);
         timer.cancel();
     }

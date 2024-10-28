@@ -12,19 +12,26 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class ManejadorDeSonidos {
     private Map<String, Clip> sonidos;
+    private Map<String, Integer> posicionesPausadas;
 
     public ManejadorDeSonidos() {
         sonidos = new HashMap<>();
+        posicionesPausadas = new HashMap<>();
         cargarSonido("vida","src\\Sonidos\\1up.wav");
         cargarSonido("moneda","src\\Sonidos\\coin.wav");
         cargarSonido("bolaFuego","src\\Sonidos\\fireball.wav");
         cargarSonido("saltar","src\\Sonidos\\jump.wav");
         cargarSonido("matar","src\\Sonidos\\kick.wav");
-        cargarSonido("dañoMario","src\\Sonidos\\pipe.wav");
+        cargarSonido("danioMario","src\\Sonidos\\pipe.wav");
         cargarSonido("powerUp","src\\Sonidos\\powerup.wav");
         cargarSonido("muerteMario","src\\Sonidos\\Die.wav");
         cargarSonido("romperPlataforma","src\\Sonidos\\Break.wav");
-        
+        cargarSonido("musicaLvl1","src\\Sonidos\\Overworld1.wav");
+        cargarSonido("musicaLvl2","src\\Sonidos\\Overworld2.wav");
+        cargarSonido("musicaLvl3","src\\Sonidos\\Overworld3.wav");
+        cargarSonido("menuPrincipal","src\\Sonidos\\MenuPrincipal.wav");
+        cargarSonido("InicioJuego","src\\Sonidos\\HereWeGo.wav");
+        cargarSonido("MarioEstrella","src\\Sonidos\\MarioEstrella.wav");
     }
 
     public void cargarSonido(String nombre, String rutaArchivo) {
@@ -43,6 +50,30 @@ public class ManejadorDeSonidos {
         Clip clip = sonidos.get(nombre);
         if (clip != null) {
             clip.setFramePosition(0); // Reinicia el clip
+            clip.start();
+        }
+    }
+
+    public void detenerSonido(String nombre) {
+        Clip clip = sonidos.get(nombre);
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
+        }
+    }
+
+    public void pausarSonido(String nombre) {
+        Clip clip = sonidos.get(nombre);
+        if (clip != null && clip.isRunning()) {
+            posicionesPausadas.put(nombre, clip.getFramePosition());
+            clip.stop();
+        }
+    }
+
+    public void reanudarSonido(String nombre) {
+        Clip clip = sonidos.get(nombre);
+        Integer posicion = posicionesPausadas.get(nombre);
+        if (clip != null && posicion != null) {
+            clip.setFramePosition(posicion);
             clip.start();
         }
     }

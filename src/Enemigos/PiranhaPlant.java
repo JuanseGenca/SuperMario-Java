@@ -25,4 +25,10 @@ public class PiranhaPlant extends Enemigo{
     public int getZIndex(){
         return ConstantesEntidades.FONDO;
     }
+
+    @Override
+    public void recibirDanio() {
+        velocidadX = 0;
+        actualizar(direccion, estadoAereo);
+     }
 }

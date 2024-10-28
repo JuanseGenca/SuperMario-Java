@@ -11,6 +11,8 @@ public class EstadoMarioComun implements EstadoMario{
 
     }
     public void recibirDanio(){
+        m.detenerSonido("musicaLvl"+m.getLogica().getNivel().getNumeroNivel());
+        m.reproducirSonido("muerteMario");
         m.morir();
     }
     public boolean puedeRomper(){

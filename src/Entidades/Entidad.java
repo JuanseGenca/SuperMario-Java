@@ -1,10 +1,9 @@
 package Entidades;
 
-import java.awt.Rectangle;
-
 import GUI.Observer;
 import GUI.Sprite;
 import Logica.*;
+import java.awt.Rectangle;
 
 public abstract class Entidad implements EntidadLogica{   
  //Atributos
@@ -39,14 +38,17 @@ public abstract class Entidad implements EntidadLogica{
       return puntaje;
    }
 
+ @SuppressWarnings("override")
    public int getPosicionX() {
       return posicionX;
    }
 
+   @SuppressWarnings("override")
    public int getPosicionY() {
       return posicionY;
    }
 
+   @SuppressWarnings("override")
    public Sprite getSprite() {
       return spriteActual;
    }
@@ -105,6 +107,7 @@ public abstract class Entidad implements EntidadLogica{
       return direccion;
    }
 
+ @SuppressWarnings("override")
    public int getZIndex(){
       return ConstantesEntidades.PRIORIDAD;
   }

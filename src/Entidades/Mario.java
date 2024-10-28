@@ -92,7 +92,7 @@ public class Mario extends Entidad implements EntidadJugador{
             public void run() {
                 invencible =false;
             }
-        }, 500); // 0.5 segundos
+        }, 700); // 0.5 segundos
     }
 
     public void disparar(){
@@ -189,10 +189,6 @@ public class Mario extends Entidad implements EntidadJugador{
 
         velocidadY = velYActual;
     }
-    
-    public void actualizarEstadoMario(int powerUp) {
-        //Una vez implementados los estados especiales. Conectar, Creo que con el setEstado ya alcanza.
-    }
 
     private void actualizarSprite() {
         Sprite nuevoSprite = misSprites[ConstantesEntidades.SPRITEQUIETO + estado.getModificador()];
@@ -254,6 +250,7 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public void morir(){
+
         miLogica.reiniciarNivel();
     }
     public Logica getLogica(){
@@ -262,5 +259,17 @@ public class Mario extends Entidad implements EntidadJugador{
     
     public void reproducirSonido(String nombre){
         miLogica.reproducirSonido(nombre);
+    }
+
+    public void detenerSonido(String nombre){
+        miLogica.detenerSonido(nombre);
+    }
+
+    public void pausarSonido(String nombre){
+        miLogica.pausarSonido(nombre);
+    }
+
+    public void reanudarSonido(String nombre){
+        miLogica.reanudarSonido(nombre);
     }
 }

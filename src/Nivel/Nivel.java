@@ -48,6 +48,10 @@ public class Nivel {
         return jugador;
     }
 
+    public int getNumeroNivel(){
+        return numeroNivel;
+    }
+
     public ManejadorDeColisiones getManejadorDeColisiones(){
         return manejadorDeColisiones;
     }
