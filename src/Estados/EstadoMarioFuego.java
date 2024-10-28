@@ -19,7 +19,6 @@ public class EstadoMarioFuego implements EstadoMario{
         m.reproducirSonido("bolaFuego");
 
         BolaDeFuego bola = ManejadorEntidades.getInstancia().crearBolaDeFuego(posX,posY, m);
-        ManejadorEntidades.getInstancia().agregarBolaDeFuego(bola);
 
         if (m.getDirTick() == ConstantesEntidades.IZQUIERDA) { // Si Mario está mirando hacia la izquierda
             bola.setVelocidadX(-Math.abs(bola.getVelocidadX())); // Asegurarse de que la velocidad X sea negativa

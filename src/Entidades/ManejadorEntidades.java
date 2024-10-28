@@ -22,64 +22,41 @@ public class ManejadorEntidades {
     private ManejadorEntidades() {}
 
     public static void inicializar(Nivel nivel,EntidadesFactory fabrica,Logica logica) {
-            instancia = new ManejadorEntidades();
-            instancia.nivel = nivel;
-            instancia.fabricaEnt = fabrica;
-            instancia.miLogica = logica;
+        instancia = new ManejadorEntidades();
+        instancia.nivel = nivel;
+        instancia.fabricaEnt = fabrica;
+        instancia.miLogica = logica;
     }
 
     public static ManejadorEntidades getInstancia() {
-        if (instancia == null) {
-            throw new IllegalStateException("El ManejadorEntidades no ha sido inicializado");
-        }
         return instancia;
     }
 
     public void eliminarEnemigo(Enemigo enemigo) {
-        if (nivel != null) {
-            nivel.eliminarEnemigo(enemigo);
-        } else {
-            System.out.println("Nivel no inicializado");
-        }
+        nivel.eliminarEnemigo(enemigo);
+       
     }
 
     public void eliminarPowerUp(PowerUp powerUp){
-        if (nivel != null) {
-            nivel.eliminarPowerUp(powerUp);
-        } else {
-            System.out.println("Nivel no inicializado");
-        }
+        nivel.eliminarPowerUp(powerUp);
     }
 
     public void eliminarPlataforma(Plataforma plataforma){
-        if (nivel != null) {
-            nivel.eliminarPlataforma(plataforma);
-        } else {
-            System.out.println("Nivel no inicializado");
-        }
+        nivel.eliminarPlataforma(plataforma);    
     }
 
     //metodos bola de fuego
-    public void agregarBolaDeFuego(BolaDeFuego bola){
-        if(nivel!=null){
-            nivel.agregarBolaDeFuego(bola);
-            Observer observerBola = miLogica.getGui().registrarEntidad(bola);
-            bola.setObserver(observerBola);
-        } else{
-            System.out.println("Nivel no inicializado");
-        }
-    }
 
     public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){
-        return fabricaEnt.crearBolaDeFuego(x,y, mario);
+        BolaDeFuego bolaDeFuego =  fabricaEnt.crearBolaDeFuego(x,y, mario);
+        nivel.agregarBolaDeFuego(bolaDeFuego);
+        Observer observerBola = miLogica.getGui().registrarEntidad(bolaDeFuego);
+        bolaDeFuego.setObserver(observerBola);
+        return bolaDeFuego;
     }
 
     public void eliminarBolaDeFuego(BolaDeFuego bola){
-        if (nivel != null) {
-            nivel.eliminarBolaDeFuego(bola);
-        } else {
-            System.out.println("Nivel no inicializado");
-        }
+        nivel.eliminarBolaDeFuego(bola);
     }
 
     public void crearMoneda(int x, int y){
