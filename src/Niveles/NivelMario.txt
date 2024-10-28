@@ -8,7 +8,6 @@ Goomba:650,0
 Buzzy Beetle:850,0
 Koopa Troopa:1100,24
 Ladrillo Rompible:144,192
-Vacio:195,192
 Ladrillo Rompible:534,192
 Ladrillo Rompible:438,192
 Ladrillo Rompible:342,192
