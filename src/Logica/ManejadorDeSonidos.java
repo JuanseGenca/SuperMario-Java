@@ -11,9 +11,10 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class ManejadorDeSonidos {
-    private Map<String, Clip> sonidos;
-    private Map<String, Integer> posicionesPausadas;
+    private final Map<String, Clip> sonidos;
+    private final Map<String, Integer> posicionesPausadas;
 
+    @SuppressWarnings("OverridableMethodCallInConstructor")
     public ManejadorDeSonidos() {
         sonidos = new HashMap<>();
         posicionesPausadas = new HashMap<>();
@@ -32,6 +33,7 @@ public class ManejadorDeSonidos {
         cargarSonido("menuPrincipal","src\\Sonidos\\MenuPrincipal.wav");
         cargarSonido("InicioJuego","src\\Sonidos\\HereWeGo.wav");
         cargarSonido("MarioEstrella","src\\Sonidos\\MarioEstrella.wav");
+        cargarSonido("PasarNivel","src\\Sonidos\\LevelClear.wav");
     }
 
     public void cargarSonido(String nombre, String rutaArchivo) {
@@ -42,7 +44,7 @@ public class ManejadorDeSonidos {
             clip.open(audioStream);
             sonidos.put(nombre, clip);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
     }
 

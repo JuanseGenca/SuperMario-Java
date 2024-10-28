@@ -83,7 +83,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     public void accionarInicioJuego() {
         this.panelPantallaJuego = new PanelPantallaJuego(this);
-        miLogica.iniciar();
+        miLogica.iniciarNivel();
     }
 
     public void accionarPantallaPuntajes() {
@@ -123,6 +123,12 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         refrescar();
     }
 
+
+    public void mostrarPantallaPasajeNivel() {
+       // ventana.setContentPane(panelPasajeNivel);
+        ventana.requestFocusInWindow();
+        refrescar();
+    }
     public void mostrarPantallaFinJuego() {
         // To Do
     }
@@ -147,6 +153,11 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     public int getNivel() {
         return miLogica.getNivel().getNumeroNivel();
+    }
+
+    public void mostrarPantallaVictoria() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarPantallaVictoria'");
     }
 
 }

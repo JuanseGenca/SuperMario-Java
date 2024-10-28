@@ -3,14 +3,11 @@ package Logica;
 import Entidades.*;
 
 public class HiloMario extends Thread {
-    private Mario jugador;
-    private ManejadorDeColisiones manejadorDeColisiones;
-    private Logica miLogica;
+    private final Mario jugador;
     boolean ejecutando;
 
     public HiloMario(Mario jugador, Logica mLogica) {
         this.jugador = jugador;
-        miLogica = mLogica;
         ejecutando = true;
     }
 

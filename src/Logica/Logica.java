@@ -10,6 +10,7 @@ import GUI.Observer;
 import Nivel.Nivel;
 import Nivel.Silueta;
 import ParseInt.Parserint;
+import static java.lang.Thread.sleep;
 import java.util.List;
 
 //La clase tiene como 800 metodos de mario, hay que ver cuales se pueden eliminar
@@ -25,6 +26,7 @@ public class Logica {
 	protected int vidas;
 	protected int monedas;
 	protected int puntaje;
+	protected int lvl;
     protected Nivel nivelActual;
 	protected HiloMario hilo1;
 	protected HiloSecundario hilo2;
@@ -38,7 +40,9 @@ public class Logica {
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
 		manejadorDeSonidos = new ManejadorDeSonidos();
         parseint = new Parserint(1,fabricaEntidades);
-        parseint = new Parserint(1,fabricaEntidades);
+        parseint = new Parserint(2,fabricaEntidades);
+		parseint = new Parserint(3,fabricaEntidades);
+		lvl=1;
 		vidas = 3;
     }
 	public GUI getGui(){
@@ -50,13 +54,13 @@ public class Logica {
 	}
 
 
-    public void iniciar() {
+    public void iniciarNivel() {
 		if (vidas == 0){
 			vidas = 3;
 			monedas = 0;
 			puntaje=0;
 		}
-		nivelActual = parseint.generarNivel(1);
+		nivelActual = parseint.generarNivel(lvl);
 		nivelActual.getMario().setLogica(this);
 		registrarObservers();
 		gui.mostrarPantallaJuego();
@@ -66,8 +70,7 @@ public class Logica {
 		hilo2.start();
 		hiloPrincipal = new HiloPrincipal(this);
 		hiloPrincipal.start();
-		manejadorDeSonidos.reproducirSonido("musicaLvl"+nivelActual.getNumeroNivel());
-		
+		manejadorDeSonidos.reproducirSonido("musicaLvl"+nivelActual.getNumeroNivel());	
 	}
 
     protected void registrarObservers() {
@@ -167,11 +170,29 @@ public class Logica {
 		hilo1.parar();
 		hilo2.parar();
 		hiloPrincipal.parar();
-		if (vidas == 0){
-			
+		if (vidas == 0){	
 			gui.mostrarPantallaInicial();
 		}else{
 			gui.accionarInicioJuego();
+		}
+	}
+
+	public void siguienteNivel() {
+		manejadorDeSonidos.pausarSonido("musicaLvl"+nivelActual.getNumeroNivel());
+		manejadorDeSonidos.reproducirSonido("PasarNivel");
+		gui.mostrarPantallaPasajeNivel();
+		try {
+			sleep(10000);
+		} catch (InterruptedException e) {
+			System.out.println(e.getMessage());
+		}
+		if(lvl<3){
+		lvl++;
+		iniciarNivel();
+		gui.mostrarPantallaJuego();
+		}
+		else{
+			gui.mostrarPantallaVictoria();
 		}
 	}
 

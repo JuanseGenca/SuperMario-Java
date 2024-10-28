@@ -2,8 +2,6 @@ package Logica;
 
 import Entidades.*;
 import Nivel.*;
-import Visitors.VisitorMario;
-
 import java.awt.Rectangle;
 import java.util.*;
 
@@ -12,7 +10,7 @@ public class ManejadorDeColisiones {
     protected Nivel nivelActual;
 
     public ManejadorDeColisiones() {
-        this.entidades = new LinkedList<Entidad>();
+        this.entidades = new LinkedList<>();
     }
 
     public void eliminarEntidad(Entidad entidad) {

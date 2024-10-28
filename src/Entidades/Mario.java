@@ -272,4 +272,8 @@ public class Mario extends Entidad implements EntidadJugador{
     public void reanudarSonido(String nombre){
         miLogica.reanudarSonido(nombre);
     }
+
+    public void siguienteNivel(){
+        miLogica.siguienteNivel();
+    }
 }
