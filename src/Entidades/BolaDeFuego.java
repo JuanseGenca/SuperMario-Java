@@ -50,6 +50,7 @@ public class BolaDeFuego extends Enemigo{
         
             if (seDebeEliminar()) {
                 ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
+                miObserver.eliminar();
             }
         }   
 
@@ -76,5 +77,6 @@ public class BolaDeFuego extends Enemigo{
         spriteActual = misSprites[1];
         actualizar(direccion, estadoAereo);
         ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
+        miObserver.eliminar();
     }
 }
