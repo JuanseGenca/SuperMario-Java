@@ -5,8 +5,6 @@ import Fabricas.EntidadesFactory;
 import Logica.Logica;
 import Nivel.Nivel;
 import Nivel.Silueta;
-import Plataformas.ConstantesBloquePregunta;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -46,7 +44,7 @@ public class Parserint {
 
         Silueta silueta = fabricaEnt.getSilueta(numero);
 		Nivel nivelActual = new Nivel(silueta, numero);
-        ManejadorEntidades.inicializar(nivelActual,fabricaEnt);
+        ManejadorEntidades.inicializar(nivelActual,fabricaEnt,miLogica);
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;

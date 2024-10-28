@@ -3,8 +3,6 @@ package Estados;
 import Entidades.BolaDeFuego;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
-import GUI.Observer;
-import Logica.ConstantesEntidades;
 
 public class EstadoMarioFuego implements EstadoMario{
     
@@ -20,9 +18,6 @@ public class EstadoMarioFuego implements EstadoMario{
         m.reproducirSonido("bolaFuego");
 
         BolaDeFuego bola = ManejadorEntidades.getInstancia().crearBolaDeFuego(posX,posY, m);
-        ManejadorEntidades.getInstancia().agregarBolaDeFuego(bola);
-        Observer observerBola = m.getLogica().getGui().registrarEntidad(bola);
-        bola.setObserver(observerBola);
 
         if (m.getDirTick() == ConstantesEntidades.IZQUIERDA) { // Si Mario está mirando hacia la izquierda
             bola.setVelocidadX(-Math.abs(bola.getVelocidadX())); // Asegurarse de que la velocidad X sea negativa

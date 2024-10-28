@@ -17,106 +17,78 @@ public class ManejadorEntidades {
     private Nivel nivel;
     private static ManejadorEntidades instancia;
     private EntidadesFactory fabricaEnt;
+    private Logica miLogica;
 
     private ManejadorEntidades() {}
 
-    public static void inicializar(Nivel nivel,EntidadesFactory fabrica) {
-            instancia = new ManejadorEntidades();
-            instancia.nivel = nivel;
-            instancia.fabricaEnt = fabrica;
+    public static void inicializar(Nivel nivel,EntidadesFactory fabrica,Logica logica) {
+        instancia = new ManejadorEntidades();
+        instancia.nivel = nivel;
+        instancia.fabricaEnt = fabrica;
+        instancia.miLogica = logica;
     }
 
     public static ManejadorEntidades getInstancia() {
-        if (instancia == null) {
-            throw new IllegalStateException("El ManejadorEntidades no ha sido inicializado");
-        }
         return instancia;
     }
 
     public void eliminarEnemigo(Enemigo enemigo) {
-        if (nivel != null) {
-            nivel.eliminarEnemigo(enemigo);
-        } else {
-            System.out.println("Nivel no inicializado");
-        }
+        nivel.eliminarEnemigo(enemigo);
     }
 
     public void eliminarPowerUp(PowerUp powerUp){
-        if (nivel != null) {
-            nivel.eliminarPowerUp(powerUp);
-        } else {
-            System.out.println("Nivel no inicializado");
-        }
+        nivel.eliminarPowerUp(powerUp);
     }
 
     public void eliminarPlataforma(Plataforma plataforma){
-        if (nivel != null) {
-            nivel.eliminarPlataforma(plataforma);
-        } else {
-            System.out.println("Nivel no inicializado");
-        }
-    }
-
-    //metodos bola de fuego
-    public void agregarBolaDeFuego(BolaDeFuego bola){
-        if(nivel!=null){
-            nivel.agregarBolaDeFuego(bola);
-        } else{
-            System.out.println("Nivel no inicializado");
-        }
-    }
-
-    public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){
-        return fabricaEnt.crearBolaDeFuego(x,y, mario);
+        nivel.eliminarPlataforma(plataforma);    
     }
 
     public void eliminarBolaDeFuego(BolaDeFuego bola){
-        if (nivel != null) {
-            nivel.eliminarBolaDeFuego(bola);
-        } else {
-            System.out.println("Nivel no inicializado");
-        }
+        nivel.eliminarBolaDeFuego(bola);
     }
 
-    //metodos power ups
-    public void agregarMoneda(Moneda moneda){
+    public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){
+        BolaDeFuego bolaDeFuego =  fabricaEnt.crearBolaDeFuego(x,y, mario);
+        nivel.agregarBolaDeFuego(bolaDeFuego);
+        Observer observerBola = miLogica.getGui().registrarEntidad(bolaDeFuego);
+        bolaDeFuego.setObserver(observerBola);
+        return bolaDeFuego;
+    }
+
+    public void crearMoneda(int x, int y){
+        Moneda moneda = fabricaEnt.crearMoneda(x, y);
         nivel.agregarPowerUp(moneda);
+        Observer observerMoneda = miLogica.getGui().registrarEntidad(moneda);
+        moneda.setObserver(observerMoneda);
     }
 
-    public Moneda crearMoneda(int x, int y){
-        return fabricaEnt.crearMoneda(x, y);
-    }
-
-    public void agregarFlorDeFuego(FlorDeFuego florDeFuego){
+    public void crearFlorDeFuego(int x, int y){
+        FlorDeFuego florDeFuego = fabricaEnt.crearFlorDeFuego(x, y);
         nivel.agregarPowerUp(florDeFuego);
+        Observer observerFlorDeFuego = miLogica.getGui().registrarEntidad(florDeFuego);
+        florDeFuego.setObserver(observerFlorDeFuego);
     }
 
-    public FlorDeFuego crearFlorDeFuego(int x, int y){
-        return fabricaEnt.crearFlorDeFuego(x, y);
-    }
-
-    public void agregarEstrella(Estrella estrella){
+    public void crearEstrella(int x, int y){
+        Estrella estrella = fabricaEnt.crearEstrella(x, y);
         nivel.agregarPowerUp(estrella);
+        Observer observerEstrella = miLogica.getGui().registrarEntidad(estrella);
+        estrella.setObserver(observerEstrella);
     }
 
-    public Estrella crearEstrella(int x, int y){
-        return fabricaEnt.crearEstrella(x, y);
-    }
-
-    public void agregarChampinionVerde(ChampinionVerde champinionVerde){
+    public void crearChampinionVerde(int x, int y){
+        ChampinionVerde champinionVerde = fabricaEnt.crearChampinionVerde(x, y);
         nivel.agregarPowerUp(champinionVerde);
+        Observer observerChampinionVerde = miLogica.getGui().registrarEntidad(champinionVerde);
+        champinionVerde.setObserver(observerChampinionVerde);
     }
 
-    public ChampinionVerde crearChampinionVerde(int x, int y){
-        return fabricaEnt.crearChampinionVerde(x, y);
-    }
-
-    public void agregarSuperChampinion(SuperChampinion superChampinion){
+    public void crearSuperChampinion(int x, int y){
+        SuperChampinion superChampinion = fabricaEnt.crearSuperChampinion(x, y);
         nivel.agregarPowerUp(superChampinion);
-    }
-
-    public SuperChampinion crearSuperChampinion(int x, int y){
-        return fabricaEnt.crearSuperChampinion(x, y);
+        Observer observerSuperChampinion = miLogica.getGui().registrarEntidad(superChampinion);
+        superChampinion.setObserver(observerSuperChampinion);
     }
 
 
