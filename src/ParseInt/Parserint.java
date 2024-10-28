@@ -46,7 +46,7 @@ public class Parserint {
 
         Silueta silueta = fabricaEnt.getSilueta(numero);
 		Nivel nivelActual = new Nivel(silueta, numero);
-        ManejadorEntidades.inicializar(nivelActual,fabricaEnt);
+        ManejadorEntidades.inicializar(nivelActual,fabricaEnt,miLogica);
 
         try (BufferedReader lector = new BufferedReader(new FileReader(path))) {
             String linea;
