@@ -64,7 +64,7 @@ public class PanelPantallaPrincipal extends JPanel{
             public void actionPerformed(ActionEvent e){
                 gui.detenerSonido("menuPrincipal");
                 gui.reproducirSonido("InicioJuego");
-                gui.accionarInicioJuego();
+                gui.mostrarPantallaModoDeJuego();
             }
         });
     }

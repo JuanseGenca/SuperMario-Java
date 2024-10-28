@@ -30,6 +30,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     protected PanelVictoria panelVictoria;
     protected Logica miLogica;
     protected AdministradorPuntaje administradorPuntaje;
+    protected PanelModoDeJuego panelModo;
 
 
     public GUI(Logica miLogica) {
@@ -39,6 +40,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         this.panelPantallaFinDeJuego = new PanelPantallaFinDeJuego(this);
         this.panelVictoria = new PanelVictoria(this);
         this.administradorPuntaje=new AdministradorPuntaje();
+        this.panelModo = new PanelModoDeJuego(this);
         configurarVentana();
         registrarOyenteVentana();
     }
@@ -210,6 +212,11 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         ventana.requestFocusInWindow();
         refrescar();
         
+    }
+    public void mostrarPantallaModoDeJuego(){
+        ventana.setContentPane(panelModo);
+        ventana.requestFocusInWindow();
+        refrescar();
     }
 
     public boolean top5() {
