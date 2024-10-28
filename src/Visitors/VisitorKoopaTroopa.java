@@ -17,6 +17,7 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
     public void visit(KoopaTroopa k, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             k.recibirDanio();
+            k.eliminar();
         }
     }
 
@@ -24,6 +25,7 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
     public void visit(Goomba g, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             g.recibirDanio(0);
+            g.eliminar();
         }
     }
 
@@ -31,6 +33,7 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
     public void visit(Lakitu l, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             l.recibirDanio(0);
+            l.eliminar();
         }
     }
 
@@ -38,6 +41,7 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
     public void visit(BuzzyBeetle b, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             b.recibirDanio(0);
+            b.eliminar();
         }
     }
 
