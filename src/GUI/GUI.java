@@ -5,6 +5,7 @@ import Entidades.EntidadJugador;
 import Entidades.EntidadLogica;
 import Logica.*;
 import Paneles.*;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -13,6 +14,10 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
@@ -37,6 +42,13 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         ventana.setResizable(false);
         ventana.setSize(ConstantesVistas.VENTANA_ANCHO, ConstantesVistas.VENTANA_ALTO);
         ventana.setLocationRelativeTo(null);
+        Image icono=null;
+        try {
+            icono = ImageIO.read(new File("src//Imagenes//Icono.jpg"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        ventana.setIconImage(icono);
         ventana.setVisible(true);
     }
 
