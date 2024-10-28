@@ -36,15 +36,15 @@ public class PanelPantallaInicioNivel extends JPanel{
         imagenFondo.setIcon(iconoImagenEscalada);
         imagenFondo.setBounds(0, 0, ConstantesVistas.VENTANA_ANCHO, ConstantesVistas.VENTANA_ALTO);
     
-        String nivel = miGUI.getNivel();
-        String mundo = miGUI.getMundo();
+        String nivel = "1";//miGUI.getNivel();
+        String mundo = "1";//miGUI.getMundo();
         JLabel etiquetaNivel = new JLabel(mundo + " - " + nivel);
         etiquetaNivel.setForeground(Color.WHITE);
         etiquetaNivel.setFont(new Font("SansSerif", Font.BOLD, 48));
         etiquetaNivel.setBounds(600, 200, 100, 50);
     
 
-        String vidas = miGUI.getVidas();
+        String vidas = "3"; //miGUI.getVidas();
         JLabel etiquetaVidas = new JLabel(vidas);
         etiquetaVidas.setForeground(Color.WHITE);
         etiquetaVidas.setFont(new Font("SansSerif", Font.BOLD, 40));
