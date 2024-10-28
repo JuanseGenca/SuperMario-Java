@@ -17,7 +17,9 @@ public class PiranhaPlant extends Enemigo{
 
     @Override
     public void mover(){
-        miObserver.actualizar();
+        if(miObserver!=null){
+            miObserver.actualizar();
+        }
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
     }
 

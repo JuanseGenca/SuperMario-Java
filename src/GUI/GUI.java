@@ -23,6 +23,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     protected PanelPantallaPrincipal panelPantallaPrincipal;
     protected PanelPantallaJuego panelPantallaJuego;
     protected PanelPantallaFinDeJuego panelPantallaFinDeJuego;
+    protected PanelVictoria panelVictoria;
     protected Logica miLogica;
 
 
@@ -31,6 +32,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         this.panelPantallaPrincipal = new PanelPantallaPrincipal(this);
         this.panelPantallaJuego = new PanelPantallaJuego(this);
         this.panelPantallaFinDeJuego = new PanelPantallaFinDeJuego(this);
+        this.panelVictoria = new PanelVictoria(this);
         configurarVentana();
         registrarOyenteVentana();
     }
@@ -158,6 +160,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         refrescar();
     }
 
+    
 
     public void mostrarPantallaPasajeNivel() {
        // ventana.setContentPane(panelPasajeNivel);
@@ -194,8 +197,9 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     }
 
     public void mostrarPantallaVictoria() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarPantallaVictoria'");
+        ventana.setContentPane(panelVictoria);
+        ventana.requestFocusInWindow();
+        refrescar();
     }
 
 }

@@ -24,7 +24,9 @@ public abstract class Enemigo extends Entidad{
         if(direccion == ConstantesEntidades.IZQUIERDA){
             posicionX -= 2;
         }
-        miObserver.actualizar();
+        if(miObserver!=null) {
+            miObserver.actualizar();
+        }
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
     }
     

@@ -183,7 +183,7 @@ public class Logica {
 		hilo1.parar();
 		hilo2.parar();
 		hiloPrincipal.parar();
-		if(lvl<3){
+		if(lvl!=3){
 			lvl++;
 			iniciarNivel();
 			gui.mostrarPantallaJuego();
