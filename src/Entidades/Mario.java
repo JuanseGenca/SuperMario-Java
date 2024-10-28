@@ -238,6 +238,11 @@ public class Mario extends Entidad implements EntidadJugador{
 
         return devolver;
     }
+
+    //testeando para que mario no atraviese cosas
+    public void setPosicionx(int x){
+            posicionX = x;
+    }
     
     public void setLogica(Logica l){
         miLogica = l;
@@ -276,4 +281,5 @@ public class Mario extends Entidad implements EntidadJugador{
     public void siguienteNivel(){
         miLogica.siguienteNivel();
     }
+
 }

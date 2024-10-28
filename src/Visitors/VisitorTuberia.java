@@ -20,6 +20,12 @@ public class VisitorTuberia extends VisitorPlataforma{
     public void visit(Mario m, int direccion){
         if(direccion == ConstantesColisiones.LATERAL){
             m.setVelocidadX(0);
+           if(m.getDireccion() == ConstantesEntidades.DERECHA){
+                 m.setPosicionx(m.getPosicionX() - 2);
+           } else 
+                if(m.getDireccion() == ConstantesEntidades.IZQUIERDA){
+                    m.setPosicionx(m.getPosicionX() + 2);
+           }
         }
         if(direccion == ConstantesColisiones.ABAJO){
             m.setVelocidadY(0);
