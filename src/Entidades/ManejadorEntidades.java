@@ -3,6 +3,7 @@ package Entidades;
 import Enemigos.Enemigo;
 import Fabricas.EntidadesFactory;
 import GUI.Observer;
+import GUI.ObserverEntidades;
 import Logica.Logica;
 import Nivel.Nivel;
 import Plataformas.Plataforma;
@@ -30,6 +31,10 @@ public class ManejadorEntidades {
 
     public static ManejadorEntidades getInstancia() {
         return instancia;
+    }
+
+    public void eliminarObserver(ObserverEntidades observerEntidad){
+        miLogica.getGui().EliminarEntidad(observerEntidad);
     }
 
     public void eliminarEnemigo(Enemigo enemigo) {

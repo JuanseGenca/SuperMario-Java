@@ -57,6 +57,10 @@ public abstract class Entidad implements EntidadLogica{
       miObserver=observer;
    }
 
+   public Observer getObserver(){
+      return miObserver;
+   }
+
    public void setVelocidadX(double vX) {
       velocidadX = vX;
    }
