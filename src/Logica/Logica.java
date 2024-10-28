@@ -210,6 +210,10 @@ public class Logica {
 		return nivelActual;
 	}
 
+	public int getNumeroNivel(){
+		return lvl;
+	}
+
 	private void perdio() {
 	    manejadorDeSonidos.pausarSonido("musicaLvl" + nivelActual.getNumeroNivel());
 	    manejadorDeSonidos.reproducirSonido("GameOver");
