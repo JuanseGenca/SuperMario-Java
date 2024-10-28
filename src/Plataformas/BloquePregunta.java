@@ -53,6 +53,8 @@ public class BloquePregunta extends Plataforma{
             Observer observerMoneda = miLogica.getGui().registrarEntidad(moneda);
             moneda.setObserver(observerMoneda);
         }
+        entidadContenida = 0;
+        
     }
 
     public void setEntidadContenida(int i){

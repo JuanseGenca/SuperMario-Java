@@ -156,6 +156,7 @@ import PowerUps.SuperChampinion;
             if(direccion == ConstantesColisiones.ARRIBA){
                 System.out.println("choque bloque pregunta");
                 bp.getEntidadContenida();
+                bp.recibirDanio();
             }
         }
 
