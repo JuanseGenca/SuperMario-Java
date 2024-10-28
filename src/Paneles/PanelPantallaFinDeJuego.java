@@ -3,10 +3,8 @@ package Paneles;
 import GUI.ConstantesVistas;
 import GUI.GUI;
 import java.awt.Image;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 

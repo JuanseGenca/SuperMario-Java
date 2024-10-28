@@ -1,18 +1,15 @@
 package Logica;
 
 import Entidades.*;
-import GUI.GUI;
 
 public class HiloMario extends Thread {
     private Mario jugador;
     private ManejadorDeColisiones manejadorDeColisiones;
-    private GUI miGui;
     private Logica miLogica;
     boolean ejecutando;
 
-    public HiloMario(Mario jugador,GUI gui,Logica mLogica) {
+    public HiloMario(Mario jugador, Logica mLogica) {
         this.jugador = jugador;
-        miGui = gui;
         miLogica = mLogica;
         ejecutando = true;
     }

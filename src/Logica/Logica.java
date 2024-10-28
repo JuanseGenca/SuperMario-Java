@@ -60,11 +60,11 @@ public class Logica {
 		nivelActual.getMario().setLogica(this);
 		registrarObservers();
 		gui.mostrarPantallaJuego();
-		hilo1 = new HiloMario(nivelActual.getMario(),gui,this);
+		hilo1 = new HiloMario(nivelActual.getMario(),this);
 		hilo1.start();
-		hilo2 = new HiloSecundario(this, gui);
+		hilo2 = new HiloSecundario(this);
 		hilo2.start();
-		hiloPrincipal = new HiloPrincipal(gui,this);
+		hiloPrincipal = new HiloPrincipal(this);
 		hiloPrincipal.start();
 		manejadorDeSonidos.reproducirSonido("musicaLvl"+nivelActual.getNumeroNivel());
 		

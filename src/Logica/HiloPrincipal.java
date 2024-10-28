@@ -1,18 +1,15 @@
 package Logica;
 
 import Entidades.Entidad;
-import GUI.GUI;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class HiloPrincipal extends Thread {
     private ManejadorDeColisiones manejadorDeColisiones;
-    private GUI miGui;
     private Logica miLogica;
     boolean ejecutando;
     private ConcurrentLinkedQueue<Entidad> entidadesAEliminar;
 
-    public HiloPrincipal(GUI gui, Logica mLogica) {
-        miGui = gui;
+    public HiloPrincipal(Logica mLogica) {
         miLogica = mLogica;
         ejecutando = true;
         manejadorDeColisiones = miLogica.getManejadorDeColisiones();

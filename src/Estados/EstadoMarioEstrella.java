@@ -23,14 +23,18 @@ public class EstadoMarioEstrella implements EstadoMario {
         this.estadoPrevio = estado;
     }
     
+    @SuppressWarnings("override")
     public void disparar() {}
     
+    @SuppressWarnings("override")
     public void recibirDanio() {}
     
+    @Override
     public boolean puedeRomper() {
         return true;
     }
 
+    @SuppressWarnings("override")
     public int getPaddingTamanio() {
         return paddingTamanio;
     }
