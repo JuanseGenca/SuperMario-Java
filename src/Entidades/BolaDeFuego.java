@@ -56,9 +56,7 @@ public class BolaDeFuego extends Enemigo{
         angulo += velocidadAngular;
 
         miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
-        actualizarSprite();
-        System.out.println("Posición X: " + posicionX + ", Posición Y: " + posicionY);
-        
+        actualizarSprite();   
     }
     public void actualizarSprite() {
         if (miObserver != null) {

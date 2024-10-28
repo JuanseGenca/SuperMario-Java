@@ -55,7 +55,6 @@ public class ManejadorEntidades {
         }
     }
     public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){
-        System.out.println("bola creada pa");
         return fabricaEnt.crearBolaDeFuego(x,y, mario);
         
     }

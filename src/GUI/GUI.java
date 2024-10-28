@@ -176,7 +176,9 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     }
 
     public int getNivel() {
-        return miLogica.getNivel().getNumeroNivel();
+        int lvl=1;
+        if(miLogica.getNivel()!=null){lvl=miLogica.getNivel().getNumeroNivel();}
+        return lvl;
     }
 
     public void mostrarPantallaVictoria() {
