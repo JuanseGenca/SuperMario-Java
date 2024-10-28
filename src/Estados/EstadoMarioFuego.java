@@ -1,7 +1,7 @@
 package Estados;
 
 import Entidades.BolaDeFuego;
-import Entidades.ConstantesEntidades;
+import Logica.ConstantesEntidades;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
 import GUI.Observer;

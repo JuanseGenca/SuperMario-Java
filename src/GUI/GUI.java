@@ -1,21 +1,26 @@
 package GUI;
 
-import Entidades.ConstantesEntidades;
+import Logica.ConstantesEntidades;
 import Entidades.EntidadJugador;
 import Entidades.EntidadLogica;
 import Logica.*;
 import Paneles.*;
+import Puntaje.AdministradorPuntaje;
+
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
@@ -25,6 +30,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     protected PanelPantallaFinDeJuego panelPantallaFinDeJuego;
     protected PanelVictoria panelVictoria;
     protected Logica miLogica;
+    protected AdministradorPuntaje administradorPuntaje;
 
 
     public GUI(Logica miLogica) {
@@ -33,6 +39,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         this.panelPantallaJuego = new PanelPantallaJuego(this);
         this.panelPantallaFinDeJuego = new PanelPantallaFinDeJuego(this);
         this.panelVictoria = new PanelVictoria(this);
+        this.administradorPuntaje=new AdministradorPuntaje();
         configurarVentana();
         registrarOyenteVentana();
     }
@@ -200,6 +207,46 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         ventana.setContentPane(panelVictoria);
         ventana.requestFocusInWindow();
         refrescar();
+        
     }
 
+    public boolean top5() {
+        administradorPuntaje.agregarScore(miLogica.getPuntaje());
+        if (administradorPuntaje.entro_en_el_top5()) {
+            boolean inputValido = false;
+            String input = null;
+
+            while (!inputValido) {
+                JPanel panel = new JPanel();
+                JLabel label = new JLabel("Ingrese 5 dígitos:");
+                JTextField textField = new JTextField(5);
+                panel.add(label);
+                panel.add(textField);
+
+                int result = JOptionPane.showConfirmDialog(ventana, panel, "Top 5", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+                if (result == JOptionPane.OK_OPTION) {
+                    input = textField.getText();
+                    
+                    // Validar que la entrada tenga exactamente 5 dígitos
+                    if (input != null && input.matches("\\d{5}")) {
+                        inputValido = true;
+                    } else {
+                        JOptionPane.showMessageDialog(ventana, "Entrada inválida. Por favor, ingrese exactamente 5 dígitos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    // Si el usuario cancela, salir del bucle
+                    break;
+                }
+            }
+
+            if (inputValido) {
+                administradorPuntaje.mejorJugador(input);
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return true; // Si no entra en el top 5, consideramos la operación exitosa
+    }
 }

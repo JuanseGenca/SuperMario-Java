@@ -203,17 +203,21 @@ public class Logica {
 	}
 
 	private void perdio() {
-		manejadorDeSonidos.pausarSonido("musicaLvl"+nivelActual.getNumeroNivel());
-		manejadorDeSonidos.reproducirSonido("GameOver");
-		gui.mostrarPantallaFinJuego();
+	    manejadorDeSonidos.pausarSonido("musicaLvl" + nivelActual.getNumeroNivel());
+	    manejadorDeSonidos.reproducirSonido("GameOver");
+	    gui.mostrarPantallaFinJuego();
 		try {
 			sleep(5000);
 		} catch (InterruptedException e) {
 			System.err.println(e.getMessage());
 		}
-		
-		gui.mostrarPantallaInicial();
-		manejadorDeSonidos.reproducirSonido("menuPrincipal");
-
+	    
+	    boolean top5Concretado = gui.top5();
+	    
+	    if (top5Concretado) {    
+	        gui.mostrarPantallaInicial();
+	        manejadorDeSonidos.reproducirSonido("menuPrincipal");
+	    }
 	}
-}	
+	
+}

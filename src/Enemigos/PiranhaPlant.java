@@ -1,6 +1,6 @@
 package Enemigos;
 
-import Entidades.ConstantesEntidades;
+import Logica.ConstantesEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
 

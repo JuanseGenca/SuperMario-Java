@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Entidades.EntidadLogica;
-import Entidades.ConstantesEntidades;
+import Logica.ConstantesEntidades;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.geom.AffineTransform;

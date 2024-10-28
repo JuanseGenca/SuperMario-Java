@@ -1,4 +1,5 @@
-package Entidades;
+package Logica;
+
 public class ConstantesEntidades {
     //Constantes estadoAereo
     public static final int AIRE = 20000;

@@ -6,7 +6,7 @@ import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
 import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
-import Entidades.ConstantesEntidades;
+import Logica.ConstantesEntidades;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 
