@@ -18,5 +18,6 @@ public abstract class Plataforma extends Entidad{
         spriteActual = misSprites[1];
         actualizar(direccion, estadoAereo);
         ManejadorEntidades.getInstancia().eliminarPlataforma(this);
+        miObserver.eliminar();
     }
 }
