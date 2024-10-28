@@ -2,6 +2,7 @@ package ParseInt;
 
 import Entidades.ManejadorEntidades;
 import Fabricas.EntidadesFactory;
+import Logica.Logica;
 import Nivel.Nivel;
 import Nivel.Silueta;
 import java.io.BufferedReader;
@@ -11,9 +12,11 @@ import java.io.IOException;
 
 public class Parserint {
     protected EntidadesFactory fabricaEnt;
+    protected Logica miLogica;
 
-    public Parserint(int nivel,EntidadesFactory fabricaEntidades){
+    public Parserint(int nivel,EntidadesFactory fabricaEntidades,Logica log){
         fabricaEnt=fabricaEntidades;
+        miLogica = log;
     }
 
     public Nivel generarNivel(int nivel){
@@ -88,7 +91,7 @@ public class Parserint {
                     case "Bloque Pregunta":
                         int bloquePreguntaX = Integer.parseInt(parametros[0]);
                         int bloquePreguntaY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarPlataforma(fabricaEnt.crearBloquePregunta(bloquePreguntaX, bloquePreguntaY));
+                        nivelActual.agregarPlataforma(fabricaEnt.crearBloquePregunta(bloquePreguntaX, bloquePreguntaY,miLogica,1));
                         break;
                     case "Goomba":
                         int goombaX = Integer.parseInt(parametros[0]);

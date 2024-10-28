@@ -4,6 +4,7 @@ import Enemigos.*;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import GUI.Sprite;
+import Logica.Logica;
 import Nivel.Silueta;
 import Plataformas.*;
 import PowerUps.*;
@@ -127,9 +128,9 @@ public class EntidadesFactory {
         return ladrilloRompible;
     }
 
-    public BloquePregunta crearBloquePregunta(int x,int y){
+    public BloquePregunta crearBloquePregunta(int x,int y,Logica log,int i){
         Sprite[] spriteBloquePregunta = spriteFactory.getBloquePregunta();
-        BloquePregunta bloquePregunta = new BloquePregunta(x,y,spriteBloquePregunta);
+        BloquePregunta bloquePregunta = new BloquePregunta(x,y,spriteBloquePregunta,log,i);
         return bloquePregunta;
     }
     public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){

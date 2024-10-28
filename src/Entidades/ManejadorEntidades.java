@@ -2,8 +2,11 @@ package Entidades;
 
 import Enemigos.Enemigo;
 import Fabricas.EntidadesFactory;
+import GUI.Observer;
+import Logica.Logica;
 import Nivel.Nivel;
 import Plataformas.Plataforma;
+import PowerUps.Moneda;
 import PowerUps.PowerUp;
 
 public class ManejadorEntidades {
@@ -33,6 +36,7 @@ public class ManejadorEntidades {
             System.out.println("Nivel no inicializado");
         }
     }
+
     public void eliminarPowerUp(PowerUp powerUp){
         if (nivel != null) {
             nivel.eliminarPowerUp(powerUp);
@@ -40,6 +44,7 @@ public class ManejadorEntidades {
             System.out.println("Nivel no inicializado");
         }
     }
+
     public void eliminarPlataforma(Plataforma plataforma){
         if (nivel != null) {
             nivel.eliminarPlataforma(plataforma);
@@ -47,6 +52,7 @@ public class ManejadorEntidades {
             System.out.println("Nivel no inicializado");
         }
     }
+
     public void agregarBolaDeFuego(BolaDeFuego bola){
         if(nivel!=null){
             nivel.agregarBolaDeFuego(bola);
@@ -54,10 +60,20 @@ public class ManejadorEntidades {
             System.out.println("Nivel no inicializado");
         }
     }
+
     public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){
         return fabricaEnt.crearBolaDeFuego(x,y, mario);
-        
     }
+
+    public void agregarMoneda(Moneda moneda){
+        nivel.agregarPowerUp(moneda);
+    }
+
+    public Moneda crearMoneda(int x, int y){
+        Moneda moneda = fabricaEnt.crearMoneda(x, y);
+        return moneda;
+    }
+
     public void eliminarBolaDeFuego(BolaDeFuego bola){
         if (nivel != null) {
             nivel.eliminarBolaDeFuego(bola);
