@@ -5,6 +5,7 @@ import Entidades.*;
 import Logica.ConstantesColisiones;
 import Logica.Visitor;
 import Plataformas.BloqueIrrompible;
+import Plataformas.BloquePregunta;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
 import Plataformas.Plataforma;
@@ -83,5 +84,8 @@ public class VisitorEnemigo implements Visitor {
     public void visit(BolaDeFuego bf, int direccion) {
         bf.eliminar();
         bf.recibirDanio();
+    }
+
+    public void visit(BloquePregunta bp,int direccion){
     }
 }

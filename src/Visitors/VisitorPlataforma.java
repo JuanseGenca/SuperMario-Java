@@ -10,6 +10,7 @@ import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import Logica.Visitor;
 import Plataformas.BloqueIrrompible;
+import Plataformas.BloquePregunta;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
 import Plataformas.Plataforma;
@@ -101,5 +102,7 @@ public abstract class VisitorPlataforma implements Visitor{
     public void visit(BolaDeFuego bf, int direccion) {
     }
 
+    public void visit(BloquePregunta bp,int direccion){
+    }
     
 }

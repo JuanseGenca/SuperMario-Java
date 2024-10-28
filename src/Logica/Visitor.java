@@ -24,4 +24,5 @@ public interface Visitor {
     public void visit(Vacio v, int direccion);
     public void visit(PowerUp pu, int direccion);
     public void visit(BolaDeFuego bf, int direccion);
+    public void visit(BloquePregunta bp,int direccion);
 }

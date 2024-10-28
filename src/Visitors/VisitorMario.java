@@ -11,6 +11,7 @@ import Entidades.Mario;
 import Logica.ConstantesColisiones;
 import Logica.Visitor;
 import Plataformas.BloqueIrrompible;
+import Plataformas.BloquePregunta;
 import Plataformas.LadrilloRompible;
 import Plataformas.Meta;
 import Plataformas.Plataforma;
@@ -147,6 +148,14 @@ import PowerUps.SuperChampinion;
             if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
                 mario.reproducirSonido("romperPlataforma");
                 bi.recibirDanio();
+            }
+            System.out.println("choque bloque irrompibel");
+        }
+
+        public void visit(BloquePregunta bp, int direccion){
+            if(direccion == ConstantesColisiones.ARRIBA){
+                System.out.println("choque bloque pregunta");
+                bp.getEntidadContenida();
             }
         }
 

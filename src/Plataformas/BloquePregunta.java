@@ -5,8 +5,10 @@ import GUI.Sprite;
 import Logica.Visitor;
 import Visitors.VisitorBloquePregunta;
 
-public class BloquePregunta extends BloqueIrrompible{
+public class BloquePregunta extends Plataforma{
     
+    protected Entidad entidadContenida;
+
     public BloquePregunta(int x, int y,Sprite sprite[]){
         super(x, y,sprite);
         visitor=new VisitorBloquePregunta();
