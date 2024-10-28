@@ -6,8 +6,12 @@ import GUI.Observer;
 import Logica.Logica;
 import Nivel.Nivel;
 import Plataformas.Plataforma;
+import PowerUps.ChampinionVerde;
+import PowerUps.Estrella;
+import PowerUps.FlorDeFuego;
 import PowerUps.Moneda;
 import PowerUps.PowerUp;
+import PowerUps.SuperChampinion;
 
 public class ManejadorEntidades {
     private Nivel nivel;
@@ -53,6 +57,7 @@ public class ManejadorEntidades {
         }
     }
 
+    //metodos bola de fuego
     public void agregarBolaDeFuego(BolaDeFuego bola){
         if(nivel!=null){
             nivel.agregarBolaDeFuego(bola);
@@ -65,15 +70,6 @@ public class ManejadorEntidades {
         return fabricaEnt.crearBolaDeFuego(x,y, mario);
     }
 
-    public void agregarMoneda(Moneda moneda){
-        nivel.agregarPowerUp(moneda);
-    }
-
-    public Moneda crearMoneda(int x, int y){
-        Moneda moneda = fabricaEnt.crearMoneda(x, y);
-        return moneda;
-    }
-
     public void eliminarBolaDeFuego(BolaDeFuego bola){
         if (nivel != null) {
             nivel.eliminarBolaDeFuego(bola);
@@ -81,5 +77,48 @@ public class ManejadorEntidades {
             System.out.println("Nivel no inicializado");
         }
     }
+
+    //metodos power ups
+    public void agregarMoneda(Moneda moneda){
+        nivel.agregarPowerUp(moneda);
+    }
+
+    public Moneda crearMoneda(int x, int y){
+        return fabricaEnt.crearMoneda(x, y);
+    }
+
+    public void agregarFlorDeFuego(FlorDeFuego florDeFuego){
+        nivel.agregarPowerUp(florDeFuego);
+    }
+
+    public FlorDeFuego crearFlorDeFuego(int x, int y){
+        return fabricaEnt.crearFlorDeFuego(x, y);
+    }
+
+    public void agregarEstrella(Estrella estrella){
+        nivel.agregarPowerUp(estrella);
+    }
+
+    public Estrella crearEstrella(int x, int y){
+        return fabricaEnt.crearEstrella(x, y);
+    }
+
+    public void agregarChampinionVerde(ChampinionVerde champinionVerde){
+        nivel.agregarPowerUp(champinionVerde);
+    }
+
+    public ChampinionVerde crearChampinionVerde(int x, int y){
+        return fabricaEnt.crearChampinionVerde(x, y);
+    }
+
+    public void agregarSuperChampinion(SuperChampinion superChampinion){
+        nivel.agregarPowerUp(superChampinion);
+    }
+
+    public SuperChampinion crearSuperChampinion(int x, int y){
+        return fabricaEnt.crearSuperChampinion(x, y);
+    }
+
+
 }
 

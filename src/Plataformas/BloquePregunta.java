@@ -7,7 +7,7 @@ import GUI.Observer;
 import GUI.Sprite;
 import Logica.Logica;
 import Logica.Visitor;
-import PowerUps.Moneda;
+import PowerUps.*;
 import Visitors.VisitorBloquePregunta;
 
 public class BloquePregunta extends Plataforma{
@@ -30,28 +30,28 @@ public class BloquePregunta extends Plataforma{
             moneda.setObserver(observerMoneda);
         }
         if(entidadContenida == ConstantesBloquePregunta.CHAMPINIONVERDE){
-            Moneda moneda = ManejadorEntidades.getInstancia().crearMoneda(posicionX,posicionY+48);
-            ManejadorEntidades.getInstancia().agregarMoneda(moneda);
-            Observer observerMoneda = miLogica.getGui().registrarEntidad(moneda);
-            moneda.setObserver(observerMoneda);
+            ChampinionVerde champinionVerde = ManejadorEntidades.getInstancia().crearChampinionVerde(posicionX,posicionY+48);
+            ManejadorEntidades.getInstancia().agregarChampinionVerde(champinionVerde);
+            Observer observerChampinionVerde = miLogica.getGui().registrarEntidad(champinionVerde);
+            champinionVerde.setObserver(observerChampinionVerde);
         }
         if(entidadContenida == ConstantesBloquePregunta.ESTRELLA){
-            Moneda moneda = ManejadorEntidades.getInstancia().crearMoneda(posicionX,posicionY+48);
-            ManejadorEntidades.getInstancia().agregarMoneda(moneda);
-            Observer observerMoneda = miLogica.getGui().registrarEntidad(moneda);
-            moneda.setObserver(observerMoneda);
+            Estrella estrella = ManejadorEntidades.getInstancia().crearEstrella(posicionX,posicionY+48);
+            ManejadorEntidades.getInstancia().agregarEstrella(estrella);
+            Observer observerEstrella = miLogica.getGui().registrarEntidad(estrella);
+            estrella.setObserver(observerEstrella);
         }
         if(entidadContenida == ConstantesBloquePregunta.FLORDEFUEGO){
-            Moneda moneda = ManejadorEntidades.getInstancia().crearMoneda(posicionX,posicionY+48);
-            ManejadorEntidades.getInstancia().agregarMoneda(moneda);
-            Observer observerMoneda = miLogica.getGui().registrarEntidad(moneda);
-            moneda.setObserver(observerMoneda);
+            FlorDeFuego florDeFuego = ManejadorEntidades.getInstancia().crearFlorDeFuego(posicionX,posicionY+48);
+            ManejadorEntidades.getInstancia().agregarFlorDeFuego(florDeFuego);
+            Observer observerFlorDeFuego = miLogica.getGui().registrarEntidad(florDeFuego);
+            florDeFuego.setObserver(observerFlorDeFuego);
         }
         if(entidadContenida == ConstantesBloquePregunta.SUPERCHAMPINION){
-            Moneda moneda = ManejadorEntidades.getInstancia().crearMoneda(posicionX,posicionY+48);
-            ManejadorEntidades.getInstancia().agregarMoneda(moneda);
-            Observer observerMoneda = miLogica.getGui().registrarEntidad(moneda);
-            moneda.setObserver(observerMoneda);
+            SuperChampinion superChampinion = ManejadorEntidades.getInstancia().crearSuperChampinion(posicionX,posicionY+48);
+            ManejadorEntidades.getInstancia().agregarSuperChampinion(superChampinion);
+            Observer observerSuperChampinion = miLogica.getGui().registrarEntidad(superChampinion);
+            superChampinion.setObserver(observerSuperChampinion);
         }
         entidadContenida = 0;
         
