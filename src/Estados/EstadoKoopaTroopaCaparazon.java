@@ -8,7 +8,7 @@ public class EstadoKoopaTroopaCaparazon implements EstadoKoopaTroopa{
     public EstadoKoopaTroopaCaparazon(KoopaTroopa koopaTroopa){
         k = koopaTroopa;
         k.setVelocidadX(0);
-        k.setVisitor(new VisitorKoopaTroopa());
+        k.setVisitor(new VisitorKoopaTroopa(k));
     }
     public void recibirDanio(){
         k.setVelocidadX(10);

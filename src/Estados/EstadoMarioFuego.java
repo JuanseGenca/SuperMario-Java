@@ -3,6 +3,7 @@ package Estados;
 import Entidades.BolaDeFuego;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
+import Logica.ConstantesEntidades;
 
 public class EstadoMarioFuego implements EstadoMario{
     
