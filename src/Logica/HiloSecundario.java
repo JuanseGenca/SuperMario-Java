@@ -3,6 +3,8 @@ package Logica;
 import Enemigos.Enemigo;
 import Entidades.BolaDeFuego;
 import Nivel.Nivel;
+import PowerUps.PowerUp;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -34,16 +36,30 @@ public class HiloSecundario extends Thread {
 
     private void tick() {
         List<Enemigo> enemigosACopiar;
+        
         synchronized (miLogica.getEnemigos()) {
             enemigosACopiar = new ArrayList<>(miLogica.getEnemigos());
         }
+        
         for (Enemigo e : enemigosACopiar) {
             e.mover();
         }
+
+        List<PowerUp> powerUpsACopiar;
+        
+        synchronized (miLogica.getPowerUps()) {
+            powerUpsACopiar = new ArrayList<>(miLogica.getPowerUps());
+        }
+        
+        for (PowerUp p : powerUpsACopiar) {
+            p.mover();
+        }
+        
         List<BolaDeFuego> bolasACopiar = new ArrayList<>(miLogica.getBolas());
         for (BolaDeFuego bola : bolasACopiar) {
             bola.mover();
         }
+
         eliminarEntidadesPendientes();
     }
 

@@ -10,6 +10,8 @@ import GUI.Observer;
 import Nivel.Nivel;
 import Nivel.Silueta;
 import ParseInt.Parserint;
+import PowerUps.PowerUp;
+
 import static java.lang.Thread.sleep;
 import java.util.List;
 
@@ -127,6 +129,10 @@ public class Logica {
 
 	public List<Enemigo> getEnemigos(){
 		return nivelActual.getEnemigos();
+	}
+
+	public List<PowerUp> getPowerUps(){
+		return nivelActual.getPowerUps();
 	}
 
 	public void actualizarVida(int i) {
