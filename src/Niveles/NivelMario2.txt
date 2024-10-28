@@ -1,1 +1,22 @@
 Mario:0,0
+Meta:2100,48
+Lakitu:300,400
+Koopa Troopa:650,0
+Koopa Troopa:850,0
+Koopa Troopa:1100,24
+Ladrillo Rompible:144,192
+Vacio:195,192
+Ladrillo Rompible:534,192
+Ladrillo Rompible:438,192
+Ladrillo Rompible:342,192
+Bloque Pregunta:192,192
+Bloque Pregunta:486,192
+Bloque Pregunta:390,192
+Bloque Pregunta:438,384
+Vacio:97,193
+Vacio:629,193
+Vacio:270,193
+Vacio:486,385
+Piranha Plant:1176,144
+Tuberia:1152,144
+Moneda:1400,0
