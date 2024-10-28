@@ -196,8 +196,7 @@ public class Logica {
 		hiloPrincipal.parar();
 		if(lvl!=3){
 			lvl++;
-			iniciarNivel();
-			gui.mostrarPantallaJuego();
+			gui.accionarInicioJuego();
 			}
 			else{
 				gui.mostrarPantallaVictoria();
@@ -211,7 +210,7 @@ public class Logica {
 	       			gui.mostrarPantallaInicial();
 	   			 }
 			}
-		gui.accionarInicioJuego();				
+		//gui.accionarInicioJuego();				
 	}
 
 	public int getPuntaje() {
@@ -220,6 +219,10 @@ public class Logica {
 
 	public Nivel getNivel() {
 		return nivelActual;
+	}
+
+	public int getNumeroNivel(){
+		return lvl;
 	}
 
 	private void perdio() {
