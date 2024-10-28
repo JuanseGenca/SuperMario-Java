@@ -131,7 +131,9 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 }
 
     public void accionarPantallaPuntajes() {
-        // To Do
+        PanelPantallaPuntajes panelPantallaPuntajes = new PanelPantallaPuntajes(this);
+        ventana.setContentPane(panelPantallaPuntajes);
+        refrescar();
     }
 
     public void accionarPantallaModoJuego() {
