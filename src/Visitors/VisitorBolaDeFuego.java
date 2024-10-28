@@ -30,7 +30,7 @@ public class VisitorBolaDeFuego implements Visitor{
     @Override
     public void visit(KoopaTroopa k, int direccion) {
         k.recibirDanio();
-        k.eliminar();
+        //k.eliminar();
     }
 
     @Override
