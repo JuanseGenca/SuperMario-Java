@@ -45,6 +45,7 @@ public class Logica {
 		lvl=1;
 		vidas = 3;
     }
+
 	public GUI getGui(){
 		return gui;
 	}
@@ -52,7 +53,6 @@ public class Logica {
     public void setControladorVistas(GUI controladorVistas) {
 		gui = controladorVistas;
 	}
-
 
     public void iniciarNivel() {
 		if (vidas == 0){

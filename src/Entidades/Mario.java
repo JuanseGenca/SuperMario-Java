@@ -250,9 +250,9 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public void morir(){
-
         miLogica.reiniciarNivel();
     }
+    
     public Logica getLogica(){
         return miLogica;
     }

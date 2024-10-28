@@ -27,9 +27,9 @@ public class PanelPantallaJuego extends JPanel {
     private JLabel labelMonedas;
     private JLabel labelVidas;
     private JLabel labelTiempo;
+    private JLabel labelNivel;
     private long startTime;
     private int posicionXAnterior = 0;
-    private int posicionYAnterior = 0;
     private GUI miGui;
     private final int TiempoDeJuego = (1 * 1000);
 
@@ -192,6 +192,7 @@ public class PanelPantallaJuego extends JPanel {
         agregarLabelsEditablesMonedas();
         agregarLabelsEditablesVidas();
         agregarLabelsEditablesTiempo();
+        agregarLabelsEditablesNivel();
         add(panelInformacion, BorderLayout.EAST);
     }
 
@@ -203,6 +204,12 @@ public class PanelPantallaJuego extends JPanel {
         imagenFondoPanelInformacion.setIcon(iconoImagenEscalado);
         imagenFondoPanelInformacion.setBounds(0, 0, ConstantesVistas.PANEL_INFORMACION_ANCHO, ConstantesVistas.VENTANA_ALTO);
         panelInformacion.add(imagenFondoPanelInformacion);
+    }
+
+    protected void agregarLabelsEditablesNivel(){
+        labelNivel = new JLabel("1");
+        decorarLabelsNivel();
+        imagenFondoPanelInformacion.add(labelNivel);
     }
 
     protected void agregarLabelsEditablesTiempo() {
@@ -222,6 +229,12 @@ public class PanelPantallaJuego extends JPanel {
         labelPuntaje = new JLabel("00000");
         decorarLabelsInformacion();
         imagenFondoPanelInformacion.add(labelPuntaje);
+    }
+
+    protected void decorarLabelsNivel(){
+        labelNivel.setBounds(49, 70, 150, 50);
+        labelNivel.setForeground(Color.WHITE);
+        labelNivel.setFont(new Font(labelPuntaje.getFont().getName(), Font.BOLD, 24));
     }
 
     protected void decorarLabelsTiempo() {
