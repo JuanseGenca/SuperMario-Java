@@ -12,17 +12,19 @@ public abstract class Enemigo extends Entidad{
         super(x,y,sprite);
         visitor = new VisitorEnemigo();
         direccion = ConstantesEntidades.DERECHA;
+        velocidadX = 2;
     }
     @Override
     public abstract void aceptar(Visitor v, int direccion);
     
     @Override
     public void mover(){
+    
         if(direccion == ConstantesEntidades.DERECHA){
-            posicionX += 2;
+            posicionX += velocidadX;
         }
         if(direccion == ConstantesEntidades.IZQUIERDA){
-            posicionX -= 2;
+            posicionX -= velocidadX;
         }
         if(miObserver!=null) {
             miObserver.actualizar();

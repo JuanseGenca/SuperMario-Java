@@ -1,4 +1,5 @@
 Mario:0,0
+Ladrillo Rompible:30,0
 Flor de Fuego:1800,0
 Super Champinion:1600,0
 Estrella:2000,0

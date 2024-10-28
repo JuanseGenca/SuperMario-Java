@@ -6,8 +6,10 @@ public class EstadoKoopaTroopaCaparazon implements EstadoKoopaTroopa{
     protected KoopaTroopa k;
     public EstadoKoopaTroopaCaparazon(KoopaTroopa koopaTroopa){
         k = koopaTroopa;
+        k.setVelocidadX(0);
     }
     public void recibirDanio(){
-        k.morir();
+        k.setVelocidadX(10);
+        
     }
 }
