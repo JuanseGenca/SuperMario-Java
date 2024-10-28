@@ -190,6 +190,11 @@ public class Logica {
 			}
 			else{
 				gui.mostrarPantallaVictoria();
+				boolean top5Concretado = gui.top5();
+	    
+	    		if (top5Concretado) {    
+	       			gui.mostrarPantallaInicial();
+	   			 }
 			}
 		gui.accionarInicioJuego();				
 	}
@@ -216,7 +221,6 @@ public class Logica {
 	    
 	    if (top5Concretado) {    
 	        gui.mostrarPantallaInicial();
-	        manejadorDeSonidos.reproducirSonido("menuPrincipal");
 	    }
 	}
 	
