@@ -5,8 +5,6 @@ import Fabricas.EntidadesFactory;
 import Logica.Logica;
 import Nivel.Nivel;
 import Nivel.Silueta;
-import Plataformas.ConstantesBloquePregunta;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

@@ -34,7 +34,6 @@ public class ManejadorEntidades {
 
     public void eliminarEnemigo(Enemigo enemigo) {
         nivel.eliminarEnemigo(enemigo);
-       
     }
 
     public void eliminarPowerUp(PowerUp powerUp){
@@ -45,7 +44,9 @@ public class ManejadorEntidades {
         nivel.eliminarPlataforma(plataforma);    
     }
 
-    //metodos bola de fuego
+    public void eliminarBolaDeFuego(BolaDeFuego bola){
+        nivel.eliminarBolaDeFuego(bola);
+    }
 
     public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){
         BolaDeFuego bolaDeFuego =  fabricaEnt.crearBolaDeFuego(x,y, mario);
@@ -53,10 +54,6 @@ public class ManejadorEntidades {
         Observer observerBola = miLogica.getGui().registrarEntidad(bolaDeFuego);
         bolaDeFuego.setObserver(observerBola);
         return bolaDeFuego;
-    }
-
-    public void eliminarBolaDeFuego(BolaDeFuego bola){
-        nivel.eliminarBolaDeFuego(bola);
     }
 
     public void crearMoneda(int x, int y){

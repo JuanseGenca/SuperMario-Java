@@ -27,7 +27,6 @@ public class BloquePregunta extends Plataforma{
         }
         if(entidadContenida == ConstantesBloquePregunta.ESTRELLA){
             ManejadorEntidades.getInstancia().crearEstrella(posicionX,posicionY+48);
-            
         }
         if(entidadContenida == ConstantesBloquePregunta.FLORDEFUEGO){
             ManejadorEntidades.getInstancia().crearFlorDeFuego(posicionX,posicionY+48);
@@ -37,10 +36,6 @@ public class BloquePregunta extends Plataforma{
         }
         entidadContenida = 0;
         
-    }
-
-    public void setEntidadContenida(int i){
-        entidadContenida = i;
     }
 
     public void aceptar(Visitor v, int direccion){
