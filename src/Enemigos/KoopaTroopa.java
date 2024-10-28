@@ -1,9 +1,12 @@
 package Enemigos;
 
 import Estados.EstadoKoopaTroopa;
+import Estados.EstadoKoopaTroopaCaparazon;
 import Estados.EstadoKoopaTroopaNormal;
 import GUI.Sprite;
 import Logica.Visitor;
+import Visitors.VisitorEnemigo;
+import Visitors.VisitorKoopaTroopa;
 
 public class KoopaTroopa extends Enemigo{
     //Atributos (saco estado mientras no este implementado para que no haya tantos errores)
@@ -13,11 +16,15 @@ public class KoopaTroopa extends Enemigo{
         super(x, y,sprite);
         puntaje=90;
         estadoKoopaTroopa = new EstadoKoopaTroopaNormal(this);
+        //visitor = new VisitorKoopaTroopa();
     }
     
     @Override
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
+    }
+    public EstadoKoopaTroopa getEstado(){
+        return estadoKoopaTroopa;
     }
     public void setEstado(EstadoKoopaTroopa e){
         estadoKoopaTroopa = e;
@@ -29,5 +36,8 @@ public class KoopaTroopa extends Enemigo{
         actualizar(direccion, estadoAereo);
         estadoKoopaTroopa.recibirDanio();
         
+    }
+    public void setVisitor(Visitor v){
+        visitor = v;
     }
 }
