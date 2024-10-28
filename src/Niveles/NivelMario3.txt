@@ -1,0 +1,2 @@
+Mario:0,0
+Goomba:200,0

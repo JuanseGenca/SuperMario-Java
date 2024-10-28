@@ -22,18 +22,17 @@ public class Parserint {
     }
 
     protected String obtenerArchivoNivel(int nivel){
-        /* String archivo;
+        String archivo;
         if(nivel == 1){
-            archivo = "assets/Niveles/NivelMario.txt"; 
+            archivo = "src/Niveles/NivelMario.txt"; 
         } else{
             if(nivel == 2){
-                archivo = "assets/Niveles/NivelMario.txt";
+                archivo = "src/Niveles/NivelMario2.txt";
             } else{
-                archivo = "assets/Niveles/NivelMario.txt";
+                archivo = "src/Niveles/NivelMario3.txt";
             }
-        } */
-
-        return "src/Niveles/NivelMario.txt";
+        }
+        return archivo; 
 
     }
 
