@@ -1,7 +1,6 @@
 package Estados;
 
 import Entidades.BolaDeFuego;
-import Logica.ConstantesEntidades;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
 
@@ -28,7 +27,7 @@ public class EstadoMarioFuego implements EstadoMario{
         }
         
     }
-    public void recibirDanio(){
+    public void recibirDanio(int puntaje){
         m.setEstado(new EstadoMarioComun(m));
         m.reproducirSonido("danioMario");
         m.aplicarGravedad();

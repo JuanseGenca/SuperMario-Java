@@ -27,7 +27,7 @@ public class EstadoMarioEstrella implements EstadoMario {
     public void disparar() {}
     
     @SuppressWarnings("override")
-    public void recibirDanio() {}
+    public void recibirDanio(int puntaje) {}
     
     @Override
     public boolean puedeRomper() {

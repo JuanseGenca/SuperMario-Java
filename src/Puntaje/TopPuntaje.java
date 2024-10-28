@@ -47,15 +47,26 @@ public class TopPuntaje
         try (Scanner scanner = new Scanner(new File(Archivo_de_guardado))) {
             while (scanner.hasNextLine()) {
                 String linea = scanner.nextLine();
+                if (linea.trim().isEmpty()) {
+                    continue; // Saltar líneas vacías
+                }
                 String[] partes = linea.split(",");
+                if (partes.length < 2) {
+                    System.err.println("Línea malformada: " + linea);
+                    continue; // Saltar líneas malformadas
+                }
                 String nombre_del_Jugador = partes[0].trim();
-                int puntuacion = Integer.parseInt(partes[1].trim());
+                int puntuacion;
+                try {
+                    puntuacion = Integer.parseInt(partes[1].trim());
+                } catch (NumberFormatException e) {
+                    System.err.println("Puntuación no válida en la línea: " + linea);
+                    continue; // Saltar líneas con puntuación no válida
+                }
                 listadeJugadores.add(new Jugador(nombre_del_Jugador, puntuacion));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
-    
-    
 }

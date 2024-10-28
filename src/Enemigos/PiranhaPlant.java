@@ -1,7 +1,7 @@
 package Enemigos;
 
-import Logica.ConstantesEntidades;
 import GUI.Sprite;
+import Logica.ConstantesEntidades;
 import Logica.Visitor;
 import Visitors.VisitorPiranhaPlant;
 
@@ -14,7 +14,7 @@ public class PiranhaPlant extends Enemigo{
         puntaje=30;
         YInicial = posicionY;
         YMax = YInicial + (int) this.getHitbox().getHeight();
-        visitor = new VisitorPiranhaPlant();
+        visitor = new VisitorPiranhaPlant(this);
     }
     
     @Override
@@ -45,7 +45,7 @@ public class PiranhaPlant extends Enemigo{
     }
 
     @Override
-    public void recibirDanio() {
+    public void recibirDanio(int puntaje) {
         velocidadX = 0;
         actualizar(direccion, estadoAereo);
      }

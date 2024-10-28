@@ -35,5 +35,5 @@ public class Tuberia extends BloqueIrrompible{
     }
 
     @Override
-    public void recibirDanio() {}
+    public void recibirDanio(int puntaje) {}
 }

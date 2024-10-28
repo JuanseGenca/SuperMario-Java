@@ -81,7 +81,7 @@ public abstract class Entidad implements EntidadLogica{
 
    }
 
-   public void recibirDanio() {
+   public void recibirDanio(int puntaje) {
       velocidadX = 0;
       spriteActual = misSprites[1];
       actualizar(direccion, estadoAereo);

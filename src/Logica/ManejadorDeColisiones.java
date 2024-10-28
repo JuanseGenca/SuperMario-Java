@@ -59,9 +59,12 @@ public class ManejadorDeColisiones {
 
         int minDelta = Math.min(Math.min(deltaIzquierda, deltaDerecha), Math.min(deltaArriba, deltaAbajo));
 
-        if (minDelta == deltaIzquierda || minDelta == deltaDerecha) {
-            direccionEntidad1 = ConstantesColisiones.LATERAL;
-            direccionEntidad2 = ConstantesColisiones.LATERAL;
+        if (minDelta == deltaIzquierda) {
+            direccionEntidad1 = ConstantesColisiones.IZQUIERDA;
+            direccionEntidad2 = ConstantesColisiones.DERECHA;
+        } else if (minDelta == deltaDerecha) {
+            direccionEntidad1 = ConstantesColisiones.DERECHA;
+            direccionEntidad2 = ConstantesColisiones.IZQUIERDA;
         } else if (minDelta == deltaArriba) {
             direccionEntidad1 = ConstantesColisiones.ARRIBA;
             direccionEntidad2 = ConstantesColisiones.ABAJO;

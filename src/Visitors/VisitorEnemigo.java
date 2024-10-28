@@ -14,7 +14,9 @@ import PowerUps.*;
 
 
 public class VisitorEnemigo implements Visitor {
-    public VisitorEnemigo() {
+    protected Enemigo enemigo;
+    public VisitorEnemigo(Enemigo enemigo) {
+        this.enemigo = enemigo;
     }
 
     @Override
@@ -42,8 +44,8 @@ public class VisitorEnemigo implements Visitor {
             m.setVelocidadY(nuevaVel);
         }
 
-        if(direccion == ConstantesColisiones.LATERAL) {
-            m.recibirDanio();
+        if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA) {
+            m.recibirDanio(enemigo.getPuntaje());
         }
     }
     
@@ -83,7 +85,7 @@ public class VisitorEnemigo implements Visitor {
     @Override
     public void visit(BolaDeFuego bf, int direccion) {
         bf.eliminar();
-        bf.recibirDanio();
+        bf.recibirDanio(0);
     }
 
     public void visit(BloquePregunta bp,int direccion){
