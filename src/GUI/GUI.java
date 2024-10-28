@@ -12,8 +12,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.Timer;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -24,14 +22,15 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     protected JFrame ventana;
     protected PanelPantallaPrincipal panelPantallaPrincipal;
     protected PanelPantallaJuego panelPantallaJuego;
+    protected PanelPantallaFinDeJuego panelPantallaFinDeJuego;
     protected Logica miLogica;
-    //protected Sonido miSonido;
 
 
     public GUI(Logica miLogica) {
         this.miLogica = miLogica;
         this.panelPantallaPrincipal = new PanelPantallaPrincipal(this);
         this.panelPantallaJuego = new PanelPantallaJuego(this);
+        this.panelPantallaFinDeJuego = new PanelPantallaFinDeJuego(this);
         configurarVentana();
         registrarOyenteVentana();
     }
@@ -166,7 +165,8 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         refrescar();
     }
     public void mostrarPantallaFinJuego() {
-        // To Do
+        ventana.setContentPane(panelPantallaFinDeJuego);
+        refrescar();
     }
 
     public void refrescar() {

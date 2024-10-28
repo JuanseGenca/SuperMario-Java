@@ -34,6 +34,7 @@ public class ManejadorDeSonidos {
         cargarSonido("InicioJuego","src\\Sonidos\\HereWeGo.wav");
         cargarSonido("MarioEstrella","src\\Sonidos\\MarioEstrella.wav");
         cargarSonido("PasarNivel","src\\Sonidos\\LevelClear.wav");
+        cargarSonido("GameOver", "src\\Sonidos\\Game Over.wav");
     }
 
     public void cargarSonido(String nombre, String rutaArchivo) {

@@ -170,8 +170,8 @@ public class Logica {
 		hilo1.parar();
 		hilo2.parar();
 		hiloPrincipal.parar();
-		if (vidas == 0){	
-			gui.mostrarPantallaInicial();
+		if (vidas == 0){
+			perdio();	
 		}else{
 			gui.accionarInicioJuego();
 		}
@@ -180,20 +180,18 @@ public class Logica {
 	public void siguienteNivel() {
 		manejadorDeSonidos.pausarSonido("musicaLvl"+nivelActual.getNumeroNivel());
 		manejadorDeSonidos.reproducirSonido("PasarNivel");
-		gui.mostrarPantallaPasajeNivel();
-		try {
-			sleep(10000);
-		} catch (InterruptedException e) {
-			System.out.println(e.getMessage());
-		}
+		hilo1.parar();
+		hilo2.parar();
+		hiloPrincipal.parar();
 		if(lvl<3){
-		lvl++;
-		iniciarNivel();
-		gui.mostrarPantallaJuego();
-		}
-		else{
-			gui.mostrarPantallaVictoria();
-		}
+			lvl++;
+			iniciarNivel();
+			gui.mostrarPantallaJuego();
+			}
+			else{
+				gui.mostrarPantallaVictoria();
+			}
+		gui.accionarInicioJuego();				
 	}
 
 	public int getPuntaje() {
@@ -202,5 +200,20 @@ public class Logica {
 
 	public Nivel getNivel() {
 		return nivelActual;
+	}
+
+	private void perdio() {
+		manejadorDeSonidos.pausarSonido("musicaLvl"+nivelActual.getNumeroNivel());
+		manejadorDeSonidos.reproducirSonido("GameOver");
+		gui.mostrarPantallaFinJuego();
+		try {
+			sleep(5000);
+		} catch (InterruptedException e) {
+			System.err.println(e.getMessage());
+		}
+		
+		gui.mostrarPantallaInicial();
+		manejadorDeSonidos.reproducirSonido("menuPrincipal");
+
 	}
 }	

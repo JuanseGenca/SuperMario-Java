@@ -31,7 +31,6 @@ public class PanelPantallaJuego extends JPanel {
     private long startTime;
     private int posicionXAnterior = 0;
     private GUI miGui;
-    private final int TiempoDeJuego = (1 * 1000);
 
     public PanelPantallaJuego(GUI gui) {
         miGui = gui;

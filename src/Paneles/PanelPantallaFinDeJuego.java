@@ -10,11 +10,9 @@ import javax.swing.JPanel;
 
 public class PanelPantallaFinDeJuego extends JPanel{
     private static final long serialVersionUID = -3884090044789061650L;
-    private GUI gui;
     private JLabel imagenFondo;
 
     public PanelPantallaFinDeJuego(GUI gui){
-        this.gui = gui;
         setSize(ConstantesVistas.PANEL_ANCHO,ConstantesVistas.PANEL_ALTO);
         setLayout(null);
         agregarImagenFondo();

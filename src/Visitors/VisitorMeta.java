@@ -9,6 +9,7 @@ public class VisitorMeta extends VisitorPlataforma {
 
     @Override
     public void visit(Mario m, int direccion) {
+        System.out.println("Ganaste");
         m.siguienteNivel();
     }
 }
