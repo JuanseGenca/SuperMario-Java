@@ -190,8 +190,12 @@ public class Logica {
 			}
 			else{
 				gui.mostrarPantallaVictoria();
+				try {
+					sleep(5000);
+				} catch (InterruptedException e) {
+				System.err.println(e.getMessage());
+				}
 				boolean top5Concretado = gui.top5();
-	    
 	    		if (top5Concretado) {    
 	       			gui.mostrarPantallaInicial();
 	   			 }
