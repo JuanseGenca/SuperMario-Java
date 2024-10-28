@@ -21,55 +21,50 @@ public abstract class SpriteFactory {
 	}
 	
 	public Sprite[] getChampinionVerde() {
-		Sprite[] devolver = new Sprite[2];
+		Sprite[] devolver = new Sprite[1];
 
 		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/champinion_verde.png");
-		devolver[1] = new Sprite(rutaCarpeta + "/imagen-vacia.png");
 
 		return devolver;
 	}
 	
 	public Sprite[] getSuperChampinion() {
-		Sprite[] devolver = new Sprite[2];
+		Sprite[] devolver = new Sprite[1];
 
 		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/super_champinion.png");
-		devolver[1] = new Sprite(rutaCarpeta + "/imagen-vacia.png");
 
 		return devolver;
 	}
 	
 	public Sprite[] getFlorDeFuego() {
-		Sprite[] devolver = new Sprite[2];
+		Sprite[] devolver = new Sprite[1];
 
 		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/flor_de_fuego.gif");
-		devolver[1] = new Sprite(rutaCarpeta + "/imagen-vacia.png");
 
 		return devolver;
 	}
 
 	public Sprite[] getBolaDeFuego() {
-		Sprite[] devolver = new Sprite[3];
+		Sprite[] devolver = new Sprite[2];
+
 		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/bola_de_fuego.gif");
 		devolver[1] = new Sprite(rutaCarpeta + "/PowerUps/bola_de_fuego_explotando.gif");
-		devolver[2] = new Sprite(rutaCarpeta + "/imagen-vacia.png");
 
 		return devolver;
 	}
 	
 	public Sprite[] getMoneda() {
-		Sprite[] devolver = new Sprite[2];
+		Sprite[] devolver = new Sprite[1];
 
 		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/moneda.gif");
-		devolver[1] = new Sprite(rutaCarpeta + "/imagen-vacia.png");
 
 		return devolver;
 	}
 	
 	public Sprite[] getEstrella() {
-		Sprite[] devolver = new Sprite[2];
+		Sprite[] devolver = new Sprite[1];
 
 		devolver[0] = new Sprite(rutaCarpeta + "/PowerUps/estrella.gif");
-		devolver[1] = new Sprite(rutaCarpeta + "/imagen-vacia.png");
 
 		return devolver;
 	}

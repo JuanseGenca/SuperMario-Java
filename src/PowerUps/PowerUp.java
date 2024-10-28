@@ -16,8 +16,7 @@ public abstract class PowerUp extends Entidad{
     }
 
     public void eliminar(){
-        spriteActual = misSprites[1];
-        actualizar(direccion, estadoAereo);
         ManejadorEntidades.getInstancia().eliminarPowerUp(this);
+        miObserver.eliminar();
     }
 }
