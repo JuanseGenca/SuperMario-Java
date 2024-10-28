@@ -38,8 +38,10 @@ public class HiloSecundario extends Thread {
     }
 
     private void tick() {
-        for (Enemigo e : miLogica.getEnemigos()) {
-            e.mover();
+        synchronized (miLogica.getEnemigos()) {
+            for (Enemigo e : miLogica.getEnemigos()) {
+                e.mover();
+            }
         }
         List<BolaDeFuego> bolasACopiar = new ArrayList<>(miLogica.getBolas());
         for (BolaDeFuego bola : bolasACopiar) {
@@ -49,7 +51,7 @@ public class HiloSecundario extends Thread {
     }
 
     private void eliminarEntidadesPendientes() {
-        Nivel nivel= miLogica.getNivel();
+        Nivel nivel = miLogica.getNivel();
         while (!enemigosAEliminar.isEmpty()) {
             Enemigo enemigo = enemigosAEliminar.poll();
             nivel.eliminarEnemigo(enemigo);

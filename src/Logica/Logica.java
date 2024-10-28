@@ -127,6 +127,14 @@ public class Logica {
 		manejadorDeSonidos.detenerSonido(nombre);
 	}
 
+	public void pausarSonido(String nombre) {
+		manejadorDeSonidos.pausarSonido(nombre);
+	}
+
+	public void reanudarSonido(String nombre) {
+		manejadorDeSonidos.reanudarSonido(nombre);
+	}
+
 	public void aniadirMoneda() {
         monedas++;
         if(monedas==100) {

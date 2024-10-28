@@ -133,4 +133,20 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     
     }
 
+    public void reproducirSonido(String nombre) {
+        miLogica.reproducirSonido(nombre);
+    }
+
+    public void detenerSonido(String nombre) {
+        miLogica.detenerSonido(nombre);
+    }
+
+    public int getVidas() {
+       return miLogica.getVidas();
+    }
+
+    public int getNivel() {
+        return miLogica.getNivel().getNumeroNivel();
+    }
+
 }

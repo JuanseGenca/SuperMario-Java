@@ -14,6 +14,8 @@ public class EstadoMarioEstrella implements EstadoMario {
 
     public EstadoMarioEstrella(Mario mario) {
         m = mario;
+        m.pausarSonido("musicaLvl"+m.getLogica().getNivel().getNumeroNivel());
+        m.reproducirSonido("MarioEstrella");
         iniciarTemporizador();
     }
 
@@ -44,6 +46,7 @@ public class EstadoMarioEstrella implements EstadoMario {
     }
 
     private void finalizarEstadoEstrella() {
+        m.reanudarSonido("musicaLvl"+m.getLogica().getNivel().getNumeroNivel());
         m.setEstado(estadoPrevio);
         timer.cancel();
     }

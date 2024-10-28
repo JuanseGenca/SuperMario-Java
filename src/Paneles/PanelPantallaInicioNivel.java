@@ -2,11 +2,9 @@ package Paneles;
 
 import GUI.ConstantesVistas;
 import GUI.GUI;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -33,16 +31,16 @@ public class PanelPantallaInicioNivel extends JPanel{
         imagenFondo.setIcon(iconoImagenEscalada);
         imagenFondo.setBounds(0, 0, ConstantesVistas.VENTANA_ANCHO, ConstantesVistas.VENTANA_ALTO);
     
-        String nivel = miGUI.getNivel();
-        String mundo = miGUI.getMundo();
+        int nivel = miGUI.getNivel();
+        String mundo = "1";
         JLabel etiquetaNivel = new JLabel(mundo + " - " + nivel);
         etiquetaNivel.setForeground(Color.WHITE);
         etiquetaNivel.setFont(new Font("SansSerif", Font.BOLD, 48));
         etiquetaNivel.setBounds(600, 200, 100, 50);
     
 
-        String vidas = miGUI.getVidas();
-        JLabel etiquetaVidas = new JLabel(vidas);
+        int vidas = miGUI.getVidas();
+        JLabel etiquetaVidas = new JLabel(""+vidas);
         etiquetaVidas.setForeground(Color.WHITE);
         etiquetaVidas.setFont(new Font("SansSerif", Font.BOLD, 40));
         etiquetaVidas.setBounds(610, 315, 100, 50);
