@@ -206,7 +206,7 @@ public class PanelPantallaJuego extends JPanel {
     }
 
     protected void agregarLabelsEditablesNivel(){
-        labelNivel = new JLabel("1");
+        labelNivel = new JLabel(String.valueOf(miGui.getNivel()));
         decorarLabelsNivel();
         imagenFondoPanelInformacion.add(labelNivel);
     }
