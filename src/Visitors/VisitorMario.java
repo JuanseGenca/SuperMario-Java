@@ -76,8 +76,7 @@ import PowerUps.SuperChampinion;
                 p.recibirDanio();
                 mario.reproducirSonido("matar");
                 mario.actualizarPuntaje(30);
-                p.eliminar();
-                
+                p.eliminar();   
             }
         }
 
