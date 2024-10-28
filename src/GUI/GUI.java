@@ -5,9 +5,14 @@ import Entidades.EntidadJugador;
 import Entidades.EntidadLogica;
 import Logica.*;
 import Paneles.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
@@ -81,10 +86,29 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         miLogica.reiniciarNivel();
     }
 
-    public void accionarInicioJuego() {
-        this.panelPantallaJuego = new PanelPantallaJuego(this);
-        miLogica.iniciarNivel();
-    }
+   public void accionarInicioJuego() {
+    // Create and show the level start panel
+    PanelPantallaInicioNivel panelInicioDeNivel = new PanelPantallaInicioNivel(this);
+    ventana.setContentPane(panelInicioDeNivel);
+    refrescar();
+
+    // Set up a Timer to switch to the game screen after 5 seconds (5000 milliseconds)
+    Timer timer = new Timer(2000, new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // Switch to the game screen and start the game
+            panelPantallaJuego = new PanelPantallaJuego(GUI.this);
+            ventana.setContentPane(panelPantallaJuego);
+            miLogica.iniciarNivel();
+            refrescar();
+            ventana.requestFocusInWindow();
+        }
+    });
+
+    // Ensure the timer runs only once
+    timer.setRepeats(false);
+    timer.start();
+}
 
     public void accionarPantallaPuntajes() {
         // To Do
