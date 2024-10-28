@@ -1,6 +1,5 @@
 package GUI;
 
-import Logica.ConstantesEntidades;
 import Entidades.EntidadJugador;
 import Entidades.EntidadLogica;
 import Logica.*;
@@ -99,6 +98,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     public void mostrarPantallaInicial() {
         ventana.setContentPane(panelPantallaPrincipal);
+        miLogica.reproducirSonido("menuPrincipal");
         refrescar();
     }
 
