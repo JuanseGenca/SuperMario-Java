@@ -168,6 +168,10 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         return observer_silueta;
     }
 
+    public void EliminarEntidad(ObserverEntidades observerEntidades){
+        panelPantallaJuego.eliminarEntidad(observerEntidades);
+    }
+
     public void mostrarPantallaJuego() {
         ventana.setContentPane(panelPantallaJuego);
         ventana.requestFocusInWindow();

@@ -1,6 +1,7 @@
 package GUI;
 
 import Entidades.EntidadLogica;
+import Entidades.ManejadorEntidades;
 
 public class ObserverEntidades extends ObserverGrafico {
 	
@@ -11,4 +12,7 @@ public class ObserverEntidades extends ObserverGrafico {
 		actualizar();
 	}
 
+	public void eliminar(){
+		ManejadorEntidades.getInstancia().eliminarObserver(this);
+	}
 }

@@ -35,6 +35,7 @@ public abstract class Enemigo extends Entidad{
     
     public void eliminar(){
         ManejadorEntidades.getInstancia().eliminarEnemigo(this);
+        miObserver.eliminar();
     }
 
 }
