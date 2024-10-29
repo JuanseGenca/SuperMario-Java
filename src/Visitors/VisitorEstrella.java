@@ -9,9 +9,12 @@ public class VisitorEstrella extends VisitorPowerUp{
 
     @Override
     public void visit(Mario m, int direccion){
-        EstadoMarioEstrella aux=new EstadoMarioEstrella(m);
-        aux.setEstadoPrevio(m.getEstado());
-        m.setEstado(aux); 
+        if(m.getEstado().getModificador()!=ConstantesPowerUp.ESTRELLA){
+            EstadoMarioEstrella aux=new EstadoMarioEstrella(m);
+            aux.setEstadoPrevio(m.getEstado());
+            m.setEstado(aux); 
+        }
+       
     }
 }
 
