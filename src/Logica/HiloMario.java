@@ -11,13 +11,14 @@ public class HiloMario extends Thread {
         ejecutando = true;
     }
 
+    @SuppressWarnings("override")
     public void run() {
         while(ejecutando){
             tick();
                 try {
                     sleep(15);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    System.out.println(e.getMessage());
                 }
             }
         }

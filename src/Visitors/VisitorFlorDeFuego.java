@@ -9,7 +9,9 @@ public class VisitorFlorDeFuego extends VisitorPowerUp{
 
     @Override
     public void visit(Mario m, int direccion){
-            m.setEstado(new EstadoMarioFuego(m)); 
+        if(m.getEstado().getModificador()!=ConstantesPowerUp.ESTRELLA){
+            m.setEstado(new EstadoMarioFuego(m));
+        }
     }
 }
 

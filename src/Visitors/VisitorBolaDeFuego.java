@@ -95,6 +95,7 @@ public class VisitorBolaDeFuego implements Visitor{
     @Override
     public void visit(BolaDeFuego bf, int direccion){}
 
+    @SuppressWarnings("override")
     public void visit(BloquePregunta bp,int direccion){
     }
 } 

@@ -34,7 +34,7 @@ public class TopPuntaje
     public void guardarLista() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(Archivo_de_guardado, false))) {
             for (Jugador jugador : listadeJugadores) {
-                writer.write(jugador.get_nombre() + "," + jugador.get_score() + "\n");
+                writer.write(jugador.getNombre() + "," + jugador.getScore() + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
