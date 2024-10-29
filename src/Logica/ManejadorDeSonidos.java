@@ -11,33 +11,33 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class ManejadorDeSonidos {
-    private final Map<String, Clip> sonidos;
-    private final Map<String, Integer> posicionesPausadas;
+    protected final Map<Integer, Clip> sonidos;
+    protected final Map<Integer, Integer> posicionesPausadas;
 
     @SuppressWarnings("OverridableMethodCallInConstructor")
     public ManejadorDeSonidos() {
         sonidos = new HashMap<>();
         posicionesPausadas = new HashMap<>();
-        cargarSonido("vida","src\\Sonidos\\1up.wav");
-        cargarSonido("moneda","src\\Sonidos\\coin.wav");
-        cargarSonido("bolaFuego","src\\Sonidos\\fireball.wav");
-        cargarSonido("saltar","src\\Sonidos\\jump.wav");
-        cargarSonido("matar","src\\Sonidos\\kick.wav");
-        cargarSonido("danioMario","src\\Sonidos\\pipe.wav");
-        cargarSonido("powerUp","src\\Sonidos\\powerup.wav");
-        cargarSonido("muerteMario","src\\Sonidos\\Die.wav");
-        cargarSonido("romperPlataforma","src\\Sonidos\\Break.wav");
-        cargarSonido("musicaLvl1","src\\Sonidos\\Overworld1.wav");
-        cargarSonido("musicaLvl2","src\\Sonidos\\Overworld2.wav");
-        cargarSonido("musicaLvl3","src\\Sonidos\\Overworld3.wav");
-        cargarSonido("menuPrincipal","src\\Sonidos\\MenuPrincipal.wav");
-        cargarSonido("InicioJuego","src\\Sonidos\\HereWeGo.wav");
-        cargarSonido("MarioEstrella","src\\Sonidos\\MarioEstrella.wav");
-        cargarSonido("PasarNivel","src\\Sonidos\\LevelClear.wav");
-        cargarSonido("GameOver", "src\\Sonidos\\Game Over.wav");
+        cargarSonido(ConstantesSonidos.VIDA,"src\\Sonidos\\1up.wav");
+        cargarSonido(ConstantesSonidos.MONEDA,"src\\Sonidos\\coin.wav");
+        cargarSonido(ConstantesSonidos.BOLAFUEGO,"src\\Sonidos\\fireball.wav");
+        cargarSonido(ConstantesSonidos.SALTAR,"src\\Sonidos\\jump.wav");
+        cargarSonido(ConstantesSonidos.MATAR,"src\\Sonidos\\kick.wav");
+        cargarSonido(ConstantesSonidos.DANIOMARIO,"src\\Sonidos\\pipe.wav");
+        cargarSonido(ConstantesSonidos.POWERUP,"src\\Sonidos\\powerup.wav");
+        cargarSonido(ConstantesSonidos.MUERTEMARIO,"src\\Sonidos\\Die.wav");
+        cargarSonido(ConstantesSonidos.ROMPERPLATAFORMA,"src\\Sonidos\\Break.wav");
+        cargarSonido(ConstantesSonidos.MUSICALVL1,"src\\Sonidos\\Overworld1.wav");
+        cargarSonido(ConstantesSonidos.MUSICALVL2,"src\\Sonidos\\Overworld2.wav");
+        cargarSonido(ConstantesSonidos.MUSICALVL3,"src\\Sonidos\\Overworld3.wav");
+        cargarSonido(ConstantesSonidos.MENUPRINCIPAL,"src\\Sonidos\\MenuPrincipal.wav");
+        cargarSonido(ConstantesSonidos.INICIOJUEGO,"src\\Sonidos\\HereWeGo.wav");
+        cargarSonido(ConstantesSonidos.ESTRELLA,"src\\Sonidos\\MarioEstrella.wav");
+        cargarSonido(ConstantesSonidos.PASARNIVEL,"src\\Sonidos\\LevelClear.wav");
+        cargarSonido(ConstantesSonidos.GAMEOVER, "src\\Sonidos\\Game Over.wav");
     }
 
-    public void cargarSonido(String nombre, String rutaArchivo) {
+    public void cargarSonido(int nombre, String rutaArchivo) {
         try {
             File archivoSonido = new File(rutaArchivo);
             AudioInputStream audioStream = AudioSystem.getAudioInputStream(archivoSonido);
@@ -49,7 +49,7 @@ public class ManejadorDeSonidos {
         }
     }
 
-    public void reproducirSonido(String nombre) {
+    public void reproducirSonido(int  nombre) {
         Clip clip = sonidos.get(nombre);
         if (clip != null) {
             clip.setFramePosition(0); // Reinicia el clip
@@ -57,14 +57,14 @@ public class ManejadorDeSonidos {
         }
     }
 
-    public void detenerSonido(String nombre) {
+    public void detenerSonido(int nombre) {
         Clip clip = sonidos.get(nombre);
         if (clip != null && clip.isRunning()) {
             clip.stop();
         }
     }
 
-    public void pausarSonido(String nombre) {
+    public void pausarSonido(int nombre) {
         Clip clip = sonidos.get(nombre);
         if (clip != null && clip.isRunning()) {
             posicionesPausadas.put(nombre, clip.getFramePosition());
@@ -72,7 +72,8 @@ public class ManejadorDeSonidos {
         }
     }
 
-    public void reanudarSonido(String nombre) {
+
+    public void reanudarSonido(int nombre) {
         Clip clip = sonidos.get(nombre);
         Integer posicion = posicionesPausadas.get(nombre);
         if (clip != null && posicion != null) {

@@ -2,6 +2,8 @@ package Paneles;
 
 import GUI.ConstantesVistas;
 import GUI.GUI;
+import Logica.ConstantesSonidos;
+
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -67,8 +69,8 @@ public class PanelModoDeJuego extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 gui.getLogica().actualizarSprites(new SpritesMarioModo1());
                 gui.accionarInicioJuego();
-                gui.detenerSonido("musicaLvl2");
-                gui.reproducirSonido("InicioJuego");
+                gui.detenerSonido(ConstantesSonidos.MUSICALVL2);
+                gui.reproducirSonido(ConstantesSonidos.INICIOJUEGO);
             }
         });
     }
@@ -78,8 +80,8 @@ public class PanelModoDeJuego extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 gui.getLogica().actualizarSprites(new SpritesMarioModo2());
                 gui.accionarInicioJuego();
-                gui.detenerSonido("musicaLvl2");
-                gui.reproducirSonido("InicioJuego");
+                gui.detenerSonido(ConstantesSonidos.MUSICALVL2);
+                gui.reproducirSonido(ConstantesSonidos.INICIOJUEGO);
             }
         });
     }

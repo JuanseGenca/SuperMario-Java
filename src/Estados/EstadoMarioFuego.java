@@ -4,6 +4,7 @@ import Entidades.BolaDeFuego;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
 import Logica.ConstantesEntidades;
+import Logica.ConstantesSonidos;
 
 public class EstadoMarioFuego implements EstadoMario{
     
@@ -16,7 +17,7 @@ public class EstadoMarioFuego implements EstadoMario{
     public void disparar(){
         int posX = m.getPosicionX();
         int posY = m.getPosicionY();
-        m.reproducirSonido("bolaFuego");
+        m.reproducirSonido(ConstantesSonidos.BOLAFUEGO);
 
         BolaDeFuego bola = ManejadorEntidades.getInstancia().crearBolaDeFuego(posX,posY, m);
 
@@ -30,7 +31,7 @@ public class EstadoMarioFuego implements EstadoMario{
     }
     public void recibirDanio(int puntaje){
         m.setEstado(new EstadoMarioComun(m));
-        m.reproducirSonido("danioMario");
+        m.reproducirSonido(ConstantesSonidos.DANIOMARIO);
         m.aplicarGravedad();
     }
     public boolean puedeRomper(){

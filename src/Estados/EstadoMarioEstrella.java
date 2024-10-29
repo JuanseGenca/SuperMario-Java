@@ -1,6 +1,7 @@
 package Estados;
 
 import Entidades.Mario;
+import Logica.ConstantesSonidos;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -14,8 +15,8 @@ public class EstadoMarioEstrella implements EstadoMario {
 
     public EstadoMarioEstrella(Mario mario) {
         m = mario;
-        m.pausarSonido("musicaLvl"+m.getLogica().getNivel().getNumeroNivel());
-        m.reproducirSonido("MarioEstrella");
+        m.pausarSonido(m.getLogica().getNivel().getNumeroNivel());
+        m.reproducirSonido(ConstantesSonidos.ESTRELLA);
         iniciarTemporizador();
     }
 
@@ -50,7 +51,7 @@ public class EstadoMarioEstrella implements EstadoMario {
     }
 
     private void finalizarEstadoEstrella() {
-        m.reanudarSonido("musicaLvl"+m.getLogica().getNivel().getNumeroNivel());
+        m.reanudarSonido(m.getLogica().getNivel().getNumeroNivel());
         m.setEstado(estadoPrevio);
         timer.cancel();
     }

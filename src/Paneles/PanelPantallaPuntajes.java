@@ -2,6 +2,7 @@ package Paneles;
 
 import GUI.ConstantesVistas;
 import GUI.GUI;
+import Logica.ConstantesSonidos;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -53,8 +54,8 @@ public class PanelPantallaPuntajes extends JPanel {
     protected void registrarOyenteBotonIniciar() {
         botonIniciar.addActionListener((ActionEvent e) -> {
             gui.mostrarPantallaInicial();
-            gui.detenerSonido("musicaLvl3");
-            gui.reproducirSonido("menuPrincipal");
+                gui.reproducirSonido(ConstantesSonidos.MUSICALVL3);
+                gui.detenerSonido(ConstantesSonidos.MENUPRINCIPAL);
         });
     }
 

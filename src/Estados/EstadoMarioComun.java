@@ -1,5 +1,6 @@
 package Estados;
 import Entidades.Mario;
+import Logica.ConstantesSonidos;
 
 public class EstadoMarioComun implements EstadoMario{
     protected Mario m;
@@ -11,9 +12,9 @@ public class EstadoMarioComun implements EstadoMario{
 
     }
     public void recibirDanio(int puntaje){
-        m.detenerSonido("musicaLvl"+m.getLogica().getNivel().getNumeroNivel());
+        m.detenerSonido(m.getLogica().getNivel().getNumeroNivel());
         if(m.getVidas() !=1) {
-        m.reproducirSonido("muerteMario");
+        m.reproducirSonido(ConstantesSonidos.MUERTEMARIO);
         }
         m.actualizarPuntaje(-puntaje);
         m.morir();
