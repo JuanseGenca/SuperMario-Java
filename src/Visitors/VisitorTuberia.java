@@ -81,45 +81,26 @@ public class VisitorTuberia extends VisitorPlataforma{
     }
 
     public void visit(Estrella e,int direccion){
-        if(direccion == ConstantesColisiones.DERECHA){
-            e.establecerDireccion(ConstantesEntidades.DERECHA);
-        } else {
-            if(direccion == ConstantesColisiones.IZQUIERDA){
-                e.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-                } else {
-                    if (direccion == ConstantesColisiones.ARRIBA){
-                        e.tocoSuelo();
-                        }   
-                }
-            } 
+        if(e.getDireccion()==ConstantesEntidades.DERECHA){
+            e.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+        }else if(e.getDireccion()==ConstantesEntidades.IZQUIERDA){
+                e.establecerDireccion(ConstantesEntidades.DERECHA);
+            }
     }
 
     public void visit(ChampinionVerde cv,int direccion){
-        if(direccion == ConstantesColisiones.DERECHA){
-            cv.establecerDireccion(ConstantesEntidades.DERECHA);
-        } else {
-            if(direccion == ConstantesColisiones.IZQUIERDA){
-                cv.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-                } else {
-                    if (direccion == ConstantesColisiones.ARRIBA){
-                        cv.tocoSuelo();
-                        }   
-                }
-            } 
+        if(cv.getDireccion()==ConstantesEntidades.DERECHA){
+            cv.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+        }else if(cv.getDireccion()==ConstantesEntidades.IZQUIERDA){
+                cv.establecerDireccion(ConstantesEntidades.DERECHA);
+            }
     }
 
     public void visit(SuperChampinion sc,int direccion){
-        if(direccion == ConstantesColisiones.DERECHA){
-            sc.establecerDireccion(ConstantesEntidades.DERECHA);
-        } else {
-            if(direccion == ConstantesColisiones.IZQUIERDA){
-                sc.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-                } else {
-                    if (direccion == ConstantesColisiones.ARRIBA){
-                        sc.tocoSuelo();
-                        }   
-                }
-            } 
-        
+        if(sc.getDireccion()==ConstantesEntidades.DERECHA){
+            sc.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+        }else if(sc.getDireccion()==ConstantesEntidades.IZQUIERDA){
+                sc.establecerDireccion(ConstantesEntidades.DERECHA);
+            }
     }
 }
