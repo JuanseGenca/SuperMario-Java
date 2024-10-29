@@ -65,9 +65,10 @@ public class PanelModoDeJuego extends JPanel{
         botonModo1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Se seleccionó el Modo 1");
                 gui.getLogica().actualizarSprites(new SpritesMarioModo1());
                 gui.accionarInicioJuego();
+                gui.detenerSonido("musicaLvl2");
+                gui.reproducirSonido("InicioJuego");
             }
         });
     }
@@ -75,9 +76,10 @@ public class PanelModoDeJuego extends JPanel{
         botonModo2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Se seleccionó el Modo 2");
                 gui.getLogica().actualizarSprites(new SpritesMarioModo2());
                 gui.accionarInicioJuego();
+                gui.detenerSonido("musicaLvl2");
+                gui.reproducirSonido("InicioJuego");
             }
         });
     }

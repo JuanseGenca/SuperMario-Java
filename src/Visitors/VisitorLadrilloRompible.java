@@ -6,6 +6,7 @@ import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
 import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
+import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 import Logica.ConstantesEntidades;
@@ -77,6 +78,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
         }
     }
     
+    @SuppressWarnings("override")
     public void visit(Estrella e,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             e.establecerDireccion(ConstantesColisiones.DERECHA);
@@ -89,6 +91,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
         }
     }
 
+    @SuppressWarnings("override")
     public void visit(ChampinionVerde cv,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             cv.establecerDireccion(ConstantesColisiones.DERECHA);
@@ -101,6 +104,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
         }
     }
 
+    @SuppressWarnings("override")
     public void visit(SuperChampinion sc,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             sc.establecerDireccion(ConstantesColisiones.DERECHA);
@@ -111,5 +115,11 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
         if(direccion == ConstantesColisiones.ARRIBA){
             sc.tocoSuelo();
         }
+    }
+
+    @Override
+    public void visit(BolaDeFuego bf, int direccion) {
+        bf.eliminar();
+        bf.recibirDanio(0);
     }
 }

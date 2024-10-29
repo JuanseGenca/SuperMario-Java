@@ -11,7 +11,6 @@ import Nivel.Nivel;
 import Nivel.Silueta;
 import ParseInt.Parserint;
 import PowerUps.PowerUp;
-
 import static java.lang.Thread.sleep;
 import java.util.List;
 
@@ -196,21 +195,18 @@ public class Logica {
 
 	public void siguienteNivel() {
 		manejadorDeSonidos.pausarSonido("musicaLvl"+nivelActual.getNumeroNivel());
+		manejadorDeSonidos.detenerSonido("MarioEstrella");
 		manejadorDeSonidos.reproducirSonido("PasarNivel");
 		hilo1.parar();
 		hilo2.parar();
 		hiloPrincipal.parar();
 		if(lvl!=3){
 			lvl++;
+			manejadorDeSonidos.detenerSonido("PasarNivel");
 			gui.accionarInicioJuego();
 			}
 			else{
 				gui.mostrarPantallaVictoria();
-				try {
-					sleep(5000);
-				} catch (InterruptedException e) {
-				System.err.println(e.getMessage());
-				}
 				boolean top5Concretado = gui.top5();
 	    		if (top5Concretado) {    
 	       			gui.mostrarPantallaInicial();

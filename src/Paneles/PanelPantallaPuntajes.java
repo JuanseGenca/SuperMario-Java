@@ -5,7 +5,6 @@ import GUI.GUI;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -52,10 +51,10 @@ public class PanelPantallaPuntajes extends JPanel {
     }
 
     protected void registrarOyenteBotonIniciar() {
-        botonIniciar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                gui.mostrarPantallaInicial();
-            }
+        botonIniciar.addActionListener((ActionEvent e) -> {
+            gui.mostrarPantallaInicial();
+            gui.detenerSonido("musicaLvl3");
+            gui.reproducirSonido("menuPrincipal");
         });
     }
 

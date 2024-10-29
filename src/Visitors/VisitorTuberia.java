@@ -6,6 +6,7 @@ import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
 import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
+import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 import Logica.ConstantesEntidades;
@@ -80,6 +81,7 @@ public class VisitorTuberia extends VisitorPlataforma{
             }
     }
 
+    @SuppressWarnings("override")
     public void visit(Estrella e,int direccion){
         if(e.getDireccion()==ConstantesEntidades.DERECHA){
             e.establecerDireccion(ConstantesEntidades.IZQUIERDA);
@@ -88,6 +90,7 @@ public class VisitorTuberia extends VisitorPlataforma{
             }
     }
 
+    @SuppressWarnings("override")
     public void visit(ChampinionVerde cv,int direccion){
         if(cv.getDireccion()==ConstantesEntidades.DERECHA){
             cv.establecerDireccion(ConstantesEntidades.IZQUIERDA);
@@ -96,11 +99,18 @@ public class VisitorTuberia extends VisitorPlataforma{
             }
     }
 
+    @SuppressWarnings("override")
     public void visit(SuperChampinion sc,int direccion){
         if(sc.getDireccion()==ConstantesEntidades.DERECHA){
             sc.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }else if(sc.getDireccion()==ConstantesEntidades.IZQUIERDA){
                 sc.establecerDireccion(ConstantesEntidades.DERECHA);
             }
+    }
+
+    @Override
+    public void visit(BolaDeFuego bf, int direccion) {
+        bf.eliminar();
+        bf.recibirDanio(0);
     }
 }
