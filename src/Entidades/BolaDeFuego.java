@@ -30,22 +30,18 @@ public class BolaDeFuego extends Enemigo{
     public void mover(){
         posicionX += velocidadX;
         
-       // posicionY += velocidadY ;
-        //velocidadY += gravedad;
-        
-            if (seDebeEliminar()) {
-                ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
-                miObserver.eliminar();
-            }
-        }   
-
         if (seDebeEliminar()) {
             ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
+            miObserver.eliminar();
         }
 
         miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
-        actualizarSprite();   
-    }
+        actualizarSprite();
+    }   
+
+        
+    
+    
     public void actualizarSprite() {
         if (miObserver != null) {
             miObserver.actualizar(posicionX, posicionY);
