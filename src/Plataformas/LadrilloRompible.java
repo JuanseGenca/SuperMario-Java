@@ -14,6 +14,5 @@ public class LadrilloRompible extends Plataforma{
         v.visit(this, direccion);
     }
     public void mover(){
-        
     }
 }

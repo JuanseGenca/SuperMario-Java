@@ -29,7 +29,6 @@ public class Logica {
 	protected int puntaje;
 	protected int lvl;
     protected Nivel nivelActual;
-	protected HiloMario hilo1;
 	protected HiloSecundario hilo2;
 	protected HiloPrincipal hiloPrincipal;
 	protected ManejadorDeSonidos manejadorDeSonidos;
@@ -76,11 +75,9 @@ public class Logica {
 		nivelActual.getMario().setLogica(this);
 		registrarObservers();
 		gui.mostrarPantallaJuego();
-		hilo1 = new HiloMario(nivelActual.getMario(),this);
-		hilo1.start();
 		hilo2 = new HiloSecundario(this);
 		hilo2.start();
-		hiloPrincipal = new HiloPrincipal(this);
+		hiloPrincipal = new HiloPrincipal(this,nivelActual.getMario());
 		hiloPrincipal.start();
 		manejadorDeSonidos.reproducirSonido(nivelActual.getNumeroNivel());	
 	}
@@ -183,7 +180,6 @@ public class Logica {
 
 	public void reiniciarNivel(){
 		vidas--;
-		hilo1.parar();
 		hilo2.parar();
 		hiloPrincipal.parar();
 		if (vidas == 0){
@@ -197,7 +193,6 @@ public class Logica {
 		manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
 		manejadorDeSonidos.detenerSonido(ConstantesSonidos.ESTRELLA);
 		manejadorDeSonidos.reproducirSonido(ConstantesSonidos.PASARNIVEL);
-		hilo1.parar();
 		hilo2.parar();
 		hiloPrincipal.parar();
 		if(lvl!=3){

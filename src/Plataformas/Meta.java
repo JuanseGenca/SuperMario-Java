@@ -8,6 +8,7 @@ public class Meta extends Plataforma{
     public Meta(int x, int y,Sprite[] sprite){
         super(x,y, sprite);
         visitor = new VisitorMeta();
+        actualizarHitboxes(posicionX, posicionY-24, ancho, alto);
     }
 
     @Override

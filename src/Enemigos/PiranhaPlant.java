@@ -39,7 +39,7 @@ public class PiranhaPlant extends Enemigo{
             }
         } else {
             posicionY -= 2;
-            if (posicionY <= YInicial) {
+            if (posicionY <= YInicial-8) {
                 sube = true;
                 counterDelay = framesDelay;
             }
@@ -49,7 +49,7 @@ public class PiranhaPlant extends Enemigo{
             miObserver.actualizar();
         }
 
-        actualizarHitboxes(posicionX, posicionY, ancho, alto);
+        actualizarHitboxes(posicionX, posicionY-25, ancho, alto);
     }
 
     @Override
