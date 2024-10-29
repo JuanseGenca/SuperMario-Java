@@ -23,12 +23,12 @@ public class Jugador implements Serializable
      this.score=score;
   }
 
-  public Integer get_score()
+  public Integer getScore()
   {
     return score;
   }
 
-  public String get_nombre()
+  public String getNombre()
   {
     return nombre;
   }

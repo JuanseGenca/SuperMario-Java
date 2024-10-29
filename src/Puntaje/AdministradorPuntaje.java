@@ -24,7 +24,7 @@ public class AdministradorPuntaje {
 
     public boolean entro_en_el_top5()
     {
-        return (scoreActual>0 && (topPuntaje.obtenerListadeJugadores().size()<5 || topPuntaje.obtenerListadeJugadores().peek().get_score()<=scoreActual));
+        return (scoreActual>0 && (topPuntaje.obtenerListadeJugadores().size()<5 || topPuntaje.obtenerListadeJugadores().peek().getScore()<=scoreActual));
     }
 
     public PriorityQueue<Jugador> obtenerListadeJugadores()
@@ -43,7 +43,7 @@ public class AdministradorPuntaje {
 		String[] devolver = new String[5];
 
 		for(int i = 4 ; i >= 0 ; i--) {
-			devolver[i] = jugadores.poll().get_nombre().toUpperCase();
+			devolver[i] = jugadores.poll().getNombre().toUpperCase();
 		}
 
 		return devolver;
@@ -54,7 +54,7 @@ public class AdministradorPuntaje {
 		int[] devolver = new int[5];
 
 		for(int i = 4 ; i >= 0 ; i--) {
-			devolver[i] = jugadores.poll().get_score();
+			devolver[i] = jugadores.poll().getScore();
 		}
 
 		return devolver;
