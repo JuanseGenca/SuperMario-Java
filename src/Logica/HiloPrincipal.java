@@ -1,17 +1,19 @@
 package Logica;
 
-import Entidades.Entidad;
+import Entidades.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class HiloPrincipal extends Thread {
     private ManejadorDeColisiones manejadorDeColisiones;
     private Logica miLogica;
-    boolean ejecutando;
+    private boolean ejecutando;
     private ConcurrentLinkedQueue<Entidad> entidadesAEliminar;
+    private Mario mario;
 
-    public HiloPrincipal(Logica mLogica) {
+    public HiloPrincipal(Logica mLogica,Mario mario) {
         miLogica = mLogica;
         ejecutando = true;
+        this.mario = mario;
         manejadorDeColisiones = miLogica.getManejadorDeColisiones();
         entidadesAEliminar = new ConcurrentLinkedQueue<>();
     }
@@ -21,7 +23,7 @@ public class HiloPrincipal extends Thread {
         while (ejecutando) {
             tick();
             try {
-                sleep(15);
+                sleep(7);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -33,6 +35,7 @@ public class HiloPrincipal extends Thread {
     }
 
     private void tick() {
+        mario.mover();
         manejadorDeColisiones.chequearColisiones();
         eliminarEntidadesPendientes();
     }
