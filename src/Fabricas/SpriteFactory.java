@@ -162,7 +162,7 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getVacio() {
 		Sprite[] devolver = new Sprite[1];
-		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/vacio.png");
+		devolver[0] = new Sprite("Imagenes/vacio.png");
 		
 		return devolver;
 	}
