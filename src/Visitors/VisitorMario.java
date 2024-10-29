@@ -37,7 +37,10 @@ import PowerUps.SuperChampinion;
                 k.recibirDanio();
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(90);
-                //k.eliminar();  
+            }
+            
+            if(k.getEstado().esVulnerable()) {
+                k.recibirDanio();
             }
         }
 

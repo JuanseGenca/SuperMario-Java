@@ -69,6 +69,15 @@ public abstract class Entidad implements EntidadLogica{
       velocidadY = vY;
    }
 
+   //testeando para que mario no atraviese cosas
+   public void setPosicionx(int x){
+      posicionX = x;
+   }
+
+   public void setPosicionY(int y){
+      posicionY = y;
+   }
+
    public double getVelocidadX() {
       return velocidadX;
    }

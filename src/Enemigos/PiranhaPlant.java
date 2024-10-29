@@ -22,20 +22,33 @@ public class PiranhaPlant extends Enemigo{
         v.visit(this, direccion);
     }
 
-    @Override
-    public void mover(){
-        if(sube){
-            posicionY+= 2;
-            if(posicionY == YMax) sube=false;
-        }else{
-            posicionY-=2;
-            if(posicionY == YInicial) sube=true;
+    private int counterDelay = 0;
+    private final int framesDelay = 120;
+
+    public void mover() {
+        if (counterDelay > 0) {
+            counterDelay--;
+            return;
         }
 
-        if(miObserver!=null){
+        if (sube) {
+            posicionY += 2;
+            if (posicionY >= YMax) {
+                sube = false;
+                counterDelay = framesDelay;
+            }
+        } else {
+            posicionY -= 2;
+            if (posicionY <= YInicial) {
+                sube = true;
+                counterDelay = framesDelay;
+            }
+        }
+
+        if (miObserver != null) {
             miObserver.actualizar();
         }
-        
+
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
     }
 

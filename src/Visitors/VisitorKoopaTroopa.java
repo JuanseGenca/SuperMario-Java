@@ -9,7 +9,9 @@ import Entidades.Mario;
 import Logica.ConstantesColisiones;
 
 public class VisitorKoopaTroopa extends VisitorEnemigo {
-    public VisitorKoopaTroopa(Enemigo enemigo){
+    KoopaTroopa kt;
+    public VisitorKoopaTroopa(KoopaTroopa enemigo){
+        kt = enemigo;
         super(enemigo);
     }
 
@@ -46,15 +48,17 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
     }
 
     @Override
-    public void visit(Mario m, int direccion) { 
+    public void visit(Mario m, int direccion) {
         if(direccion == ConstantesColisiones.ARRIBA) {
-            m.setPosicionY(m.getPosicionY() + 8);
+            m.setPosicionY(m.getPosicionY() + 16);
             double nuevaVel = 3;
             m.setVelocidadY(nuevaVel);
         }
 
-        if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA) {
-            m.recibirDanio(0);
+        if(!kt.getEstado().esVulnerable()) {
+            if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA) {
+                m.recibirDanio(0);
+            }
         }
     }
 }

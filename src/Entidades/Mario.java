@@ -63,7 +63,7 @@ public class Mario extends Entidad implements EntidadJugador{
 
     public void aplicarGravedad() {
         double gravedad = -0.1;
-        double velTerminal = -8;
+        double velTerminal = -10;
         
 
         if(velocidadY == 0) {
@@ -145,9 +145,9 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     public void actualizarVelocidadXMario() {
-        double acceleration = 0.5;
-        double deceleration = 0.2;
-        double maxVelocity = 5;
+        double acceleration = 1;
+        double deceleration = 0.4;
+        double maxVelocity = 8;
         double currentVelocity = getVelocidadX();
   
         switch (direccion) {
@@ -170,8 +170,8 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     public void actualizarVelocidadYMario() {
-        double velInicialSalto = 8;
-        double gravedad = -0.1;
+        double velInicialSalto = 11;
+        double gravedad = -0.2;
         double velTerminal = -8;
         double velYActual = velocidadY;
         
@@ -239,15 +239,6 @@ public class Mario extends Entidad implements EntidadJugador{
         }
 
         return devolver;
-    }
-
-    //testeando para que mario no atraviese cosas
-    public void setPosicionx(int x){
-            posicionX = x;
-    }
-    
-    public void setPosicionY(int y){
-        posicionY = y;
     }
 
     public void setLogica(Logica l){

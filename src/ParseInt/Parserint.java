@@ -160,7 +160,6 @@ public class Parserint {
 
     private int getRandomInt() {
         int numero = (int) (Math.random() * 5 + 1);
-        System.out.println(numero);
         return numero;
       }
 }
