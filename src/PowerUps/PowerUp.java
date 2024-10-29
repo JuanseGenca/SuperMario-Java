@@ -7,10 +7,11 @@ import Logica.Visitor;
 
 
 public abstract class PowerUp extends Entidad{
-
+    
     public PowerUp(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
         velocidadX = 2;
+        velocidadY = 4;
         direccion = ConstantesEntidades.DERECHA;
     }
     
@@ -22,4 +23,24 @@ public abstract class PowerUp extends Entidad{
         ManejadorEntidades.getInstancia().eliminarPowerUp(this);
         miObserver.eliminar();
     }
+
+    public void aplicarGravedad() {
+        estadoAereo = ConstantesEntidades.AIRE;
+    }
+
+    public void tocoSuelo() {
+        establecerEstadoAereo(ConstantesEntidades.SUELO);
+        tocandoSuelo = true;
+    }
+
+    public void actualizarVelocidadY() {
+       
+        posicionY -= velocidadY;
+        
+        if (miHitboxes.getHitbox().getY() < 0) {
+            posicionY = 0;
+            estadoAereo = ConstantesEntidades.SUELO;
+            }
+    }
+
 }

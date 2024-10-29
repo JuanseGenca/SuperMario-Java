@@ -48,11 +48,11 @@ public class VisitorVacio extends VisitorPlataforma{
     }
     @Override
     public void visit(ChampinionVerde cv, int direccion){
-        cv.morir();
+        cv.aplicarGravedad();
     }
     @Override
     public void visit(SuperChampinion sc, int direccion){
-        sc.morir();
+        sc.aplicarGravedad();
     }
     @Override
     public void visit(FlorDeFuego f, int direccion){
@@ -66,7 +66,7 @@ public class VisitorVacio extends VisitorPlataforma{
     public void visit(Plataforma p, int direccion){}
     @Override
     public void visit(Estrella e, int direccion){
-        e.morir();
+        e.aplicarGravedad();
     }
     @Override
     public void visit(BolaDeFuego bf, int direccion){

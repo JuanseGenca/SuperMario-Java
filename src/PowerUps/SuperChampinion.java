@@ -11,6 +11,7 @@ public class SuperChampinion extends PowerUp{
         super(x,y, sprite);
         visitor = new VisitorSuperChampinion();
     }
+    
     public void mover(){
         if(direccion == ConstantesEntidades.DERECHA){
             posicionX += velocidadX;
@@ -18,10 +19,13 @@ public class SuperChampinion extends PowerUp{
         if(direccion == ConstantesEntidades.IZQUIERDA){
             posicionX -= velocidadX;
         }
-        if(miObserver!=null) {
-            miObserver.actualizar();
-        }
+        
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
+        miObserver.actualizar();
+
+        if(getEstadoAereo() == ConstantesEntidades.AIRE) {
+            actualizarVelocidadY();
+        }
     }
     
     public void aceptar(Visitor v, int direccion){

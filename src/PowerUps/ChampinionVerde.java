@@ -20,10 +20,13 @@ public class ChampinionVerde extends PowerUp{
         if(direccion == ConstantesEntidades.IZQUIERDA){
             posicionX -= velocidadX;
         }
-        if(miObserver!=null) {
-            miObserver.actualizar();
-        }
+        
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
+        miObserver.actualizar();
+
+        if(getEstadoAereo() == ConstantesEntidades.AIRE) {
+            actualizarVelocidadY();
+        }
     }
     
     public void aceptar(Visitor v, int direccion){
