@@ -33,6 +33,11 @@ public class BolaDeFuego extends Enemigo{
        // posicionY += velocidadY ;
         //velocidadY += gravedad;
         
+            if (seDebeEliminar()) {
+                ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
+                miObserver.eliminar();
+            }
+        }   
 
         if (seDebeEliminar()) {
             ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
@@ -59,5 +64,6 @@ public class BolaDeFuego extends Enemigo{
         spriteActual = misSprites[1];
         actualizar(direccion, estadoAereo);
         ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
+        miObserver.eliminar();
     }
 }
