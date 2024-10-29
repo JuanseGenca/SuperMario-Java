@@ -12,6 +12,7 @@ public class SuperChampinion extends PowerUp{
         visitor = new VisitorSuperChampinion();
     }
     
+    @SuppressWarnings("override")
     public void mover(){
         if(direccion == ConstantesEntidades.DERECHA){
             posicionX += velocidadX;
@@ -28,6 +29,7 @@ public class SuperChampinion extends PowerUp{
         }
     }
     
+    @SuppressWarnings("override")
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
