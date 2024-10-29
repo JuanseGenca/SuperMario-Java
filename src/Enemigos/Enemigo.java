@@ -27,7 +27,7 @@ public abstract class Enemigo extends Entidad{
             posicionX -= velocidadX;
         }
         if(miObserver!=null) {
-            miObserver.actualizar();
+            miObserver.actualizar(direccion,ConstantesEntidades.SUELO);
         }
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
     }

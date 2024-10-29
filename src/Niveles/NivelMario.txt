@@ -4,7 +4,7 @@ Flor de Fuego:1800,0
 Super Champinion:1600,0
 Estrella:2000,0
 Meta:2100,48
-Lakitu:300,400
+Lakitu:300,480
 Goomba:650,0
 Piranha Plant:1176,144
 Buzzy Beetle:850,0
