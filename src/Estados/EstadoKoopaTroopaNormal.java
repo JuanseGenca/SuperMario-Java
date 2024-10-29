@@ -10,4 +10,8 @@ public class EstadoKoopaTroopaNormal implements EstadoKoopaTroopa{
     public void recibirDanio(){
         k.setEstado(new EstadoKoopaTroopaCaparazon(k));
     }
+
+    public boolean esVulnerable() {
+        return false;
+    }
 }

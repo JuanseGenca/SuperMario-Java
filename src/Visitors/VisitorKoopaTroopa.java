@@ -48,6 +48,7 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
     @Override
     public void visit(Mario m, int direccion) { 
         if(direccion == ConstantesColisiones.ARRIBA) {
+            m.setPosicionY(m.getPosicionY() + 8);
             double nuevaVel = 3;
             m.setVelocidadY(nuevaVel);
         }

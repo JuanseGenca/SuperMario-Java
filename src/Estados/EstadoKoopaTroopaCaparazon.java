@@ -11,7 +11,10 @@ public class EstadoKoopaTroopaCaparazon implements EstadoKoopaTroopa{
         k.setVisitor(new VisitorKoopaTroopa(k));
     }
     public void recibirDanio(){
-        k.setVelocidadX(10);
-        
+        k.setVelocidadX(10);   
+    }
+
+    public boolean esVulnerable() {
+        return true;
     }
 }

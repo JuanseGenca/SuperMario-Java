@@ -64,16 +64,18 @@ public class Mario extends Entidad implements EntidadJugador{
     public void aplicarGravedad() {
         double gravedad = -0.1;
         double velTerminal = -8;
-        double velYActual = velocidadY;
-        velocidadY = Math.max(velYActual + gravedad, velTerminal);
-        estadoAereo = ConstantesEntidades.AIRE;
-        tocandoSuelo = false;
+        
 
-        if(posicionY <= 0) {
-            posicionY = posicionY + 0;
-            tocandoSuelo = true;
-            estadoAereo = ConstantesEntidades.SUELO;
-        } else {posicionY += velocidadY;}
+        if(velocidadY == 0) {
+            double velYActual = velocidadY;
+            velocidadY = Math.max(velYActual + gravedad, velTerminal);
+            estadoAereo = ConstantesEntidades.AIRE;
+            tocandoSuelo = false;
+            if(posicionY <= 0) {
+                tocandoSuelo = true;
+                estadoAereo = ConstantesEntidades.SUELO;
+            } else {posicionY += velocidadY;}
+        }
     }
 
     @Override
@@ -92,7 +94,7 @@ public class Mario extends Entidad implements EntidadJugador{
             public void run() {
                 invencible =false;
             }
-        }, 700); // 0.5 segundos
+        }, 700);
     }
 
     public void disparar(){
@@ -244,6 +246,10 @@ public class Mario extends Entidad implements EntidadJugador{
             posicionX = x;
     }
     
+    public void setPosicionY(int y){
+        posicionY = y;
+    }
+
     public void setLogica(Logica l){
         miLogica = l;
     }

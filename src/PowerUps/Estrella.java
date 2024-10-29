@@ -22,7 +22,10 @@ public class Estrella extends PowerUp{
         }
         
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
-        miObserver.actualizar();
+        if(miObserver != null) {
+            miObserver.actualizar();
+        }
+        
 
         if(getEstadoAereo() == ConstantesEntidades.AIRE) {
             actualizarVelocidadY();

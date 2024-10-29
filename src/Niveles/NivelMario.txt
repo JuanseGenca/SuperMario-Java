@@ -6,7 +6,6 @@ Estrella:2000,0
 Meta:2100,48
 Lakitu:300,480
 Goomba:650,0
-Piranha Plant:1176,144
 Buzzy Beetle:850,0
 Ladrillo Rompible:144,192
 Ladrillo Rompible:534,192
@@ -16,10 +15,11 @@ Bloque Pregunta:192,192
 Bloque Pregunta:486,192
 Bloque Pregunta:390,192
 Bloque Pregunta:438,384
-Vacio:97,193
-Vacio:629,193
-Vacio:270,193
-Vacio:390,385
-Vacio:486,385
+Vacio:97,200
+Vacio:629,200
+Vacio:270,200
+Vacio:390,400
+Vacio:486,400
 Tuberia:1152,144
 Moneda:1400,0
+Piranha Plant:1176,144

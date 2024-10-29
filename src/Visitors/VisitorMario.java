@@ -92,6 +92,7 @@ import PowerUps.SuperChampinion;
 
         @Override
         public void visit(Mario m, int direccion) {
+            System.out.println("si alguien alguna vez llega a ver este mensaje en la terminal, es momento de dejar la carrera");
         }
 
         @Override
