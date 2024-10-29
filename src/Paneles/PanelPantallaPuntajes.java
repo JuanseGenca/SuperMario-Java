@@ -20,19 +20,18 @@ public class PanelPantallaPuntajes extends JPanel {
     private JButton botonIniciar;
     private JLabel[] labelsPuntajes;
 
-    public PanelPantallaPuntajes(GUI gui) {
+    public PanelPantallaPuntajes(GUI gui, String[] nombreJugadores, int[] puntajeJugadores) {
         this.gui = gui;
         setSize(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO);
         setLayout(null);
         agregarImagenFondo();
+        agregarListaPuntajes(nombreJugadores, puntajeJugadores);
         agregarBotonIniciar();
-        agregarListaPuntajes();
-        gui.reproducirSonido("menuPrincipal");
     }
 
     protected void agregarImagenFondo() {
         imagenFondo = new JLabel();
-        ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-principal.png"));
+        ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-puntajes.png"));
         Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.VENTANA_ANCHO, ConstantesVistas.VENTANA_ALTO, Image.SCALE_SMOOTH);
         Icon iconoImagenEscalada = new ImageIcon(imagenEscalada);
         imagenFondo.setIcon(iconoImagenEscalada);
@@ -66,25 +65,18 @@ public class PanelPantallaPuntajes extends JPanel {
         boton.setBorderPainted(false);
     }
 
-    protected void agregarListaPuntajes() {
+    protected void agregarListaPuntajes(String[] nombreJugadores, int[] puntajeJugadores) {
         labelsPuntajes = new JLabel[5];
 
         int startY = 200; // Y position where the list starts
-        int spacing = 50; // Space between each score label
-
-        // Example scores (replace with actual data)
-        String[] nombres = {"Player1", "Player2", "Player3", "Player4", "Player5"};
-        int[] puntajes = {5000, 4500, 4000, 3500, 3000};
+        int spacing = 75; // Space between each score label
 
         for (int i = 0; i < labelsPuntajes.length; i++) {
-            labelsPuntajes[i] = new JLabel((i + 1) + ". " + nombres[i] + " - " + puntajes[i], SwingConstants.CENTER);
-            labelsPuntajes[i].setBounds(0, startY + (i * spacing), ConstantesVistas.VENTANA_ANCHO, 30);
-            labelsPuntajes[i].setFont(new Font("Arial", Font.BOLD, 24));
-            System.out.println("Texto: "+labelsPuntajes[i].getText());
-            System.out.println("X: "+labelsPuntajes[i].getX()+" Y: "+labelsPuntajes[i].getY());
-            System.out.println("W: "+labelsPuntajes[i].getWidth()+" H: "+labelsPuntajes[i].getHeight());
+            labelsPuntajes[i] = new JLabel((i + 1) + ". " + nombreJugadores[i] + " - " + puntajeJugadores[i], SwingConstants.CENTER);
+            labelsPuntajes[i].setBounds(0, startY + (i * spacing), 1200, 50);
+            labelsPuntajes[i].setFont(new Font("Helvetica", Font.BOLD, 42));
             labelsPuntajes[i].setForeground(java.awt.Color.WHITE);
-            add(labelsPuntajes[i]);
+            imagenFondo.add(labelsPuntajes[i]);
         }
     }
 }

@@ -28,6 +28,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     protected PanelPantallaJuego panelPantallaJuego;
     protected PanelPantallaFinDeJuego panelPantallaFinDeJuego;
     protected PanelVictoria panelVictoria;
+    protected PanelPantallaPuntajes panelPantallaPuntaje;
     protected Logica miLogica;
     protected AdministradorPuntaje administradorPuntaje;
     protected PanelModoDeJuego panelModo;
@@ -42,6 +43,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         this.administradorPuntaje=new AdministradorPuntaje();
         this.panelModo = new PanelModoDeJuego(this);
         configurarVentana();
+        
         registrarOyenteVentana();
     }
 
@@ -59,6 +61,8 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         }
         ventana.setIconImage(icono);
         ventana.setVisible(true);
+        
+        miLogica.reproducirSonido("menuPrincipal");
     }
 
     protected void registrarOyenteVentana() {
@@ -100,7 +104,6 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     public void mostrarPantallaInicial() {
         ventana.setContentPane(panelPantallaPrincipal);
-        miLogica.reproducirSonido("menuPrincipal");
         refrescar();
     }
 
@@ -136,7 +139,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 }
 
     public void accionarPantallaPuntajes() {
-        PanelPantallaPuntajes panelPantallaPuntajes = new PanelPantallaPuntajes(this);
+        PanelPantallaPuntajes panelPantallaPuntajes = new PanelPantallaPuntajes(this, administradorPuntaje.obtenerArrayNombresJugadores(), administradorPuntaje.obtenerArrayScoreJugadores());
         ventana.setContentPane(panelPantallaPuntajes);
         refrescar();
     }
@@ -190,6 +193,11 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         refrescar();
     }
 
+    public void mostrarPantallaPuntaje() {
+        ventana.setContentPane(panelPantallaPuntaje);
+        refrescar();
+    }
+
     public void refrescar() {
         ventana.revalidate();
         ventana.repaint();
@@ -221,6 +229,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         
     }
     public void mostrarPantallaModoDeJuego(){
+        miLogica.detenerSonido("menuPrincipal");
         ventana.setContentPane(panelModo);
         ventana.requestFocusInWindow();
         refrescar();

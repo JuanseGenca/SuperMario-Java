@@ -26,7 +26,6 @@ public class PanelPantallaPrincipal extends JPanel{
         agregarImagenFondo();
         agregarBotonIniciar();
         agregarBotonPuntaje();
-        gui.reproducirSonido("menuPrincipal");
     }
 
     protected void agregarImagenFondo(){
@@ -62,8 +61,6 @@ public class PanelPantallaPrincipal extends JPanel{
     protected void registrarOyenteBotonIniciar(){
         botonIniciar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                gui.detenerSonido("menuPrincipal");
-                gui.reproducirSonido("InicioJuego");
                 gui.mostrarPantallaModoDeJuego();
             }
         });
