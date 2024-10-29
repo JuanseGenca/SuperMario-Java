@@ -15,7 +15,7 @@ public class HiloMario extends Thread {
         while(ejecutando){
             tick();
                 try {
-                    sleep(7);
+                    sleep(15);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
