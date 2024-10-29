@@ -82,7 +82,7 @@ public class Logica {
 		hilo2.start();
 		hiloPrincipal = new HiloPrincipal(this);
 		hiloPrincipal.start();
-		manejadorDeSonidos.reproducirSonido("musicaLvl"+nivelActual.getNumeroNivel());	
+		manejadorDeSonidos.reproducirSonido(nivelActual.getNumeroNivel());	
 	}
 
     protected void registrarObservers() {
@@ -118,7 +118,7 @@ public class Logica {
 	}
 
 	public void setMarioEstadoAereo(int estado) {
-		reproducirSonido("saltar");
+		reproducirSonido(ConstantesSonidos.SALTAR);
 		nivelActual.getMario().establecerEstadoAereo(estado);
 	}
 
@@ -138,19 +138,19 @@ public class Logica {
 		vidas = vidas + i;
 	}
 
-	public void reproducirSonido(String nombre) {
+	public void reproducirSonido(int nombre) {
 		manejadorDeSonidos.reproducirSonido(nombre);
 	}
 
-	public void detenerSonido(String nombre) {
+	public void detenerSonido(int  nombre) {
 		manejadorDeSonidos.detenerSonido(nombre);
 	}
 
-	public void pausarSonido(String nombre) {
+	public void pausarSonido(int nombre) {
 		manejadorDeSonidos.pausarSonido(nombre);
 	}
 
-	public void reanudarSonido(String nombre) {
+	public void reanudarSonido(int nombre) {
 		manejadorDeSonidos.reanudarSonido(nombre);
 	}
 
@@ -194,15 +194,15 @@ public class Logica {
 	}
 
 	public void siguienteNivel() {
-		manejadorDeSonidos.pausarSonido("musicaLvl"+nivelActual.getNumeroNivel());
-		manejadorDeSonidos.detenerSonido("MarioEstrella");
-		manejadorDeSonidos.reproducirSonido("PasarNivel");
+		manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
+		manejadorDeSonidos.detenerSonido(ConstantesSonidos.ESTRELLA);
+		manejadorDeSonidos.reproducirSonido(ConstantesSonidos.PASARNIVEL);
 		hilo1.parar();
 		hilo2.parar();
 		hiloPrincipal.parar();
 		if(lvl!=3){
 			lvl++;
-			manejadorDeSonidos.detenerSonido("PasarNivel");
+			manejadorDeSonidos.detenerSonido(ConstantesSonidos.PASARNIVEL);
 			gui.accionarInicioJuego();
 			}
 			else{
@@ -228,8 +228,8 @@ public class Logica {
 	}
 
 	private void perdio() {
-	    manejadorDeSonidos.pausarSonido("musicaLvl" + nivelActual.getNumeroNivel());
-	    manejadorDeSonidos.reproducirSonido("GameOver");
+	    manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
+	    manejadorDeSonidos.reproducirSonido(ConstantesSonidos.GAMEOVER);
 	    gui.mostrarPantallaFinJuego();
 		try {
 			sleep(5000);

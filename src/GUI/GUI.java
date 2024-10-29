@@ -61,7 +61,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         ventana.setIconImage(icono);
         ventana.setVisible(true);
         
-        miLogica.reproducirSonido("menuPrincipal");
+        miLogica.reproducirSonido(ConstantesSonidos.MENUPRINCIPAL);
     }
 
     protected void registrarOyenteVentana() {
@@ -203,11 +203,11 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     
     }
 
-    public void reproducirSonido(String nombre) {
+    public void reproducirSonido(int nombre) {
         miLogica.reproducirSonido(nombre);
     }
 
-    public void detenerSonido(String nombre) {
+    public void detenerSonido(int nombre) {
         miLogica.detenerSonido(nombre);
     }
 
@@ -228,7 +228,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         
     }
     public void mostrarPantallaModoDeJuego(){
-        miLogica.detenerSonido("menuPrincipal");
+        miLogica.detenerSonido(ConstantesSonidos.MENUPRINCIPAL);
         ventana.setContentPane(panelModo);
         ventana.requestFocusInWindow();
         refrescar();

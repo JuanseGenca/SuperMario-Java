@@ -2,6 +2,8 @@ package Paneles;
 
 import GUI.ConstantesVistas;
 import GUI.GUI;
+import Logica.ConstantesSonidos;
+
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -62,8 +64,8 @@ public class PanelPantallaPrincipal extends JPanel{
         botonIniciar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 gui.mostrarPantallaModoDeJuego();
-                gui.detenerSonido("menuPrincipal");
-                gui.reproducirSonido("musicaLvl2");
+                gui.detenerSonido(ConstantesSonidos.MENUPRINCIPAL);
+                gui.reproducirSonido(ConstantesSonidos.MUSICALVL2);
             }
         });
     }
@@ -71,8 +73,8 @@ public class PanelPantallaPrincipal extends JPanel{
         botonPuntajes.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 gui.accionarPantallaPuntajes();
-                gui.detenerSonido("menuPrincipal");
-                gui.reproducirSonido("musicaLvl3");
+                gui.detenerSonido(ConstantesSonidos.MENUPRINCIPAL);
+                gui.reproducirSonido(ConstantesSonidos.MUSICALVL3);
             }
         });
     }

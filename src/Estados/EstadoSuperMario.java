@@ -1,6 +1,7 @@
 package Estados;
 
 import Entidades.Mario;
+import Logica.ConstantesSonidos;
 
 public class EstadoSuperMario implements EstadoMario{
     protected Mario m;
@@ -13,7 +14,7 @@ public class EstadoSuperMario implements EstadoMario{
     }
     public void recibirDanio(int puntaje){
         m.setEstado(new EstadoMarioComun(m));
-        m.reproducirSonido("danioMario");
+        m.reproducirSonido(ConstantesSonidos.DANIOMARIO);
         m.aplicarGravedad();
     }
     public boolean puedeRomper(){
