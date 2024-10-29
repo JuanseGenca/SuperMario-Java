@@ -8,52 +8,35 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 public class BolaDeFuego extends Enemigo{
-    private double angulo;
-    private double velocidadAngular;
-    private double amplitud;
-    private int colisionesConEjeX;
-    private static final int ALTURA_BASE = 0;
-    private static final int MAX_COLISIONES = 6;
-    private boolean canCollide = true;
     private Timer timer;
+    private long tiempoCreacion;
+    private long tiempoVida;
+    private int desplazamientoY;
+    private double gravedad = 0.8;
+    private Mario mario;
 
     public BolaDeFuego(int x, int y,Sprite[] miSprite, Mario mario){
+        this.mario = mario;
         super(x,y, miSprite);
-        this.velocidadX = 5; 
-        this.amplitud = 30;  
-        this.velocidadAngular = 0.10; 
-        this.angulo = 0;
-        colisionesConEjeX = 0; 
+        this.velocidadX = 2; 
+        this.velocidadY = 0;
         visitor = new VisitorBolaDeFuego(mario);
+        tiempoVida = 3000;
+        tiempoCreacion = System.currentTimeMillis();
+        posicionY = posicionY - 40;
 
-        timer = new Timer(300, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                canCollide = true;
-            }
-        });
-        timer.setRepeats(false);
     }
     @Override
     public void mover(){
         posicionX += velocidadX;
-
-        double frequencia = 2.0;
-        posicionY = (int) (ALTURA_BASE - (amplitud * Math.cos(frequencia * angulo)));
-
-        if (posicionY >= ALTURA_BASE && canCollide) {
-            colisionesConEjeX++;
-            posicionY = ALTURA_BASE;
-    
-            canCollide = false;
-            timer.start(); 
         
-            if (seDebeEliminar()) {
-                ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
-            }
-        }   
+       // posicionY += velocidadY ;
+        //velocidadY += gravedad;
+        
 
-        angulo += velocidadAngular;
+        if (seDebeEliminar()) {
+            ManejadorEntidades.getInstancia().eliminarBolaDeFuego(this);
+        }
 
         miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
         actualizarSprite();   
@@ -69,7 +52,7 @@ public class BolaDeFuego extends Enemigo{
     }
 
     public boolean seDebeEliminar(){
-        return colisionesConEjeX >= MAX_COLISIONES;
+        return System.currentTimeMillis() - tiempoCreacion >= tiempoVida;
     }
 
     public void eliminar(){

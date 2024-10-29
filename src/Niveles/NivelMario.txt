@@ -8,7 +8,6 @@ Lakitu:300,400
 Goomba:650,0
 Piranha Plant:1176,144
 Buzzy Beetle:850,0
-Koopa Troopa:1100,24
 Ladrillo Rompible:144,192
 Ladrillo Rompible:534,192
 Ladrillo Rompible:438,192
