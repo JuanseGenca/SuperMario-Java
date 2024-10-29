@@ -145,15 +145,14 @@ import PowerUps.SuperChampinion;
         @Override
         public void visit(BloqueIrrompible bi, int direccion) {
             if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
-                mario.reproducirSonido("romperPlataforma");
                 bi.recibirDanio(0);
             }
-            System.out.println("choque bloque irrompibel");
         }
 
+        @SuppressWarnings("override")
         public void visit(BloquePregunta bp, int direccion){
             if(direccion == ConstantesColisiones.ARRIBA){
-                System.out.println("choque bloque pregunta");
+                mario.reproducirSonido("romperPlataforma"); //Agregar sonido de que sale el power up
                 bp.getEntidadContenida();
                 bp.recibirDanio(0);
             }

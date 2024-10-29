@@ -1,15 +1,15 @@
 package Launcher;
 
-import java.awt.EventQueue;
-
-import Logica.Logica;
 import GUI.*;
+import Logica.Logica;
+import java.awt.EventQueue;
 
 
 public class Launcher {
 	
 	public static void main(String [] args) {
 		EventQueue.invokeLater(new Runnable() {
+            @Override
 			public void run() {
 				try {
 					Logica juego = new Logica();
@@ -17,7 +17,7 @@ public class Launcher {
 					juego.setControladorVistas(controladorVistas);
 					controladorVistas.mostrarPantallaInicial();
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println(e.getMessage());
 				}
 			}
 		});

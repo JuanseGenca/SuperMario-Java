@@ -5,22 +5,21 @@ import Entidades.EntidadLogica;
 import Logica.*;
 import Paneles.*;
 import Puntaje.AdministradorPuntaje;
-
 import java.awt.Image;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.Timer;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.Timer;
 
+@SuppressWarnings("override")
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     protected JFrame ventana;
@@ -75,18 +74,21 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
             public void keyPressed(KeyEvent event) {
 
                 int keyCode = event.getKeyCode();
-                if (keyCode == KeyEvent.VK_A) {
-                    miLogica.setMarioDirection(ConstantesEntidades.IZQUIERDA);
-                    
-                } else if (keyCode == KeyEvent.VK_D) {
-                    miLogica.setMarioDirection(ConstantesEntidades.DERECHA);
-                    
-                } else if (keyCode == KeyEvent.VK_W) {
-                    miLogica.setMarioEstadoAereo(ConstantesEntidades.AIRE);
-                    
-                } else if (keyCode == KeyEvent.VK_SPACE) {
-                    miLogica.shootMario();
-
+                switch (keyCode) {
+                    case KeyEvent.VK_A:
+                        miLogica.setMarioDirection(ConstantesEntidades.IZQUIERDA);
+                        break;
+                    case KeyEvent.VK_D:
+                        miLogica.setMarioDirection(ConstantesEntidades.DERECHA);
+                        break;
+                    case KeyEvent.VK_W:
+                        miLogica.setMarioEstadoAereo(ConstantesEntidades.AIRE);
+                        break;
+                    case KeyEvent.VK_SPACE:
+                        miLogica.shootMario();
+                        break;
+                    default:
+                        break;
                 }
             }
 
@@ -114,23 +116,20 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         return miLogica;
     }
 
+    @SuppressWarnings("override")
    public void accionarInicioJuego() {
     // Create and show the level start panel
     PanelPantallaInicioNivel panelInicioDeNivel = new PanelPantallaInicioNivel(this);
     ventana.setContentPane(panelInicioDeNivel);
     refrescar();
-
     // Set up a Timer to switch to the game screen after 5 seconds (5000 milliseconds)
-    Timer timer = new Timer(2000, new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // Switch to the game screen and start the game
-            panelPantallaJuego = new PanelPantallaJuego(GUI.this);
-            ventana.setContentPane(panelPantallaJuego);
-            miLogica.iniciarNivel();
-            refrescar();
-            ventana.requestFocusInWindow();
-        }
+    Timer timer = new Timer(4000, (ActionEvent e) -> {
+        // Switch to the game screen and start the game
+        panelPantallaJuego = new PanelPantallaJuego(GUI.this);
+        ventana.setContentPane(panelPantallaJuego);
+        miLogica.iniciarNivel();
+        refrescar();
+        ventana.requestFocusInWindow();
     });
 
     // Ensure the timer runs only once
@@ -254,7 +253,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
                     input = textField.getText();
                     
                     // Validar que la entrada tenga exactamente 5 dígitos
-                    if (input != null && input.matches("\\d{5}")) {
+                    if (input != null && input.matches(".{5}")) {
                         inputValido = true;
                     } else {
                         JOptionPane.showMessageDialog(ventana, "Entrada inválida. Por favor, ingrese exactamente 5 dígitos.", "Error", JOptionPane.ERROR_MESSAGE);

@@ -88,6 +88,7 @@ public class VisitorEnemigo implements Visitor {
         bf.recibirDanio(0);
     }
 
+    @Override
     public void visit(BloquePregunta bp,int direccion){
     }
 }

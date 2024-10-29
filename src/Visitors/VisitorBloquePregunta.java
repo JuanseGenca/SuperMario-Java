@@ -1,5 +1,6 @@
 package Visitors;
 
+import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 import Logica.ConstantesEntidades;
@@ -24,6 +25,7 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
         }
     }
 
+    @SuppressWarnings("override")
     public void visit(Estrella e,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             e.establecerDireccion(ConstantesEntidades.DERECHA);
@@ -38,6 +40,7 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
             } 
     }
 
+    @SuppressWarnings("override")
     public void visit(ChampinionVerde cv,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             cv.establecerDireccion(ConstantesEntidades.DERECHA);
@@ -52,6 +55,7 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
             } 
     }
 
+    @Override
     public void visit(SuperChampinion sc,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             sc.establecerDireccion(ConstantesEntidades.DERECHA);
@@ -63,7 +67,12 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
                         sc.tocoSuelo();
                         }   
                 }
-            } 
-        
+            }    
+    }
+
+    @Override
+    public void visit(BolaDeFuego bf, int direccion) {
+        bf.eliminar();
+        bf.recibirDanio(0);
     }
 }

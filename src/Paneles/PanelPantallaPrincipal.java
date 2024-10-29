@@ -62,6 +62,8 @@ public class PanelPantallaPrincipal extends JPanel{
         botonIniciar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 gui.mostrarPantallaModoDeJuego();
+                gui.detenerSonido("menuPrincipal");
+                gui.reproducirSonido("musicaLvl2");
             }
         });
     }
@@ -69,6 +71,8 @@ public class PanelPantallaPrincipal extends JPanel{
         botonPuntajes.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 gui.accionarPantallaPuntajes();
+                gui.detenerSonido("menuPrincipal");
+                gui.reproducirSonido("musicaLvl3");
             }
         });
     }

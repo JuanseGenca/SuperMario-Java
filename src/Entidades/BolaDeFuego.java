@@ -3,22 +3,15 @@ import Enemigos.Enemigo;
 import GUI.Sprite;
 import Logica.Visitor;
 import Visitors.VisitorBolaDeFuego;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
 
 public class BolaDeFuego extends Enemigo{
-    private Timer timer;
+    
     private long tiempoCreacion;
     private long tiempoVida;
-    private int desplazamientoY;
-    private double gravedad = 0.8;
-    private Mario mario;
 
-    public BolaDeFuego(int x, int y,Sprite[] miSprite, Mario mario){
-        this.mario = mario;
-        super(x,y, miSprite);
-        this.velocidadX = 2; 
+    public BolaDeFuego(int x, int y, Sprite[] miSprite, Mario mario){
+        super(x, y, miSprite);
+        this.velocidadX = 7; 
         this.velocidadY = 0;
         visitor = new VisitorBolaDeFuego(mario);
         tiempoVida = 3000;
@@ -56,6 +49,7 @@ public class BolaDeFuego extends Enemigo{
         return System.currentTimeMillis() - tiempoCreacion >= tiempoVida;
     }
 
+    @Override
     public void eliminar(){
         spriteActual = misSprites[1];
         actualizar(direccion, estadoAereo);
