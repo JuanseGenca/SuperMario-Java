@@ -17,16 +17,17 @@ public class ChampinionVerde extends PowerUp{
         if(direccion == ConstantesEntidades.DERECHA){
             posicionX += velocidadX;
         }
+        
         if(direccion == ConstantesEntidades.IZQUIERDA){
             posicionX -= velocidadX;
         }
         
-        actualizarHitboxes(posicionX, posicionY, ancho, alto);
-        miObserver.actualizar();
-
-        if(getEstadoAereo() == ConstantesEntidades.AIRE) {
+        if(tocandoSuelo == false) {
             actualizarVelocidadY();
         }
+
+        actualizarHitboxes(posicionX, posicionY, ancho, alto);
+        miObserver.actualizar();
     }
     
     public void aceptar(Visitor v, int direccion){

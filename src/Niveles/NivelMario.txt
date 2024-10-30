@@ -1,8 +1,5 @@
 Mario:0,0
 Ladrillo Rompible:30,0
-Flor de Fuego:1800,0
-Super Champinion:1600,0
-Estrella:2000,0
 Meta:2100,48
 Lakitu:300,480
 Goomba:650,0
@@ -21,5 +18,4 @@ Vacio:270,200
 Vacio:390,400
 Vacio:486,400
 Tuberia:1152,144
-Moneda:1400,0
 Piranha Plant:1176,144

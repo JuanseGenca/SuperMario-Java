@@ -26,52 +26,49 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
         }
     }
 
-    @SuppressWarnings("override")
     public void visit(Estrella e,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
+            e.setPosicionx(e.getPosicionX() - 4);
+            e.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+        }
+        if(direccion == ConstantesColisiones.IZQUIERDA){
+            e.setPosicionx(e.getPosicionX() + 4);
             e.establecerDireccion(ConstantesEntidades.DERECHA);
-        } else {
-            if(direccion == ConstantesColisiones.IZQUIERDA){
-                e.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-                } else {
-                    if (direccion == ConstantesColisiones.ARRIBA){
-                        e.tocoSuelo();
-                        }   
-                }
-            } 
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            e.tocoSuelo();
+        } 
     }
 
-    @SuppressWarnings("override")
     public void visit(ChampinionVerde cv,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
+            cv.setPosicionx(cv.getPosicionX() - 4);
+            cv.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+        }
+        if(direccion == ConstantesColisiones.IZQUIERDA){
+            cv.setPosicionx(cv.getPosicionX() + 4);
             cv.establecerDireccion(ConstantesEntidades.DERECHA);
-        } else {
-            if(direccion == ConstantesColisiones.IZQUIERDA){
-                cv.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-                } else {
-                    if (direccion == ConstantesColisiones.ARRIBA){
-                        cv.tocoSuelo();
-                        }   
-                }
-            } 
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            cv.tocoSuelo();
+        }
     }
 
     @Override
     public void visit(SuperChampinion sc,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
+            sc.setPosicionx(sc.getPosicionX() - 4);
+            sc.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+        }
+        if(direccion == ConstantesColisiones.IZQUIERDA){
+            sc.setPosicionx(sc.getPosicionX() + 4);
             sc.establecerDireccion(ConstantesEntidades.DERECHA);
-        } else {
-            if(direccion == ConstantesColisiones.IZQUIERDA){
-                sc.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-                } else {
-                    if (direccion == ConstantesColisiones.ARRIBA){
-                        sc.tocoSuelo();
-                        }   
-                }
-            }    
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            sc.tocoSuelo();
+        }
     }
 
-    @Override
     public void visit(BolaDeFuego bf, int direccion) {
         bf.eliminar();
         bf.recibirDanio(0);

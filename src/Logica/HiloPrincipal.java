@@ -37,7 +37,7 @@ public class HiloPrincipal extends Thread {
     private void tick() {
         mario.mover();
         manejadorDeColisiones.chequearColisiones();
-        eliminarEntidadesPendientes();
+       eliminarEntidadesPendientes();
     }
 
     private void eliminarEntidadesPendientes() {

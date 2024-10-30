@@ -17,10 +17,8 @@ import PowerUps.SuperChampinion;
 public class VisitorTuberia extends VisitorPlataforma{
     
     public VisitorTuberia(){
-        
     }
     
-    @Override
     public void visit(Mario m, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             m.setVelocidadX(0);
@@ -38,7 +36,7 @@ public class VisitorTuberia extends VisitorPlataforma{
             m.tocoSuelo();
         }
     }
-    @Override
+    
     public void visit(KoopaTroopa k, int direccion){
         if(k.getDireccion()==ConstantesEntidades.DERECHA){
             k.setPosicionx(k.getPosicionX() - 4);
@@ -49,7 +47,6 @@ public class VisitorTuberia extends VisitorPlataforma{
          }
     }
 
-    @Override
     public void visit(Goomba g, int direccion){
         if(g.getDireccion()==ConstantesEntidades.DERECHA){
             g.setPosicionx(g.getPosicionX() - 4);
@@ -59,7 +56,7 @@ public class VisitorTuberia extends VisitorPlataforma{
                 g.establecerDireccion(ConstantesEntidades.DERECHA);
          }
     }
-    @Override
+    
     public void visit(Lakitu l, int direccion){
         if(l.getDireccion()==ConstantesEntidades.DERECHA){
             l.establecerDireccion(ConstantesEntidades.IZQUIERDA);
@@ -67,7 +64,7 @@ public class VisitorTuberia extends VisitorPlataforma{
                 l.establecerDireccion(ConstantesEntidades.DERECHA);
             }
     }
-    @Override
+    
     public void visit(BuzzyBeetle b, int direccion){
         if(b.getDireccion()==ConstantesEntidades.DERECHA){
             b.setPosicionx(b.getPosicionX() - 4);
@@ -77,9 +74,9 @@ public class VisitorTuberia extends VisitorPlataforma{
                 b.establecerDireccion(ConstantesEntidades.DERECHA);
          }
     }
-    @Override
+    
     public void visit(PiranhaPlant p, int direccion){}
-    @Override
+    
     public void visit(Spiny s, int direccion){
         if(s.getDireccion()==ConstantesEntidades.DERECHA){
             s.setVelocidadX(0);
@@ -91,43 +88,48 @@ public class VisitorTuberia extends VisitorPlataforma{
          }
     }
 
-    @SuppressWarnings("override")
     public void visit(Estrella e,int direccion){
-        if(e.getDireccion()==ConstantesEntidades.DERECHA){
-            e.setVelocidadX(0);
+        if(direccion == ConstantesColisiones.DERECHA){
             e.setPosicionx(e.getPosicionX() - 4);
             e.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-        }else if(e.getDireccion()==ConstantesEntidades.IZQUIERDA){
-                e.setPosicionx(e.getPosicionX() + 4);
-                e.establecerDireccion(ConstantesEntidades.DERECHA);
-         }
+        }
+        if(direccion == ConstantesColisiones.IZQUIERDA){
+            e.setPosicionx(e.getPosicionX() + 4);
+            e.establecerDireccion(ConstantesEntidades.DERECHA);
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            e.tocoSuelo();
+        }
     }
 
-    @SuppressWarnings("override")
     public void visit(ChampinionVerde cv,int direccion){
-        if(cv.getDireccion()==ConstantesEntidades.DERECHA){
-            cv.setVelocidadX(0);
+        if(direccion == ConstantesColisiones.DERECHA){
             cv.setPosicionx(cv.getPosicionX() - 4);
             cv.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-        }else if(cv.getDireccion()==ConstantesEntidades.IZQUIERDA){
-                cv.setPosicionx(cv.getPosicionX() + 4);
-                cv.establecerDireccion(ConstantesEntidades.DERECHA);
-         }
+        }
+        if(direccion == ConstantesColisiones.IZQUIERDA){
+            cv.setPosicionx(cv.getPosicionX() + 4);
+            cv.establecerDireccion(ConstantesEntidades.DERECHA);
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            cv.tocoSuelo();
+        }
     }
 
-    @SuppressWarnings("override")
     public void visit(SuperChampinion sc,int direccion){
-        if(sc.getDireccion()==ConstantesEntidades.DERECHA){
-            sc.setVelocidadX(0);
+        if(direccion == ConstantesColisiones.DERECHA){
             sc.setPosicionx(sc.getPosicionX() - 4);
             sc.establecerDireccion(ConstantesEntidades.IZQUIERDA);
-        }else if(sc.getDireccion()==ConstantesEntidades.IZQUIERDA){
-                sc.setPosicionx(sc.getPosicionX() + 4);
-                sc.establecerDireccion(ConstantesEntidades.DERECHA);
-         }
+        }
+        if(direccion == ConstantesColisiones.IZQUIERDA){
+            sc.setPosicionx(sc.getPosicionX() + 4);
+            sc.establecerDireccion(ConstantesEntidades.DERECHA);
+        }
+        if(direccion == ConstantesColisiones.ARRIBA){
+            sc.tocoSuelo();
+        }
     }
 
-    @Override
     public void visit(BolaDeFuego bf, int direccion) {
         bf.eliminar();
         bf.recibirDanio(0);

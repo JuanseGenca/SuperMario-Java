@@ -11,8 +11,8 @@ import Logica.ConstantesColisiones;
 public class VisitorKoopaTroopa extends VisitorEnemigo {
     KoopaTroopa kt;
     public VisitorKoopaTroopa(KoopaTroopa enemigo){
-        kt = enemigo;
         super(enemigo);
+        kt = enemigo;
     }
 
     @Override

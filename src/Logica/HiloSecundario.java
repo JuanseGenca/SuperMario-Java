@@ -60,7 +60,8 @@ public class HiloSecundario extends Thread {
             bola.mover();
         }
 
-        eliminarEntidadesPendientes();
+        // Es necesario? esta el mismo metodo en el otro hilo
+       eliminarEntidadesPendientes();
     }
 
     private void eliminarEntidadesPendientes() {

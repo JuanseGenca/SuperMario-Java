@@ -11,7 +11,7 @@ public class VisitorSuperChampinion extends VisitorPowerUp {
 
     @Override
     public void visit(Mario m, int direccion) {
-        if(m.getEstado().getModificador()!=ConstantesPowerUp.ESTRELLA){
+        if(m.getEstado().getModificador()!=ConstantesPowerUp.ESTRELLA && m.getEstado().getModificador()!=ConstantesPowerUp.FLORDEFUEGO ){
             m.setEstado(new EstadoSuperMario(m));
         }
     }

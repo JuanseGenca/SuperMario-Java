@@ -13,6 +13,7 @@ public abstract class PowerUp extends Entidad{
         velocidadX = 2;
         velocidadY = 4;
         direccion = ConstantesEntidades.DERECHA;
+        tocandoSuelo = true;
     }
     
     public abstract void aceptar(Visitor visitor, int direccion);
@@ -25,11 +26,10 @@ public abstract class PowerUp extends Entidad{
     }
 
     public void aplicarGravedad() {
-        estadoAereo = ConstantesEntidades.AIRE;
+        tocandoSuelo = false;
     }
 
     public void tocoSuelo() {
-        establecerEstadoAereo(ConstantesEntidades.SUELO);
         tocandoSuelo = true;
     }
 
@@ -39,7 +39,7 @@ public abstract class PowerUp extends Entidad{
         
         if (miHitboxes.getHitbox().getY() < 0) {
             posicionY = 0;
-            estadoAereo = ConstantesEntidades.SUELO;
+            tocandoSuelo = true;
             }
     }
 
