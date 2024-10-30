@@ -21,7 +21,7 @@ public class PanelVictoria extends JPanel {
 
     protected void agregarImagenFondo(){
         imagenFondo = new JLabel();
-        ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-fin-de-juego.png"));
+        ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-victoria.png"));
         Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.VENTANA_ANCHO,ConstantesVistas.VENTANA_ALTO,Image.SCALE_SMOOTH);
         Icon iconoImagenEscalada = new ImageIcon(imagenEscalada);
         imagenFondo.setIcon(iconoImagenEscalada);

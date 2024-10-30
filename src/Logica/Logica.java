@@ -206,8 +206,7 @@ public class Logica {
 	    		if (top5Concretado) {    
 	       			gui.mostrarPantallaInicial();
 	   			 }
-			}
-		//gui.accionarInicioJuego();				
+			}				
 	}
 
 	public int getPuntaje() {
