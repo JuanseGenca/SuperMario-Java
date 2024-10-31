@@ -18,6 +18,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
     public VisitorLadrilloRompible() {
     }
 
+    @SuppressWarnings("override")
     public void visit(KoopaTroopa k, int direccion){
         if(k.getDireccion()==ConstantesEntidades.DERECHA){
             k.establecerDireccion(ConstantesEntidades.IZQUIERDA);
@@ -26,6 +27,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
             }
     }
 
+    @SuppressWarnings("override")
     public void visit(Goomba g, int direccion){
         if(g.getDireccion()==ConstantesEntidades.DERECHA){
             g.establecerDireccion(ConstantesEntidades.IZQUIERDA);
@@ -34,6 +36,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
             }
     }
 
+    @SuppressWarnings("override")
     public void visit(Lakitu l, int direccion){
         if(l.getDireccion()==ConstantesEntidades.DERECHA){
             l.establecerDireccion(ConstantesEntidades.IZQUIERDA);
@@ -42,6 +45,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
             }
     }
 
+    @SuppressWarnings("override")
     public void visit(BuzzyBeetle b, int direccion){
         if(b.getDireccion()==ConstantesEntidades.DERECHA){
             b.establecerDireccion(ConstantesEntidades.IZQUIERDA);
@@ -50,8 +54,10 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
             }
     }
 
+    @SuppressWarnings("override")
     public void visit(PiranhaPlant p, int direccion){}
 
+    @SuppressWarnings("override")
     public void visit(Spiny s, int direccion){
         if(s.getDireccion()==ConstantesEntidades.DERECHA){
             s.establecerDireccion(ConstantesEntidades.IZQUIERDA);
@@ -60,6 +66,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
             }
     }
 
+    @SuppressWarnings("override")
     public void visit(Mario m, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             m.setVelocidadX(0);
@@ -78,6 +85,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
         }
     }
     
+    @SuppressWarnings("override")
     public void visit(Estrella e,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             e.setPosicionx(e.getPosicionX() - 4);
@@ -92,6 +100,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
         }
     }
 
+    @SuppressWarnings("override")
     public void visit(ChampinionVerde cv,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             cv.setPosicionx(cv.getPosicionX() - 4);
@@ -106,6 +115,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
         }
     }
 
+    @SuppressWarnings("override")
     public void visit(SuperChampinion sc,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             sc.setPosicionx(sc.getPosicionX() - 4);
@@ -120,6 +130,7 @@ public class VisitorLadrilloRompible extends VisitorPlataforma{
         }
     }
 
+    @SuppressWarnings("override")
     public void visit(BolaDeFuego bf, int direccion) {
         bf.eliminar();
         bf.recibirDanio(0);

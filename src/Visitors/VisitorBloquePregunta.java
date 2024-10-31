@@ -30,6 +30,7 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
         }
     }
 
+    @SuppressWarnings("override")
     public void visit(Estrella e,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             e.setPosicionx(e.getPosicionX() - 4);
@@ -44,6 +45,7 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
         } 
     }
 
+    @SuppressWarnings("override")
     public void visit(ChampinionVerde cv,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             cv.setPosicionx(cv.getPosicionX() - 4);
@@ -73,6 +75,7 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
         }
     }
 
+    @SuppressWarnings("override")
     public void visit(BolaDeFuego bf, int direccion) {
         bf.eliminar();
         bf.recibirDanio(0);

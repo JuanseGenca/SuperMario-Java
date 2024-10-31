@@ -1,7 +1,6 @@
 package Visitors;
 
 import Enemigos.BuzzyBeetle;
-import Enemigos.Enemigo;
 import Enemigos.Goomba;
 import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
