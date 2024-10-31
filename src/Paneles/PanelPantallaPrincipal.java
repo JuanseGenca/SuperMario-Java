@@ -3,11 +3,9 @@ package Paneles;
 import GUI.ConstantesVistas;
 import GUI.GUI;
 import Logica.ConstantesSonidos;
-
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -46,20 +44,24 @@ public class PanelPantallaPrincipal extends JPanel{
         registrarOyenteBotonIniciar();
         add(botonIniciar);
     }
+
     protected void agregarBotonPuntaje(){
         botonPuntajes = new JButton();
         decorarBotonPuntajes();
         registrarOyenteBotonPuntajes();
         add(botonPuntajes);
     }
+
     protected void decorarBotonIniciar(){
         transparentarBoton(botonIniciar);
         botonIniciar.setBounds(370 ,510, 430 , 50);
     }
+
     protected void decorarBotonPuntajes(){
         transparentarBoton(botonPuntajes);
         botonPuntajes.setBounds(410 ,650, 300 , 50);
     }
+
     protected void registrarOyenteBotonIniciar(){
         botonIniciar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
@@ -69,6 +71,7 @@ public class PanelPantallaPrincipal extends JPanel{
             }
         });
     }
+
     protected void registrarOyenteBotonPuntajes(){
         botonPuntajes.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
@@ -78,11 +81,11 @@ public class PanelPantallaPrincipal extends JPanel{
             }
         });
     }
+
     protected void transparentarBoton(JButton boton){
         boton.setOpaque(false);
         boton.setContentAreaFilled(false);
         boton.setBorderPainted(false);
     }
-
 
 }

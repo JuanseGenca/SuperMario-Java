@@ -23,7 +23,7 @@ public class PanelPantallaInicioNivel extends JPanel{
     }
 
     protected void agregarImagenFondo() {
-        // Set up the background image
+        
         imagenFondo = new JLabel();
         ImageIcon iconoImagen = new ImageIcon(this.getClass().getResource("/Imagenes/pantalla-nivel.png"));
         Image imagenEscalada = iconoImagen.getImage().getScaledInstance(ConstantesVistas.VENTANA_ANCHO, ConstantesVistas.VENTANA_ALTO, Image.SCALE_SMOOTH);

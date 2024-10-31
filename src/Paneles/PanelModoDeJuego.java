@@ -3,17 +3,14 @@ package Paneles;
 import GUI.ConstantesVistas;
 import GUI.GUI;
 import Logica.ConstantesSonidos;
-
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import Fabricas.SpritesMarioModo1;
 import Fabricas.SpritesMarioModo2;
 
@@ -49,20 +46,24 @@ public class PanelModoDeJuego extends JPanel{
         registrarOyenteBotonModo1();
         add(botonModo1);
     }
+
     protected void agregarBotonModo2(){
         botonModo2 = new JButton();
         decorarBotonModo2();
         registrarOyenteBotonModo2();
         add(botonModo2);
     }
+
     protected void decorarBotonModo1(){
         transparentarBoton(botonModo1);
         botonModo1.setBounds(100 ,190, 450 , 360);
     }
+
     protected void decorarBotonModo2(){
         transparentarBoton(botonModo2);
         botonModo2.setBounds(650 ,190, 450 , 360);
     }
+
     protected void registrarOyenteBotonModo1(){
         botonModo1.addActionListener(new ActionListener() {
             @Override
@@ -74,6 +75,7 @@ public class PanelModoDeJuego extends JPanel{
             }
         });
     }
+
     protected void registrarOyenteBotonModo2(){
         botonModo2.addActionListener(new ActionListener() {
             @Override
@@ -85,6 +87,7 @@ public class PanelModoDeJuego extends JPanel{
             }
         });
     }
+    
     protected void transparentarBoton(JButton boton){
         boton.setOpaque(false);
         boton.setContentAreaFilled(false);

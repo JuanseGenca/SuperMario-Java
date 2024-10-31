@@ -91,8 +91,6 @@ public class PanelPantallaJuego extends JPanel {
         }else{
             labelTiempo.setText(Long.toString((System.currentTimeMillis() - startTime)/(-1000)));
         }
-        
-        //labelTiempo.setText(Long.toString((System.currentTimeMillis() - startTime)/(-1000)));
     }
 
     protected void actualizarLabelsInformacion(EntidadJugador jugador) {
@@ -131,8 +129,6 @@ public class PanelPantallaJuego extends JPanel {
         retorno = retorno && (numero <= techo);
         return retorno;
     }
-
-    // Operacion para observer de jugador
 
     public void actualizarScrollHaciaJugador(EntidadLogica jugador) {
         double interpolationFactor = 0.3; // Controla la suavidad

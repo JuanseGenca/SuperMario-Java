@@ -68,8 +68,8 @@ public class PanelPantallaPuntajes extends JPanel {
     protected void agregarListaPuntajes(String[] nombreJugadores, int[] puntajeJugadores) {
         labelsPuntajes = new JLabel[5];
 
-        int startY = 200; // Y position where the list starts
-        int spacing = 75; // Space between each score label
+        int startY = 200; // posicion donde comienza la lista
+        int spacing = 75; // espacio entre cada label
 
         for (int i = 0; i < labelsPuntajes.length; i++) {
             labelsPuntajes[i] = new JLabel((i + 1) + ". " + nombreJugadores[i] + " - " + puntajeJugadores[i], SwingConstants.CENTER);
