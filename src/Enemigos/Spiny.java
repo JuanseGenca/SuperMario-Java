@@ -10,8 +10,9 @@ public class Spiny extends Enemigo{
         super(x,y,sprite);
         puntaje=60;
         visitor=new VisitorSpiny(this);
-        estadoAereo = ConstantesEntidades.AIRE;
-        dirTickAnterior = ConstantesEntidades.IZQUIERDA;
+        tocandoSuelo = false;
+        //estadoAereo = ConstantesEntidades.AIRE;
+        //dirTickAnterior = ConstantesEntidades.IZQUIERDA;
     }
    
     @Override
@@ -20,7 +21,7 @@ public class Spiny extends Enemigo{
     }
 
     @Override
-    public void mover(){
+    /*public void mover(){
         
         moverX();
         if(direccion == ConstantesEntidades.DERECHA){
@@ -35,9 +36,9 @@ public class Spiny extends Enemigo{
             actualizarVelocidadY();
         }
         
-    }
+    }*/
 
-    private void actualizarVelocidadY() {
+    /*public void actualizarVelocidadY() {
         double velInicialSalto = 11;
         double gravedad = -0.2;
         double velTerminal = -8;
@@ -58,9 +59,9 @@ public class Spiny extends Enemigo{
         }
 
         velocidadY = velYActual;
-    }
+    }*/
 
-    private void moverX() {
+    /*private void moverX() {
         if(direccion != ConstantesEntidades.QUIETO || estadoAereo == ConstantesEntidades.AIRE) {
             if(direccion==ConstantesEntidades.IZQUIERDA) {
                 posicionX-=velocidadX;
@@ -79,7 +80,7 @@ public class Spiny extends Enemigo{
         }else{
             direccion = ConstantesEntidades.QUIETO;
         }
-    }
+    }*/
 
     @SuppressWarnings("override")
     public void recibirDanio(int puntaje) {

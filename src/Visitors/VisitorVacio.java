@@ -17,27 +17,45 @@ public class VisitorVacio extends VisitorPlataforma{
     }
     
     public void visit(KoopaTroopa k, int direccion){
-        k.morir();
+        if(k.getPosicionY() == 0){
+            k.cayoAlVacio = true;
+        }
+        k.aplicarGravedad();
     }
     
     public void visit(Goomba g, int direccion){
-        g.morir();
+        if(g.getPosicionY() == 0){
+            g.cayoAlVacio = true;
+        }
+        g.aplicarGravedad();
     }
     
     public void visit(Lakitu l, int direccion){
-        l.morir();
+        if(l.getPosicionY() == 0){
+            l.cayoAlVacio = true;
+        }
+        l.aplicarGravedad();
     }
     
     public void visit(BuzzyBeetle b, int direccion){
-        b.morir();
+        if(b.getPosicionY() == 0){
+            b.cayoAlVacio = true;
+        }
+        b.aplicarGravedad();
     }
     
     public void visit(PiranhaPlant p, int direccion){
-        p.morir();
+        if(p.getPosicionY() == 0){
+            p.cayoAlVacio = true;
+        }
+        p.aplicarGravedad();
     }
     
     public void visit(Spiny s, int direccion){
-        s.morir();
+        if(s.getPosicionY() == 0){
+            s.cayoAlVacio = true;
+        }
+        s.aplicarGravedad();
     }
     
     public void visit(Mario m, int direccion){
