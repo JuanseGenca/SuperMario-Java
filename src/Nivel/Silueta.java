@@ -10,9 +10,7 @@ public class Silueta extends Entidad {
 		super( 0, 0,mi_sprite);
 	}
 
-    @Override
     public void aceptar(Visitor visitor, int direccion) {}
 
-    @Override
     public void mover() {}
 }

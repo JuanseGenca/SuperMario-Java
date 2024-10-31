@@ -28,6 +28,5 @@ public class ObserverJugador extends ObserverGrafico{
 	}
 
 	public void eliminar(){
-		
 	}
 }

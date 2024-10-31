@@ -1,7 +1,6 @@
 package Nivel;
 import Enemigos.*;
 import Entidades.BolaDeFuego;
-import Entidades.Entidad;
 import Entidades.Mario;
 import Logica.ManejadorDeColisiones;
 import Plataformas.Plataforma;
@@ -37,15 +36,19 @@ public class Nivel {
     public ArrayList<Enemigo> getEnemigos(){
         return enemigos;
     }
+
     public ArrayList<Plataforma> getPlataformas(){
         return plataformas;
     }
+
     public ArrayList<PowerUp> getPowerUps(){
         return powerUps;
     }
+
     public ArrayList<BolaDeFuego> getBolaDeFuego(){
         return bolasFuego;
     }
+
     public Mario getMario(){
         return jugador;
     }
@@ -64,51 +67,56 @@ public class Nivel {
             manejadorDeColisiones.eliminarEntidad(plataforma);
         }
     }
-    public void eliminarMario(Mario mario){
-        //como elimino a mario? le asigno null directamente?
-    }
+    
     public void eliminarPowerUp(PowerUp powerUp){
         if(powerUps.contains(powerUp)){
             powerUps.remove(powerUp);
             manejadorDeColisiones.eliminarEntidad(powerUp);
         }
     }
+
     public void eliminarEnemigo(Enemigo enemigo){
         if(enemigos.contains(enemigo)){
             enemigos.remove(enemigo);
             manejadorDeColisiones.eliminarEntidad(enemigo);
         }
     }
+
     public void agregarPlataforma(Plataforma plataforma){
         if(plataforma!=null) {
             plataformas.add(plataforma);
             manejadorDeColisiones.agregarEntidad(plataforma);
         }
     }
+
     public void agregarMario(Mario mario){
         if(mario!=null) {
             this.jugador = mario;
             manejadorDeColisiones.agregarEntidad(mario);
         }
     }
+
     public void agregarPowerUp(PowerUp powerUp){
         if(powerUp!=null) {
             powerUps.add(powerUp);
             manejadorDeColisiones.agregarEntidad(powerUp);
         }
     }
+
     public void agregarEnemigo(Enemigo enemigo){
         if(enemigo!=null) { 
             enemigos.add(enemigo);
             manejadorDeColisiones.agregarEntidad(enemigo);
         }
     }
+
     public void agregarBolaDeFuego(BolaDeFuego bola){
         if(bola!=null){
             bolasFuego.add(bola);
             manejadorDeColisiones.agregarEntidad(bola);
         }
     }
+
     public void eliminarBolaDeFuego(BolaDeFuego bola){
         if(bolasFuego.contains(bola)){
             bolasFuego.remove(bola);
@@ -127,8 +135,6 @@ public class Nivel {
             l.iniciarReloj(5000);
         }
     }
-
-    public void eliminarEntidad(Entidad entidad) {}
 
     public void frenarTimerLakitus() {
         for (Lakitu l : lakitus) {

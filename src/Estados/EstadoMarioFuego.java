@@ -14,6 +14,7 @@ public class EstadoMarioFuego implements EstadoMario{
     public EstadoMarioFuego(Mario mario){
         m = mario;
     }
+
     public void disparar(){
         int posX = m.getPosicionX();
         int posY = m.getPosicionY();
@@ -29,14 +30,17 @@ public class EstadoMarioFuego implements EstadoMario{
         }
         
     }
+
     public void recibirDanio(int puntaje){
         m.setEstado(new EstadoMarioComun(m));
         m.reproducirSonido(ConstantesSonidos.DANIOMARIO);
         m.aplicarGravedad();
     }
+
     public boolean puedeRomper(){
         return true;
     }
+    
     public int getModificador(){
         return 6;
     }

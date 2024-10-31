@@ -24,18 +24,14 @@ public class EstadoMarioEstrella implements EstadoMario {
         this.estadoPrevio = estado;
     }
     
-    @SuppressWarnings("override")
     public void disparar() {}
     
-    @SuppressWarnings("override")
     public void recibirDanio(int puntaje) {}
     
-    @Override
     public boolean puedeRomper() {
         return true;
     }
 
-    @SuppressWarnings("override")
     public int getPaddingTamanio() {
         return paddingTamanio;
     }
@@ -56,7 +52,6 @@ public class EstadoMarioEstrella implements EstadoMario {
         timer.cancel();
     }
 
-    @Override
     public int getModificador() {
         return 9;
     }

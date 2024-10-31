@@ -19,7 +19,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.Timer;
 
-@SuppressWarnings("override")
 public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     protected JFrame ventana;
@@ -70,7 +69,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     private void addWindowKeyListener() {
         ventana.addKeyListener(new KeyAdapter() {
-            @Override
+            
             public void keyPressed(KeyEvent event) {
 
                 int keyCode = event.getKeyCode();
@@ -92,7 +91,6 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
                 }
             }
 
-            @Override
             public void keyReleased(KeyEvent event) {
                 int keyCode = event.getKeyCode();
 
@@ -112,44 +110,35 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     public void reiniciarNivel(){
         miLogica.reiniciarNivel();
     }
+
     public Logica getLogica(){
         return miLogica;
     }
 
-    @SuppressWarnings("override")
-   public void accionarInicioJuego() {
-    // Create and show the level start panel
-    PanelPantallaInicioNivel panelInicioDeNivel = new PanelPantallaInicioNivel(this);
-    ventana.setContentPane(panelInicioDeNivel);
-    refrescar();
-    // Set up a Timer to switch to the game screen after 5 seconds (5000 milliseconds)
-    Timer timer = new Timer(4000, (ActionEvent e) -> {
+    public void accionarInicioJuego() {
+        // Create and show the level start panel
+        PanelPantallaInicioNivel panelInicioDeNivel = new PanelPantallaInicioNivel(this);
+        ventana.setContentPane(panelInicioDeNivel);
+        refrescar();
+        // Set up a Timer to switch to the game screen after 5 seconds (5000 milliseconds)
+        Timer timer = new Timer(4000, (ActionEvent e) -> {
         // Switch to the game screen and start the game
         panelPantallaJuego = new PanelPantallaJuego(GUI.this);
         ventana.setContentPane(panelPantallaJuego);
         miLogica.iniciarNivel();
         refrescar();
         ventana.requestFocusInWindow();
-    });
+        });
 
-    // Ensure the timer runs only once
-    timer.setRepeats(false);
-    timer.start();
-}
+        // Ensure the timer runs only once
+        timer.setRepeats(false);
+        timer.start();
+    }
 
     public void accionarPantallaPuntajes() {
         PanelPantallaPuntajes panelPantallaPuntajes = new PanelPantallaPuntajes(this, administradorPuntaje.obtenerArrayNombresJugadores(), administradorPuntaje.obtenerArrayScoreJugadores());
         ventana.setContentPane(panelPantallaPuntajes);
         refrescar();
-    }
-
-    public void accionarPantallaModoJuego() {
-        // To Do
-    }
-
-    public void cambiarModoJuego(int modo) {
-        // To Do
-        mostrarPantallaInicial();
     }
 
     public Observer registrarEntidad(EntidadLogica entidadLogica) {
@@ -180,13 +169,6 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         refrescar();
     }
 
-    
-
-    public void mostrarPantallaPasajeNivel() {
-       // ventana.setContentPane(panelPasajeNivel);
-        ventana.requestFocusInWindow();
-        refrescar();
-    }
     public void mostrarPantallaFinJuego() {
         ventana.setContentPane(panelPantallaFinDeJuego);
         refrescar();

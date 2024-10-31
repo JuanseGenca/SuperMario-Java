@@ -18,7 +18,6 @@ public class HiloPrincipal extends Thread {
         entidadesAEliminar = new ConcurrentLinkedQueue<>();
     }
 
-    @Override
     public void run() {
         while (ejecutando) {
             tick();

@@ -14,11 +14,10 @@ import PowerUps.PowerUp;
 import static java.lang.Thread.sleep;
 import java.util.List;
 
-//La clase tiene como 800 metodos de mario, hay que ver cuales se pueden eliminar
-
 
 public class Logica {
-    //Atributos de instancia
+    
+	//Atributos de instancia
 
     protected Parserint parseint;
     protected EntidadesFactory fabricaEntidades;
@@ -54,8 +53,6 @@ public class Logica {
 	private void actualizarFabricaEntidades(){
 		fabricaEntidades.setFabricaSprites(fabricaSprites);
 	}
-
-	
 
 	public GUI getGui(){
 		return gui;
