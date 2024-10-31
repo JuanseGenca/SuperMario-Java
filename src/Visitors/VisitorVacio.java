@@ -7,6 +7,8 @@ import Enemigos.Lakitu;
 import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.Mario;
+import Logica.ConstantesColisiones;
+import Logica.ConstantesEntidades;
 import PowerUps.ChampinionVerde;
 import PowerUps.Estrella;
 import PowerUps.Moneda;
@@ -31,10 +33,14 @@ public class VisitorVacio extends VisitorPlataforma{
     }
     
     public void visit(Lakitu l, int direccion){
-        if(l.getPosicionY() == 0){
-            l.cayoAlVacio = true;
+        if(direccion == ConstantesColisiones.DERECHA){
+            l.setPosicionx(l.getPosicionX() - 4);
+            l.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
-        l.aplicarGravedad();
+        if(direccion == ConstantesColisiones.IZQUIERDA){
+            l.setPosicionx(l.getPosicionX() + 4);
+            l.establecerDireccion(ConstantesEntidades.DERECHA);
+        }
     }
     
     public void visit(BuzzyBeetle b, int direccion){

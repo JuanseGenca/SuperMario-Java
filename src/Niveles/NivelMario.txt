@@ -1,13 +1,15 @@
 Mario:0,0
+Vacio:0,480
 Ladrillo Rompible:30,0
-Estrella:1210,0
-Super Champinion:1230,0
-Champinion Verde:1260,0
+Goomba:1210,0
+Buzzy Beetle:1230,0
+Koopa Troopa:1260,0
 Vacio:2050,1
 Vacio:2002,1
 Vacio:1954,1
 Meta:2100,48
 Lakitu:300,480
+Vacio:2100,480
 Goomba:650,0
 Buzzy Beetle:850,0
 Ladrillo Rompible:144,192
