@@ -21,6 +21,10 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
             m.setVelocidadX(0);
             m.setPosicionx(m.getPosicionX() + 2);
         }
+        if(direccion == ConstantesColisiones.ABAJO){
+            if(m.getVelocidadY() >= 0) 
+                m.setVelocidadY(0);
+        }
         if(direccion == ConstantesColisiones.ARRIBA){
             m.tocoSuelo();
         }

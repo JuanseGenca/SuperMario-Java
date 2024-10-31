@@ -78,4 +78,11 @@ public class Spiny extends Enemigo{
             direccion = ConstantesEntidades.QUIETO;
         }
     }
+
+    @SuppressWarnings("override")
+    public void recibirDanio(int puntaje) {
+        velocidadX = 0;
+        spriteActual = misSprites[0];
+        actualizar(direccion, estadoAereo);
+     }
 }
