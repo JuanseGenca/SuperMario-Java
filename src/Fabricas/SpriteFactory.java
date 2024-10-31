@@ -99,7 +99,7 @@ public abstract class SpriteFactory {
 	public Sprite[] getSpiny() {
 		Sprite[] devolver = new Sprite[1];
 
-		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/spiny.gif");
+		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/spiny_caminando.gif");
 
 		return devolver;
 	}
