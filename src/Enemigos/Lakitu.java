@@ -10,7 +10,7 @@ public class Lakitu extends Enemigo{
     private Timer timer;
     public Lakitu(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
-        puntaje=60; // Llama a spawnearSpiny cada 5000 ms (5 segundos)
+        puntaje=60;
     }
    
     @Override

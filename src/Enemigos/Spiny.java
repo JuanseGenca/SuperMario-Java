@@ -2,12 +2,14 @@ package Enemigos;
 import GUI.Sprite;
 import Logica.ConstantesEntidades;
 import Logica.Visitor;
+import Visitors.VisitorSpiny;
 
 public class Spiny extends Enemigo{
     protected int dirTickAnterior;
     public Spiny(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
         puntaje=60;
+        visitor=new VisitorSpiny(this);
         estadoAereo = ConstantesEntidades.AIRE;
         dirTickAnterior = ConstantesEntidades.IZQUIERDA;
     }
