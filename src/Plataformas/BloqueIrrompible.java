@@ -2,18 +2,16 @@ package Plataformas;
 
 import Entidades.Entidad;
 import GUI.Sprite;
-
-
 import Logica.Visitor;
 
 public abstract class BloqueIrrompible extends Plataforma{
-    //ATRIBUTOS
+    
     protected Entidad entidadContenida;
 
     public BloqueIrrompible(int x ,int y,Sprite sprite[]){
         super(x,y,sprite);
     }
-    @Override
+    
     public abstract void aceptar(Visitor v, int direccion);
     public abstract Entidad getEntidadContenida();
     public abstract void setEntidadContenida(Entidad e);

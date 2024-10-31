@@ -135,9 +135,6 @@ import PowerUps.SuperChampinion;
         }
 
         public void visit(BloqueIrrompible bi, int direccion) {
-            if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
-                bi.recibirDanio(0);
-            }
         }
 
         public void visit(BloquePregunta bp, int direccion){
