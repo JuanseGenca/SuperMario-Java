@@ -32,7 +32,7 @@ public class Lakitu extends Enemigo{
         }, 0, intervalo);
     }
 
-    private void detenerReloj() {
+    public void detenerReloj() {
         if (timer != null) {
             timer.cancel();
         }

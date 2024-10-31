@@ -130,4 +130,10 @@ public class Nivel {
 
     public void eliminarEntidad(Entidad entidad) {}
 
+    public void frenarTimerLakitus() {
+        for (Lakitu l : lakitus) {
+            l.detenerReloj();
+        }
+    }
+
 }

@@ -27,7 +27,9 @@ public class ChampinionVerde extends PowerUp{
         }
 
         actualizarHitboxes(posicionX, posicionY, ancho, alto);
-        miObserver.actualizar();
+        if(miObserver!=null) {
+            miObserver.actualizar();
+        }
     }
     
     public void aceptar(Visitor v, int direccion){

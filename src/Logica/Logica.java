@@ -183,6 +183,7 @@ public class Logica {
 		vidas--;
 		hilo2.parar();
 		hiloPrincipal.parar();
+		nivelActual.frenarTimerLakitus();
 		if (vidas == 0){
 			perdio();	
 		}else{
@@ -194,6 +195,7 @@ public class Logica {
 		manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
 		manejadorDeSonidos.detenerSonido(ConstantesSonidos.ESTRELLA);
 		manejadorDeSonidos.reproducirSonido(ConstantesSonidos.PASARNIVEL);
+		nivelActual.frenarTimerLakitus();
 		hilo2.parar();
 		hiloPrincipal.parar();
 		if(lvl!=3){
@@ -203,8 +205,8 @@ public class Logica {
 			}
 			else{
 				gui.mostrarPantallaVictoria();
-				boolean top5Concretado = gui.top5();
-	    		if (top5Concretado) {    
+	    		if (gui.top5()) {    
+					manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
 	       			gui.mostrarPantallaInicial();
 	   			 }
 			}				
@@ -232,9 +234,8 @@ public class Logica {
 			System.err.println(e.getMessage());
 		}
 	    
-	    boolean top5Concretado = gui.top5();
-	    
-	    if (top5Concretado) {    
+	    if (gui.top5()) {    
+			manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
 	        gui.mostrarPantallaInicial();
 	    }
 	}
