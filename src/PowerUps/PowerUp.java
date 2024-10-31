@@ -8,12 +8,15 @@ import Logica.Visitor;
 
 public abstract class PowerUp extends Entidad{
     
+    public boolean cayoAlVacio;
+
     public PowerUp(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
         velocidadX = 2;
         velocidadY = 4;
         direccion = ConstantesEntidades.DERECHA;
         tocandoSuelo = true;
+        cayoAlVacio = false;
     }
     
     public abstract void aceptar(Visitor visitor, int direccion);
@@ -37,10 +40,14 @@ public abstract class PowerUp extends Entidad{
        
         posicionY -= velocidadY;
         
-        if (miHitboxes.getHitbox().getY() < 0) {
+        if (miHitboxes.getHitbox().getY() < 0 && !cayoAlVacio) {
             posicionY = 0;
             tocandoSuelo = true;
             }
+
+        if(posicionY < -200){
+            eliminar();
+        }
     }
 
 }

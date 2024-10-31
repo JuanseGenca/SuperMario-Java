@@ -14,6 +14,7 @@ public class Mario extends Entidad implements EntidadJugador{
     protected Logica miLogica;
     private int dirTickAnterior;
     protected boolean invencible;
+    public boolean cayoAlVacio;
     
 
     public Mario(int x, int y,Sprite[] sprites){
@@ -22,6 +23,7 @@ public class Mario extends Entidad implements EntidadJugador{
         tocandoSuelo = true;
         estadoAereo = ConstantesEntidades.SUELO;
         visitor= new VisitorMario(this);
+        cayoAlVacio = false;
     }
 
     @Override
@@ -71,7 +73,7 @@ public class Mario extends Entidad implements EntidadJugador{
             velocidadY = Math.max(velYActual + gravedad, velTerminal);
             estadoAereo = ConstantesEntidades.AIRE;
             tocandoSuelo = false;
-            if(posicionY <= 0) {
+            if(posicionY <= 0 && !cayoAlVacio) {
                 tocandoSuelo = true;
                 estadoAereo = ConstantesEntidades.SUELO;
             } else {posicionY += velocidadY;}
@@ -180,7 +182,7 @@ public class Mario extends Entidad implements EntidadJugador{
             tocandoSuelo = false;
         } else {
             velYActual = Math.max(velYActual + gravedad, velTerminal);
-            if (miHitboxes.getHitbox().getY() < 0) {
+            if (miHitboxes.getHitbox().getY() < 0 && !cayoAlVacio) {
                 velYActual = 0;
                 posicionY = estado.getPaddingTamanio();
                 tocandoSuelo = true;
@@ -190,6 +192,10 @@ public class Mario extends Entidad implements EntidadJugador{
         }
 
         velocidadY = velYActual;
+
+        if(posicionY < -200){
+            morir();
+        }
     }
 
     private void actualizarSprite() {
