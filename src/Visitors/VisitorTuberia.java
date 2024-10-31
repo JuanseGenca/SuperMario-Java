@@ -79,13 +79,10 @@ public class VisitorTuberia extends VisitorPlataforma{
     
     public void visit(Spiny s, int direccion){
         if(s.getDireccion()==ConstantesEntidades.DERECHA){
-            s.setVelocidadX(0);
-            s.setPosicionx(s.getPosicionX() - 4);
             s.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }else if(s.getDireccion()==ConstantesEntidades.IZQUIERDA){
-                s.setPosicionx(s.getPosicionX() + 4);
                 s.establecerDireccion(ConstantesEntidades.DERECHA);
-         }
+            }
     }
 
     public void visit(Estrella e,int direccion){
