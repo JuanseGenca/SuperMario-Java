@@ -1,5 +1,6 @@
 package ParseInt;
 
+import Enemigos.Lakitu;
 import Entidades.ManejadorEntidades;
 import Fabricas.EntidadesFactory;
 import Logica.Logica;
@@ -101,7 +102,9 @@ public class Parserint {
                     case "Lakitu":
                         int lakituX = Integer.parseInt(parametros[0]);
                         int lakituY = Integer.parseInt(parametros[1]);
-                        nivelActual.agregarEnemigo(fabricaEnt.crearLakitu(lakituX,lakituY));
+                        Lakitu lakitu = fabricaEnt.crearLakitu(lakituX, lakituY);
+                        nivelActual.agregarEnemigo(lakitu);
+                        nivelActual.agregarLakitu(lakitu);
                         break;
                     case "Piranha Plant":
                         int piranhaPlantX = Integer.parseInt(parametros[0]);

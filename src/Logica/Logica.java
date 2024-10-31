@@ -79,7 +79,8 @@ public class Logica {
 		hilo2.start();
 		hiloPrincipal = new HiloPrincipal(this,nivelActual.getMario());
 		hiloPrincipal.start();
-		manejadorDeSonidos.reproducirSonido(nivelActual.getNumeroNivel());	
+		manejadorDeSonidos.reproducirSonido(nivelActual.getNumeroNivel());
+		nivelActual.iniciarTimerLakitus();	
 	}
 
     protected void registrarObservers() {

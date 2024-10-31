@@ -1,12 +1,16 @@
 package Enemigos;
 
+import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Lakitu extends Enemigo{
+    private Timer timer;
     public Lakitu(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
-        puntaje=60;
+        puntaje=60; // Llama a spawnearSpiny cada 5000 ms (5 segundos)
     }
    
     @Override
@@ -14,4 +18,30 @@ public class Lakitu extends Enemigo{
         v.visit(this, direccion);
     }
     
+    private void spawnearSpiny(){
+        ManejadorEntidades.getInstancia().crearSpiny(posicionX, posicionY);
+    }
+
+    public void iniciarReloj(long intervalo) {
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                spawnearSpiny();
+            }
+        }, 0, intervalo);
+    }
+
+    private void detenerReloj() {
+        if (timer != null) {
+            timer.cancel();
+        }
+    }
+
+    @SuppressWarnings("override")
+    public void eliminar(){
+        detenerReloj();
+        ManejadorEntidades.getInstancia().eliminarEnemigo(this);
+        miObserver.eliminar();
+    }
 }

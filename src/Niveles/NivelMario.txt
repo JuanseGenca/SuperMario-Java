@@ -4,7 +4,7 @@ Meta:2100,48
 Lakitu:300,480
 Goomba:650,0
 Buzzy Beetle:850,0
-Spiny:144,384
+Ladrillo Rompible:144,192
 Ladrillo Rompible:534,192
 Ladrillo Rompible:438,192
 Ladrillo Rompible:342,192

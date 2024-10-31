@@ -1,6 +1,7 @@
 package Entidades;
 
 import Enemigos.Enemigo;
+import Enemigos.Spiny;
 import Fabricas.EntidadesFactory;
 import GUI.Observer;
 import GUI.ObserverEntidades;
@@ -96,6 +97,11 @@ public class ManejadorEntidades {
         superChampinion.setObserver(observerSuperChampinion);
     }
 
-
+    public void crearSpiny(int x, int y){
+        Spiny spiny = fabricaEnt.crearSpiny(x, y);
+        nivel.agregarEnemigo(spiny);
+        Observer observerSpiny = miLogica.getGui().registrarEntidad(spiny);
+        spiny.setObserver(observerSpiny);
+    }
 }
 

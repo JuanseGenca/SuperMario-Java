@@ -13,6 +13,7 @@ public class Nivel {
     protected ArrayList<Plataforma> plataformas;
     protected ArrayList<PowerUp> powerUps;
     protected ArrayList<BolaDeFuego> bolasFuego;
+    protected ArrayList<Lakitu> lakitus;
     protected Mario jugador;
     protected Silueta silueta;
     protected int numeroNivel;
@@ -25,6 +26,7 @@ public class Nivel {
         plataformas = new ArrayList<>();
         powerUps = new ArrayList<>();
         bolasFuego = new ArrayList<>();
+        lakitus = new ArrayList<>();
         manejadorDeColisiones = new ManejadorDeColisiones();
     }
 
@@ -111,6 +113,18 @@ public class Nivel {
         if(bolasFuego.contains(bola)){
             bolasFuego.remove(bola);
             manejadorDeColisiones.eliminarEntidad(bola);
+        }
+    }
+
+    public void agregarLakitu(Lakitu lakitu){
+        if(lakitu!=null){
+            lakitus.add(lakitu);
+        }
+    }
+
+    public void iniciarTimerLakitus() {
+        for (Lakitu l : lakitus) {
+            l.iniciarReloj(10000);
         }
     }
 
