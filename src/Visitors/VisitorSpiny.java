@@ -10,7 +10,6 @@ public class VisitorSpiny extends VisitorEnemigo{
         super(enemigo);
     }
 
-    @Override
     public void visit(Mario m, int direccion) { 
         if(direccion == ConstantesColisiones.ARRIBA||direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA) {
             m.recibirDanio(enemigo.getPuntaje());

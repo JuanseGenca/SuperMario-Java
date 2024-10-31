@@ -8,13 +8,14 @@ import Entidades.Mario;
 import Logica.ConstantesColisiones;
 
 public class VisitorKoopaTroopa extends VisitorEnemigo {
+
     KoopaTroopa kt;
+
     public VisitorKoopaTroopa(KoopaTroopa enemigo){
         super(enemigo);
         kt = enemigo;
     }
 
-    @Override
     public void visit(KoopaTroopa k, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             k.recibirDanio();
@@ -22,7 +23,6 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
         }
     }
 
-    @Override
     public void visit(Goomba g, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             g.recibirDanio(0);
@@ -30,7 +30,6 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
         }
     }
 
-    @Override
     public void visit(Lakitu l, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             l.recibirDanio(0);
@@ -38,7 +37,6 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
         }
     }
 
-    @Override
     public void visit(BuzzyBeetle b, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             b.recibirDanio(0);
@@ -46,7 +44,6 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
         }
     }
 
-    @Override
     public void visit(Mario m, int direccion) {
         if(direccion == ConstantesColisiones.ARRIBA) {
             m.setPosicionY(m.getPosicionY() + 16);

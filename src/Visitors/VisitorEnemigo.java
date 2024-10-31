@@ -14,30 +14,25 @@ import PowerUps.*;
 
 
 public class VisitorEnemigo implements Visitor {
+
     protected Enemigo enemigo;
+
     public VisitorEnemigo(Enemigo enemigo) {
         this.enemigo = enemigo;
     }
 
-    @Override
     public void visit(KoopaTroopa k, int direccion) {}
     
-    @Override
     public void visit(Goomba g, int direccion) {}
     
-    @Override
     public void visit(Lakitu l, int direccion) {}
     
-    @Override
     public void visit(BuzzyBeetle b, int direccion) {}
     
-    @Override
     public void visit(PiranhaPlant p, int direccion) {}
     
-    @Override
     public void visit(Spiny s, int direccion) {}
     
-    @Override
     public void visit(Mario m, int direccion) { 
         if(direccion == ConstantesColisiones.ARRIBA) {
             m.setPosicionY(m.getPosicionY() + 8);
@@ -50,46 +45,33 @@ public class VisitorEnemigo implements Visitor {
         }
     }
     
-    @Override
     public void visit(ChampinionVerde cv, int direccion) {}
     
-    @Override
     public void visit(SuperChampinion sc, int direccion) {}
     
-    @Override
     public void visit(FlorDeFuego f, int direccion) {}
     
-    @Override
     public void visit(Moneda m, int direccion) {}
     
-    @Override
     public void visit(Plataforma p, int direccion) {}
     
-    @Override
     public void visit(Estrella e, int direccion) {}
     
-    @Override
     public void visit(LadrilloRompible lr, int direccion) {}
     
-    @Override
     public void visit(BloqueIrrompible bi, int direccion) {}
     
-    @Override
     public void visit(Meta m, int direccion) {}
     
-    @Override
     public void visit(Vacio v, int direccion) {}
     
-    @Override
     public void visit(PowerUp pu, int direccion) {}
     
-    @Override
     public void visit(BolaDeFuego bf, int direccion) {
         bf.eliminar();
         bf.recibirDanio(0);
     }
 
-    @Override
-    public void visit(BloquePregunta bp,int direccion){
-    }
+    public void visit(BloquePregunta bp,int direccion){}
+    
 }

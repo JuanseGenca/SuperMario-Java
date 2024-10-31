@@ -25,13 +25,13 @@ import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
     public class VisitorMario implements Visitor {
+
         protected Mario mario;
 
         public VisitorMario(Mario mario) {
             this.mario = mario;
         }
 
-        @Override
         public void visit(KoopaTroopa k, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA |  direccion == ConstantesColisiones.ABAJO) {
                 k.recibirDanio();
@@ -44,7 +44,6 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        @Override
         public void visit(Goomba g, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
                 g.recibirDanio(0);
@@ -54,7 +53,6 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        @Override
         public void visit(Lakitu l, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
                 l.recibirDanio(0);
@@ -64,7 +62,6 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        @Override
         public void visit(BuzzyBeetle b, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
                 b.recibirDanio(0);
@@ -74,7 +71,6 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        @Override
         public void visit(PiranhaPlant p, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA) {
                 p.recibirDanio(0);
@@ -84,7 +80,6 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        @Override
         public void visit(Spiny s, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA) {
                 s.recibirDanio(0);
@@ -94,51 +89,43 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        @Override
         public void visit(Mario m, int direccion) {
             System.out.println("si alguien alguna vez llega a ver este mensaje en la terminal, es momento de dejar la carrera");
         }
 
-        @Override
         public void visit(ChampinionVerde cv, int direccion) {
             mario.actualizarPuntaje(100);
             mario.reproducirSonido(ConstantesSonidos.POWERUP); 
             cv.eliminar();
         }
 
-        @Override
         public void visit(SuperChampinion sc, int direccion) {
             mario.actualizarPuntaje(puntajeSuperChampinion());
             mario.reproducirSonido(ConstantesSonidos.POWERUP); 
             sc.eliminar();
         }
 
-        @Override
         public void visit(FlorDeFuego f, int direccion) {
             mario.actualizarPuntaje(puntajeFlorDeFuego());
             mario.reproducirSonido(ConstantesSonidos.POWERUP); 
             f.eliminar();
         }
 
-        @Override
         public void visit(Moneda m, int direccion) {
             mario.actualizarPuntaje(5);
             mario.reproducirSonido(ConstantesSonidos.MONEDA); 
             m.eliminar();
         }
 
-        @Override
         public void visit(Plataforma p, int direccion) {
         }
 
-        @Override
         public void visit(Estrella e, int direccion) {
             mario.actualizarPuntaje(puntajeEstrella());
             mario.reproducirSonido(ConstantesSonidos.POWERUP); 
             e.eliminar();
         }
 
-        @Override
         public void visit(LadrilloRompible lr, int direccion) {
             if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
                 mario.reproducirSonido(ConstantesSonidos.ROMPERPLATAFORMA); 
@@ -147,14 +134,12 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        @Override
         public void visit(BloqueIrrompible bi, int direccion) {
             if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
                 bi.recibirDanio(0);
             }
         }
 
-        @SuppressWarnings("override")
         public void visit(BloquePregunta bp, int direccion){
             if(direccion == ConstantesColisiones.ARRIBA){
                 mario.reproducirSonido(ConstantesSonidos.ROMPERPLATAFORMA); //Agregar sonido de que sale el power up
@@ -163,36 +148,28 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        @Override
-        public void visit(Meta m, int direccion) {
-        }
+        public void visit(Meta m, int direccion) {}
 
-        @Override
-        public void visit(Vacio v, int direccion) {
-        }
+        public void visit(Vacio v, int direccion) {}
 
-        @Override
-        public void visit(PowerUp pu, int direccion) {
-        }
+        public void visit(PowerUp pu, int direccion) {}
 
-        @Override
-        public void visit(BolaDeFuego bf, int direccion) {
-        }
+        public void visit(BolaDeFuego bf, int direccion) {}
 
-    private int puntajeEstrella() {
-        int puntos;
-            switch (mario.getEstado().getModificador()) {
-                case ConstantesPowerUp.ESTRELLA:
-                    puntos = 35;
-                    break;
-                case ConstantesPowerUp.SUPERCHAMPINION:
-                    puntos = 30;
-                    break;
-                default:
-                    puntos = 20;
-            }
+        private int puntajeEstrella() {
+            int puntos;
+                switch (mario.getEstado().getModificador()) {
+                    case ConstantesPowerUp.ESTRELLA:
+                        puntos = 35;
+                        break;
+                    case ConstantesPowerUp.SUPERCHAMPINION:
+                        puntos = 30;
+                        break;
+                    default:
+                        puntos = 20;
+                }
             return puntos;
-    }
+        }
 
     private int puntajeFlorDeFuego() {
         int puntos;
