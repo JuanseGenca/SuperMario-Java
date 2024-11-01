@@ -4,6 +4,7 @@ import Enemigos.BuzzyBeetle;
 import Enemigos.Goomba;
 import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
+import Enemigos.Spiny;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 
@@ -41,6 +42,13 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
             b.recibirDanio(0);
             b.eliminar();
+        }
+    }
+
+    public void visit(Spiny s, int direccion) {
+        if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
+            s.recibirDanio(0);
+            s.eliminar();
         }
     }
 
