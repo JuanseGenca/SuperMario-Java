@@ -65,7 +65,7 @@ public class VisitorVacio extends VisitorPlataforma{
     }
     
     public void visit(Mario m, int direccion){
-        if(m.getPosicionY() == 0){
+        if(m.sobreY0()){
             m.cayoAlVacio = true;
         }
         m.aplicarGravedad();

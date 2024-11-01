@@ -285,4 +285,8 @@ public class Mario extends Entidad implements EntidadJugador{
         miLogica.siguienteNivel();
     }
 
+    public boolean sobreY0(){
+        return posicionY - estado.getPaddingTamanio() == 0;
+    }
+
 }
