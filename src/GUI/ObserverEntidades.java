@@ -12,6 +12,10 @@ public class ObserverEntidades extends ObserverGrafico {
 		actualizar();
 	}
 
+	public int getZIndex() {
+		return entidadObservada.getZIndex();
+	}
+
 	public void eliminar(){
 		ManejadorEntidades.getInstancia().eliminarObserver(this);
 	}
