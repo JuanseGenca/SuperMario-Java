@@ -1,5 +1,8 @@
 package Visitors;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import Enemigos.BuzzyBeetle;
 import Enemigos.Goomba;
 import Enemigos.KoopaTroopa;
@@ -49,7 +52,13 @@ import PowerUps.SuperChampinion;
                 g.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(60);
-                g.eliminar();
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    g.eliminar();
+                }
+                }, 300);
             }
         }
 
@@ -67,7 +76,13 @@ import PowerUps.SuperChampinion;
                 b.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(30);
-                b.eliminar();
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    b.eliminar();
+                }
+                }, 300);
             }
         }
 
