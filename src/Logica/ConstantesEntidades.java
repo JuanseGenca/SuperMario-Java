@@ -17,6 +17,6 @@ public class ConstantesEntidades {
     public static final int SPRITESALTAR = 2;
 
     //Constante ZIndex
-    public static final int PRIORIDAD = 1;
-    public static final int FONDO = 0;
+    public static final int PRIORIDAD = 0;
+    public static final int FONDO = 1;
 }

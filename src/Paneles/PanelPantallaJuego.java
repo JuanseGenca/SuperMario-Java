@@ -2,15 +2,20 @@ package Paneles;
 
 import Entidades.*;
 import GUI.*;
+import Logica.ConstantesEntidades;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.Toolkit;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JViewport;
@@ -18,10 +23,11 @@ import javax.swing.JViewport;
 public class PanelPantallaJuego extends JPanel {
 
     private static final long serialVersionUID = -1366756178696496543L;
-    private JPanel panelJuego;
+    private JLayeredPane panelJuego;
     private JPanel panelInformacion;
     private JLabel imagenFondoPanelJuego;
     private JLabel imagenFondoPanelInformacion;
+    private JLabel primerLayerEntidades, segundoLayerEntidades;
     private JScrollPane panelPantallaJuego;
     private JLabel labelPuntaje;
     private JLabel labelMonedas;
@@ -50,13 +56,18 @@ public class PanelPantallaJuego extends JPanel {
 
     public Observer incorporarEntidad(EntidadLogica entidadLogica) {
         ObserverEntidades observerEntidad = new ObserverEntidades(entidadLogica);
-        imagenFondoPanelJuego.add(observerEntidad);
+        if(entidadLogica.getZIndex() == ConstantesEntidades.PRIORIDAD) {
+            primerLayerEntidades.add(observerEntidad);
+        } 
+        else {System.out.println(entidadLogica);
+            imagenFondoPanelJuego.add(observerEntidad);}
+
         return observerEntidad;
     }
 
     public Observer incorporarEntidadJugador(EntidadJugador entidadJugador) {
         ObserverJugador observerJugador = new ObserverJugador(this, entidadJugador);
-        imagenFondoPanelJuego.add(observerJugador);
+        primerLayerEntidades.add(observerJugador);
         actualizarInfoJugador(entidadJugador);
         return observerJugador;
     }
@@ -170,9 +181,22 @@ public class PanelPantallaJuego extends JPanel {
         imagenFondoPanelJuego.setLayout(null);
         imagenFondoPanelJuego.setBounds(0, 0, ConstantesVistas.PANEL_JUEGO_ANCHO, ConstantesVistas.PANEL_ALTO);
 
-        panelJuego = new JPanel(null);
+        primerLayerEntidades = new JLabel();
+        primerLayerEntidades.setLayout(null);
+        primerLayerEntidades.setBounds(0, 0, 5000, 1000);
+
+        segundoLayerEntidades = new JLabel();
+        segundoLayerEntidades.setLayout(null);
+        segundoLayerEntidades.setBounds(0, 0, 5000, 1000);
+
+        panelJuego = new JLayeredPane();
         panelJuego.setPreferredSize(new Dimension(ConstantesVistas.PANEL_JUEGO_ANCHO, ConstantesVistas.PANEL_ALTO));
-        panelJuego.add(imagenFondoPanelJuego);
+        panelJuego.add(imagenFondoPanelJuego,2);
+        panelJuego.add(segundoLayerEntidades,1);
+        panelJuego.add(primerLayerEntidades,0);
+
+        panelJuego.revalidate();
+        panelJuego.repaint();
 
         panelPantallaJuego = new JScrollPane(panelJuego);
         panelPantallaJuego.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
