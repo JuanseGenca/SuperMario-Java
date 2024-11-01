@@ -16,6 +16,11 @@ public class Meta extends Plataforma{
         v.visit(this, direccion);
     }
 
+    public void pasarNivel() {
+        spriteActual = misSprites[1];
+        actualizar(direccion, estadoAereo);
+    }
+
     public void mover(){
     }
 }

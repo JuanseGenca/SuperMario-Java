@@ -145,7 +145,9 @@ import PowerUps.SuperChampinion;
             }
         }
 
-        public void visit(Meta m, int direccion) {}
+        public void visit(Meta m, int direccion) {
+            m.pasarNivel();
+        }
 
         public void visit(Vacio v, int direccion) {}
 

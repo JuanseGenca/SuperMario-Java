@@ -198,7 +198,7 @@ public class Mario extends Entidad implements EntidadJugador{
         }
     }
 
-    private void actualizarSprite() {
+    public void actualizarSprite() {
         Sprite nuevoSprite = misSprites[ConstantesEntidades.SPRITEQUIETO + estado.getModificador()];
 
         if(ConstantesEntidades.AIRE == estadoAereo) {

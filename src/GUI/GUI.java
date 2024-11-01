@@ -116,13 +116,10 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     }
 
     public void accionarInicioJuego() {
-        // Create and show the level start panel
         PanelPantallaInicioNivel panelInicioDeNivel = new PanelPantallaInicioNivel(this);
         ventana.setContentPane(panelInicioDeNivel);
         refrescar();
-        // Set up a Timer to switch to the game screen after 5 seconds (5000 milliseconds)
         Timer timer = new Timer(4000, (ActionEvent e) -> {
-        // Switch to the game screen and start the game
         panelPantallaJuego = new PanelPantallaJuego(GUI.this);
         ventana.setContentPane(panelPantallaJuego);
         miLogica.iniciarNivel();

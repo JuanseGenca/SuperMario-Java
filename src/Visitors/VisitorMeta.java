@@ -1,6 +1,7 @@
 package Visitors;
 
 import Entidades.Mario;
+import Logica.ConstantesEntidades;
 
 public class VisitorMeta extends VisitorPlataforma {
     
@@ -8,6 +9,7 @@ public class VisitorMeta extends VisitorPlataforma {
     }
 
     public void visit(Mario m, int direccion) {
+        m.actualizar(ConstantesEntidades.QUIETO, m.getEstadoAereo());
         m.siguienteNivel();
     }
 }

@@ -7,12 +7,16 @@ import Entidades.Mario;
 import Fabricas.*;
 import GUI.GUI;
 import GUI.Observer;
+import java.awt.event.ActionEvent;
 import Nivel.Nivel;
 import Nivel.Silueta;
+import Paneles.PanelPantallaJuego;
 import ParseInt.Parserint;
 import PowerUps.PowerUp;
 import static java.lang.Thread.sleep;
 import java.util.List;
+
+import javax.swing.Timer;
 
 
 public class Logica {
@@ -195,18 +199,25 @@ public class Logica {
 		nivelActual.frenarTimerLakitus();
 		hilo2.parar();
 		hiloPrincipal.parar();
-		if(lvl!=3){
-			lvl++;
-			manejadorDeSonidos.detenerSonido(ConstantesSonidos.PASARNIVEL);
-			gui.accionarInicioJuego();
-			}
-			else{
-				gui.mostrarPantallaVictoria();
-	    		if (gui.top5()) {    
-					manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
-	       			gui.mostrarPantallaInicial();
-	   			 }
-			}				
+
+		Timer timer = new Timer(8000, (ActionEvent e) -> {
+			
+			if(lvl!=3){
+				lvl++;
+				manejadorDeSonidos.detenerSonido(ConstantesSonidos.PASARNIVEL);
+				gui.accionarInicioJuego();
+				}
+				else{
+					gui.mostrarPantallaVictoria();
+					if (gui.top5()) {    
+						manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
+						   gui.mostrarPantallaInicial();
+						}
+				}	
+        });
+
+		timer.setRepeats(false);
+        timer.start();		
 	}
 
 	public int getPuntaje() {
