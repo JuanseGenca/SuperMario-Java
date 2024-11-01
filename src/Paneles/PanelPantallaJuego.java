@@ -81,7 +81,8 @@ public class PanelPantallaJuego extends JPanel {
     }
 
     public void eliminarEntidad(ObserverEntidades observerEntidades){
-        imagenFondoPanelJuego.remove(observerEntidades);
+        primerLayerEntidades.remove(observerEntidades);
+        primerLayerEntidades.repaint();
     }
 
     public void actualizarInfoJugador(EntidadJugador jugador) {

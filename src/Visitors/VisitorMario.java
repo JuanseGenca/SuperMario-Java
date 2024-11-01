@@ -1,5 +1,4 @@
 package Visitors;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -52,13 +51,18 @@ import PowerUps.SuperChampinion;
                 g.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(60);
-                Timer timer = new Timer();
-                timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
+                if(mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA){
                     g.eliminar();
                 }
+                else {
+                    Timer timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        g.eliminar();
+                    }
                 }, 300);
+                }
             }
         }
 
@@ -76,13 +80,18 @@ import PowerUps.SuperChampinion;
                 b.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(30);
-                Timer timer = new Timer();
-                timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
+                if(mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA){
                     b.eliminar();
                 }
+                else {
+                    Timer timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        b.eliminar();
+                    }
                 }, 300);
+                }
             }
         }
 
