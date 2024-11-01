@@ -4,10 +4,7 @@ Ladrillo Rompible:30,0
 Goomba:1210,0
 Buzzy Beetle:1230,0
 Koopa Troopa:1260,0
-Vacio:2050,1
-Vacio:2002,1
-Vacio:1954,1
-Meta:2100,48
+Meta:4300,48
 Lakitu:300,480
 Vacio:2100,480
 Goomba:650,0
@@ -28,3 +25,8 @@ Vacio:390,400
 Vacio:486,400
 Tuberia:1152,144
 Piranha Plant:1176,144
+Vacio:2590,1
+Vacio:3164,1
+Vacio:3212,1
+Vacio:3260,1
+Vacio:3270,1
