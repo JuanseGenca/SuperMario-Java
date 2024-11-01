@@ -14,9 +14,8 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getSilueta(int numero) {
 		Sprite[] devolver = new Sprite[1];
-
+		System.out.println(rutaCarpeta);
 		devolver[0] = new Sprite(rutaCarpeta +  "/fondo-nivel.png");
-
 		return devolver;
 	}
 	

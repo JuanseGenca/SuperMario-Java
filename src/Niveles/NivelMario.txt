@@ -3,7 +3,7 @@ Vacio:0,480
 Ladrillo Rompible:30,0
 Goomba:1210,0
 Buzzy Beetle:1600,0
-Koopa Troopa:2000,24
+Koopa Troopa:2000,0
 Meta:4300,48
 Lakitu:300,480
 Vacio:2100,480

@@ -3,7 +3,7 @@ package Fabricas;
 
 public class SpritesMarioModo2 extends SpriteFactory {
     public SpritesMarioModo2(){
-        super("sdsadsada");
+        super("Imagenes//Modo2/");
     }
     
 }
