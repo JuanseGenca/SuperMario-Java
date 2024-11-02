@@ -1,6 +1,5 @@
 package GUI;
 
-import Entidades.Entidad;
 import Entidades.EntidadLogica;
 import Logica.ConstantesEntidades;
 import java.awt.Graphics2D;
@@ -8,12 +7,8 @@ import java.awt.Image;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-import java.time.zone.ZoneRulesProvider;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
-import Enemigos.PiranhaPlant;
 
 public abstract class ObserverGrafico extends JLabel implements Observer {
     

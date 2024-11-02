@@ -22,7 +22,7 @@ public class AdministradorPuntaje {
         scoreActual=scoreActual+puntos;
     }
 
-    public boolean entro_en_el_top5()
+    public boolean entroEnElTop5()
     {
         return (scoreActual>0 && (topPuntaje.obtenerListadeJugadores().size()<5 || topPuntaje.obtenerListadeJugadores().peek().getScore()<=scoreActual));
     }

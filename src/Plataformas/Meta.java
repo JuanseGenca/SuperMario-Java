@@ -6,14 +6,14 @@ import Visitors.VisitorMeta;
 
 public class Meta extends Plataforma{
     
-    public Meta(int x, int y,Sprite[] sprite){
-        super(x,y, sprite);
+    public Meta(int posicionX ,int posicionY,Sprite sprite[]){
+        super(posicionX,posicionY,sprite);
         visitor = new VisitorMeta();
         actualizarHitboxes(posicionX, posicionY-24, ancho, alto);
     }
 
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
 
     public void pasarNivel() {

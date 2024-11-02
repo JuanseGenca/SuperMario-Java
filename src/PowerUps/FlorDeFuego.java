@@ -6,8 +6,8 @@ import Visitors.VisitorFlorDeFuego;
 
 public class FlorDeFuego extends PowerUp{
     
-    public FlorDeFuego(int x, int y,Sprite[] sprite){
-        super(x,y, sprite);
+    public FlorDeFuego(int posicionX, int posicionY,Sprite[] sprite){
+        super(posicionX, posicionY, sprite);
         visitor=new VisitorFlorDeFuego();
     }
 
@@ -15,8 +15,8 @@ public class FlorDeFuego extends PowerUp{
         
     }
     
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
     
 }

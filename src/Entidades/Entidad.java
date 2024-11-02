@@ -61,21 +61,21 @@ public abstract class Entidad implements EntidadLogica{
       return miObserver;
    }
 
-   public void setVelocidadX(double vX) {
-      velocidadX = vX;
+   public void setVelocidadX(double velocidadX) {
+      this.velocidadX = velocidadX;
    }
 
-   public void setVelocidadY(double vY) {
-      velocidadY = vY;
+   public void setVelocidadY(double velocidadY) {
+      this.velocidadY = velocidadY;
    }
 
    //testeando para que mario no atraviese cosas
-   public void setPosicionx(int x){
-      posicionX = x;
+   public void setPosicionx(int posicionX){
+      this.posicionX = posicionX;
    }
 
-   public void setPosicionY(int y){
-      posicionY = y;
+   public void setPosicionY(int posicionY){
+      this.posicionY = posicionY;
    }
 
    public double getVelocidadX() {
@@ -112,8 +112,8 @@ public abstract class Entidad implements EntidadLogica{
 
    public abstract void mover();
 
-   public void establecerDireccion(int x){
-      direccion = x;
+   public void establecerDireccion(int direccion){
+      this.direccion = direccion;
    }
 
    public int getDireccion(){
@@ -125,8 +125,8 @@ public abstract class Entidad implements EntidadLogica{
       return ConstantesEntidades.PRIORIDAD;
   }
 
-   public void establecerEstadoAereo(int x){
-      estadoAereo = x;
+   public void establecerEstadoAereo(int estadoAereo){
+      this.estadoAereo = estadoAereo;
       mover();
    }
 

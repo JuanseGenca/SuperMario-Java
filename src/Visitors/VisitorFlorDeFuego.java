@@ -8,9 +8,9 @@ public class VisitorFlorDeFuego extends VisitorPowerUp{
     public VisitorFlorDeFuego() {
     }
 
-    public void visit(Mario m, int direccion){
-        if(m.getEstado().getModificador()!=ConstantesPowerUp.ESTRELLA){
-            m.setEstado(new EstadoMarioFuego(m));
+    public void visit(Mario mario, int direccion){
+        if(mario.getEstado().getModificador()!=ConstantesPowerUp.ESTRELLA){
+            mario.setEstado(new EstadoMarioFuego(mario));
         }
     }
 }

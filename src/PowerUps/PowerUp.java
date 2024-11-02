@@ -10,8 +10,8 @@ public abstract class PowerUp extends Entidad{
     
     public boolean cayoAlVacio;
 
-    public PowerUp(int x, int y,Sprite[] sprite){
-        super(x,y,sprite);
+    public PowerUp(int posicionX, int posicionY,Sprite[] sprite){
+        super(posicionX, posicionY, sprite);
         velocidadX = 2;
         velocidadY = 4;
         direccion = ConstantesEntidades.DERECHA;

@@ -21,8 +21,10 @@ public abstract class Enemigo extends Entidad{
         visitor = new VisitorEnemigo(this);
     }
     
+    @SuppressWarnings("override")
     public abstract void aceptar(Visitor v, int direccion);
     
+    @SuppressWarnings("override")
     public void mover(){
         
         if(direccion == ConstantesEntidades.DERECHA){

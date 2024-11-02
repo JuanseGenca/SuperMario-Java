@@ -8,9 +8,9 @@ public class VisitorSuperChampinion extends VisitorPowerUp {
     public VisitorSuperChampinion() {
     }
 
-    public void visit(Mario m, int direccion) {
-        if(m.getEstado().getModificador()!=ConstantesPowerUp.ESTRELLA && m.getEstado().getModificador()!=ConstantesPowerUp.FLORDEFUEGO ){
-            m.setEstado(new EstadoSuperMario(m));
+    public void visit(Mario mario, int direccion) {
+        if(mario.getEstado().getModificador()!=ConstantesPowerUp.ESTRELLA && mario.getEstado().getModificador()!=ConstantesPowerUp.FLORDEFUEGO ){
+            mario.setEstado(new EstadoSuperMario(mario));
         }
     }
 }

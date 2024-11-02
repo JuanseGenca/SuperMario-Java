@@ -8,8 +8,8 @@ public class VisitorMeta extends VisitorPlataforma {
     public VisitorMeta() {
     }
 
-    public void visit(Mario m, int direccion) {
-        m.actualizar(ConstantesEntidades.QUIETO, m.getEstadoAereo());
-        m.siguienteNivel();
+    public void visit(Mario mario, int direccion) {
+        mario.actualizar(ConstantesEntidades.QUIETO, mario.getEstadoAereo());
+        mario.siguienteNivel();
     }
 }

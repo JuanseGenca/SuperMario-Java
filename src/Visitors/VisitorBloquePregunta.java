@@ -17,139 +17,138 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
 
     public VisitorBloquePregunta(){
     }
-    
-    public void visit(Mario m, int direccion){
+    public void visit(Mario mario, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            m.setVelocidadX(0);
-            m.setPosicionx(m.getPosicionX() - 2);
+            mario.setVelocidadX(0);
+            mario.setPosicionx(mario.getPosicionX() - 2);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            m.setVelocidadX(0);
-            m.setPosicionx(m.getPosicionX() + 2);
+            mario.setVelocidadX(0);
+            mario.setPosicionx(mario.getPosicionX() + 2);
         }
         if(direccion == ConstantesColisiones.ABAJO){
-            if(m.getVelocidadY() >= 0) 
-                m.setVelocidadY(0);
+            if(mario.getVelocidadY() >= 0) 
+                mario.setVelocidadY(0);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            m.tocoSuelo();
+            mario.tocoSuelo();
         }
     }
 
-    public void visit(Estrella e,int direccion){
+    public void visit(Estrella estrella,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            e.setPosicionx(e.getPosicionX() - 4);
-            e.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            estrella.setPosicionx(estrella.getPosicionX() - 4);
+            estrella.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            e.setPosicionx(e.getPosicionX() + 4);
-            e.establecerDireccion(ConstantesEntidades.DERECHA);
+            estrella.setPosicionx(estrella.getPosicionX() + 4);
+            estrella.establecerDireccion(ConstantesEntidades.DERECHA);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            e.tocoSuelo();
+            estrella.tocoSuelo();
         } 
     }
 
-    public void visit(ChampinionVerde cv,int direccion){
+    public void visit(ChampinionVerde champinionverde,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            cv.setPosicionx(cv.getPosicionX() - 4);
-            cv.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            champinionverde.setPosicionx(champinionverde.getPosicionX() - 4);
+            champinionverde.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            cv.setPosicionx(cv.getPosicionX() + 4);
-            cv.establecerDireccion(ConstantesEntidades.DERECHA);
+            champinionverde.setPosicionx(champinionverde.getPosicionX() + 4);
+            champinionverde.establecerDireccion(ConstantesEntidades.DERECHA);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            cv.tocoSuelo();
+            champinionverde.tocoSuelo();
         }
     }
 
-    public void visit(SuperChampinion sc,int direccion){
+    public void visit(SuperChampinion superchampinion,int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            sc.setPosicionx(sc.getPosicionX() - 4);
-            sc.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            superchampinion.setPosicionx(superchampinion.getPosicionX() - 4);
+            superchampinion.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            sc.setPosicionx(sc.getPosicionX() + 4);
-            sc.establecerDireccion(ConstantesEntidades.DERECHA);
+            superchampinion.setPosicionx(superchampinion.getPosicionX() + 4);
+            superchampinion.establecerDireccion(ConstantesEntidades.DERECHA);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            sc.tocoSuelo();
+            superchampinion.tocoSuelo();
         }
     }
 
-    public void visit(BolaDeFuego bf, int direccion) {
-        bf.eliminar();
-        bf.recibirDanio(0);
+    public void visit(BolaDeFuego bolaDeFuego, int direccion) {
+        bolaDeFuego.eliminar();
+        bolaDeFuego.recibirDanio(0);
     }
 
-    public void visit(KoopaTroopa k, int direccion){
+    public void visit(KoopaTroopa koopatroopa, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            k.setPosicionx(k.getPosicionX() - 4);
-            k.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            koopatroopa.setPosicionx(koopatroopa.getPosicionX() - 4);
+            koopatroopa.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            k.setPosicionx(k.getPosicionX() + 4);
-            k.establecerDireccion(ConstantesEntidades.DERECHA);
+            koopatroopa.setPosicionx(koopatroopa.getPosicionX() + 4);
+            koopatroopa.establecerDireccion(ConstantesEntidades.DERECHA);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            k.tocoSuelo();
+            koopatroopa.tocoSuelo();
         }
     }
 
-    public void visit(Goomba g, int direccion){
+    public void visit(Goomba goomba, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            g.setPosicionx(g.getPosicionX() - 4);
-            g.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            goomba.setPosicionx(goomba.getPosicionX() - 4);
+            goomba.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            g.setPosicionx(g.getPosicionX() + 4);
-            g.establecerDireccion(ConstantesEntidades.DERECHA);
+            goomba.setPosicionx(goomba.getPosicionX() + 4);
+            goomba.establecerDireccion(ConstantesEntidades.DERECHA);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            g.tocoSuelo();
+            goomba.tocoSuelo();
         }
     }
     
-    public void visit(Lakitu l, int direccion){
+    public void visit(Lakitu lakitu, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            l.setPosicionx(l.getPosicionX() - 4);
-            l.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            lakitu.setPosicionx(lakitu.getPosicionX() - 4);
+            lakitu.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            l.setPosicionx(l.getPosicionX() + 4);
-            l.establecerDireccion(ConstantesEntidades.DERECHA);
+            lakitu.setPosicionx(lakitu.getPosicionX() + 4);
+            lakitu.establecerDireccion(ConstantesEntidades.DERECHA);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            l.tocoSuelo();
+            lakitu.tocoSuelo();
         }
     }
     
-    public void visit(BuzzyBeetle b, int direccion){
+    public void visit(BuzzyBeetle buzzybeetle, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            b.setPosicionx(b.getPosicionX() - 4);
-            b.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            buzzybeetle.setPosicionx(buzzybeetle.getPosicionX() - 4);
+            buzzybeetle.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            b.setPosicionx(b.getPosicionX() + 4);
-            b.establecerDireccion(ConstantesEntidades.DERECHA);
+            buzzybeetle.setPosicionx(buzzybeetle.getPosicionX() + 4);
+            buzzybeetle.establecerDireccion(ConstantesEntidades.DERECHA);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            b.tocoSuelo();
+            buzzybeetle.tocoSuelo();
         }
     }
     
-    public void visit(Spiny s, int direccion){
+    public void visit(Spiny spiny, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            s.setPosicionx(s.getPosicionX() - 4);
-            s.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            spiny.setPosicionx(spiny.getPosicionX() - 4);
+            spiny.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            s.setPosicionx(s.getPosicionX() + 4);
-            s.establecerDireccion(ConstantesEntidades.DERECHA);
+            spiny.setPosicionx(spiny.getPosicionX() + 4);
+            spiny.establecerDireccion(ConstantesEntidades.DERECHA);
         }
         if(direccion == ConstantesColisiones.ARRIBA){
-            s.tocoSuelo();
+            spiny.tocoSuelo();
         }
     }
 }

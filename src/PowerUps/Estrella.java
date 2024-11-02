@@ -7,8 +7,8 @@ import Visitors.VisitorEstrella;
 
 public class Estrella extends PowerUp{
     
-    public Estrella(int x, int y,Sprite[] sprite){
-        super(x,y, sprite);
+    public Estrella(int posicionX, int posicionY,Sprite[] sprite){
+        super(posicionX, posicionY, sprite);
         visitor = new VisitorEstrella();
     }
 
@@ -31,8 +31,8 @@ public class Estrella extends PowerUp{
         }
     }
     
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
     
 }

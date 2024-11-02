@@ -17,8 +17,8 @@ public class Mario extends Entidad implements EntidadJugador{
     public boolean cayoAlVacio;
     
 
-    public Mario(int x, int y,Sprite[] sprites){
-        super(x,y,sprites);
+    public Mario(int posicionX, int posicionY,Sprite[] sprites){
+        super(posicionX,posicionY,sprites);
         estado = new EstadoMarioComun(this);
         tocandoSuelo = true;
         estadoAereo = ConstantesEntidades.SUELO;
@@ -111,8 +111,8 @@ public class Mario extends Entidad implements EntidadJugador{
         miLogica.aniadirMoneda();
     }
     @Override
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
     public int getDirTick(){
         return dirTickAnterior;
@@ -222,10 +222,10 @@ public class Mario extends Entidad implements EntidadJugador{
         return estado;
     }
 
-    public void setEstado(EstadoMario m){
+    public void setEstado(EstadoMario estadoMario){
         int paddingAnterior = estado.getPaddingTamanio();
-        estado = m;
-        int paddingReal =  m.getPaddingTamanio() - paddingAnterior;
+        estado = estadoMario;
+        int paddingReal =  estadoMario.getPaddingTamanio() - paddingAnterior;
         posicionY = posicionY + paddingReal;
         actualizarSprite();
         alto = spriteActual.getHeight();
@@ -247,8 +247,8 @@ public class Mario extends Entidad implements EntidadJugador{
         return devolver;
     }
 
-    public void setLogica(Logica l){
-        miLogica = l;
+    public void setLogica(Logica logica){
+        miLogica = logica;
     }
 
     @Override

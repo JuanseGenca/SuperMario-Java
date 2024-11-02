@@ -18,82 +18,82 @@ public class VisitorVacio extends VisitorPlataforma{
     public VisitorVacio(){
     }
     
-    public void visit(KoopaTroopa k, int direccion){
-        if(k.getPosicionY() == 0){
-            k.cayoAlVacio = true;
+    public void visit(KoopaTroopa koopaTroopa, int direccion){
+        if(koopaTroopa.getPosicionY() == 0){
+            koopaTroopa.cayoAlVacio = true;
         }
-        k.aplicarGravedad();
+        koopaTroopa.aplicarGravedad();
     }
     
-    public void visit(Goomba g, int direccion){
-        if(g.getPosicionY() == 0){
-            g.cayoAlVacio = true;
+    public void visit(Goomba goomba, int direccion){
+        if(goomba.getPosicionY() == 0){
+            goomba.cayoAlVacio = true;
         }
-        g.aplicarGravedad();
+        goomba.aplicarGravedad();
     }
     
-    public void visit(Lakitu l, int direccion){
+    public void visit(Lakitu lakitu, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
-            l.setPosicionx(l.getPosicionX() - 4);
-            l.establecerDireccion(ConstantesEntidades.IZQUIERDA);
+            lakitu.setPosicionx(lakitu.getPosicionX() - 4);
+            lakitu.establecerDireccion(ConstantesEntidades.IZQUIERDA);
         }
         if(direccion == ConstantesColisiones.IZQUIERDA){
-            l.setPosicionx(l.getPosicionX() + 4);
-            l.establecerDireccion(ConstantesEntidades.DERECHA);
+            lakitu.setPosicionx(lakitu.getPosicionX() + 4);
+            lakitu.establecerDireccion(ConstantesEntidades.DERECHA);
         }
     }
     
-    public void visit(BuzzyBeetle b, int direccion){
-        if(b.getPosicionY() == 0){
-            b.cayoAlVacio = true;
+    public void visit(BuzzyBeetle buzzyBeetle, int direccion){
+        if(buzzyBeetle.getPosicionY() == 0){
+            buzzyBeetle.cayoAlVacio = true;
         }
-        b.aplicarGravedad();
+        buzzyBeetle.aplicarGravedad();
     }
     
-    public void visit(PiranhaPlant p, int direccion){
-        if(p.getPosicionY() == 0){
-            p.cayoAlVacio = true;
+    public void visit(PiranhaPlant piranhaPlant, int direccion){
+        if(piranhaPlant.getPosicionY() == 0){
+            piranhaPlant.cayoAlVacio = true;
         }
-        p.aplicarGravedad();
+        piranhaPlant.aplicarGravedad();
     }
     
-    public void visit(Spiny s, int direccion){
-        if(s.getPosicionY() == 0){
-            s.cayoAlVacio = true;
+    public void visit(Spiny spiny, int direccion){
+        if(spiny.getPosicionY() == 0){
+            spiny.cayoAlVacio = true;
         }
-        s.aplicarGravedad();
+        spiny.aplicarGravedad();
     }
     
-    public void visit(Mario m, int direccion){
-        if(m.sobreY0()){
-            m.cayoAlVacio = true;
+    public void visit(Mario mario, int direccion){
+        if(mario.sobreY0()){
+            mario.cayoAlVacio = true;
         }
-        m.aplicarGravedad();
+        mario.aplicarGravedad();
     }
     
-    public void visit(ChampinionVerde cv, int direccion){
-        if(cv.getPosicionY() == 0){
-            cv.cayoAlVacio = true;
+    public void visit(ChampinionVerde champinionVerde, int direccion){
+        if(champinionVerde.getPosicionY() == 0){
+            champinionVerde.cayoAlVacio = true;
         }
-        cv.aplicarGravedad();
+        champinionVerde.aplicarGravedad();
     }
     
-    public void visit(SuperChampinion sc, int direccion){
-        if(sc.getPosicionY() == 0){
-            sc.cayoAlVacio = true;
+    public void visit(SuperChampinion superChampinion, int direccion){
+        if(superChampinion.getPosicionY() == 0){
+            superChampinion.cayoAlVacio = true;
         }
-        sc.aplicarGravedad();
+        superChampinion.aplicarGravedad();
     }
     
-    public void visit(Moneda m, int direccion){
-        m.morir();
+    public void visit(Moneda moneda, int direccion){
+        moneda.morir();
     }
     
-    public void visit(Estrella e, int direccion){
-        if(e.getPosicionY() == 0){
-            e.cayoAlVacio = true;
+    public void visit(Estrella estrella, int direccion){
+        if(estrella.getPosicionY() == 0){
+            estrella.cayoAlVacio = true;
         }
-        e.aplicarGravedad();
+        estrella.aplicarGravedad();
     }
     
 }

@@ -68,10 +68,7 @@ public class PanelModoDeJuego extends JPanel{
         botonModo1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gui.getLogica().actualizarSprites(new SpritesMarioModo1());
-                gui.accionarInicioJuego();
-                gui.detenerSonido(ConstantesSonidos.MUSICALVL2);
-                gui.reproducirSonido(ConstantesSonidos.INICIOJUEGO);
+                funcionBotonModo1();
             }
         });
     }
@@ -80,10 +77,7 @@ public class PanelModoDeJuego extends JPanel{
         botonModo2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gui.getLogica().actualizarSprites(new SpritesMarioModo2());
-                gui.accionarInicioJuego();
-                gui.detenerSonido(ConstantesSonidos.MUSICALVL2);
-                gui.reproducirSonido(ConstantesSonidos.INICIOJUEGO);
+                funcionBotonModo2();
             }
         });
     }
@@ -94,4 +88,18 @@ public class PanelModoDeJuego extends JPanel{
         boton.setBorderPainted(false);
     }
 
+    private void funcionBotonModo1(){
+        gui.getLogica().actualizarSprites(new SpritesMarioModo1());
+        gui.accionarInicioJuego();
+        gui.detenerSonido(ConstantesSonidos.MUSICALVL2);
+        gui.reproducirSonido(ConstantesSonidos.INICIOJUEGO);
+    }
+
+    private void funcionBotonModo2(){
+        gui.getLogica().actualizarSprites(new SpritesMarioModo2());
+        gui.accionarInicioJuego();
+        gui.detenerSonido(ConstantesSonidos.MUSICALVL2);
+        gui.reproducirSonido(ConstantesSonidos.INICIOJUEGO);
+    }       
+        
 }

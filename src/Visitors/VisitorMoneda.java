@@ -7,7 +7,7 @@ public class VisitorMoneda extends VisitorPowerUp{
     public VisitorMoneda() {
     }
     
-    public void visit(Mario m, int direccion) { 
-        m.aniadirMoneda();
+    public void visit(Mario mario, int direccion) { 
+        mario.aniadirMoneda();
     }
 }

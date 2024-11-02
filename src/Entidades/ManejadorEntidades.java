@@ -54,51 +54,51 @@ public class ManejadorEntidades {
         nivel.eliminarBolaDeFuego(bola);
     }
 
-    public BolaDeFuego crearBolaDeFuego(int x, int y, Mario mario){
-        BolaDeFuego bolaDeFuego =  fabricaEnt.crearBolaDeFuego(x,y, mario);
+    public BolaDeFuego crearBolaDeFuego(int posicionX, int posicionY, Mario mario){
+        BolaDeFuego bolaDeFuego =  fabricaEnt.crearBolaDeFuego(posicionX,posicionY, mario);
         nivel.agregarBolaDeFuego(bolaDeFuego);
         Observer observerBola = miLogica.getGui().registrarEntidad(bolaDeFuego);
         bolaDeFuego.setObserver(observerBola);
         return bolaDeFuego;
     }
 
-    public void crearMoneda(int x, int y){
-        Moneda moneda = fabricaEnt.crearMoneda(x, y);
+    public void crearMoneda(int posicionX, int posicionY){
+        Moneda moneda = fabricaEnt.crearMoneda(posicionX, posicionY);
         nivel.agregarPowerUp(moneda);
         Observer observerMoneda = miLogica.getGui().registrarEntidad(moneda);
         moneda.setObserver(observerMoneda);
     }
 
-    public void crearFlorDeFuego(int x, int y){
-        FlorDeFuego florDeFuego = fabricaEnt.crearFlorDeFuego(x, y);
+    public void crearFlorDeFuego(int posicionX, int posicionY){
+        FlorDeFuego florDeFuego = fabricaEnt.crearFlorDeFuego(posicionX, posicionY);
         nivel.agregarPowerUp(florDeFuego);
         Observer observerFlorDeFuego = miLogica.getGui().registrarEntidad(florDeFuego);
         florDeFuego.setObserver(observerFlorDeFuego);
     }
 
-    public void crearEstrella(int x, int y){
-        Estrella estrella = fabricaEnt.crearEstrella(x, y);
+    public void crearEstrella(int posicionX, int posicionY){
+        Estrella estrella = fabricaEnt.crearEstrella(posicionX, posicionY);
         nivel.agregarPowerUp(estrella);
         Observer observerEstrella = miLogica.getGui().registrarEntidad(estrella);
         estrella.setObserver(observerEstrella);
     }
 
-    public void crearChampinionVerde(int x, int y){
-        ChampinionVerde champinionVerde = fabricaEnt.crearChampinionVerde(x, y);
+    public void crearChampinionVerde(int posicionX, int posicionY){
+        ChampinionVerde champinionVerde = fabricaEnt.crearChampinionVerde(posicionX, posicionY);
         nivel.agregarPowerUp(champinionVerde);
         Observer observerChampinionVerde = miLogica.getGui().registrarEntidad(champinionVerde);
         champinionVerde.setObserver(observerChampinionVerde);
     }
 
-    public void crearSuperChampinion(int x, int y){
-        SuperChampinion superChampinion = fabricaEnt.crearSuperChampinion(x, y);
+    public void crearSuperChampinion(int posicionX, int posicionY){
+        SuperChampinion superChampinion = fabricaEnt.crearSuperChampinion(posicionX, posicionY);
         nivel.agregarPowerUp(superChampinion);
         Observer observerSuperChampinion = miLogica.getGui().registrarEntidad(superChampinion);
         superChampinion.setObserver(observerSuperChampinion);
     }
 
-    public void crearSpiny(int x, int y){
-        Spiny spiny = fabricaEnt.crearSpiny(x, y);
+    public void crearSpiny(int posicionX, int posicionY){
+        Spiny spiny = fabricaEnt.crearSpiny(posicionX, posicionY);
         nivel.agregarEnemigo(spiny);
         Observer observerSpiny = miLogica.getGui().registrarEntidad(spiny);
         spiny.setObserver(observerSpiny);

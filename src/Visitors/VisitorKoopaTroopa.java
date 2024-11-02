@@ -10,58 +10,58 @@ import Logica.ConstantesColisiones;
 
 public class VisitorKoopaTroopa extends VisitorEnemigo {
 
-    KoopaTroopa kt;
+    KoopaTroopa koopaTroopa;
 
     public VisitorKoopaTroopa(KoopaTroopa enemigo){
         super(enemigo);
-        kt = enemigo;
+        koopaTroopa = enemigo;
     }
 
-    public void visit(KoopaTroopa k, int direccion) {
+    public void visit(KoopaTroopa koopa, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
-            k.recibirDanio();
-            k.eliminar();
+            koopa.recibirDanio();
+            koopa.eliminar();
         }
     }
 
-    public void visit(Goomba g, int direccion) {
+    public void visit(Goomba goomba, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
-            g.recibirDanio(0);
-            g.eliminar();
+            goomba.recibirDanio(0);
+            goomba.eliminar();
         }
     }
 
-    public void visit(Lakitu l, int direccion) {
+    public void visit(Lakitu lakitu, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
-            l.recibirDanio(0);
-            l.eliminar();
+            lakitu.recibirDanio(0);
+            lakitu.eliminar();
         }
     }
 
-    public void visit(BuzzyBeetle b, int direccion) {
+    public void visit(BuzzyBeetle buzzyBeetle, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
-            b.recibirDanio(0);
-            b.eliminar();
+            buzzyBeetle.recibirDanio(0);
+            buzzyBeetle.eliminar();
         }
     }
 
-    public void visit(Spiny s, int direccion) {
+    public void visit(Spiny spiny, int direccion) {
         if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA){
-            s.recibirDanio(0);
-            s.eliminar();
+            spiny.recibirDanio(0);
+            spiny.eliminar();
         }
     }
 
-    public void visit(Mario m, int direccion) {
+    public void visit(Mario mario, int direccion) {
         if(direccion == ConstantesColisiones.ARRIBA) {
-            m.setPosicionY(m.getPosicionY() + 16);
+            mario.setPosicionY(mario.getPosicionY() + 16);
             double nuevaVel = 3;
-            m.setVelocidadY(nuevaVel);
+            mario.setVelocidadY(nuevaVel);
         }
 
-        if(!kt.getEstado().esVulnerable()) {
+        if(!koopaTroopa.getEstado().esVulnerable()) {
             if(direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA) {
-                m.recibirDanio(0);
+                mario.recibirDanio(0);
             }
         }
     }

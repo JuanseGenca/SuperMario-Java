@@ -6,13 +6,13 @@ import Visitors.VisitorLadrilloRompible;
 
 public class LadrilloRompible extends Plataforma{
 
-    public LadrilloRompible(int x, int y,Sprite[] sprite){
-        super(x, y, sprite);
+    public LadrilloRompible(int posicionX ,int posicionY,Sprite sprite[]){
+        super(posicionX,posicionY,sprite);
         visitor= new VisitorLadrilloRompible();
     }
     
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
 
     public void mover() {

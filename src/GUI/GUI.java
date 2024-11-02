@@ -127,7 +127,6 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         ventana.requestFocusInWindow();
         });
 
-        // Ensure the timer runs only once
         timer.setRepeats(false);
         timer.start();
     }
@@ -215,7 +214,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
 
     public boolean top5() {
         administradorPuntaje.agregarScore(miLogica.getPuntaje());
-        if (administradorPuntaje.entro_en_el_top5()) {
+        if (administradorPuntaje.entroEnElTop5()) {
             boolean inputValido = false;
             String input = null;
 

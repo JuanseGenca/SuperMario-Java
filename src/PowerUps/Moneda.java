@@ -6,8 +6,8 @@ import Visitors.VisitorMoneda;
 
 public class Moneda extends PowerUp{
     
-    public Moneda(int x, int y,Sprite[] sprite){
-        super(x,y, sprite);
+    public Moneda(int posicionX, int posicionY,Sprite[] sprite){
+        super(posicionX, posicionY, sprite);
         visitor = new VisitorMoneda();
         puntaje=5;
     }
@@ -16,8 +16,8 @@ public class Moneda extends PowerUp{
         
     }
     
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
     
 }

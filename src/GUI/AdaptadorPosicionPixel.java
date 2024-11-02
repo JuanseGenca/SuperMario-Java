@@ -7,7 +7,7 @@ public class AdaptadorPosicionPixel {
 	}
 	
 	// Las coordenadas gráficas se miden de arriba hacia abajo
-	public static int transformarY(int y) {
-		return ConstantesVistas.PANEL_ALTO - y - ConstantesVistas.PADDING;
+	public static int transformarY(int altura) {
+		return ConstantesVistas.PANEL_ALTO - altura - ConstantesVistas.PADDING;
 	}
 }

@@ -11,11 +11,11 @@ public class BloquePregunta extends Plataforma{
     protected int entidadContenida;
     protected Logica miLogica;
 
-    public BloquePregunta(int x, int y,Sprite sprite[],Logica log,int i){
-        super(x, y,sprite);
+    public BloquePregunta(int posicionX ,int posicionY,Sprite sprite[],Logica log,int entidadContenida){
+        super(posicionX ,posicionY,sprite);
         visitor=new VisitorBloquePregunta();
         miLogica = log;
-        entidadContenida = i;
+        this.entidadContenida = entidadContenida;
     }
 
     public void getEntidadContenida(){
@@ -38,8 +38,8 @@ public class BloquePregunta extends Plataforma{
         
     }
 
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
 
     public void mover() {}

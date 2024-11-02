@@ -37,7 +37,7 @@ public class TopPuntaje
                 writer.write(jugador.getNombre() + "," + jugador.getScore() + "\n");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error al guardar la lista: " + e.getMessage());
         }
     }
     
@@ -66,7 +66,7 @@ public class TopPuntaje
                 listadeJugadores.add(new Jugador(nombre_del_Jugador, puntuacion));
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("Error al cargar la lista: " + e.getMessage());
         }
     }
 }

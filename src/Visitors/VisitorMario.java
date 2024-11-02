@@ -26,158 +26,156 @@ import PowerUps.Moneda;
 import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
-    public class VisitorMario implements Visitor {
+public class VisitorMario implements Visitor {
 
-        protected Mario mario;
+    protected Mario mario;
 
-        public VisitorMario(Mario mario) {
-            this.mario = mario;
-        }
-
-        public void visit(KoopaTroopa k, int direccion) {
+    public VisitorMario(Mario mario) {
+        this.mario = mario;
+    }
+        public void visit(KoopaTroopa koopaTroopa, int direccion) {
+    
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA |  direccion == ConstantesColisiones.ABAJO) {
-                k.recibirDanio();
+                koopaTroopa.recibirDanio();
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(90);
             }
             
-            if(k.getEstado().esVulnerable()) {
-                k.recibirDanio();
+            if(koopaTroopa.getEstado().esVulnerable()) {
+                koopaTroopa.recibirDanio();
             }
         }
-
-        public void visit(Goomba g, int direccion) {
+        public void visit(Goomba goomba, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
-                g.recibirDanio(0);
+                goomba.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(60);
                 if(mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA){
-                    g.eliminar();
+                    goomba.eliminar();
                 }
                 else {
                     Timer timer = new Timer();
                     timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
-                        g.eliminar();
+                        goomba.eliminar();
                     }
                 }, 300);
                 }
             }
         }
-
-        public void visit(Lakitu l, int direccion) {
+        public void visit(Lakitu lakitu, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
-                l.recibirDanio(0);
+                lakitu.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(60);
-                l.eliminar();
+                lakitu.eliminar();
             }
         }
 
-        public void visit(BuzzyBeetle b, int direccion) {
+        public void visit(BuzzyBeetle buzzyBeetle, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
-                b.recibirDanio(0);
+                buzzyBeetle.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(30);
                 if(mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA){
-                    b.eliminar();
+                    buzzyBeetle.eliminar();
                 }
                 else {
                     Timer timer = new Timer();
                     timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
-                        b.eliminar();
+                        buzzyBeetle.eliminar();
                     }
                 }, 300);
                 }
             }
         }
 
-        public void visit(PiranhaPlant p, int direccion) {
+        public void visit(PiranhaPlant piranhaPlant, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA) {
-                p.recibirDanio(0);
+                piranhaPlant.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(30);
-                p.eliminar();   
+                piranhaPlant.eliminar();   
             }
         }
 
-        public void visit(Spiny s, int direccion) {
+        public void visit(Spiny spiny, int direccion) {
             if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA) {
-                s.recibirDanio(0);
+                spiny.recibirDanio(0);
                 mario.reproducirSonido(ConstantesSonidos.MATAR);
                 mario.actualizarPuntaje(60);
-                s.eliminar();
+                spiny.eliminar();
             }
         }
 
-        public void visit(Mario m, int direccion) {
+        public void visit(Mario mario, int direccion) {
             System.out.println("si alguien alguna vez llega a ver este mensaje en la terminal, es momento de dejar la carrera");
         }
 
-        public void visit(ChampinionVerde cv, int direccion) {
+        public void visit(ChampinionVerde champinionVerde, int direccion) {
             mario.actualizarPuntaje(100);
             mario.reproducirSonido(ConstantesSonidos.POWERUP); 
-            cv.eliminar();
+            champinionVerde.eliminar();
         }
 
-        public void visit(SuperChampinion sc, int direccion) {
+        public void visit(SuperChampinion superChampinion, int direccion) {
             mario.actualizarPuntaje(puntajeSuperChampinion());
             mario.reproducirSonido(ConstantesSonidos.POWERUP); 
-            sc.eliminar();
+            superChampinion.eliminar();
         }
 
-        public void visit(FlorDeFuego f, int direccion) {
+        public void visit(FlorDeFuego florDeFuego, int direccion) {
             mario.actualizarPuntaje(puntajeFlorDeFuego());
             mario.reproducirSonido(ConstantesSonidos.POWERUP); 
-            f.eliminar();
+            florDeFuego.eliminar();
         }
 
-        public void visit(Moneda m, int direccion) {
+        public void visit(Moneda moneda, int direccion) {
             mario.actualizarPuntaje(5);
             mario.reproducirSonido(ConstantesSonidos.MONEDA); 
-            m.eliminar();
+            moneda.eliminar();
         }
 
-        public void visit(Plataforma p, int direccion) {
+        public void visit(Plataforma plataforma, int direccion) {
         }
 
-        public void visit(Estrella e, int direccion) {
+        public void visit(Estrella estrella, int direccion) {
             mario.actualizarPuntaje(puntajeEstrella());
             mario.reproducirSonido(ConstantesSonidos.POWERUP); 
-            e.eliminar();
+            estrella.eliminar();
         }
 
-        public void visit(LadrilloRompible lr, int direccion) {
+        public void visit(LadrilloRompible ladrilloRompible, int direccion) {
             if (direccion == ConstantesColisiones.ARRIBA && mario.getEstado().getModificador() != ConstantesPowerUp.NORMAL) {
                 mario.reproducirSonido(ConstantesSonidos.ROMPERPLATAFORMA); 
-                lr.recibirDanio(0);
-                lr.eliminar();
+                ladrilloRompible.recibirDanio(0);
+                ladrilloRompible.eliminar();
             }
         }
 
-        public void visit(BloqueIrrompible bi, int direccion) {
+        public void visit(BloqueIrrompible bloqueIrrompible, int direccion) {
         }
 
-        public void visit(BloquePregunta bp, int direccion){
+        public void visit(BloquePregunta bloquePregunta, int direccion){
             if(direccion == ConstantesColisiones.ARRIBA){
                 mario.reproducirSonido(ConstantesSonidos.ROMPERPLATAFORMA); //Agregar sonido de que sale el power up
-                bp.getEntidadContenida();
-                bp.recibirDanio(0);
+                bloquePregunta.getEntidadContenida();
+                bloquePregunta.recibirDanio(0);
             }
         }
 
-        public void visit(Meta m, int direccion) {
-            m.pasarNivel();
+        public void visit(Meta meta, int direccion) {
+            meta.pasarNivel();
         }
 
-        public void visit(Vacio v, int direccion) {}
+        public void visit(Vacio vacio, int direccion) {}
 
-        public void visit(PowerUp pu, int direccion) {}
+        public void visit(PowerUp powerUp, int direccion) {}
 
-        public void visit(BolaDeFuego bf, int direccion) {}
+        public void visit(BolaDeFuego bolaDeFuego, int direccion) {}
 
         private int puntajeEstrella() {
             int puntos;
@@ -218,4 +216,6 @@ import PowerUps.SuperChampinion;
             }
         return puntaje;
     }
-}
+
+        }
+

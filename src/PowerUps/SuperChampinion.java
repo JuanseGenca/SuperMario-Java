@@ -7,8 +7,8 @@ import Visitors.VisitorSuperChampinion;
 
 public class SuperChampinion extends PowerUp{
     
-    public SuperChampinion(int x, int y,Sprite[] sprite){
-        super(x,y, sprite);
+    public SuperChampinion(int posicionX, int posicionY,Sprite[] sprite){
+        super(posicionX,posicionY, sprite);
         visitor = new VisitorSuperChampinion();
     }
     
@@ -31,8 +31,8 @@ public class SuperChampinion extends PowerUp{
         }
     }
     
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
     
 }

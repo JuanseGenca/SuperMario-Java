@@ -3,15 +3,12 @@ package Paneles;
 import Entidades.*;
 import GUI.*;
 import Logica.ConstantesEntidades;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
-import java.awt.Toolkit;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;

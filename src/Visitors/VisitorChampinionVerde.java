@@ -7,7 +7,7 @@ public class VisitorChampinionVerde extends VisitorPowerUp{
     public VisitorChampinionVerde(){
     }
     
-    public void visit(Mario m, int direccion){ 
-        m.aniadirVida();
+    public void visit(Mario mario, int direccion){ 
+        mario.aniadirVida();
     }
 }

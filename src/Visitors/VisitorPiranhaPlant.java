@@ -11,9 +11,9 @@ public class VisitorPiranhaPlant extends VisitorEnemigo {
         super(enemigo);
     }
 
-    public void visit(Mario m, int direccion) { 
+    public void visit(Mario mario, int direccion) { 
         if(direccion == ConstantesColisiones.ARRIBA || direccion == ConstantesColisiones.IZQUIERDA || direccion == ConstantesColisiones.DERECHA) {
-            m.recibirDanio(enemigo.getPuntaje());
+            mario.recibirDanio(enemigo.getPuntaje());
         }
     } 
 }

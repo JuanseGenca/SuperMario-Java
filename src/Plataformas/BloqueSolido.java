@@ -6,13 +6,13 @@ import Visitors.VisitorBloqueSolido;
 
 public class BloqueSolido extends Plataforma{
     
-    public BloqueSolido(int x, int y, Sprite[] sprite){
-        super(x,y,sprite);
+    public BloqueSolido(int posicionX, int posicionY, Sprite[] sprite){
+        super(posicionX ,posicionY,sprite);
         visitor=new VisitorBloqueSolido();
     }
     
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
 
     public void mover(){

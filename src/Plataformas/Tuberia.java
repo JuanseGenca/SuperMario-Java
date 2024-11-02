@@ -7,18 +7,18 @@ import Visitors.VisitorTuberia;
 
 public class Tuberia extends BloqueIrrompible{
     
-    public Tuberia(int x, int y, Sprite[] sprite){
-        super(x, y, sprite);
+    public Tuberia(int posicionX ,int posicionY,Sprite sprite[]){
+        super(posicionX,posicionY,sprite);
         visitor= new VisitorTuberia();
-        miHitboxes.actualizarHitboxes(x, y-144, ancho, alto);
+        miHitboxes.actualizarHitboxes(posicionX, posicionY-144, ancho, alto);
     }
 
     public Entidad getEntidadContenida(){
         return entidadContenida;
     }
 
-    public void setEntidadContenida(Entidad e){
-        entidadContenida = e;
+    public void setEntidadContenida(Entidad entidad){
+        entidadContenida = entidad;
     }
 
     public void mostrarEntidadContenida(){
@@ -29,8 +29,8 @@ public class Tuberia extends BloqueIrrompible{
         //Resolver como esconderla por pantalla.
     }
 
-    public void aceptar(Visitor v, int direccion){
-        v.visit(this, direccion);
+    public void aceptar(Visitor visitor, int direccion){
+        visitor.visit(this, direccion);
     }
 
     public void mover(){

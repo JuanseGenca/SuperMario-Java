@@ -7,15 +7,13 @@ import Entidades.Mario;
 import Fabricas.*;
 import GUI.GUI;
 import GUI.Observer;
-import java.awt.event.ActionEvent;
 import Nivel.Nivel;
 import Nivel.Silueta;
-import Paneles.PanelPantallaJuego;
 import ParseInt.Parserint;
 import PowerUps.PowerUp;
+import java.awt.event.ActionEvent;
 import static java.lang.Thread.sleep;
 import java.util.List;
-
 import javax.swing.Timer;
 
 

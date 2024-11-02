@@ -29,69 +29,68 @@ public class VisitorBolaDeFuego implements Visitor{
     public VisitorBolaDeFuego(Mario mario){
         this.mario = mario;
     }
-    
-    public void visit(KoopaTroopa k, int direccion) {
-        k.recibirDanio();
+    public void visit(KoopaTroopa koopaTroopa, int direccion) {
+        koopaTroopa.recibirDanio();
         mario.actualizarPuntaje(90);
     }
 
-    public void visit(Goomba g, int direccion) {
-        g.recibirDanio(0);
+    public void visit(Goomba goomba, int direccion) {
+        goomba.recibirDanio(0);
         mario.actualizarPuntaje(90);
-        g.eliminar();
+        goomba.eliminar();
     }
 
-    public void visit(Lakitu l, int direccion) {
-        l.recibirDanio(0);
+    public void visit(Lakitu lakitu, int direccion) {
+        lakitu.recibirDanio(0);
         mario.actualizarPuntaje(60);
-        l.eliminar();
+        lakitu.eliminar();
     }
 
-    public void visit(BuzzyBeetle b, int direccion){
-        b.recibirDanio(0);
+    public void visit(BuzzyBeetle buzzyBeetle, int direccion){
+        buzzyBeetle.recibirDanio(0);
         mario.actualizarPuntaje(30);
-        b.eliminar();
+        buzzyBeetle.eliminar();
     }
 
-    public void visit(PiranhaPlant p, int direccion){
-        p.recibirDanio(0);
+    public void visit(PiranhaPlant piranhaPlant, int direccion){
+        piranhaPlant.recibirDanio(0);
         mario.actualizarPuntaje(30);
-        p.eliminar();
+        piranhaPlant.eliminar();
     }
 
-    public void visit(Spiny s, int direccion){
-        s.recibirDanio(0);
+    public void visit(Spiny spiny, int direccion){
+        spiny.recibirDanio(0);
         mario.actualizarPuntaje(60);
-        s.eliminar();
+        spiny.eliminar();
     } 
 
     
-    public void visit(ChampinionVerde cv, int direccion){}
+    public void visit(ChampinionVerde champinionVerde, int direccion){}
     
-    public void visit(SuperChampinion sc, int direccion){}
+    public void visit(SuperChampinion superChampinion, int direccion){}
     
-    public void visit(FlorDeFuego f, int direccion){}
+    public void visit(FlorDeFuego florDeFuego, int direccion){}
     
-    public void visit(Moneda m, int direccion){}
+    public void visit(Moneda moneda, int direccion){}
     
-    public void visit(Plataforma p, int direccion){}
+    public void visit(Plataforma plataforma, int direccion){}
     
-    public void visit(Estrella e, int direccion){}
+    public void visit(Estrella estrella, int direccion){}
     
-    public void visit(LadrilloRompible lr, int direccion){}
+    public void visit(LadrilloRompible ladrilloRompible, int direccion){}
     
-    public void visit(BloqueIrrompible bi, int direccion){}
+    public void visit(BloqueIrrompible bloqueIrrompible, int direccion){}
     
-    public void visit(Meta m, int direccion){}
+    public void visit(Meta meta, int direccion){}
     
-    public void visit(Vacio v, int direccion){}
+    public void visit(Vacio vacio, int direccion){}
     
-    public void visit(PowerUp pu, int direccion){}
+    public void visit(PowerUp powerUp, int direccion){}
     
-    public void visit(BolaDeFuego bf, int direccion){}
+    public void visit(BolaDeFuego bolaDeFuego, int direccion){}
 
-    public void visit(BloquePregunta bp,int direccion){}
+    public void visit(BloquePregunta bloquePregunta, int direccion){}
 
-    public void visit(Mario m, int direccion) {}
+    public void visit(Mario mario, int direccion) {}
 } 
 
