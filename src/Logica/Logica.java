@@ -191,7 +191,7 @@ public class Logica {
 	}
 
 	public void siguienteNivel() {
-		manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
+		manejadorDeSonidos.detenerSonido(nivelActual.getNumeroNivel());
 		manejadorDeSonidos.detenerSonido(ConstantesSonidos.ESTRELLA);
 		manejadorDeSonidos.reproducirSonido(ConstantesSonidos.PASARNIVEL);
 		nivelActual.frenarTimerLakitus();
@@ -207,8 +207,8 @@ public class Logica {
 				}
 				else{
 					gui.mostrarPantallaVictoria();
-					if (gui.top5()) {    
-						manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
+					if (gui.top5()) {
+							reiniciarJuego();
 						   gui.mostrarPantallaInicial();
 						}
 				}	
@@ -242,8 +242,15 @@ public class Logica {
 	    
 	    if (gui.top5()) {    
 			manejadorDeSonidos.pausarSonido(nivelActual.getNumeroNivel());
+			reiniciarJuego();
 	        gui.mostrarPantallaInicial();
 	    }
+
 	}
 	
+	public void reiniciarJuego() {
+		vidas=3;
+		puntaje=0;
+		monedas=0;
+	}
 }

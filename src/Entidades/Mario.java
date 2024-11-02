@@ -258,6 +258,8 @@ public class Mario extends Entidad implements EntidadJugador{
 
     @Override
     public void morir(){
+        miLogica.detenerSonido(miLogica.getNivel().getNumeroNivel());
+        miLogica.reproducirSonido(ConstantesSonidos.MUERTEMARIO);
         miLogica.reiniciarNivel();
     }
     
