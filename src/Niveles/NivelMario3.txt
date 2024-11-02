@@ -4,7 +4,7 @@ Meta:2100,48
 Lakitu:300,400
 Buzzy Beetle:650,0
 Koopa Troopa:850,0
-Koopa Troopa:1100,24
+Koopa Troopa:1100,0
 Ladrillo Rompible:144,192
 Vacio:195,192
 Ladrillo Rompible:534,192

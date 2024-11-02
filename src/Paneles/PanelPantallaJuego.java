@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -24,7 +25,7 @@ public class PanelPantallaJuego extends JPanel {
     private JPanel panelInformacion;
     private JLabel imagenFondoPanelJuego;
     private JLabel imagenFondoPanelInformacion;
-    private JLabel primerLayerEntidades, segundoLayerEntidades;
+    private JLabel primerLayerEntidades;
     private JScrollPane panelPantallaJuego;
     private JLabel labelPuntaje;
     private JLabel labelMonedas;
@@ -55,9 +56,7 @@ public class PanelPantallaJuego extends JPanel {
         ObserverEntidades observerEntidad = new ObserverEntidades(entidadLogica);
         if(entidadLogica.getZIndex() == ConstantesEntidades.PRIORIDAD) {
             primerLayerEntidades.add(observerEntidad);
-        } 
-        else {System.out.println(entidadLogica);
-            imagenFondoPanelJuego.add(observerEntidad);}
+        } imagenFondoPanelJuego.add(observerEntidad);
 
         return observerEntidad;
     }
@@ -78,7 +77,10 @@ public class PanelPantallaJuego extends JPanel {
     }
 
     public void eliminarEntidad(ObserverEntidades observerEntidades){
-        primerLayerEntidades.remove(observerEntidades);
+        if(observerEntidades.getZIndex() == ConstantesEntidades.FONDO) {
+            imagenFondoPanelJuego.remove(observerEntidades);
+        }else {primerLayerEntidades.remove(observerEntidades);}
+        
         primerLayerEntidades.repaint();
     }
 
@@ -183,14 +185,10 @@ public class PanelPantallaJuego extends JPanel {
         primerLayerEntidades.setLayout(null);
         primerLayerEntidades.setBounds(0, 0, 5000, 1000);
 
-        segundoLayerEntidades = new JLabel();
-        segundoLayerEntidades.setLayout(null);
-        segundoLayerEntidades.setBounds(0, 0, 5000, 1000);
 
         panelJuego = new JLayeredPane();
         panelJuego.setPreferredSize(new Dimension(ConstantesVistas.PANEL_JUEGO_ANCHO, ConstantesVistas.PANEL_ALTO));
         panelJuego.add(imagenFondoPanelJuego,2);
-        panelJuego.add(segundoLayerEntidades,1);
         panelJuego.add(primerLayerEntidades,0);
 
         panelJuego.revalidate();
