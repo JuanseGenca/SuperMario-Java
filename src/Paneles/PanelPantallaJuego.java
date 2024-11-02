@@ -56,7 +56,7 @@ public class PanelPantallaJuego extends JPanel {
         ObserverEntidades observerEntidad = new ObserverEntidades(entidadLogica);
         if(entidadLogica.getZIndex() == ConstantesEntidades.PRIORIDAD) {
             primerLayerEntidades.add(observerEntidad);
-        } imagenFondoPanelJuego.add(observerEntidad);
+        } else imagenFondoPanelJuego.add(observerEntidad);
 
         return observerEntidad;
     }
