@@ -15,7 +15,4 @@ public class Vacio extends Plataforma{
         visitor.visit(this, direccion);
     }
 
-    public void mover(){ 
-    }
-
 }

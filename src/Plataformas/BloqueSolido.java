@@ -14,7 +14,4 @@ public class BloqueSolido extends Plataforma{
     public void aceptar(Visitor visitor, int direccion){
         visitor.visit(this, direccion);
     }
-
-    public void mover(){
-    }
 }

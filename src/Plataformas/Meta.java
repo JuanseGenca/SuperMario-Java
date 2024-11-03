@@ -21,6 +21,4 @@ public class Meta extends Plataforma{
         actualizar(direccion, estadoAereo);
     }
 
-    public void mover(){
-    }
 }

@@ -21,4 +21,5 @@ public abstract class Plataforma extends Entidad{
         ManejadorEntidades.getInstancia().eliminarPlataforma(this);
         miObserver.eliminar();
     }
+    public void mover(){}
 }

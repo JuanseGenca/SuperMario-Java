@@ -21,19 +21,12 @@ public class Tuberia extends BloqueIrrompible{
         entidadContenida = entidad;
     }
 
-    public void mostrarEntidadContenida(){
-        //Resolver como mostrarla por pantalla.
-    }
+    public void mostrarEntidadContenida(){}
 
-    public void OcultarEntidad(){
-        //Resolver como esconderla por pantalla.
-    }
+    public void OcultarEntidad(){}
 
     public void aceptar(Visitor visitor, int direccion){
         visitor.visit(this, direccion);
-    }
-
-    public void mover(){
     }
 
 }
