@@ -249,6 +249,7 @@ public class Logica {
 	}
 	
 	public void reiniciarJuego() {
+		lvl = 1;
 		vidas=3;
 		puntaje=0;
 		monedas=0;
