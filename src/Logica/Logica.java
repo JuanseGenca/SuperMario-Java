@@ -198,7 +198,7 @@ public class Logica {
 		hilo2.parar();
 		hiloPrincipal.parar();
 
-		Timer timer = new Timer(1000, (ActionEvent e) -> {
+		Timer timer = new Timer(2000, (ActionEvent e) -> {
 			
 			if(lvl!=3){
 				lvl++;

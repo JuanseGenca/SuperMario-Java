@@ -127,7 +127,7 @@ public abstract class Entidad implements EntidadLogica{
 
    public void establecerEstadoAereo(int estadoAereo){
       this.estadoAereo = estadoAereo;
-      mover();
+
    }
 
    public int getEstadoAereo(){
