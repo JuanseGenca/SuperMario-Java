@@ -198,7 +198,7 @@ public class Logica {
 		hilo2.parar();
 		hiloPrincipal.parar();
 
-		Timer timer = new Timer(8000, (ActionEvent e) -> {
+		Timer timer = new Timer(1000, (ActionEvent e) -> {
 			
 			if(lvl!=3){
 				lvl++;
@@ -208,8 +208,8 @@ public class Logica {
 				else{
 					gui.mostrarPantallaVictoria();
 					if (gui.top5()) {
-							reiniciarJuego();
-						   gui.mostrarPantallaInicial();
+						reiniciarJuego();
+						gui.mostrarPantallaInicial();
 						}
 				}	
         });
