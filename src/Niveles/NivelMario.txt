@@ -13,6 +13,11 @@ Ladrillo Rompible:144,192
 Ladrillo Rompible:534,192
 Ladrillo Rompible:438,192
 Ladrillo Rompible:342,192
+Ladrillo Rompible:582,70
+Ladrillo Rompible:630,70
+Ladrillo Rompible:678,70
+Ladrillo Rompible:726,118
+Vacio:487,74
 Bloque Pregunta:192,192
 Goomba:342,240
 Bloque Pregunta:486,192

@@ -33,6 +33,7 @@ public abstract class PowerUp extends Entidad{
     }
 
     public void tocoSuelo() {
+        posicionY += 2;
         tocandoSuelo = true;
     }
 
