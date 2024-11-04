@@ -119,7 +119,7 @@ Vacio:5532,104
 Vacio:5484,-40
 Vacio:5532,-40
 Vacio:5580,-40
-Ladrillo Rompible:5682,0
+Moneda:5682,0
 Piranha Plant:5754,144
 Vacio:5635,152
 Tuberia:5730,144
