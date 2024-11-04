@@ -115,11 +115,6 @@ public abstract class Entidad implements EntidadLogica{
       return ConstantesEntidades.PRIORIDAD;
    }
 
-   public void establecerEstadoAereo(int estadoAereo){
-      this.estadoAereo = estadoAereo;
-      mover();
-   }
-
    public int getEstadoAereo(){
       return estadoAereo;
    }

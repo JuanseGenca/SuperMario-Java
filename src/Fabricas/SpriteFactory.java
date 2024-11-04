@@ -167,7 +167,7 @@ public abstract class SpriteFactory {
 	public Sprite[] getVacio() {
 		Sprite[] devolver = new Sprite[1];
 
-		devolver[0] = new Sprite("Imagenes/vacio.png");
+		devolver[0] = new Sprite("Imagenes/Modo1/Plataformas/Bloque_ladrillo_roto.png");
 		
 		return devolver;
 	}

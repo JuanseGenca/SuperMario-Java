@@ -21,8 +21,8 @@ Bloque Pregunta:438,384
 Vacio:97,200
 Vacio:629,200
 Vacio:270,200
-Vacio:390,400
-Vacio:486,400
+Vacio:343,386
+Vacio:533,386
 Tuberia:1152,144
 Vacio:1250,145
 Piranha Plant:1176,144

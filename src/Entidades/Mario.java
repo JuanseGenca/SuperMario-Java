@@ -114,9 +114,15 @@ public class Mario extends Entidad implements EntidadJugador{
         return dirTickAnterior;
     }
 
+    public void establecerEstadoAereo(int estadoAereo){
+        this.estadoAereo = estadoAereo;
+        //mover();
+     }
+
     public void tocoSuelo() {
         velocidadY = 0;
-        posicionY = alto + (posicionY - posicionY % 48) - estado.getPaddingTamanio();
+        posicionY += 2;
+        //posicionY = alto + (posicionY - posicionY % 48) - estado.getPaddingTamanio();
         establecerEstadoAereo(ConstantesEntidades.SUELO);
         tocandoSuelo = true;
     }
