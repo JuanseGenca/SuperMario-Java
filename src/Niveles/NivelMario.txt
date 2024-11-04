@@ -18,7 +18,7 @@ Piranha Plant:1224,144
 Vacio:1105,152
 Tuberia:1200,144
 Vacio:1343,152
-PiranhaPlant:2424,144
+Piranha Plant:2424,144
 Vacio:2305,152
 Koopa Troopa:1300,0
 Goomba:1800,0
