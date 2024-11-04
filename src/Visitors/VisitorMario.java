@@ -41,10 +41,10 @@ public class VisitorMario implements Visitor {
             mario.reproducirSonido(ConstantesSonidos.MATAR);
             mario.actualizarPuntaje(90);
         }
-            
-        if(koopaTroopa.getEstado().esVulnerable()) {
-            koopaTroopa.recibirDanio();
-        }
+        else
+            if(koopaTroopa.getEstado().esVulnerable()) {
+                koopaTroopa.recibirDanio();
+            }
         }
         
     public void visit(Goomba goomba, int direccion) {
