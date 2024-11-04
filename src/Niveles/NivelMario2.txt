@@ -42,8 +42,9 @@ Ladrillo Rompible:2640,200
 Vacio:2735,205
 Bloque Solido:3184,-48
 Bloque Solido:3184,-96
-Vacio:3279,-40
-Vacio:3327,-40
+Vacio:3135,-40
+Vacio:3235,-40
+Vacio:3300,-40
 Ladrillo Rompible:3424,0
 Vacio:3490,48
 Vacio:3490,96
