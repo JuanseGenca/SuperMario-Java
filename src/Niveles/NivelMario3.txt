@@ -1,4 +1,4 @@
-Mario:3700,500
+Mario:0,0
 Vacio:0,354
 Vacio:0,550
 Lakitu:8000,550
