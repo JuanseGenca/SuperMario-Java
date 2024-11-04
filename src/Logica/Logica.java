@@ -83,7 +83,6 @@ public class Logica {
     protected void registrarObservers() {
 		registrarObserverJugador(nivelActual.getMario());
 		registrarObserverSilueta(nivelActual.getSilueta());
-		registrarObserverSilueta(nivelActual.getSilueta());
 		registrarObserversParaEntidades(nivelActual.getPowerUps());
 		registrarObserversParaEntidades(nivelActual.getEnemigos());
 		registrarObserversParaEntidades(nivelActual.getPlataformas());
@@ -97,7 +96,6 @@ public class Logica {
 
 	protected void registrarObserverSilueta(Silueta siluetaRuta) {
 		Observer observer = gui.registrarSilueta(siluetaRuta);
-		siluetaRuta.setObserver(observer);
 		siluetaRuta.setObserver(observer);
 	}
 	
