@@ -179,7 +179,7 @@ public class PanelPantallaJuego extends JPanel {
 
         primerLayerEntidades = new JLabel();
         primerLayerEntidades.setLayout(null);
-        primerLayerEntidades.setBounds(0, 0, 5000, 1000);
+        primerLayerEntidades.setBounds(0, 0, 10000, 1000);
 
 
         panelJuego = new JLayeredPane();
