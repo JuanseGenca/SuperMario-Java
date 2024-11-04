@@ -78,31 +78,35 @@ Vacio:3327,-40
 Ladrillo Rompible:3424,0
 Vacio:3490,0
 Vacio:3490,48
+Vacio:3490,96
 Ladrillo Rompible:3550,48
 Vacio:3615,48
 Vacio:3615,96
+Vacio:3615,144
 Ladrillo Rompible:3700,96
 Vacio:3770,96
 Vacio:3770,144
+Vacio:3770,192
 Ladrillo Rompible:3850,144
 Vacio:3915,144
-Vacio:3915,0
+Vacio:3915,192
 Ladrillo Rompible:4000,0
-Vacio:4050,0
 Vacio:4050,48
-Vacio:4150,96
+Vacio:4050,96
 Ladrillo Rompible:4200,48
 Vacio:4250,48
 Vacio:4250,96
+Vacio:4250,144
 Vacio:4350,96
+Vacio:4350,144
 Ladrillo Rompible:4400,96
 Vacio:4470,96
 Vacio:4470,144
+Vacio:4470,192
 Ladrillo Rompible:4550,144
 Vacio:4615,144
-Vacio:4615,0
+Vacio:4615,192
 Ladrillo Rompible:4700,0
-Vacio:4750,0
 Vacio:4750,48
 Vacio:4850,96
 Ladrillo Rompible:4900,48
@@ -112,18 +116,19 @@ Vacio:5100,144
 Vacio:5250,144
 Ladrillo Rompible:5300,96
 Vacio:5370,96
-Vacio:5370,0
+Vacio:5370,144
+Vacio:5370,192
 Ladrillo Rompible:5500,144
 Vacio:5550,144
-Vacio:5550,0
-Vacio:5650,0
+Vacio:5550,192
 Ladrillo Rompible:5700,0
-Vacio:5770,0
 Vacio:5770,48
+Vacio:5770,96
 Ladrillo Rompible:5850,48
 Vacio:5900,48
 Vacio:5900,96
-Meta:5850,100
+Vacio:5900,144
+Meta:5850,120
 Vacio:3400,0
 Vacio:3450,0
 Vacio:3500,0
