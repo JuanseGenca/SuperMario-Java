@@ -134,7 +134,7 @@ public class Nivel {
 
     public void iniciarTimerLakitus() {
         for (Lakitu l : lakitus) {
-            l.iniciarReloj(5000);
+            l.iniciarReloj(4000);
         }
     }
 
