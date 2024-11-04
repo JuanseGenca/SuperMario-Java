@@ -1,46 +1,15 @@
 Mario:0,0
-Vacio:0,354
-Vacio:0,550
 Goomba:300,0
 Bloque Solido:300,-48
 Bloque Solido:300,-96
-Vacio:392,-40
-Vacio:440,-40
 Bloque Solido:540,-48
 Bloque Solido:540,-96
 Bloque Solido:588,-48
 Bloque Solido:588,-96
-Vacio:683,-40
-Vacio:731,-40
 Bloque Solido:828,-48
 Bloque Solido:828,-96
 Bloque Solido:974,-48
 Bloque Solido:974,-96
-Vacio:1068,-40
-Vacio:1116,-40
-Vacio:1164,-40
-Vacio:1212,-40
-Vacio:1260,-40
-Vacio:1308,-40
-Vacio:1356,-40
-Vacio:1404,-40
-Vacio:1452,-40
-Vacio:1500,-40
-Vacio:1548,-40
-Vacio:1596,-40
-Vacio:1644,-40
-Vacio:1692,-40
-Vacio:1740,-40
-Vacio:1788,-40
-Vacio:1836,-40
-Vacio:1884,-40
-Vacio:1932,-40
-Vacio:1980,-40
-Vacio:2028,-40
-Vacio:2076,-40
-Vacio:2124,-40
-Vacio:2172,-40
-Vacio:2220,-40
 Bloque Solido:2320,-48
 Bloque Solido:2320,-96
 Vacio:1261,56
@@ -76,11 +45,10 @@ Bloque Solido:3184,-96
 Vacio:3279,-40
 Vacio:3327,-40
 Ladrillo Rompible:3424,0
-Vacio:3490,0
 Vacio:3490,48
 Vacio:3490,96
 Ladrillo Rompible:3550,48
-Vacio:3615,48
+Lakitu:3550,0
 Vacio:3615,96
 Vacio:3615,144
 Ladrillo Rompible:3700,96
@@ -100,12 +68,16 @@ Vacio:4250,144
 Vacio:4350,96
 Vacio:4350,144
 Ladrillo Rompible:4400,96
+Ladrillo Rompible:4400,0
+Lakitu:4350,0
 Vacio:4470,96
 Vacio:4470,144
 Vacio:4470,192
 Ladrillo Rompible:4550,144
 Vacio:4615,144
 Vacio:4615,192
+Vacio:4480,0
+Vacio:4570,0
 Ladrillo Rompible:4700,0
 Vacio:4750,48
 Vacio:4850,96
@@ -114,7 +86,13 @@ Vacio:4950,48
 Vacio:4950,96
 Vacio:5100,144
 Vacio:5250,144
+Vacio:5050,0
+Vacio:5110,0
+Vacio:5170,0
+Vacio:5230,0
 Ladrillo Rompible:5300,96
+Ladrillo Rompible:5300,0
+Lakitu:5350,0
 Vacio:5370,96
 Vacio:5370,144
 Vacio:5370,192
@@ -129,56 +107,3 @@ Vacio:5900,48
 Vacio:5900,96
 Vacio:5900,144
 Meta:5850,120
-Vacio:3400,0
-Vacio:3450,0
-Vacio:3500,0
-Vacio:3550,0
-Vacio:3600,0
-Vacio:3650,0
-Vacio:3700,0
-Vacio:3750,0
-Vacio:3800,0
-Vacio:3850,0
-Vacio:3900,0
-Vacio:3950,0
-Vacio:4000,0
-Vacio:4050,0
-Vacio:4100,0
-Vacio:4150,0
-Vacio:4200,0
-Vacio:4250,0
-Vacio:4300,0
-Vacio:4350,0
-Vacio:4400,0
-Vacio:4450,0
-Vacio:4500,0
-Vacio:4550,0
-Vacio:4600,0
-Vacio:4650,0
-Vacio:4700,0
-Vacio:4750,0
-Vacio:4800,0
-Vacio:4850,0
-Vacio:4900,0
-Vacio:4950,0
-Vacio:5000,0
-Vacio:5050,0
-Vacio:5100,0
-Vacio:5150,0
-Vacio:5200,0
-Vacio:5250,0
-Vacio:5300,0
-Vacio:5350,0
-Vacio:5400,0
-Vacio:5450,0
-Vacio:5500,0
-Vacio:5550,0
-Vacio:5600,0
-Vacio:5650,0
-Vacio:5700,0
-Vacio:5750,0
-Vacio:5800,0
-Vacio:5850,0
-Vacio:5900,0
-Vacio:5950,0
-Vacio:6000,0
