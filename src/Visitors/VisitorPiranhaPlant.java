@@ -4,7 +4,6 @@ import Enemigos.Enemigo;
 import Entidades.*;
 import Logica.ConstantesColisiones;
 
-
 public class VisitorPiranhaPlant extends VisitorEnemigo {
 
     public VisitorPiranhaPlant(Enemigo enemigo) {

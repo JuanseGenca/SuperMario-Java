@@ -6,6 +6,7 @@ import java.awt.Rectangle;
 import java.util.*;
 
 public class ManejadorDeColisiones {
+    
     protected LinkedList<Entidad> entidades;
     protected Nivel nivelActual;
 

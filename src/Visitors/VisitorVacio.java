@@ -13,6 +13,7 @@ import PowerUps.Estrella;
 import PowerUps.SuperChampinion;
 
 public class VisitorVacio extends VisitorPlataforma{
+
     public VisitorVacio(){
     }
     
@@ -30,6 +31,7 @@ public class VisitorVacio extends VisitorPlataforma{
         goomba.aplicarGravedad();
     }
     
+    //cuando lakitu choca con un vacio se de vuelta asi no sale del mapa
     public void visit(Lakitu lakitu, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             lakitu.setPosicionx(lakitu.getPosicionX() - 4);

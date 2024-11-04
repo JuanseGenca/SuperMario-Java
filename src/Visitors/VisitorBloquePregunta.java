@@ -17,6 +17,7 @@ public class VisitorBloquePregunta extends VisitorPlataforma{
 
     public VisitorBloquePregunta(){
     }
+    
     public void visit(Mario mario, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             mario.setVelocidadX(0);

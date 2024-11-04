@@ -178,7 +178,6 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     public void refrescar() {
         ventana.revalidate();
         ventana.repaint();
-    
     }
 
     public void reproducirSonido(int nombre) {
@@ -205,6 +204,7 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
         refrescar();
         
     }
+    
     public void mostrarPantallaModoDeJuego(){
         miLogica.detenerSonido(ConstantesSonidos.MENUPRINCIPAL);
         ventana.setContentPane(panelModo);

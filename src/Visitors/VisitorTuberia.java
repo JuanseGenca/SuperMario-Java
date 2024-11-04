@@ -4,7 +4,6 @@ import Enemigos.BuzzyBeetle;
 import Enemigos.Goomba;
 import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
-import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
@@ -18,6 +17,7 @@ public class VisitorTuberia extends VisitorPlataforma{
     
     public VisitorTuberia(){
     }
+
     public void visit(Mario mario, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             mario.setVelocidadX(0);
@@ -91,8 +91,6 @@ public class VisitorTuberia extends VisitorPlataforma{
             buzyBeetle.tocoSuelo();
         }
     }
-    
-    public void visit(PiranhaPlant piranhaPlant, int direccion){}
     
     public void visit(Spiny spiny, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){

@@ -1,8 +1,6 @@
 package Fabricas;
 
-
 import GUI.Sprite;
-
 
 public abstract class SpriteFactory {
 
@@ -14,7 +12,9 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getSilueta(int numero) {
 		Sprite[] devolver = new Sprite[1];
+
 		devolver[0] = new Sprite(rutaCarpeta +  "/fondo-nivel.png");
+
 		return devolver;
 	}
 	
@@ -91,6 +91,7 @@ public abstract class SpriteFactory {
 
 		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle_caminando.gif");
 		devolver[1] = new Sprite(rutaCarpeta + "/Enemigos/buzzy_beetle_golpeado.png");
+
 		return devolver;
 	}
 	
@@ -122,6 +123,7 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getPiranhaPlant() {
 		Sprite[] devolver = new Sprite[1];
+
 		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/piranha_plant.gif");
 
 		return devolver;
@@ -129,6 +131,7 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getKoopaTroopa() {
 		Sprite[] devolver = new Sprite[3];
+
 		devolver[0] = new Sprite(rutaCarpeta + "/Enemigos/koopa_caminando.gif");
 		devolver[1] = new Sprite(rutaCarpeta + "/Enemigos/koopa_golpeado.png");
 		devolver[2] = new Sprite(rutaCarpeta + "/Enemigos/koopa_saliendo.gif");
@@ -138,6 +141,7 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getBloqueSolido() {
 		Sprite[] devolver = new Sprite[1];
+
 		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/bloque_solido.png");
 
 		return devolver;
@@ -145,6 +149,7 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getTuberia() {
 		Sprite[] devolver = new Sprite[1];
+
 		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/tuberia.png");
 		
 		return devolver;
@@ -152,6 +157,7 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getMeta() {
 		Sprite[] devolver = new Sprite[2];
+
 		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/meta1.png");
 		devolver[1] = new Sprite(rutaCarpeta + "/Plataformas/meta2.png");
 		
@@ -160,6 +166,7 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getVacio() {
 		Sprite[] devolver = new Sprite[1];
+
 		devolver[0] = new Sprite("Imagenes/vacio.png");
 		
 		return devolver;
@@ -167,6 +174,7 @@ public abstract class SpriteFactory {
 
     public Sprite[] getLadrilloRompible() {
 		Sprite[] devolver = new Sprite[2];
+
 		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/bloque_ladrillo.png");
 		devolver[1] = new Sprite(rutaCarpeta + "/Plataformas/bloque_ladrillo_roto.png");
 
@@ -175,6 +183,7 @@ public abstract class SpriteFactory {
 	
 	public Sprite[] getBloquePregunta() {
 		Sprite[] devolver = new Sprite[2];
+		
 		devolver[0] = new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta.gif");
 		devolver[1] = new Sprite(rutaCarpeta + "/Plataformas/bloque_pregunta_vacio.png");
 		

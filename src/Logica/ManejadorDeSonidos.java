@@ -11,6 +11,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class ManejadorDeSonidos {
+    
     protected final Map<Integer, Clip> sonidos;
     protected final Map<Integer, Integer> posicionesPausadas;
 

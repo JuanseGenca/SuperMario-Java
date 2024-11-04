@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanelPantallaFinDeJuego extends JPanel{
+    
     private static final long serialVersionUID = -3884090044789061650L;
     private JLabel imagenFondo;
 

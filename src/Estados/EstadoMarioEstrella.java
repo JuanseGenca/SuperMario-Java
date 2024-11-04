@@ -2,6 +2,7 @@ package Estados;
 
 import Entidades.Mario;
 import Logica.ConstantesSonidos;
+import Visitors.ConstantesPowerUp;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -53,6 +54,6 @@ public class EstadoMarioEstrella implements EstadoMario {
     }
 
     public int getModificador() {
-        return 9;
+        return ConstantesPowerUp.ESTRELLA;
     }
 }

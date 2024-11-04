@@ -14,7 +14,7 @@ public abstract class ObserverGrafico extends JLabel implements Observer {
     
 	private static final long serialVersionUID = 1L;
     protected EntidadLogica entidadObservada;
-    private int zIndex; // New property to manage z-order
+    private int zIndex; //atributo para graficar en orden de prioridad
 
     protected ObserverGrafico(EntidadLogica entidadObservada, int zIndex)  {
 		super();

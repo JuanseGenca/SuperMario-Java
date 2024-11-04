@@ -5,6 +5,7 @@ import Entidades.ManejadorEntidades;
 import Entidades.Mario;
 import Logica.ConstantesEntidades;
 import Logica.ConstantesSonidos;
+import Visitors.ConstantesPowerUp;
 
 public class EstadoMarioFuego implements EstadoMario{
     
@@ -42,7 +43,7 @@ public class EstadoMarioFuego implements EstadoMario{
     }
     
     public int getModificador(){
-        return 6;
+        return ConstantesPowerUp.FLORDEFUEGO;
     }
 
     public int getPaddingTamanio() {

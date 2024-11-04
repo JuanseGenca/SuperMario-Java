@@ -4,6 +4,7 @@ import Enemigos.KoopaTroopa;
 import Visitors.VisitorKoopaTroopa;
 
 public class EstadoKoopaTroopaCaparazon implements EstadoKoopaTroopa{
+    
     protected KoopaTroopa k;
     protected boolean vulnerable = true;
     

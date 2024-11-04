@@ -15,6 +15,7 @@ import Fabricas.SpritesMarioModo1;
 import Fabricas.SpritesMarioModo2;
 
 public class PanelModoDeJuego extends JPanel{
+    
     private static final long serialVersionUID = -3884090044789061650L;
     private GUI gui;
     private JLabel imagenFondo;

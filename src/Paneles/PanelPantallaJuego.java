@@ -9,7 +9,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -170,10 +169,7 @@ public class PanelPantallaJuego extends JPanel {
 			viewport.repaint();
 		}
 	}
-	
-	
-	
-	
+
     // Operaciones propias para construccion de PanelPantallaJuego
 
     protected void agregarPanelJuegoConFondoYScroll() {

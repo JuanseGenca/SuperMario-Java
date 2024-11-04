@@ -20,7 +20,6 @@ import javax.swing.Timer;
 public class Logica {
     
 	//Atributos de instancia
-
     protected Parserint parseint;
     protected EntidadesFactory fabricaEntidades;
     protected SpriteFactory fabricaSprites;
@@ -33,7 +32,6 @@ public class Logica {
 	protected HiloSecundario hilo2;
 	protected HiloPrincipal hiloPrincipal;
 	protected ManejadorDeSonidos manejadorDeSonidos;
-    
 
     //Constructor
     public Logica() {
@@ -174,6 +172,7 @@ public class Logica {
 	public int getMonedas(){
 		return monedas;
 	}
+	
 	public List<BolaDeFuego> getBolas(){
 		return nivelActual.getBolaDeFuego();
 	}

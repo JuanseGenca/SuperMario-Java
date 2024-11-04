@@ -1,5 +1,7 @@
 package Estados;
+
 import Entidades.Mario;
+import Visitors.ConstantesPowerUp;
 
 public class EstadoMarioComun implements EstadoMario{
 
@@ -24,7 +26,7 @@ public class EstadoMarioComun implements EstadoMario{
     }
     
     public int getModificador(){
-        return 0;
+        return ConstantesPowerUp.NORMAL;
     }
 
     public int getPaddingTamanio() {

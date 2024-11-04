@@ -29,6 +29,7 @@ public class VisitorBolaDeFuego implements Visitor{
     public VisitorBolaDeFuego(Mario mario){
         this.mario = mario;
     }
+    
     public void visit(KoopaTroopa koopaTroopa, int direccion) {
         koopaTroopa.recibirDanio();
         mario.actualizarPuntaje(90);

@@ -1,4 +1,5 @@
 package Nivel;
+
 import Enemigos.*;
 import Entidades.BolaDeFuego;
 import Entidades.Mario;
@@ -8,6 +9,7 @@ import PowerUps.PowerUp;
 import java.util.ArrayList;
 
 public class Nivel {
+
     protected ArrayList<Enemigo> enemigos;
     protected ArrayList<Plataforma> plataformas;
     protected ArrayList<PowerUp> powerUps;

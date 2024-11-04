@@ -3,11 +3,11 @@ package Logica;
 import Enemigos.Enemigo;
 import Entidades.BolaDeFuego;
 import PowerUps.PowerUp;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class HiloSecundario extends Thread {
+    
     private boolean ejecutando = true;
     private Logica miLogica;
 

@@ -17,6 +17,7 @@ public class VisitorBloqueSolido extends VisitorPlataforma {
     
     public VisitorBloqueSolido() {
     }
+    
     public void visit(KoopaTroopa koopaTroopa, int direccion){
         if(direccion == ConstantesColisiones.DERECHA){
             koopaTroopa.setPosicionx(koopaTroopa.getPosicionX() - 4);

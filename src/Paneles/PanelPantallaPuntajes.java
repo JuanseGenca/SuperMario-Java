@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class PanelPantallaPuntajes extends JPanel {
+    
     private static final long serialVersionUID = -3884090044789061650L;
     private GUI gui;
     private JLabel imagenFondo;

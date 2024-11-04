@@ -13,7 +13,6 @@ public class Moneda extends PowerUp{
     }
     
     public void mover(){
-        
     }
     
     public void aceptar(Visitor visitor, int direccion){

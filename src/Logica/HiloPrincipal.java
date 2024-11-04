@@ -4,6 +4,7 @@ import Entidades.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class HiloPrincipal extends Thread {
+    
     private ManejadorDeColisiones manejadorDeColisiones;
     private Logica miLogica;
     private boolean ejecutando;

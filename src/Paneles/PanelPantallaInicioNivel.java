@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanelPantallaInicioNivel extends JPanel{
+    
     private static final long serialVersionUID = -3884090044789061650L;
     private GUI miGUI;
     private JLabel imagenFondo;

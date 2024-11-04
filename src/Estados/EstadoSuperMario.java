@@ -2,6 +2,7 @@ package Estados;
 
 import Entidades.Mario;
 import Logica.ConstantesSonidos;
+import Visitors.ConstantesPowerUp;
 
 public class EstadoSuperMario implements EstadoMario{
 
@@ -26,7 +27,7 @@ public class EstadoSuperMario implements EstadoMario{
     }
     
     public int getModificador(){
-        return 3;
+        return ConstantesPowerUp.SUPERCHAMPINION;
     }
 
     public int getPaddingTamanio() {
