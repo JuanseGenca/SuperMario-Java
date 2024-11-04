@@ -5,6 +5,7 @@ import Enemigos.Goomba;
 import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
 import Enemigos.Spiny;
+import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 import Logica.ConstantesEntidades;
@@ -85,4 +86,6 @@ public class VisitorVacio extends VisitorPlataforma{
         estrella.aplicarGravedad();
     }
     
+    public void visit(BolaDeFuego bolaDeFuego, int direccion) {
+    }
 }

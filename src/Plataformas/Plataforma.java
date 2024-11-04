@@ -4,11 +4,13 @@ import Entidades.Entidad;
 import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.Visitor;
+import Visitors.VisitorPlataforma;
 
 public abstract class Plataforma extends Entidad{
     
     public Plataforma(int posicionX ,int posicionY,Sprite sprite[]){
         super(posicionX,posicionY,sprite);
+        visitor = new VisitorPlataforma();
     }
     
     public void aceptar(Visitor visitor, int direccion){

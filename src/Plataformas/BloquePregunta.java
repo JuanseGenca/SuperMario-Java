@@ -4,7 +4,6 @@ import Entidades.ManejadorEntidades;
 import GUI.Sprite;
 import Logica.Logica;
 import Logica.Visitor;
-import Visitors.VisitorBloquePregunta;
 
 public class BloquePregunta extends Plataforma{
     
@@ -13,7 +12,6 @@ public class BloquePregunta extends Plataforma{
 
     public BloquePregunta(int posicionX ,int posicionY,Sprite sprite[],Logica log,int entidadContenida){
         super(posicionX ,posicionY,sprite);
-        visitor=new VisitorBloquePregunta();
         miLogica = log;
         this.entidadContenida = entidadContenida;
     }

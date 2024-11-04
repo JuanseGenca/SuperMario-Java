@@ -3,13 +3,11 @@ package Plataformas;
 import Entidades.Entidad;
 import GUI.Sprite;
 import Logica.Visitor;
-import Visitors.VisitorTuberia;
 
 public class Tuberia extends BloqueIrrompible{
     
     public Tuberia(int posicionX ,int posicionY,Sprite sprite[]){
         super(posicionX,posicionY,sprite);
-        visitor= new VisitorTuberia();
         miHitboxes.actualizarHitboxes(posicionX, posicionY-144, ancho, alto);
     }
 
