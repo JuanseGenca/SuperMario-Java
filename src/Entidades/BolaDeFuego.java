@@ -19,7 +19,7 @@ public class BolaDeFuego extends Enemigo{
         posicionY = posicionY - 40;
 
     }
-    @Override
+    
     public void mover(){
         posicionX += velocidadX;
         
@@ -31,16 +31,13 @@ public class BolaDeFuego extends Enemigo{
         miHitboxes.actualizarHitboxes(posicionX, posicionY, ancho, alto);
         actualizarSprite();
     }   
-
-        
-    
     
     public void actualizarSprite() {
         if (miObserver != null) {
             miObserver.actualizar(posicionX, posicionY);
         }
     }
-    @Override
+    
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
@@ -49,7 +46,6 @@ public class BolaDeFuego extends Enemigo{
         return System.currentTimeMillis() - tiempoCreacion >= tiempoVida;
     }
 
-    @Override
     public void eliminar(){
         spriteActual = misSprites[1];
         actualizar(direccion, estadoAereo);

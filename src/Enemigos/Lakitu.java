@@ -7,13 +7,14 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Lakitu extends Enemigo{
+    
     private Timer timer;
+
     public Lakitu(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
         puntaje=60;
     }
    
-    @Override
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }
@@ -38,7 +39,6 @@ public class Lakitu extends Enemigo{
         }
     }
 
-    @SuppressWarnings("override")
     public void eliminar(){
         detenerReloj();
         ManejadorEntidades.getInstancia().eliminarEnemigo(this);

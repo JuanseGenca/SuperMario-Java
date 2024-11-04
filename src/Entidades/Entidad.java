@@ -6,22 +6,21 @@ import Logica.*;
 import java.awt.Rectangle;
 
 public abstract class Entidad implements EntidadLogica{   
- //Atributos
- protected int posicionX;
- protected int posicionY;
- protected int direccion;
- protected int estadoAereo;
- protected int alto, ancho;
- protected boolean tocandoSuelo;
- protected int puntaje;
- protected Sprite[] misSprites;
- protected Sprite spriteActual;
- protected Observer miObserver;
- protected double velocidadX, velocidadY;
- protected HitboxesEntidad miHitboxes;
- protected Visitor visitor;
-  
 
+   protected int posicionX;
+   protected int posicionY;
+   protected int direccion;
+   protected int estadoAereo;
+   protected int alto, ancho;
+   protected boolean tocandoSuelo;
+   protected int puntaje;
+   protected Sprite[] misSprites;
+   protected Sprite spriteActual;
+   protected Observer miObserver;
+   protected double velocidadX, velocidadY;
+   protected HitboxesEntidad miHitboxes;
+   protected Visitor visitor;
+  
    public Entidad(int posicionX, int posicionY,Sprite[] sprites) {
       this.posicionX=posicionX;
       this.posicionY=posicionY;
@@ -38,17 +37,14 @@ public abstract class Entidad implements EntidadLogica{
       return puntaje;
    }
 
- @SuppressWarnings("override")
    public int getPosicionX() {
       return posicionX;
    }
 
-   @SuppressWarnings("override")
    public int getPosicionY() {
       return posicionY;
    }
 
-   @SuppressWarnings("override")
    public Sprite getSprite() {
       return spriteActual;
    }
@@ -69,7 +65,6 @@ public abstract class Entidad implements EntidadLogica{
       this.velocidadY = velocidadY;
    }
 
-   //testeando para que mario no atraviese cosas
    public void setPosicionx(int posicionX){
       this.posicionX = posicionX;
    }
@@ -84,10 +79,6 @@ public abstract class Entidad implements EntidadLogica{
 
    public double getVelocidadY() {
       return velocidadY;
-   }
-
-   public void morir(){
-
    }
 
    public void recibirDanio(int puntaje) {
@@ -120,10 +111,9 @@ public abstract class Entidad implements EntidadLogica{
       return direccion;
    }
 
- @SuppressWarnings("override")
    public int getZIndex(){
       return ConstantesEntidades.PRIORIDAD;
-  }
+   }
 
    public void establecerEstadoAereo(int estadoAereo){
       this.estadoAereo = estadoAereo;

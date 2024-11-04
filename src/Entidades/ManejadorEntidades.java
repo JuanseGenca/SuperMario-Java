@@ -16,6 +16,7 @@ import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
 
 public class ManejadorEntidades {
+    
     private Nivel nivel;
     private static ManejadorEntidades instancia;
     private EntidadesFactory fabricaEnt;

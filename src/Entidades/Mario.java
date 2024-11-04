@@ -7,15 +7,13 @@ import Visitors.VisitorMario;
 import java.util.Timer;
 import java.util.TimerTask;
 
-//import Plataformas.Plataforma;
-
 public class Mario extends Entidad implements EntidadJugador{
+    
     protected EstadoMario estado;
     protected Logica miLogica;
     private int dirTickAnterior;
     protected boolean invencible;
     public boolean cayoAlVacio;
-    
 
     public Mario(int posicionX, int posicionY,Sprite[] sprites){
         super(posicionX,posicionY,sprites);
@@ -26,7 +24,6 @@ public class Mario extends Entidad implements EntidadJugador{
         cayoAlVacio = false;
     }
 
-    @Override
     public void mover(){
         
         moverX();
@@ -80,7 +77,6 @@ public class Mario extends Entidad implements EntidadJugador{
         }
     }
 
-    @Override
     public void recibirDanio(int puntaje){
         if(!invencible){
             estado.recibirDanio(puntaje);
@@ -110,7 +106,7 @@ public class Mario extends Entidad implements EntidadJugador{
     public void aniadirMoneda() {
         miLogica.aniadirMoneda();
     }
-    @Override
+    
     public void aceptar(Visitor visitor, int direccion){
         visitor.visit(this, direccion);
     }
@@ -118,8 +114,6 @@ public class Mario extends Entidad implements EntidadJugador{
         return dirTickAnterior;
     }
 
-    //como no tengo formar de recibir el Y de la plataforma, asumo que la plataforma sigue el estandar de un bloque = 48px
-    //mejorable si encontramos la forma de pasarle la posicion de la plataforma
     public void tocoSuelo() {
         velocidadY = 0;
         posicionY = alto + (posicionY - posicionY % 48) - estado.getPaddingTamanio();
@@ -127,7 +121,6 @@ public class Mario extends Entidad implements EntidadJugador{
         tocandoSuelo = true;
     }
 
-    @Override
     public int getPuntaje() {
         return miLogica.getPuntaje();
     }
@@ -136,17 +129,12 @@ public class Mario extends Entidad implements EntidadJugador{
         miLogica.actualizarPuntaje(puntaje);
     }
 
-    @Override
-    public int getTiempo() {
-      return 0;  
-    }
-
-    @Override
     public int getVidas() {
         return miLogica.getVidas();
     }
 
     public void actualizarVelocidadXMario() {
+        
         double acceleration = 1;
         double deceleration = 0.4;
         double maxVelocity = 8;
@@ -172,6 +160,7 @@ public class Mario extends Entidad implements EntidadJugador{
     }
 
     public void actualizarVelocidadYMario() {
+        
         double velInicialSalto = 11;
         double gravedad = -0.2;
         double velTerminal = -8;
@@ -213,7 +202,6 @@ public class Mario extends Entidad implements EntidadJugador{
         spriteActual = nuevoSprite;
     }
 
-    @Override
     public int getDireccion(){
         return direccion;
     }
@@ -251,12 +239,10 @@ public class Mario extends Entidad implements EntidadJugador{
         miLogica = logica;
     }
 
-    @Override
     public int getMonedas() {
         return miLogica.getMonedas();
     } 
 
-    @Override
     public void morir(){
         miLogica.detenerSonido(miLogica.getNivel().getNumeroNivel());
         miLogica.reproducirSonido(ConstantesSonidos.MUERTEMARIO);

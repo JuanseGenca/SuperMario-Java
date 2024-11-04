@@ -1,4 +1,5 @@
 package Entidades;
+
 import Logica.*;
 
 public interface Visitable {

@@ -10,7 +10,6 @@ public class Goomba extends Enemigo{
         puntaje=60;
     }
     
-    @Override
     public void aceptar(Visitor v, int direccion){
         v.visit(this, direccion);
     }

@@ -4,14 +4,12 @@ import Enemigos.BuzzyBeetle;
 import Enemigos.Goomba;
 import Enemigos.KoopaTroopa;
 import Enemigos.Lakitu;
-import Enemigos.PiranhaPlant;
 import Enemigos.Spiny;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 import Logica.ConstantesEntidades;
 import PowerUps.ChampinionVerde;
 import PowerUps.Estrella;
-import PowerUps.Moneda;
 import PowerUps.SuperChampinion;
 
 public class VisitorVacio extends VisitorPlataforma{
@@ -50,13 +48,6 @@ public class VisitorVacio extends VisitorPlataforma{
         buzzyBeetle.aplicarGravedad();
     }
     
-    public void visit(PiranhaPlant piranhaPlant, int direccion){
-        if(piranhaPlant.getPosicionY() == 0){
-            piranhaPlant.cayoAlVacio = true;
-        }
-        piranhaPlant.aplicarGravedad();
-    }
-    
     public void visit(Spiny spiny, int direccion){
         if(spiny.getPosicionY() == 0){
             spiny.cayoAlVacio = true;
@@ -83,10 +74,6 @@ public class VisitorVacio extends VisitorPlataforma{
             superChampinion.cayoAlVacio = true;
         }
         superChampinion.aplicarGravedad();
-    }
-    
-    public void visit(Moneda moneda, int direccion){
-        moneda.morir();
     }
     
     public void visit(Estrella estrella, int direccion){
