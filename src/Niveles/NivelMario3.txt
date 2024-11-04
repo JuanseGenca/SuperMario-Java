@@ -1,4 +1,176 @@
-Mario:0,0
+Mario:3700,500
+Vacio:0,354
+Vacio:0,550
+Lakitu:8000,550
+Goomba:300,0
+Bloque Solido:300,-48
+Bloque Solido:300,-96
 Vacio:392,-40
 Vacio:440,-40
-Bloque Solido:10,10
+Bloque Solido:540,-48
+Bloque Solido:540,-96
+Bloque Solido:588,-48
+Bloque Solido:588,-96
+Vacio:683,-40
+Vacio:731,-40
+Bloque Solido:828,-48
+Bloque Solido:828,-96
+Bloque Solido:974,-48
+Bloque Solido:974,-96
+Vacio:1068,-40
+Vacio:1116,-40
+Vacio:1164,-40
+Vacio:1212,-40
+Vacio:1260,-40
+Vacio:1308,-40
+Vacio:1356,-40
+Vacio:1404,-40
+Vacio:1452,-40
+Vacio:1500,-40
+Vacio:1548,-40
+Vacio:1596,-40
+Vacio:1644,-40
+Vacio:1692,-40
+Vacio:1740,-40
+Vacio:1788,-40
+Vacio:1836,-40
+Vacio:1884,-40
+Vacio:1932,-40
+Vacio:1980,-40
+Vacio:2028,-40
+Vacio:2076,-40
+Vacio:2124,-40
+Vacio:2172,-40
+Vacio:2220,-40
+Bloque Solido:2320,-48
+Bloque Solido:2320,-96
+Vacio:1261,56
+Bloque Solido:1356,48
+Vacio:1451,56
+Vacio:1705,200
+Bloque Solido:1800,192
+Vacio:1895,200
+Vacio:2305,455
+Ladrillo Rompible:2400,450
+Moneda:2400,498
+Moneda:2400,546
+Ladrillo Rompible:2448,450
+Moneda:2448,498
+Moneda:2447,546
+Ladrillo Rompible:2496,450
+Moneda:2496,498
+Moneda:2496,546
+Ladrillo Rompible:2544,450
+Moneda:2544,498
+Moneda:2544,546
+Ladrillo Rompible:2592,450
+Moneda:2592,498
+Moneda:2592,546
+Vacio:2687,455
+Vacio:2449,205
+Ladrillo Rompible:2544,200
+Bloque Pregunta:2592,200
+Ladrillo Rompible:2640,200
+Vacio:2735,205
+Bloque Solido:3184,-48
+Bloque Solido:3184,-96
+Vacio:3279,-40
+Vacio:3327,-40
+Bloque Solido:3424,-48
+Bloque Solido:3424,-96
+Vacio:3520,354
+Piranha Plant:3544,144
+Vacio:3425,152
+Tuberia:3520,144
+Goomba:3600,0
+Koopa Troopa:3700,0
+Vacio:3663,152
+Vacio:3953,408
+Ladrillo Rompible:4048,400
+Bloque Pregunta:4096,400
+Ladrillo Rompible:4144,400
+Vacio:4239,408
+Vacio:3953,208
+Ladrillo Rompible:4048,200
+Bloque Pregunta:4096,200
+Ladrillo Rompible:4144,200
+Vacio:4239,208
+Goomba:4500,0
+Koopa Troopa:4600,0
+Piranha Plant:4792,144
+Vacio:4673,152
+Tuberia:4768,144
+Vacio:4911,152
+Bloque Solido:4864,-48
+Bloque Solido:4864,-96
+Bloque Solido:4912,-48
+Bloque Solido:4912,-96
+Bloque Solido:4960,-48
+Bloque Solido:4960,-96
+Vacio:5294,104
+Koopa Troopa:5000,0
+Koopa Troopa:5100,0
+Koopa Troopa:5200,0
+Ladrillo Rompible:5389,0
+Ladrillo Rompible:5389,48
+Ladrillo Rompible:5389,96
+Vacio:5484,104
+Vacio:5532,104
+Vacio:5484,-40
+Vacio:5532,-40
+Vacio:5580,-40
+Ladrillo Rompible:5682,0
+Piranha Plant:5754,144
+Vacio:5635,152
+Tuberia:5730,144
+Vacio:5873,152
+Vacio:6211,208
+Koopa Troopa:5800,0
+Koopa Troopa:6000,0
+Koopa Troopa:6300,0
+Ladrillo Rompible:6306,200
+Bloque Pregunta:6354,200
+Ladrillo Rompible:6402,200
+Vacio:6497,208
+Piranha Plant:7242,144
+Vacio:7123,152
+Goomba:7100,0
+Goomba:6900,0
+Tuberia:7218,144
+Vacio:7361,152
+Vacio:7843,208
+Koopa Troopa:7400,0
+Koopa Troopa:7600,0
+Goomba:8600,0
+Goomba:8400,0
+Ladrillo Rompible:7938,200
+Bloque Pregunta:7986,200
+Ladrillo Rompible:8034,200
+Vacio:8129,208
+Ladrillo Rompible:8751,0
+Ladrillo Rompible:8751,48
+Ladrillo Rompible:8751,96
+Ladrillo Rompible:8751,144
+Ladrillo Rompible:8799,0
+Ladrillo Rompible:8799,48
+Ladrillo Rompible:8799,96
+Ladrillo Rompible:8799,144
+Vacio:8663,152
+Ladrillo Rompible:8847,0
+Ladrillo Rompible:8847,48
+Ladrillo Rompible:8847,96
+Ladrillo Rompible:8847,144
+Ladrillo Rompible:8895,0
+Ladrillo Rompible:8895,48
+Ladrillo Rompible:8895,96
+Ladrillo Rompible:8895,144
+Ladrillo Rompible:8943,0
+Ladrillo Rompible:8943,48
+Ladrillo Rompible:8943,96
+Ladrillo Rompible:8943,144
+Ladrillo Rompible:8943,192
+Ladrillo Rompible:8943,240
+Ladrillo Rompible:8943,288
+Ladrillo Rompible:8943,336
+Vacio:8943,550
+Meta:8943,432

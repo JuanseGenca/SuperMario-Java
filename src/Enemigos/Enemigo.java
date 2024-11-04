@@ -15,7 +15,7 @@ public abstract class Enemigo extends Entidad{
         super(x,y,sprite);
         velocidadX = 2;
         velocidadY = 4;
-        direccion = ConstantesEntidades.DERECHA;
+        direccion = ConstantesEntidades.IZQUIERDA;
         tocandoSuelo = true;
         cayoAlVacio = false;
         visitor = new VisitorEnemigo(this);
