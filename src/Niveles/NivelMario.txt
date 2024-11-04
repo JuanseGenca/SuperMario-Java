@@ -1,40 +1,61 @@
 Mario:0,0
-Vacio:0,480
-Ladrillo Rompible:30,0
-Goomba:1210,0
-Buzzy Beetle:1600,0
-Koopa Troopa:2000,0
-Meta:4300,48
-Lakitu:300,480
-Vacio:2100,480
-Goomba:650,0
-Buzzy Beetle:850,0
-Ladrillo Rompible:144,192
-Ladrillo Rompible:534,192
-Ladrillo Rompible:438,192
-Ladrillo Rompible:342,192
-Ladrillo Rompible:582,70
-Ladrillo Rompible:630,70
-Ladrillo Rompible:678,70
-Ladrillo Rompible:726,118
-Vacio:487,78
-Bloque Pregunta:192,192
-Goomba:342,240
-Bloque Pregunta:486,192
-Bloque Pregunta:390,192
-Bloque Pregunta:438,384
-Vacio:97,200
-Vacio:629,200
-Vacio:270,200
-Vacio:343,386
-Vacio:533,386
-Tuberia:1152,144
-Vacio:1250,145
-Piranha Plant:1176,144
-Tuberia:2300,144
-Vacio:2347,145
-Vacio:2590,1
-Vacio:3164,1
-Vacio:3212,1
-Vacio:3260,1
-Vacio:3270,1
+Vacio:193,200
+Ladrillo Rompible:288,192
+Bloque Pregunta:336,192
+Vacio:431,200
+Ladrillo Rompible:528,192
+Bloque Pregunta:576,192
+Ladrillo Rompible:624,192
+Vacio:529,400
+Bloque Pregunta:624,384
+Vacio:719,400
+Bloque Pregunta:672,192
+Ladrillo Rompible:720,192
+Vacio:815,200
+Buzzy Beetle:500,0
+Goomba:800,0
+Piranha Plant:1224,144
+Vacio:1105,152
+Tuberia:1200,144
+Vacio:1343,152
+Piranha Plant:2424,144
+Vacio:2305,152
+Koopa Troopa:1300,0
+Goomba:1800,0
+Koopa Troopa:2300,0
+Tuberia:2400,144
+Vacio:2543,152
+Moneda:2496,0
+Bloque Solido:2496,-48
+Bloque Solido:2496,-96
+Vacio:2591,0
+Vacio:2593,0
+Bloque Solido:2688,-48
+Bloque Solido:2688,-96
+Vacio:2593,385
+Ladrillo Rompible:2688,375
+Moneda:2688,423
+Ladrillo Rompible:2736,375
+Moneda:2736,423
+Ladrillo Rompible:2784,375
+Moneda:2784,423
+Vacio:2879,385
+Bloque Solido:3072,-48
+Bloque Solido:3072,-96
+Vacio:3167,0
+Vacio:3216,0
+Vacio:3265,0
+Bloque Solido:3360,-48
+Bloque Solido:3360,-96
+Vacio:3745,200
+Ladrillo Rompible:3840,192
+Bloque Pregunta:3888,192
+Ladrillo Rompible:3936,192
+Vacio:4031,200
+Moneda:4032,0
+Moneda:4080,0
+Moneda:4128,0
+Meta:4368,48
+Koopa Troopa:5500,0
+Goomba:4800,0
+Goomba:4900,0
