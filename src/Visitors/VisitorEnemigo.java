@@ -34,7 +34,7 @@ public class VisitorEnemigo implements Visitor {
     public void visit(Spiny spiny, int direccion) {}
     
     public void visit(Mario mario, int direccion) { 
-        if(direccion == ConstantesColisiones.ARRIBA) {
+        if(direccion == ConstantesColisiones.ARRIBA && !mario.estaInvencible()) {
             mario.setPosicionY(mario.getPosicionY() + 8);
             double nuevaVel = 3;
             mario.setVelocidadY(nuevaVel);

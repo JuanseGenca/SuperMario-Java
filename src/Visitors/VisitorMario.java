@@ -36,7 +36,7 @@ public class VisitorMario implements Visitor {
         
     public void visit(KoopaTroopa koopaTroopa, int direccion) {
     
-        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA |  direccion == ConstantesColisiones.ABAJO) {
+        if ((mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA |  direccion == ConstantesColisiones.ABAJO) && !mario.estaInvencible()) {
             koopaTroopa.recibirDanio();
             mario.reproducirSonido(ConstantesSonidos.MATAR);
             mario.actualizarPuntaje(90);
@@ -48,14 +48,16 @@ public class VisitorMario implements Visitor {
         }
         
     public void visit(Goomba goomba, int direccion) {
-        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
+        if ((mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) && !mario.estaInvencible()) {
             goomba.recibirDanio(0);
             mario.reproducirSonido(ConstantesSonidos.MATAR);
             mario.actualizarPuntaje(60);
             
+            //si mario esta en estrella el enemigo es eliminado instaneamente
             if(mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA){
                     goomba.eliminar();
                 }
+                // sino hay un delay
                 else {
                     Timer timer = new Timer();
                     timer.schedule(new TimerTask() {
@@ -78,7 +80,7 @@ public class VisitorMario implements Visitor {
     }
 
     public void visit(BuzzyBeetle buzzyBeetle, int direccion) {
-        if (mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) {
+        if ((mario.getEstado().getModificador()==ConstantesPowerUp.ESTRELLA | direccion == ConstantesColisiones.ABAJO) && !mario.estaInvencible()) {
             buzzyBeetle.recibirDanio(0);
             mario.reproducirSonido(ConstantesSonidos.MATAR);
             mario.actualizarPuntaje(30);

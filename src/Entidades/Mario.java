@@ -84,15 +84,20 @@ public class Mario extends Entidad implements EntidadJugador{
         } 
     }
 
+    public boolean estaInvencible(){
+        return invencible;
+    }
+
+    //mario despues de recibir danio tiene un periodo en el cual no puede volver a recibir y no puede matar enemigos
     private void establecerInvencibilidad() {
         invencible = true;
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                invencible =false;
+                invencible = false;
             }
-        }, 700);
+        }, 1500);
     }
 
     public void disparar(){

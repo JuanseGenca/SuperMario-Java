@@ -53,7 +53,7 @@ public class VisitorKoopaTroopa extends VisitorEnemigo {
     }
 
     public void visit(Mario mario, int direccion) {
-        if(direccion == ConstantesColisiones.ARRIBA) {
+        if(direccion == ConstantesColisiones.ARRIBA && !mario.estaInvencible()) {
             mario.setPosicionY(mario.getPosicionY() + 16);
             double nuevaVel = 3;
             mario.setVelocidadY(nuevaVel);
