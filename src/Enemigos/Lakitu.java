@@ -13,6 +13,7 @@ public class Lakitu extends Enemigo{
     public Lakitu(int x, int y,Sprite[] sprite){
         super(x,y,sprite);
         puntaje=60;
+        velocidadX = 3;
     }
    
     public void aceptar(Visitor v, int direccion){
