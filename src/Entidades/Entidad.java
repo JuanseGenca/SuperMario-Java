@@ -5,7 +5,7 @@ import GUI.Sprite;
 import Logica.*;
 import java.awt.Rectangle;
 
-public abstract class Entidad implements EntidadLogica{   
+public abstract class Entidad implements EntidadLogica, Visitable{   
 
    protected int posicionX;
    protected int posicionY;
