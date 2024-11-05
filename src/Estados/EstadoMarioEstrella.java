@@ -12,7 +12,7 @@ public class EstadoMarioEstrella implements EstadoMario {
     protected static final int paddingTamanio = 48;
     protected EstadoMario estadoPrevio;
     private Timer timer;
-    private static final long DURACION_ESTRELLA = 5000; // Duración en milisegundos (1 segundo=1000 milisegundos)
+    private static final long duracionEstrella = 5000; // Duración en milisegundos (1 segundo=1000 milisegundos)
 
     public EstadoMarioEstrella(Mario mario) {
         m = mario;
@@ -44,7 +44,7 @@ public class EstadoMarioEstrella implements EstadoMario {
             public void run() {
                 finalizarEstadoEstrella();
             }
-        }, DURACION_ESTRELLA);
+        }, duracionEstrella);
     }
 
     private void finalizarEstadoEstrella() {
