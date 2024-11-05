@@ -21,11 +21,9 @@ public class PanelPantallaJuego extends JPanel {
     private JLabel primerLayerEntidades;
     private JScrollPane panelPantallaJuego;
     private int posicionXAnterior = 0;
-    private GUI miGui;
     private PanelInformacionJugador miPanelInformacionJugador;
 
     public PanelPantallaJuego(GUI gui) {
-        miGui = gui;
         setPreferredSize(new Dimension(ConstantesVistas.PANEL_ANCHO, ConstantesVistas.PANEL_ALTO));
         setLayout(new BorderLayout());
         miPanelInformacionJugador = new PanelInformacionJugador(gui, this);

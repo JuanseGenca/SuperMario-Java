@@ -8,7 +8,7 @@ import Logica.Visitor;
 
 public abstract class PowerUp extends Entidad{
     
-    public boolean cayoAlVacio;
+    protected boolean cayoAlVacio;
 
     public PowerUp(int posicionX, int posicionY,Sprite[] sprite){
         super(posicionX, posicionY, sprite);
@@ -51,4 +51,7 @@ public abstract class PowerUp extends Entidad{
         }
     }
 
+    public void setCayoAlVacio(boolean cayoAlVacio) {
+        this.cayoAlVacio = cayoAlVacio;
+    }
 }

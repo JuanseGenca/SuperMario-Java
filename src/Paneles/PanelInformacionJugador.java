@@ -59,16 +59,16 @@ public class PanelInformacionJugador{
 
     protected String textoConCantidadDigitos(int numero, int digitos) {
         String textoAutocompletado = "";
-        if (en_rango(numero, 0, 9)) {
+        if (enRango(numero, 0, 9)) {
             textoAutocompletado = "0000" + numero;
         } else {
-            if (en_rango(numero, 10, 99)) {
+            if (enRango(numero, 10, 99)) {
                 textoAutocompletado = "000" + numero;
             } else {
-                if (en_rango(numero, 100, 999)) {
+                if (enRango(numero, 100, 999)) {
                     textoAutocompletado = "00" + numero;
                 } else {
-                    if (en_rango(numero, 1000, 9999)) {
+                    if (enRango(numero, 1000, 9999)) {
                         textoAutocompletado = "0" + numero;
                     } else {
                         textoAutocompletado += numero;
@@ -79,7 +79,7 @@ public class PanelInformacionJugador{
         return textoAutocompletado;
     }
 
-    protected boolean en_rango(int numero, int piso, int techo) {
+    protected boolean enRango(int numero, int piso, int techo) {
         boolean retorno;
         retorno = numero >= piso;
         retorno = retorno && (numero <= techo);

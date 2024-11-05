@@ -62,21 +62,21 @@ public class VisitorVacio extends VisitorPlataforma{
     
     public void visit(ChampinionVerde champinionVerde, int direccion){
         if(champinionVerde.getPosicionY() == 0){
-            champinionVerde.cayoAlVacio = true;
+            champinionVerde.setCayoAlVacio(true);
         }
         champinionVerde.aplicarGravedad();
     }
     
     public void visit(SuperChampinion superChampinion, int direccion){
         if(superChampinion.getPosicionY() == 0){
-            superChampinion.cayoAlVacio = true;
+            superChampinion.setCayoAlVacio(true);
         }
         superChampinion.aplicarGravedad();
     }
     
     public void visit(Estrella estrella, int direccion){
         if(estrella.getPosicionY() == 0){
-            estrella.cayoAlVacio = true;
+            estrella.setCayoAlVacio(true);
         }
         estrella.aplicarGravedad();
     }
