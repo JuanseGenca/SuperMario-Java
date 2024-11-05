@@ -49,7 +49,7 @@ Ladrillo Rompible:3424,0
 Vacio:3490,48
 Vacio:3490,96
 Ladrillo Rompible:3550,48
-Lakitu:3550,0
+Koopa Troopa:3550,0
 Vacio:3615,96
 Vacio:3615,144
 Ladrillo Rompible:3700,96
@@ -70,7 +70,7 @@ Vacio:4350,96
 Vacio:4350,144
 Ladrillo Rompible:4400,96
 Ladrillo Rompible:4400,0
-Lakitu:4350,0
+Koopa Troopa:4350,0
 Vacio:4470,96
 Vacio:4470,144
 Vacio:4470,192
@@ -93,7 +93,7 @@ Vacio:5170,0
 Vacio:5230,0
 Ladrillo Rompible:5300,96
 Ladrillo Rompible:5300,0
-Lakitu:5350,0
+Koopa Troopa:5350,0
 Vacio:5370,96
 Vacio:5370,144
 Vacio:5370,192
