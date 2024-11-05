@@ -1,12 +1,6 @@
 package Visitors;
 
-import Enemigos.BuzzyBeetle;
-import Enemigos.Goomba;
-import Enemigos.KoopaTroopa;
-import Enemigos.Lakitu;
-import Enemigos.PiranhaPlant;
-import Enemigos.Spiny;
-import Entidades.BolaDeFuego;
+import Enemigos.*;
 import Entidades.Mario;
 import Logica.Visitor;
 import Plataformas.BloqueIrrompible;

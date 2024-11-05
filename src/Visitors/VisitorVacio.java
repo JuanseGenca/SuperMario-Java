@@ -1,11 +1,6 @@
 package Visitors;
 
-import Enemigos.BuzzyBeetle;
-import Enemigos.Goomba;
-import Enemigos.KoopaTroopa;
-import Enemigos.Lakitu;
-import Enemigos.Spiny;
-import Entidades.BolaDeFuego;
+import Enemigos.*;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 import Logica.ConstantesEntidades;

@@ -1,5 +1,6 @@
 package Entidades;
 
+import Enemigos.BolaDeFuego;
 import Enemigos.Enemigo;
 import Enemigos.Spiny;
 import Fabricas.EntidadesFactory;

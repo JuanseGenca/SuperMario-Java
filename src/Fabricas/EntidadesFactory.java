@@ -1,7 +1,6 @@
 package Fabricas;
 
 import Enemigos.*;
-import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import GUI.Sprite;
 import Logica.Logica;

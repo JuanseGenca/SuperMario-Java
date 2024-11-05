@@ -1,14 +1,5 @@
 package Visitors;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import Enemigos.BuzzyBeetle;
-import Enemigos.Goomba;
-import Enemigos.KoopaTroopa;
-import Enemigos.Lakitu;
-import Enemigos.PiranhaPlant;
-import Enemigos.Spiny;
-import Entidades.BolaDeFuego;
+import Enemigos.*;
 import Entidades.Mario;
 import Logica.ConstantesColisiones;
 import Logica.ConstantesSonidos;
@@ -25,6 +16,8 @@ import PowerUps.FlorDeFuego;
 import PowerUps.Moneda;
 import PowerUps.PowerUp;
 import PowerUps.SuperChampinion;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class VisitorMario implements Visitor {
 

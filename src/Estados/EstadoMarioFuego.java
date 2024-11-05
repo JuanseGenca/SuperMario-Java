@@ -1,6 +1,6 @@
 package Estados;
 
-import Entidades.BolaDeFuego;
+import Enemigos.BolaDeFuego;
 import Entidades.ManejadorEntidades;
 import Entidades.Mario;
 import Logica.ConstantesEntidades;

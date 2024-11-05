@@ -1,7 +1,7 @@
 package Logica;
 
+import Enemigos.BolaDeFuego;
 import Enemigos.Enemigo;
-import Entidades.BolaDeFuego;
 import Entidades.Entidad;
 import Entidades.Mario;
 import Fabricas.*;

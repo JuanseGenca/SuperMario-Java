@@ -1,7 +1,6 @@
 package Nivel;
 
 import Enemigos.*;
-import Entidades.BolaDeFuego;
 import Entidades.Mario;
 import Logica.ManejadorDeColisiones;
 import Plataformas.Plataforma;

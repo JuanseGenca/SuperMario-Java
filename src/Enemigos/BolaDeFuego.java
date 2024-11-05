@@ -1,5 +1,7 @@
-package Entidades;
-import Enemigos.Enemigo;
+package Enemigos;
+
+import Entidades.ManejadorEntidades;
+import Entidades.Mario;
 import GUI.Sprite;
 import Logica.Visitor;
 import Visitors.VisitorBolaDeFuego;

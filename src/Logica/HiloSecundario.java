@@ -1,7 +1,7 @@
 package Logica;
 
+import Enemigos.BolaDeFuego;
 import Enemigos.Enemigo;
-import Entidades.BolaDeFuego;
 import PowerUps.PowerUp;
 import java.util.ArrayList;
 import java.util.List;
