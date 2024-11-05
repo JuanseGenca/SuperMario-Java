@@ -34,6 +34,7 @@ Moneda:1728,432
 Goomba:1728,432
 Goomba:1776,432
 Goomba:1824,432
+Vacio:776,585
 Ladrillo Rompible:864,384
 Ladrillo Rompible:864,495
 Ladrillo Rompible:912,384
@@ -76,6 +77,7 @@ Ladrillo Rompible:1776,384
 Ladrillo Rompible:1776,495
 Ladrillo Rompible:1824,384
 Ladrillo Rompible:1824,495
+Vacio:1912,585
 Vacio:1158,202
 Bloque Pregunta:1248,192
 Vacio:1335,202
