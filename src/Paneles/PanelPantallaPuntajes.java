@@ -55,8 +55,8 @@ public class PanelPantallaPuntajes extends JPanel {
     protected void registrarOyenteBotonIniciar() {
         botonIniciar.addActionListener((ActionEvent e) -> {
             gui.mostrarPantallaInicial();
-                gui.reproducirSonido(ConstantesSonidos.MUSICALVL3);
-                gui.detenerSonido(ConstantesSonidos.MENUPRINCIPAL);
+            gui.detenerSonido(ConstantesSonidos.MUSICALVL3);
+            gui.reproducirSonido(ConstantesSonidos.MENUPRINCIPAL);
         });
     }
 

@@ -19,23 +19,23 @@ public class ManejadorDeSonidos {
     public ManejadorDeSonidos() {
         sonidos = new HashMap<>();
         posicionesPausadas = new HashMap<>();
-        cargarSonido(ConstantesSonidos.VIDA,"src\\Sonidos\\1up.wav");
-        cargarSonido(ConstantesSonidos.MONEDA,"src\\Sonidos\\coin.wav");
-        cargarSonido(ConstantesSonidos.BOLAFUEGO,"src\\Sonidos\\fireball.wav");
-        cargarSonido(ConstantesSonidos.SALTAR,"src\\Sonidos\\jump.wav");
-        cargarSonido(ConstantesSonidos.MATAR,"src\\Sonidos\\kick.wav");
-        cargarSonido(ConstantesSonidos.DANIOMARIO,"src\\Sonidos\\pipe.wav");
-        cargarSonido(ConstantesSonidos.POWERUP,"src\\Sonidos\\powerup.wav");
-        cargarSonido(ConstantesSonidos.MUERTEMARIO,"src\\Sonidos\\Die.wav");
-        cargarSonido(ConstantesSonidos.ROMPERPLATAFORMA,"src\\Sonidos\\Break.wav");
-        cargarSonido(ConstantesSonidos.MUSICALVL1,"src\\Sonidos\\Overworld1.wav");
-        cargarSonido(ConstantesSonidos.MUSICALVL2,"src\\Sonidos\\Overworld2.wav");
-        cargarSonido(ConstantesSonidos.MUSICALVL3,"src\\Sonidos\\Overworld3.wav");
-        cargarSonido(ConstantesSonidos.MENUPRINCIPAL,"src\\Sonidos\\MenuPrincipal.wav");
-        cargarSonido(ConstantesSonidos.INICIOJUEGO,"src\\Sonidos\\HereWeGo.wav");
-        cargarSonido(ConstantesSonidos.ESTRELLA,"src\\Sonidos\\MarioEstrella.wav");
-        cargarSonido(ConstantesSonidos.PASARNIVEL,"src\\Sonidos\\LevelClear.wav");
-        cargarSonido(ConstantesSonidos.GAMEOVER, "src\\Sonidos\\Game Over.wav");
+        cargarSonido(ConstantesSonidos.VIDA, "src/Sonidos/1up.wav");
+        cargarSonido(ConstantesSonidos.MONEDA, "src/Sonidos/Coin.wav");
+        cargarSonido(ConstantesSonidos.BOLAFUEGO, "src/Sonidos/fireball.wav");
+        cargarSonido(ConstantesSonidos.SALTAR, "src/Sonidos/Jump.wav");
+        cargarSonido(ConstantesSonidos.MATAR, "src/Sonidos/Kick.wav");
+        cargarSonido(ConstantesSonidos.DANIOMARIO, "src/Sonidos/pipe.wav");
+        cargarSonido(ConstantesSonidos.POWERUP, "src/Sonidos/powerup.wav");
+        cargarSonido(ConstantesSonidos.MUERTEMARIO, "src/Sonidos/Die.wav");
+        cargarSonido(ConstantesSonidos.ROMPERPLATAFORMA, "src/Sonidos/Break.wav");
+        cargarSonido(ConstantesSonidos.MUSICALVL1, "src/Sonidos/Overworld1.wav");
+        cargarSonido(ConstantesSonidos.MUSICALVL2, "src/Sonidos/Overworld2.wav");
+        cargarSonido(ConstantesSonidos.MUSICALVL3, "src/Sonidos/Overworld3.wav");
+        cargarSonido(ConstantesSonidos.MENUPRINCIPAL, "src/Sonidos/MenuPrincipal.wav");
+        cargarSonido(ConstantesSonidos.INICIOJUEGO, "src/Sonidos/HereWeGo.wav");
+        cargarSonido(ConstantesSonidos.ESTRELLA, "src/Sonidos/MarioEstrella.wav");
+        cargarSonido(ConstantesSonidos.PASARNIVEL, "src/Sonidos/LevelClear.wav");
+        cargarSonido(ConstantesSonidos.GAMEOVER, "src/Sonidos/Game Over.wav");
     }
 
     public void cargarSonido(int nombre, String rutaArchivo) {

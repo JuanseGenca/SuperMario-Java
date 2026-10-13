@@ -38,9 +38,7 @@ public class Logica {
         fabricaSprites = new SpritesMarioModo1();
 		fabricaEntidades = new EntidadesFactory(fabricaSprites);
 		manejadorDeSonidos = new ManejadorDeSonidos();
-        parseint = new Parserint(1,fabricaEntidades,this);
-        parseint = new Parserint(2,fabricaEntidades,this);
-		parseint = new Parserint(3,fabricaEntidades,this);
+		parseint = new Parserint(fabricaEntidades, this);
 		lvl=1;
 		vidas = 3;
     }

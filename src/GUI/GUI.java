@@ -46,14 +46,14 @@ public class GUI implements ControladorDeVistas, ControladorEntreJuegoVista {
     }
 
     private void configurarVentana() {
-        ventana = new JFrame("Super Mario Bros TDP 15");
+        ventana = new JFrame("Super Mario Bros");
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setResizable(false);
         ventana.setSize(ConstantesVistas.VENTANA_ANCHO, ConstantesVistas.VENTANA_ALTO);
         ventana.setLocationRelativeTo(null);
         Image icono=null;
         try {
-            icono = ImageIO.read(new File("src//Imagenes//Icono.jpg"));
+            icono = ImageIO.read(new File("src/Imagenes/Icono.jpg"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

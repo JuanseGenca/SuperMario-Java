@@ -58,32 +58,7 @@ public class PanelInformacionJugador{
     }
 
     protected String textoConCantidadDigitos(int numero, int digitos) {
-        String textoAutocompletado = "";
-        if (enRango(numero, 0, 9)) {
-            textoAutocompletado = "0000" + numero;
-        } else {
-            if (enRango(numero, 10, 99)) {
-                textoAutocompletado = "000" + numero;
-            } else {
-                if (enRango(numero, 100, 999)) {
-                    textoAutocompletado = "00" + numero;
-                } else {
-                    if (enRango(numero, 1000, 9999)) {
-                        textoAutocompletado = "0" + numero;
-                    } else {
-                        textoAutocompletado += numero;
-                    }
-                }
-            }
-        }
-        return textoAutocompletado;
-    }
-
-    protected boolean enRango(int numero, int piso, int techo) {
-        boolean retorno;
-        retorno = numero >= piso;
-        retorno = retorno && (numero <= techo);
-        return retorno;
+        return String.format("%0" + digitos + "d", Math.max(0, numero));
     }
 
     protected void agregarPanelInformacion(PanelPantallaJuego miPantallaJuego) {

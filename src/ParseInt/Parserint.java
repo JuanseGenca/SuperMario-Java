@@ -15,8 +15,8 @@ public class Parserint {
     protected EntidadesFactory fabricaEnt;
     protected Logica miLogica;
 
-    public Parserint(int nivel,EntidadesFactory fabricaEntidades,Logica log){
-        fabricaEnt=fabricaEntidades;
+    public Parserint(EntidadesFactory fabricaEntidades, Logica log){
+        fabricaEnt = fabricaEntidades;
         miLogica = log;
     }
 

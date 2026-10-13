@@ -19,7 +19,7 @@ public class AdministradorPuntaje {
 
     public void agregarScore(int puntos)
     {
-        scoreActual=scoreActual+puntos;
+        scoreActual = puntos;
     }
 
     public boolean entroEnElTop5()
